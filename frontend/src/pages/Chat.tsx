@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Loader2, Sparkles, MessageCircle } from 'lucide-react';
+import { Send, Bot, User, Loader2, MessageCircle } from 'lucide-react';
 import { useQuery } from 'react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { aiApi } from '../services/api.ts';
-import { ChatMessage, AIResponse } from '../types/index.ts';
+import { ChatMessage } from '../types/index.ts';
 import toast from 'react-hot-toast';
 
 const Chat: React.FC = () => {

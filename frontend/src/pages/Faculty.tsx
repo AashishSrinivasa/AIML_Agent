@@ -132,11 +132,11 @@ const FacultyPage: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Designations</option>
-              {statsData?.data?.designations.map((designation: any) => (
+              {statsData?.data?.designations && Array.isArray(statsData.data.designations) ? statsData.data.designations.map((designation: any) => (
                 <option key={designation._id} value={designation._id}>
                   {designation._id} ({designation.count})
                 </option>
-              ))}
+              )) : null}
             </select>
           </div>
           <div>
@@ -147,11 +147,11 @@ const FacultyPage: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Specializations</option>
-              {statsData?.data?.specializations.map((specialization: any) => (
+              {statsData?.data?.specializations && Array.isArray(statsData.data.specializations) ? statsData.data.specializations.map((specialization: any) => (
                 <option key={specialization._id} value={specialization._id}>
                   {specialization._id} ({specialization.count})
                 </option>
-              ))}
+              )) : null}
             </select>
           </div>
           <div className="flex items-end">
@@ -195,28 +195,32 @@ const FacultyPage: React.FC = () => {
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Specialization</p>
                     <div className="flex flex-wrap gap-1">
-                      {faculty.specialization.map((spec, index) => (
+                      {faculty.specialization && Array.isArray(faculty.specialization) ? faculty.specialization.map((spec, index) => (
                         <span
                           key={index}
                           className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
                         >
                           {spec}
                         </span>
-                      ))}
+                      )) : (
+                        <span className="text-gray-500 text-xs">No specializations listed</span>
+                      )}
                     </div>
                   </div>
 
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Research Areas</p>
                     <div className="flex flex-wrap gap-1">
-                      {faculty.researchAreas.map((area, index) => (
+                      {faculty.researchAreas && Array.isArray(faculty.researchAreas) ? faculty.researchAreas.map((area, index) => (
                         <span
                           key={index}
                           className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
                         >
                           {area}
                         </span>
-                      ))}
+                      )) : (
+                        <span className="text-gray-500 text-xs">No research areas listed</span>
+                      )}
                     </div>
                   </div>
 

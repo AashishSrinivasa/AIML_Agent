@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
-import BMSCELogo from './BMSCELogo';
+import BMSCELogo from './BMSCELogo.tsx';
 
 interface NavbarProps {
   darkMode: boolean;

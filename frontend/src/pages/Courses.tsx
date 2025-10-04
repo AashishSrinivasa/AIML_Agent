@@ -132,11 +132,11 @@ const Courses: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Semesters</option>
-              {statsData?.data?.semesters.map((semester: any) => (
+              {statsData?.data?.semesters && Array.isArray(statsData.data.semesters) ? statsData.data.semesters.map((semester: any) => (
                 <option key={semester._id} value={semester._id}>
                   {semester._id} ({semester.count})
                 </option>
-              ))}
+              )) : null}
             </select>
           </div>
           <div>
@@ -147,11 +147,11 @@ const Courses: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Instructors</option>
-              {statsData?.data?.instructors.map((instructor: any) => (
+              {statsData?.data?.instructors && Array.isArray(statsData.data.instructors) ? statsData.data.instructors.map((instructor: any) => (
                 <option key={instructor._id} value={instructor._id}>
                   {instructor._id} ({instructor.count})
                 </option>
-              ))}
+              )) : null}
             </select>
           </div>
           <div>
@@ -229,7 +229,7 @@ const Courses: React.FC = () => {
                     <span>{course.room}</span>
                   </div>
 
-                  {course.prerequisites.length > 0 && (
+                  {course.prerequisites && Array.isArray(course.prerequisites) && course.prerequisites.length > 0 && (
                     <div>
                       <p className="text-sm text-gray-600 mb-1">Prerequisites</p>
                       <div className="flex flex-wrap gap-1">
@@ -248,18 +248,24 @@ const Courses: React.FC = () => {
                   <div>
                     <p className="text-sm text-gray-600 mb-1">Topics Covered</p>
                     <div className="flex flex-wrap gap-1">
-                      {course.topics.slice(0, 4).map((topic, index) => (
-                        <span
-                          key={index}
-                          className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
-                        >
-                          {topic}
-                        </span>
-                      ))}
-                      {course.topics.length > 4 && (
-                        <span className="text-xs text-gray-500">
-                          +{course.topics.length - 4} more
-                        </span>
+                      {course.topics && Array.isArray(course.topics) ? (
+                        <>
+                          {course.topics.slice(0, 4).map((topic, index) => (
+                            <span
+                              key={index}
+                              className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                            >
+                              {topic}
+                            </span>
+                          ))}
+                          {course.topics.length > 4 && (
+                            <span className="text-xs text-gray-500">
+                              +{course.topics.length - 4} more
+                            </span>
+                          )}
+                        </>
+                      ) : (
+                        <span className="text-gray-500 text-xs">No topics listed</span>
                       )}
                     </div>
                   </div>

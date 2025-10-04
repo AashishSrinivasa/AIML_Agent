@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Calendar, Clock, MapPin, Filter, ChevronRight } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 import { calendarApi } from '../services/api.ts';
-import { AcademicCalendar, Event } from '../types/index.ts';
+import { Event } from '../types/index.ts';
 
 const CalendarPage: React.FC = () => {
-  const [selectedType, setSelectedType] = useState<string>('');
   const [selectedYear, setSelectedYear] = useState<string>('');
 
   const { data: calendarData, isLoading: calendarLoading } = useQuery(

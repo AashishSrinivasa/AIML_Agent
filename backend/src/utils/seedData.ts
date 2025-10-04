@@ -10,18 +10,18 @@ const seedData = async () => {
   try {
     console.log('🌱 Starting data seeding...');
 
-    // Read JSON files
+    // Read comprehensive JSON files
     const facultyData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, '../../data/faculty.json'), 'utf8')
+      fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
     );
     const courseData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, '../../data/courses.json'), 'utf8')
+      fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
     );
     const calendarData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, '../../data/academic_calendar.json'), 'utf8')
+      fs.readFileSync(path.join(__dirname, '../../data/comprehensive_academic_calendar.json'), 'utf8')
     );
     const infrastructureData = JSON.parse(
-      fs.readFileSync(path.join(__dirname, '../../data/infrastructure.json'), 'utf8')
+      fs.readFileSync(path.join(__dirname, '../../data/comprehensive_infrastructure.json'), 'utf8')
     );
 
     // Clear existing data

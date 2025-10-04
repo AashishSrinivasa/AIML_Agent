@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { AcademicCalendar } from '../models/AcademicCalendar';
 import { asyncHandler } from '../utils/errorHandler';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
 
@@ -10,18 +12,30 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req: Request, res: Response) => {
   const { year } = req.query;
   
-  let query: any = {};
+  // Read comprehensive academic calendar data from JSON file
+  const calendarData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_academic_calendar.json'), 'utf8')
+  );
+  
+  let calendar = calendarData;
+  
+  // Filter by year if specified
   if (year) {
-    query.academicYear = year;
-  }
-  
-  const calendar = await AcademicCalendar.findOne(query).sort({ academicYear: -1 });
-  
-  if (!calendar) {
-    return res.status(404).json({
-      success: false,
-      error: 'Academic calendar not found'
-    });
+    calendar = calendarData.filter((cal: any) => 
+      cal.academicYear === year
+    );
+    if (calendar.length === 0) {
+      return res.status(404).json({
+        success: false,
+        error: 'Academic calendar not found for the specified year'
+      });
+    }
+    calendar = calendar[0]; // Return the first (and likely only) match
+  } else {
+    // Return the most recent calendar
+    calendar = calendarData.sort((a: any, b: any) => 
+      b.academicYear.localeCompare(a.academicYear)
+    )[0];
   }
   
   return res.json({

@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { Faculty } from '../models/Faculty';
 import { asyncHandler } from '../utils/errorHandler';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
 
@@ -10,33 +12,46 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req: Request, res: Response) => {
   const { search, designation, specialization } = req.query;
   
-  let query: any = {};
+  // Read comprehensive faculty data from JSON file
+  const facultyData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
+  );
+  
+  let filteredFaculty = facultyData;
   
   // Search by name, specialization, or research areas
   if (search) {
-    query.$or = [
-      { name: { $regex: search, $options: 'i' } },
-      { specialization: { $regex: search, $options: 'i' } },
-      { researchAreas: { $regex: search, $options: 'i' } }
-    ];
+    const searchTerm = (search as string).toLowerCase();
+    filteredFaculty = filteredFaculty.filter((faculty: any) => 
+      faculty.name.toLowerCase().includes(searchTerm) ||
+      faculty.specialization.some((spec: string) => spec.toLowerCase().includes(searchTerm)) ||
+      faculty.researchAreas.some((area: string) => area.toLowerCase().includes(searchTerm))
+    );
   }
   
   // Filter by designation
   if (designation) {
-    query.designation = { $regex: designation, $options: 'i' };
+    filteredFaculty = filteredFaculty.filter((faculty: any) => 
+      faculty.designation.toLowerCase().includes((designation as string).toLowerCase())
+    );
   }
   
   // Filter by specialization
   if (specialization) {
-    query.specialization = { $regex: specialization, $options: 'i' };
+    filteredFaculty = filteredFaculty.filter((faculty: any) => 
+      faculty.specialization.some((spec: string) => 
+        spec.toLowerCase().includes((specialization as string).toLowerCase())
+      )
+    );
   }
   
-  const faculty = await Faculty.find(query).sort({ name: 1 });
+  // Sort by name
+  filteredFaculty.sort((a: any, b: any) => a.name.localeCompare(b.name));
   
   return res.json({
     success: true,
-    count: faculty.length,
-    data: faculty
+    count: filteredFaculty.length,
+    data: filteredFaculty
   });
 }));
 
@@ -93,19 +108,53 @@ router.get('/specialization/:specialization', asyncHandler(async (req: Request, 
 // @route   GET /api/faculty/stats/overview
 // @access  Public
 router.get('/stats/overview', asyncHandler(async (req: Request, res: Response) => {
-  const totalFaculty = await Faculty.countDocuments();
-  const designations = await Faculty.aggregate([
-    { $group: { _id: '$designation', count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-  ]);
-  const specializations = await Faculty.aggregate([
-    { $unwind: '$specialization' },
-    { $group: { _id: '$specialization', count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-  ]);
-  const totalPublications = await Faculty.aggregate([
-    { $group: { _id: null, total: { $sum: '$publications' } } }
-  ]);
+  // Read comprehensive faculty data from JSON file
+  const facultyData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
+  );
+  
+  const totalFaculty = facultyData.length;
+  
+  // Calculate designations
+  const designationMap = new Map();
+  facultyData.forEach((faculty: any) => {
+    const designation = faculty.designation;
+    designationMap.set(designation, (designationMap.get(designation) || 0) + 1);
+  });
+  const designations = Array.from(designationMap.entries()).map(([designation, count]) => ({
+    _id: designation,
+    count
+  })).sort((a, b) => b.count - a.count);
+  
+  // Calculate specializations
+  const specializationMap = new Map();
+  facultyData.forEach((faculty: any) => {
+    if (faculty.specialization && Array.isArray(faculty.specialization)) {
+      faculty.specialization.forEach((spec: string) => {
+        specializationMap.set(spec, (specializationMap.get(spec) || 0) + 1);
+      });
+    }
+  });
+  const specializations = Array.from(specializationMap.entries()).map(([specialization, count]) => ({
+    _id: specialization,
+    count
+  })).sort((a, b) => b.count - a.count);
+  
+  // Calculate total publications
+  const totalPublications = facultyData.reduce((total: number, faculty: any) => {
+    return total + (faculty.publications || 0);
+  }, 0);
+  
+  // Calculate total research areas
+  const researchAreaMap = new Map();
+  facultyData.forEach((faculty: any) => {
+    if (faculty.researchAreas && Array.isArray(faculty.researchAreas)) {
+      faculty.researchAreas.forEach((area: string) => {
+        researchAreaMap.set(area, (researchAreaMap.get(area) || 0) + 1);
+      });
+    }
+  });
+  const totalResearchAreas = researchAreaMap.size;
   
   return res.json({
     success: true,
@@ -113,7 +162,8 @@ router.get('/stats/overview', asyncHandler(async (req: Request, res: Response) =
       totalFaculty,
       designations,
       specializations,
-      totalPublications: totalPublications[0]?.total || 0
+      totalPublications,
+      totalResearchAreas
     }
   });
 }));

@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { Course } from '../models/Course';
 import { asyncHandler } from '../utils/errorHandler';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
 
@@ -10,38 +12,52 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req: Request, res: Response) => {
   const { search, semester, instructor, credits } = req.query;
   
-  let query: any = {};
+  // Read comprehensive courses data from JSON file
+  const courseData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
+  );
+  
+  let filteredCourses = courseData;
   
   // Search by name, description, or topics
   if (search) {
-    query.$or = [
-      { name: { $regex: search, $options: 'i' } },
-      { description: { $regex: search, $options: 'i' } },
-      { topics: { $regex: search, $options: 'i' } }
-    ];
+    const searchTerm = (search as string).toLowerCase();
+    filteredCourses = filteredCourses.filter((course: any) => 
+      course.name.toLowerCase().includes(searchTerm) ||
+      course.description.toLowerCase().includes(searchTerm) ||
+      (course.topics && course.topics.some((topic: string) => topic.toLowerCase().includes(searchTerm)))
+    );
   }
   
   // Filter by semester
   if (semester) {
-    query.semester = { $regex: semester, $options: 'i' };
+    filteredCourses = filteredCourses.filter((course: any) => 
+      course.semester.toLowerCase().includes((semester as string).toLowerCase())
+    );
   }
   
   // Filter by instructor
   if (instructor) {
-    query.instructor = { $regex: instructor, $options: 'i' };
+    filteredCourses = filteredCourses.filter((course: any) => 
+      course.instructor.toLowerCase().includes((instructor as string).toLowerCase())
+    );
   }
   
   // Filter by credits
   if (credits) {
-    query.credits = parseInt(credits as string);
+    const creditValue = parseInt(credits as string);
+    filteredCourses = filteredCourses.filter((course: any) => 
+      course.credits === creditValue
+    );
   }
   
-  const courses = await Course.find(query).sort({ code: 1 });
+  // Sort by code
+  filteredCourses.sort((a: any, b: any) => a.code.localeCompare(b.code));
   
   return res.json({
     success: true,
-    count: courses.length,
-    data: courses
+    count: filteredCourses.length,
+    data: filteredCourses
   });
 }));
 
@@ -98,19 +114,45 @@ router.get('/instructor/:instructor', asyncHandler(async (req: Request, res: Res
 // @route   GET /api/courses/stats/overview
 // @access  Public
 router.get('/stats/overview', asyncHandler(async (req: Request, res: Response) => {
-  const totalCourses = await Course.countDocuments();
-  const semesters = await Course.aggregate([
-    { $group: { _id: '$semester', count: { $sum: 1 } } },
-    { $sort: { _id: 1 } }
-  ]);
-  const instructors = await Course.aggregate([
-    { $group: { _id: '$instructor', count: { $sum: 1 } } },
-    { $sort: { count: -1 } }
-  ]);
-  const credits = await Course.aggregate([
-    { $group: { _id: '$credits', count: { $sum: 1 } } },
-    { $sort: { _id: 1 } }
-  ]);
+  // Read comprehensive courses data from JSON file
+  const courseData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
+  );
+  
+  const totalCourses = courseData.length;
+  
+  // Calculate semesters
+  const semesterMap = new Map();
+  courseData.forEach((course: any) => {
+    const semester = course.semester;
+    semesterMap.set(semester, (semesterMap.get(semester) || 0) + 1);
+  });
+  const semesters = Array.from(semesterMap.entries()).map(([semester, count]) => ({
+    _id: semester,
+    count
+  })).sort((a, b) => a._id.localeCompare(b._id));
+  
+  // Calculate instructors
+  const instructorMap = new Map();
+  courseData.forEach((course: any) => {
+    const instructor = course.instructor;
+    instructorMap.set(instructor, (instructorMap.get(instructor) || 0) + 1);
+  });
+  const instructors = Array.from(instructorMap.entries()).map(([instructor, count]) => ({
+    _id: instructor,
+    count
+  })).sort((a, b) => b.count - a.count);
+  
+  // Calculate credits
+  const creditMap = new Map();
+  courseData.forEach((course: any) => {
+    const credits = course.credits;
+    creditMap.set(credits, (creditMap.get(credits) || 0) + 1);
+  });
+  const credits = Array.from(creditMap.entries()).map(([credits, count]) => ({
+    _id: credits,
+    count
+  })).sort((a, b) => a._id - b._id);
   
   return res.json({
     success: true,

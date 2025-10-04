@@ -1,6 +1,8 @@
 import express, { Request, Response } from 'express';
 import { Infrastructure } from '../models/Infrastructure';
 import { asyncHandler } from '../utils/errorHandler';
+import fs from 'fs';
+import path from 'path';
 
 const router = express.Router();
 
@@ -10,18 +12,28 @@ const router = express.Router();
 router.get('/', asyncHandler(async (req: Request, res: Response) => {
   const { department } = req.query;
   
-  let query: any = {};
+  // Read comprehensive infrastructure data from JSON file
+  const infrastructureData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_infrastructure.json'), 'utf8')
+  );
+  
+  let infrastructure = infrastructureData;
+  
+  // Filter by department if specified
   if (department) {
-    query.department = { $regex: department, $options: 'i' };
-  }
-  
-  const infrastructure = await Infrastructure.findOne(query);
-  
-  if (!infrastructure) {
-    return res.status(404).json({
-      success: false,
-      error: 'Infrastructure details not found'
-    });
+    infrastructure = infrastructureData.filter((infra: any) => 
+      infra.department && infra.department.toLowerCase().includes((department as string).toLowerCase())
+    );
+    if (infrastructure.length === 0) {
+      return res.status(404).json({
+        success: false,
+        error: 'Infrastructure details not found for the specified department'
+      });
+    }
+    infrastructure = infrastructure[0]; // Return the first match
+  } else {
+    // Return the first infrastructure entry (likely the main one)
+    infrastructure = infrastructureData[0];
   }
   
   return res.json({

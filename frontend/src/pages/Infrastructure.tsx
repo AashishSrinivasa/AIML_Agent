@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Building2, Monitor, BookOpen, Users, Search, MapPin, Wrench, Clock } from 'lucide-react';
+import { Building2, Monitor, BookOpen, Users, Search, Wrench, Clock } from 'lucide-react';
 import { infrastructureApi } from '../services/api.ts';
-import { Infrastructure, Lab, ResearchFacility } from '../types/index.ts';
+import { Lab, ResearchFacility } from '../types/index.ts';
 
 const InfrastructurePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -132,36 +132,42 @@ const InfrastructurePage: React.FC = () => {
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2">Equipment</h4>
                     <div className="grid grid-cols-1 gap-2">
-                      {lab.equipment.map((equipment, eqIndex) => (
+                      {lab.equipment && Array.isArray(lab.equipment) ? lab.equipment.map((equipment, eqIndex) => (
                         <div key={eqIndex} className="flex items-center justify-between p-2 bg-gray-50 rounded">
                           <div>
-                            <span className="font-medium">{equipment.name}</span>
-                            <span className="text-sm text-gray-600 ml-2">({equipment.quantity})</span>
+                            <span className="font-medium">{equipment.name || equipment}</span>
+                            {equipment.quantity && <span className="text-sm text-gray-600 ml-2">({equipment.quantity})</span>}
                           </div>
-                          <span className={`px-2 py-1 rounded text-xs ${
-                            equipment.condition === 'excellent' ? 'bg-green-100 text-green-800' :
-                            equipment.condition === 'good' ? 'bg-blue-100 text-blue-800' :
-                            equipment.condition === 'fair' ? 'bg-yellow-100 text-yellow-800' :
-                            'bg-red-100 text-red-800'
-                          }`}>
-                            {equipment.condition}
-                          </span>
+                          {equipment.condition && (
+                            <span className={`px-2 py-1 rounded text-xs ${
+                              equipment.condition === 'excellent' ? 'bg-green-100 text-green-800' :
+                              equipment.condition === 'good' ? 'bg-blue-100 text-blue-800' :
+                              equipment.condition === 'fair' ? 'bg-yellow-100 text-yellow-800' :
+                              'bg-red-100 text-red-800'
+                            }`}>
+                              {equipment.condition}
+                            </span>
+                          )}
                         </div>
-                      ))}
+                      )) : (
+                        <div className="text-gray-500 text-sm">No equipment listed</div>
+                      )}
                     </div>
                   </div>
 
                   <div>
                     <h4 className="font-medium text-gray-900 mb-2">Facilities</h4>
                     <div className="flex flex-wrap gap-2">
-                      {lab.facilities.map((facility, facIndex) => (
+                      {lab.facilities && Array.isArray(lab.facilities) ? lab.facilities.map((facility, facIndex) => (
                         <span
                           key={facIndex}
                           className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
                         >
                           {facility}
                         </span>
-                      ))}
+                      )) : (
+                        <div className="text-gray-500 text-sm">No facilities listed</div>
+                      )}
                     </div>
                   </div>
 

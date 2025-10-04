@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
 
 // Create axios instance
 const api = axios.create({
@@ -159,7 +159,7 @@ export const facultyApi = {
   },
 
   getStats: async (): Promise<ApiResponse<any>> => {
-    const response = await api.get('/faculty/stats');
+    const response = await api.get('/faculty/stats/overview');
     return response.data;
   },
 };
@@ -182,7 +182,7 @@ export const coursesApi = {
   },
 
   getStats: async (): Promise<ApiResponse<any>> => {
-    const response = await api.get('/courses/stats');
+    const response = await api.get('/courses/stats/overview');
     return response.data;
   },
 };

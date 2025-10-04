@@ -1,6 +1,6 @@
 import React from 'react';
 import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, MapPin, Phone, Mail } from 'lucide-react';
-import BMSCELogo from '../components/BMSCELogo';
+import BMSCELogo from '../components/BMSCELogo.tsx';
 
 const About: React.FC = () => {
   const features = [

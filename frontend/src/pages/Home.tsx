@@ -13,7 +13,7 @@ import {
   GraduationCap,
   TrendingUp
 } from 'lucide-react';
-import BMSCELogo from '../components/BMSCELogo';
+import BMSCELogo from '../components/BMSCELogo.tsx';
 
 const Home: React.FC = () => {
   const features = [

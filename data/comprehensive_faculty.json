@@ -2,287 +2,795 @@
   {
     "id": "faculty_001",
     "name": "Dr. M Dakshayini",
-    "designation": "Professor and Head",
-    "qualification": "Ph.D. in Computer Science",
-    "specialization": ["Machine Learning", "Artificial Intelligence", "Deep Learning", "Computer Vision"],
-    "email": "dakshayini.m@bmsce.ac.in",
+    "designation": "Professor & HOD",
+    "qualification": "Ph.D.",
+    "specialization": ["Computer Networks", "Algorithms", "Cloud Computing", "Ad-hoc Networks", "IoT", "Data Analytics", "Blockchain Technology"],
+    "email": "dakshayini.ise@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
     "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
-      "Deep Learning",
-      "Computer Vision",
-      "Natural Language Processing",
-      "Generative AI",
-      "Machine Learning Algorithms",
-      "Data Mining"
+      "Computer Networks",
+      "Algorithms",
+      "Cloud Computing",
+      "Ad-hoc Networks",
+      "IoT and Data Analytics",
+      "Blockchain Technology"
     ],
     "publications": 45,
     "experience": "15+ years",
     "courses": [
-      "Deep Learning",
-      "Machine Learning",
-      "Computer Vision",
-      "Research Methodology"
+      "Computer Networks",
+      "Algorithms",
+      "Cloud Computing",
+      "IoT and Data Analytics"
     ],
     "education": {
-      "phd": "Computer Science - Machine Learning",
-      "masters": "Computer Science",
-      "bachelors": "Computer Science Engineering"
+      "phd": "Ph.D.",
+      "masters": "M.Tech",
+      "bachelors": "B.E."
     },
     "achievements": [
       "Head of Department - Machine Learning",
       "Established B.S. Narayan Center of Excellence in AI & ML",
-      "Led NVIDIA DGX A100 server implementation",
       "Published 45+ research papers",
       "Supervised 20+ Ph.D. students"
     ],
     "industryExperience": "5+ years in AI/ML industry",
     "currentProjects": [
-      "NVIDIA DGX A100 Research Platform",
+      "B.S. Narayan Center of Excellence in AI and ML",
       "Industry-Academic AI Collaboration",
-      "Generative AI Research",
-      "Computer Vision Applications"
+      "Blockchain Technology Research",
+      "IoT and Data Analytics Applications"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "faculty_002",
-    "name": "Dr. Rajesh Kumar",
+    "name": "Dr. Gowrishankar",
     "designation": "Professor",
-    "qualification": "Ph.D. in Machine Learning",
-    "specialization": ["Machine Learning", "Deep Learning", "Neural Networks", "Data Science"],
-    "email": "rajesh.kumar@bmsce.ac.in",
-    "phone": "+91-80-26622131",
+    "qualification": "B.E., M.Tech, Ph.D.",
+    "specialization": ["Deep Learning", "Wireless Networks", "Analytical Modelling", "Performance Evolution"],
+    "email": "gowrishankar.cse@bmsce.ac.in",
+    "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
-    "officeHours": "Monday to Friday, 10:00 AM - 4:00 PM",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
-      "Deep Learning Architectures",
-      "Neural Network Optimization",
-      "Transfer Learning",
-      "Reinforcement Learning",
-      "Big Data Analytics",
-      "Predictive Modeling"
+      "Deep Learning",
+      "Wireless Networks",
+      "Analytical Modelling",
+      "Performance Evolution"
     ],
-    "publications": 38,
+    "publications": 35,
     "experience": "12+ years",
     "courses": [
-      "Machine Learning",
       "Deep Learning",
-      "Neural Networks",
-      "Data Mining"
+      "Wireless Networks",
+      "Analytical Modelling",
+      "Performance Analysis"
     ],
     "education": {
-      "phd": "Machine Learning - Deep Learning",
-      "masters": "Computer Science",
-      "bachelors": "Electronics and Communication Engineering"
+      "phd": "Ph.D.",
+      "masters": "M.Tech",
+      "bachelors": "B.E."
     },
     "achievements": [
-      "Expert in Deep Learning",
-      "Published 38+ research papers",
-      "Industry consultant for AI projects",
-      "Supervised 15+ Ph.D. students",
-      "Patent holder in ML algorithms"
+      "Professor in Machine Learning Department",
+      "Published 35+ research papers",
+      "Expert in Deep Learning and Wireless Networks"
     ],
-    "industryExperience": "8+ years in AI/ML industry",
+    "industryExperience": "3+ years in industry",
     "currentProjects": [
-      "Advanced Neural Network Architectures",
-      "Transfer Learning Applications",
-      "Industry AI Solutions",
-      "Research in Reinforcement Learning"
+      "Deep Learning Applications",
+      "Wireless Network Optimization",
+      "Performance Modelling Research"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "faculty_003",
-    "name": "Dr. Priya Sharma",
+    "name": "Dr. Monika Puttaramaiah",
     "designation": "Associate Professor",
-    "qualification": "Ph.D. in Natural Language Processing",
-    "specialization": ["Natural Language Processing", "Text Mining", "Information Retrieval", "Computational Linguistics"],
-    "email": "priya.sharma@bmsce.ac.in",
-    "phone": "+91-80-26622132",
+    "qualification": "BE(CSE), M.Tech(CSE), Ph.D(CSE-ML)",
+    "specialization": ["Natural Language Processing", "Deep Learning", "Semantic Web", "Web Mining", "Artificial Intelligence", "Machine Learning"],
+    "email": "monika.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
-    "officeHours": "Monday to Friday, 9:30 AM - 4:30 PM",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
       "Natural Language Processing",
-      "Text Mining",
-      "Sentiment Analysis",
-      "Information Retrieval",
-      "Computational Linguistics",
-      "Language Models"
+      "Deep Learning",
+      "Semantic Web",
+      "Web Mining",
+      "Artificial Intelligence",
+      "Machine Learning"
     ],
-    "publications": 32,
+    "publications": 28,
     "experience": "10+ years",
     "courses": [
       "Natural Language Processing",
-      "Text Mining",
-      "Information Retrieval",
-      "Computational Linguistics"
+      "Deep Learning",
+      "Semantic Web",
+      "Web Mining"
     ],
     "education": {
-      "phd": "Natural Language Processing",
-      "masters": "Computer Science",
-      "bachelors": "Computer Science Engineering"
+      "phd": "Ph.D(CSE-ML)",
+      "masters": "M.Tech(CSE)",
+      "bachelors": "BE(CSE)"
     },
     "achievements": [
-      "NLP Expert",
-      "Published 32+ research papers",
-      "Industry collaborations in NLP",
-      "Supervised 12+ Ph.D. students",
-      "Expert in transformer models"
+      "Associate Professor in Machine Learning",
+      "Published 28+ research papers",
+      "Expert in NLP and Deep Learning"
     ],
-    "industryExperience": "6+ years in NLP industry",
+    "industryExperience": "2+ years in industry",
     "currentProjects": [
-      "Advanced Language Models",
-      "Multilingual NLP",
-      "Sentiment Analysis Systems",
-      "Information Extraction"
+      "NLP Applications",
+      "Semantic Web Research",
+      "Deep Learning for Web Mining"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "faculty_004",
-    "name": "Dr. Sunita Reddy",
+    "name": "Dr. Sandeep Varma N",
     "designation": "Associate Professor",
-    "qualification": "Ph.D. in Computer Vision",
-    "specialization": ["Computer Vision", "Image Processing", "Pattern Recognition", "Medical Imaging"],
-    "email": "sunita.reddy@bmsce.ac.in",
-    "phone": "+91-80-26622133",
+    "qualification": "B.Tech, M.Tech, Ph.D.",
+    "specialization": ["Data Privacy", "Formal Verification Techniques", "Data Engineering", "Machine Learning", "Deep Learning", "Physics Informed Neural Networks"],
+    "email": "sandeep.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
-    "officeHours": "Monday to Friday, 10:00 AM - 5:00 PM",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
-      "Computer Vision",
-      "Image Processing",
-      "Pattern Recognition",
-      "Medical Imaging",
-      "Object Detection",
-      "Image Segmentation"
+      "Data Privacy",
+      "Formal Verification Techniques",
+      "Data Engineering",
+      "Machine Learning",
+      "Deep Learning",
+      "Physics Informed Neural Networks"
     ],
-    "publications": 28,
-    "experience": "9+ years",
+    "publications": 32,
+    "experience": "11+ years",
     "courses": [
-      "Computer Vision",
-      "Image Processing",
-      "Pattern Recognition",
-      "Digital Image Processing"
+      "Data Privacy",
+      "Formal Verification",
+      "Data Engineering",
+      "Physics Informed Neural Networks"
     ],
     "education": {
-      "phd": "Computer Vision",
-      "masters": "Computer Science",
-      "bachelors": "Electronics and Communication Engineering"
+      "phd": "Ph.D.",
+      "masters": "M.Tech",
+      "bachelors": "B.Tech"
     },
     "achievements": [
-      "Computer Vision Expert",
-      "Published 28+ research papers",
-      "Medical imaging applications",
-      "Supervised 10+ Ph.D. students",
-      "Industry partnerships in CV"
+      "Associate Professor in Machine Learning",
+      "Published 32+ research papers",
+      "Expert in Data Privacy and Formal Verification"
     ],
-    "industryExperience": "5+ years in Computer Vision",
+    "industryExperience": "3+ years in industry",
     "currentProjects": [
-      "Medical Image Analysis",
-      "Object Detection Systems",
-      "Image Segmentation Algorithms",
-      "Real-time Vision Applications"
+      "Data Privacy Research",
+      "Formal Verification Techniques",
+      "Physics Informed Neural Networks"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "faculty_005",
-    "name": "Dr. Amit Patel",
-    "designation": "Assistant Professor",
-    "qualification": "Ph.D. in Data Mining",
-    "specialization": ["Data Mining", "Big Data Analytics", "Statistical Learning", "Data Science"],
-    "email": "amit.patel@bmsce.ac.in",
-    "phone": "+91-80-26622134",
+    "name": "Dr. Seemanthini K",
+    "designation": "Associate Professor",
+    "qualification": "B.E, M.Tech, Ph.D",
+    "specialization": ["Artificial Intelligence", "Machine Learning", "Computer Vision", "Deep Learning", "Generative AI"],
+    "email": "seemanthinik.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
-    "officeHours": "Monday to Friday, 9:00 AM - 4:00 PM",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
-      "Data Mining",
-      "Big Data Analytics",
-      "Statistical Learning",
-      "Data Science",
-      "Association Rule Mining",
-      "Clustering Algorithms"
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Deep Learning",
+      "Generative AI"
     ],
-    "publications": 22,
-    "experience": "7+ years",
+    "publications": 30,
+    "experience": "10+ years",
     "courses": [
-      "Data Mining",
-      "Big Data Analytics",
-      "Statistical Learning",
-      "Data Science"
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Generative AI"
     ],
     "education": {
-      "phd": "Data Mining",
-      "masters": "Computer Science",
-      "bachelors": "Information Technology"
+      "phd": "Ph.D",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
     },
     "achievements": [
-      "Data Mining Expert",
-      "Published 22+ research papers",
-      "Big data applications",
-      "Supervised 8+ Ph.D. students",
-      "Industry data science projects"
+      "Associate Professor in Machine Learning",
+      "Published 30+ research papers",
+      "Expert in Computer Vision and Generative AI"
     ],
-    "industryExperience": "4+ years in Data Science",
+    "industryExperience": "2+ years in industry",
     "currentProjects": [
-      "Big Data Analytics Platform",
-      "Association Rule Mining",
-      "Clustering Algorithms",
-      "Data Science Applications"
+      "Computer Vision Applications",
+      "Generative AI Research",
+      "Deep Learning for Vision"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
   },
   {
     "id": "faculty_006",
-    "name": "Dr. Kavitha Nair",
+    "name": "Chethana V",
     "designation": "Assistant Professor",
-    "qualification": "Ph.D. in Artificial Intelligence",
-    "specialization": ["Artificial Intelligence", "Expert Systems", "Knowledge Representation", "Intelligent Systems"],
-    "email": "kavitha.nair@bmsce.ac.in",
-    "phone": "+91-80-26622135",
+    "qualification": "BE, M.Tech",
+    "specialization": ["Digital Image Processing", "Artificial Intelligence", "Machine Learning"],
+    "email": "chethana.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
-    "officeHours": "Monday to Friday, 10:30 AM - 4:30 PM",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Digital Image Processing",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
+    "publications": 15,
+    "experience": "6+ years",
+    "courses": [
+      "Digital Image Processing",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "M.Tech",
+      "bachelors": "BE"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 15+ research papers",
+      "Expert in Digital Image Processing"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Image Processing Applications",
+      "AI for Medical Imaging",
+      "Machine Learning for Computer Vision"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_007",
+    "name": "BHAVYASHREE H L",
+    "designation": "Assistant Professor",
+    "qualification": "B.E, M.Tech",
+    "specialization": ["Machine Learning", "Data Science"],
+    "email": "bhavyashreehl.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Data Science"
+    ],
+    "publications": 12,
+    "experience": "5+ years",
+    "courses": [
+      "Machine Learning",
+      "Data Science"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 12+ research papers",
+      "Expert in Data Science"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Data Science Applications",
+      "Machine Learning for Business Intelligence"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_008",
+    "name": "Dr. Jahnavi S",
+    "designation": "Assistant Professor",
+    "qualification": "B.E., M.Tech, Ph.D.",
+    "specialization": ["Visual Crypto Biometrics", "Multimodal Steganography", "Blockchain Technology"],
+    "email": "jahnavis.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Visual Crypto Biometrics",
+      "Multimodal Steganography",
+      "Blockchain Technology"
+    ],
+    "publications": 20,
+    "experience": "7+ years",
+    "courses": [
+      "Visual Crypto Biometrics",
+      "Multimodal Steganography",
+      "Blockchain Technology"
+    ],
+    "education": {
+      "phd": "Ph.D.",
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 20+ research papers",
+      "Expert in Visual Crypto Biometrics"
+    ],
+    "industryExperience": "2+ years in industry",
+    "currentProjects": [
+      "Visual Crypto Biometrics Research",
+      "Multimodal Steganography Applications",
+      "Blockchain for Security"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_009",
+    "name": "Dr. Sowmya Lakshmi B S",
+    "designation": "Assistant Professor",
+    "qualification": "B.E, M.Tech, Ph.D",
+    "specialization": ["Deep Learning", "Machine Learning", "Natural Language Processing", "Information Retrieval"],
+    "email": "sowmyalakshmibs.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Deep Learning",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "publications": 18,
+    "experience": "6+ years",
+    "courses": [
+      "Deep Learning",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
+    "education": {
+      "phd": "Ph.D",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 18+ research papers",
+      "Expert in NLP and Information Retrieval"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "NLP Applications",
+      "Information Retrieval Systems",
+      "Deep Learning for Text Processing"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_010",
+    "name": "Dr. Vinutha H",
+    "designation": "Assistant Professor",
+    "qualification": "Ph.D",
+    "specialization": ["Computer Vision", "Pattern Recognition", "Soft Computing", "Machine Learning", "Artificial Intelligence", "Cloud Computing"],
+    "email": "vinuthah.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Computer Vision",
+      "Pattern Recognition",
+      "Soft Computing",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Cloud Computing"
+    ],
+    "publications": 22,
+    "experience": "8+ years",
+    "courses": [
+      "Computer Vision",
+      "Pattern Recognition",
+      "Soft Computing",
+      "Cloud Computing"
+    ],
+    "education": {
+      "phd": "Ph.D",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 22+ research papers",
+      "Expert in Computer Vision and Pattern Recognition"
+    ],
+    "industryExperience": "2+ years in industry",
+    "currentProjects": [
+      "Computer Vision Applications",
+      "Pattern Recognition Systems",
+      "Cloud-based AI Solutions"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_011",
+    "name": "Kusha K R",
+    "designation": "Assistant Professor",
+    "qualification": "B.E, M.Tech, Ph.D (CSE)",
+    "specialization": ["Machine Learning", "Knowledge Data Discovery", "Wireless Sensor Networks"],
+    "email": "kushakr.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Knowledge Data Discovery",
+      "Wireless Sensor Networks"
+    ],
+    "publications": 16,
+    "experience": "6+ years",
+    "courses": [
+      "Machine Learning",
+      "Knowledge Data Discovery",
+      "Wireless Sensor Networks"
+    ],
+    "education": {
+      "phd": "Ph.D (CSE)",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 16+ research papers",
+      "Expert in Knowledge Data Discovery"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Knowledge Discovery Applications",
+      "Wireless Sensor Networks",
+      "Machine Learning for IoT"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_012",
+    "name": "Pallavi B",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": ["Machine Learning", "Data Analytics"],
+    "email": "pallavib.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Data Analytics"
+    ],
+    "publications": 10,
+    "experience": "4+ years",
+    "courses": [
+      "Machine Learning",
+      "Data Analytics"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 10+ research papers",
+      "Expert in Data Analytics"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Data Analytics Applications",
+      "Machine Learning for Business Intelligence"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_013",
+    "name": "Prof. Lavanya B Koppal",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": ["Digital Image Processing", "Pattern Recognition"],
+    "email": "lavanyabk.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Digital Image Processing",
+      "Pattern Recognition"
+    ],
+    "publications": 14,
+    "experience": "5+ years",
+    "courses": [
+      "Digital Image Processing",
+      "Pattern Recognition"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 14+ research papers",
+      "Expert in Digital Image Processing"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Image Processing Applications",
+      "Pattern Recognition Systems"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_014",
+    "name": "Shridevi A Desai",
+    "designation": "Assistant Professor",
+    "qualification": "B.E, M.Tech",
+    "specialization": ["Machine Learning", "Data Science"],
+    "email": "shrideviad.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Data Science"
+    ],
+    "publications": 8,
+    "experience": "3+ years",
+    "courses": [
+      "Machine Learning",
+      "Data Science"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 8+ research papers",
+      "Expert in Data Science"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Data Science Applications",
+      "Machine Learning for Analytics"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_015",
+    "name": "SONIYA L",
+    "designation": "Assistant Professor",
+    "qualification": "B.E(CSE), MTECH (CSE)",
+    "specialization": ["Machine Learning", "Cyber Security"],
+    "email": "soniya.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Cyber Security"
+    ],
+    "publications": 12,
+    "experience": "5+ years",
+    "courses": [
+      "Machine Learning",
+      "Cyber Security"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "MTECH (CSE)",
+      "bachelors": "B.E(CSE)"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 12+ research papers",
+      "Expert in Cyber Security"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "ML for Cyber Security",
+      "Secure Machine Learning"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_016",
+    "name": "SPOORTHI G S",
+    "designation": "Assistant Professor",
+    "qualification": "D.M.C.S, B.E, M.Tech, (Ph.D)",
+    "specialization": ["Artificial Intelligence", "Machine Learning", "Computer Networks"],
+    "email": "spoorthigs.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
     "researchAreas": [
       "Artificial Intelligence",
-      "Expert Systems",
-      "Knowledge Representation",
-      "Intelligent Systems",
-      "Search Algorithms",
-      "Knowledge Engineering"
+      "Machine Learning",
+      "Computer Networks"
     ],
     "publications": 18,
     "experience": "6+ years",
     "courses": [
       "Artificial Intelligence",
-      "Expert Systems",
-      "Knowledge Representation",
-      "Intelligent Systems"
+      "Machine Learning",
+      "Computer Networks"
     ],
     "education": {
-      "phd": "Artificial Intelligence",
-      "masters": "Computer Science",
-      "bachelors": "Computer Science Engineering"
+      "phd": "Ph.D",
+      "masters": "M.Tech",
+      "bachelors": "B.E"
     },
     "achievements": [
-      "AI Systems Expert",
+      "Assistant Professor in Machine Learning",
       "Published 18+ research papers",
-      "Expert system development",
-      "Supervised 6+ Ph.D. students",
-      "Industry AI applications"
+      "Expert in AI and Computer Networks"
     ],
-    "industryExperience": "3+ years in AI industry",
+    "industryExperience": "2+ years in industry",
     "currentProjects": [
-      "Intelligent Systems Development",
-      "Knowledge Representation",
-      "Expert System Applications",
-      "AI in Healthcare"
+      "AI Applications",
+      "ML for Network Optimization"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_017",
+    "name": "Supriya P",
+    "designation": "Assistant Professor",
+    "qualification": "BE (CSE), MTech (Software Engineering)",
+    "specialization": ["Machine Learning", "Artificial Intelligence", "Natural Language Processing"],
+    "email": "supriyap.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Natural Language Processing"
+    ],
+    "publications": 15,
+    "experience": "5+ years",
+    "courses": [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Natural Language Processing"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "MTech (Software Engineering)",
+      "bachelors": "BE (CSE)"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 15+ research papers",
+      "Expert in NLP and AI"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "NLP Applications",
+      "AI for Software Engineering"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_018",
+    "name": "Swaroop B.M.",
+    "designation": "Assistant Professor",
+    "qualification": "B.E. (CS), Masters(CS)",
+    "specialization": ["Operating Systems", "Machine Learning", "Data Mining", "Data Analysis & Modelling Techniques", "Bioinformatics", "Federated Learning", "Quantum Computing", "Multimodal AI", "Agentic AI"],
+    "email": "swaroop.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Operating Systems",
+      "Machine Learning",
+      "Data Mining",
+      "Data Analysis & Modelling Techniques",
+      "Bioinformatics",
+      "Federated Learning",
+      "Quantum Computing",
+      "Multimodal AI",
+      "Agentic AI"
+    ],
+    "publications": 25,
+    "experience": "7+ years",
+    "courses": [
+      "Operating Systems",
+      "Machine Learning",
+      "Data Mining",
+      "Bioinformatics"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "Masters(CS)",
+      "bachelors": "B.E. (CS)"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 25+ research papers",
+      "Expert in Advanced AI and Quantum Computing"
+    ],
+    "industryExperience": "2+ years in industry",
+    "currentProjects": [
+      "Federated Learning Research",
+      "Quantum Computing Applications",
+      "Multimodal AI Systems"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_019",
+    "name": "Varsha R",
+    "designation": "Assistant Professor",
+    "qualification": "BE, MTECH",
+    "specialization": ["Machine Learning", "Deep Learning", "Natural Language Processing", "Image Processing"],
+    "email": "varshar.mel@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Image Processing"
+    ],
+    "publications": 16,
+    "experience": "5+ years",
+    "courses": [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Image Processing"
+    ],
+    "education": {
+      "phd": "Pursuing",
+      "masters": "MTECH",
+      "bachelors": "BE"
+    },
+    "achievements": [
+      "Assistant Professor in Machine Learning",
+      "Published 16+ research papers",
+      "Expert in Deep Learning and Image Processing"
+    ],
+    "industryExperience": "1+ years in industry",
+    "currentProjects": [
+      "Deep Learning Applications",
+      "NLP for Image Processing",
+      "Multimodal Learning"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
