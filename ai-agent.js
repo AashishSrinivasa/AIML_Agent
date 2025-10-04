@@ -285,39 +285,77 @@ class AIMLAgent {
     }
   }
 
-  // Generate response using free LLM (Hugging Face Inference API)
+  // Generate response using Llama LLM via Ollama
   async generateLLMResponse(question, data, analysis) {
-    const prompt = this.buildPrompt(question, data, analysis);
+    const prompt = this.buildLlamaPrompt(question, data, analysis);
     
     try {
-      const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium', {
+      const response = await fetch('http://localhost:11434/api/generate', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer hf_your_token_here', // Free token
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          inputs: prompt,
-          parameters: {
-            max_length: 200,
+          model: 'llama3.2:3b', // Free Llama model
+          prompt: prompt,
+          stream: false,
+          options: {
             temperature: 0.7,
-            do_sample: true
+            top_p: 0.9,
+            max_tokens: 300
           }
         })
       });
 
       if (!response.ok) {
-        throw new Error('LLM API error');
+        throw new Error('Llama API error');
       }
 
       const result = await response.json();
-      return result[0]?.generated_text || this.generateRuleBasedResponse(question, analysis);
+      return result.response || this.generateRuleBasedResponse(question, analysis);
     } catch (error) {
+      console.log('Llama not available, using fallback');
       throw error;
     }
   }
 
-  // Build context-aware prompt for LLM
+  // Build context-aware prompt for Llama LLM
+  buildLlamaPrompt(question, data, analysis) {
+    let context = "";
+    let systemPrompt = "You are a helpful AI assistant for the AIML (Artificial Intelligence and Machine Learning) department at BMSCE College of Engineering. Provide concise, accurate, and helpful responses about faculty, courses, infrastructure, and academic information.";
+    
+    if (analysis.type === 'faculty' && analysis.keywords.length > 0) {
+      const matchingFaculty = data.faculty.filter(f => 
+        f.specialization.some(spec => analysis.keywords.includes(spec)) ||
+        f.researchAreas.some(area => analysis.keywords.includes(area))
+      );
+      
+      context = `Faculty specializing in ${analysis.keywords.join(', ')}:\n`;
+      matchingFaculty.forEach(f => {
+        context += `- ${f.name} (${f.designation}) - ${f.email}\n`;
+        context += `  Specializations: ${f.specialization.join(', ')}\n`;
+        context += `  Research Areas: ${f.researchAreas.join(', ')}\n\n`;
+      });
+    } else if (analysis.type === 'courses') {
+      context = `Available courses:\n`;
+      data.courses.forEach(c => {
+        context += `- ${c.name} (${c.code}) - ${c.semester} semester - ${c.instructor}\n`;
+      });
+    } else if (analysis.type === 'infrastructure') {
+      context = `Department Labs:\n`;
+      data.labs.forEach(l => {
+        context += `- ${l.name} (Capacity: ${l.capacity})\n`;
+      });
+    } else if (analysis.type === 'calendar') {
+      context = `Academic Calendar ${data.academicYear}:\n`;
+      if (data.events) context += `Events: ${data.events.join(', ')}\n`;
+      if (data.examinations) context += `Examinations: ${data.examinations.map(e => e.name).join(', ')}\n`;
+    }
+
+    return `${systemPrompt}\n\nContext Information:\n${context}\n\nUser Question: ${question}\n\nProvide a helpful, concise response:`;
+  }
+
+  // Build context-aware prompt for LLM (fallback)
   buildPrompt(question, data, analysis) {
     let context = "";
     
