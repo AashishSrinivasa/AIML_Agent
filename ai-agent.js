@@ -156,27 +156,27 @@ class AIMLAgent {
 
   extractKeywords(question) {
     const keywords = [];
-    const allSpecializations = this.knowledgeBase.faculty.flatMap(f => f.specialization);
-    const allResearchAreas = this.knowledgeBase.faculty.flatMap(f => f.researchAreas);
+    const allSpecializations = [...new Set(this.knowledgeBase.faculty.flatMap(f => f.specialization))];
+    const allResearchAreas = [...new Set(this.knowledgeBase.faculty.flatMap(f => f.researchAreas))];
     const allCourses = this.knowledgeBase.courses.map(c => c.name);
     
-    // Check for faculty specializations
+    // Check for faculty specializations (avoid duplicates)
     allSpecializations.forEach(spec => {
-      if (question.includes(spec.toLowerCase())) {
+      if (question.toLowerCase().includes(spec.toLowerCase()) && !keywords.includes(spec)) {
         keywords.push(spec);
       }
     });
     
-    // Check for research areas
+    // Check for research areas (avoid duplicates)
     allResearchAreas.forEach(area => {
-      if (question.includes(area.toLowerCase())) {
+      if (question.toLowerCase().includes(area.toLowerCase()) && !keywords.includes(area)) {
         keywords.push(area);
       }
     });
     
-    // Check for course names
+    // Check for course names (avoid duplicates)
     allCourses.forEach(course => {
-      if (question.includes(course.toLowerCase())) {
+      if (question.toLowerCase().includes(course.toLowerCase()) && !keywords.includes(course)) {
         keywords.push(course);
       }
     });
@@ -221,36 +221,21 @@ class AIMLAgent {
     return entities;
   }
 
-  // Generate intelligent response
-  generateResponse(question) {
+  // Generate intelligent response using free LLM
+  async generateResponse(question) {
     const analysis = this.analyzeQuestion(question);
     let response = "";
     let sources = [];
 
-    switch (analysis.type) {
-      case 'faculty':
-        response = this.handleFacultyQuery(question, analysis);
-        sources.push('Faculty Directory');
-        break;
-      case 'courses':
-        response = this.handleCourseQuery(question, analysis);
-        sources.push('Course Catalog');
-        break;
-      case 'infrastructure':
-        response = this.handleInfrastructureQuery(question, analysis);
-        sources.push('Infrastructure Guide');
-        break;
-      case 'calendar':
-        response = this.handleCalendarQuery(question, analysis);
-        sources.push('Academic Calendar');
-        break;
-      case 'contact':
-        response = this.handleContactQuery(question, analysis);
-        sources.push('Contact Information');
-        break;
-      default:
-        response = this.handleGeneralQuery(question, analysis);
-        sources.push('General Information');
+    // Get relevant data based on question type
+    let relevantData = this.getRelevantData(analysis);
+    
+    // Use free LLM for better responses
+    try {
+      response = await this.generateLLMResponse(question, relevantData, analysis);
+    } catch (error) {
+      console.log('LLM fallback to rule-based response');
+      response = this.generateRuleBasedResponse(question, analysis);
     }
 
     return {
@@ -260,187 +245,150 @@ class AIMLAgent {
     };
   }
 
-  handleFacultyQuery(question, analysis) {
-    const { faculty } = this.knowledgeBase;
+  // Get relevant data for the question
+  getRelevantData(analysis) {
+    const { faculty, courses, infrastructure, calendar } = this.knowledgeBase;
     
-    if (analysis.intent === 'count') {
-      return `We have ${faculty.length} faculty members in our Machine Learning department, including 1 HOD, 1 Professor, 3 Associate Professors, and 14 Assistant Professors.`;
+    switch (analysis.type) {
+      case 'faculty':
+        return {
+          faculty: faculty,
+          specializations: [...new Set(faculty.flatMap(f => f.specialization))],
+          researchAreas: [...new Set(faculty.flatMap(f => f.researchAreas))],
+          totalFaculty: faculty.length
+        };
+      case 'courses':
+        return {
+          courses: courses,
+          semesters: [...new Set(courses.map(c => c.semester))],
+          instructors: [...new Set(courses.map(c => c.instructor))],
+          totalCourses: courses.length
+        };
+      case 'infrastructure':
+        return {
+          labs: infrastructure.labs,
+          equipment: infrastructure.equipment,
+          software: infrastructure.software
+        };
+      case 'calendar':
+        return {
+          academicYear: calendar.academicYear,
+          events: calendar.events,
+          examinations: calendar.examinations
+        };
+      default:
+        return {
+          department: this.knowledgeBase.department,
+          faculty: faculty,
+          courses: courses
+        };
     }
-    
-    if (analysis.intent === 'specific' || question.includes('hod') || question.includes('head')) {
-      const hod = faculty.find(f => f.designation.includes('HOD'));
-      if (hod) {
-        return `Our Head of Department is Dr. ${hod.name} (${hod.designation}). ` +
-               `Dr. ${hod.name} specializes in ${hod.specialization.join(', ')} and has research interests in ${hod.researchAreas.join(', ')}. ` +
-               `With ${hod.experience} years of experience and ${hod.publications} publications, Dr. ${hod.name} can be contacted at ${hod.email}.`;
-      }
-    }
-    
-    if (analysis.keywords.length > 0) {
-      const matchingFaculty = faculty.filter(f => 
-        f.specialization.some(spec => analysis.keywords.includes(spec)) ||
-        f.researchAreas.some(area => analysis.keywords.includes(area)) ||
-        f.name.toLowerCase().includes(question.toLowerCase())
-      );
-      
-      if (matchingFaculty.length > 0) {
-        let response = `Based on your query about ${analysis.keywords.join(', ')}, here are the relevant faculty members:\n\n`;
-        matchingFaculty.forEach(faculty => {
-          response += `• Dr. ${faculty.name} (${faculty.designation})\n`;
-          response += `  Specialization: ${faculty.specialization.join(', ')}\n`;
-          response += `  Research Areas: ${faculty.researchAreas.join(', ')}\n`;
-          response += `  Contact: ${faculty.email}\n\n`;
-        });
-        return response;
-      }
-    }
-    
-    // General faculty information
-    const specializations = [...new Set(faculty.flatMap(f => f.specialization))];
-    const researchAreas = [...new Set(faculty.flatMap(f => f.researchAreas))];
-    
-    return `Our department has ${faculty.length} highly qualified faculty members with specializations in ${specializations.slice(0, 10).join(', ')}. ` +
-           `They are actively involved in research areas including ${researchAreas.slice(0, 10).join(', ')}. ` +
-           `You can find detailed information about each faculty member in our faculty directory.`;
   }
 
-  handleCourseQuery(question, analysis) {
-    const { courses } = this.knowledgeBase;
+  // Generate response using free LLM (Hugging Face Inference API)
+  async generateLLMResponse(question, data, analysis) {
+    const prompt = this.buildPrompt(question, data, analysis);
     
-    if (analysis.intent === 'count') {
-      return `We offer ${courses.length} comprehensive courses in our Machine Learning program, covering various aspects of AI, ML, and related technologies.`;
-    }
-    
-    if (analysis.keywords.length > 0) {
-      const matchingCourses = courses.filter(c => 
-        analysis.keywords.some(keyword => 
-          c.name.toLowerCase().includes(keyword.toLowerCase()) ||
-          c.code.toLowerCase().includes(keyword.toLowerCase())
-        )
-      );
-      
-      if (matchingCourses.length > 0) {
-        let response = `Here are the courses related to ${analysis.keywords.join(', ')}:\n\n`;
-        matchingCourses.forEach(course => {
-          response += `• ${course.name} (${course.code})\n`;
-          response += `  Semester: ${course.semester} | Credits: ${course.credits}\n`;
-          response += `  Instructor: ${course.instructor}\n`;
-          response += `  Description: ${course.description}\n\n`;
-        });
-        return response;
-      }
-    }
-    
-    if (question.includes('semester')) {
-      const semester = question.match(/\d+/)?.[0];
-      if (semester) {
-        const semesterCourses = courses.filter(c => c.semester.includes(semester));
-        if (semesterCourses.length > 0) {
-          let response = `In ${semester} semester, we offer the following courses:\n\n`;
-          semesterCourses.forEach(course => {
-            response += `• ${course.name} (${course.code}) - ${course.credits} credits\n`;
-          });
-          return response;
-        }
-      }
-    }
-    
-    // General course information
-    const semesters = [...new Set(courses.map(c => c.semester))];
-    const instructors = [...new Set(courses.map(c => c.instructor))];
-    
-    return `Our curriculum includes ${courses.length} courses distributed across semesters: ${semesters.join(', ')}. ` +
-           `Courses are taught by experienced instructors including ${instructors.slice(0, 5).join(', ')} and others. ` +
-           `Each course is designed to provide both theoretical knowledge and practical skills in AI and Machine Learning.`;
-  }
-
-  handleInfrastructureQuery(question, analysis) {
-    const { infrastructure } = this.knowledgeBase;
-    
-    if (question.includes('lab') || question.includes('laboratory')) {
-      let response = `Our department has ${infrastructure.labs.length} state-of-the-art laboratories:\n\n`;
-      infrastructure.labs.forEach(lab => {
-        response += `• ${lab.name}\n`;
-        response += `  Capacity: ${lab.capacity} students\n`;
-        
-        // Handle equipment display properly
-        if (lab.equipment && Array.isArray(lab.equipment)) {
-          const equipmentList = lab.equipment.map(eq => 
-            typeof eq === 'string' ? eq : eq.name || eq.type || 'Computing equipment'
-          ).join(', ');
-          response += `  Equipment: ${equipmentList}\n`;
-        } else {
-          response += `  Equipment: High-performance computing workstations\n`;
-        }
-        
-        response += `  Facilities: ${lab.facilities ? lab.facilities.join(', ') : 'Modern computing environment'}\n\n`;
+    try {
+      const response = await fetch('https://api-inference.huggingface.co/models/microsoft/DialoGPT-medium', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer hf_your_token_here', // Free token
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          inputs: prompt,
+          parameters: {
+            max_length: 200,
+            temperature: 0.7,
+            do_sample: true
+          }
+        })
       });
-      return response;
-    }
-    
-    if (question.includes('equipment') || question.includes('software')) {
-      let response = `Our labs are equipped with:\n\n`;
-      if (infrastructure.equipment && infrastructure.equipment.length > 0) {
-        response += `Hardware: ${infrastructure.equipment.join(', ')}\n\n`;
+
+      if (!response.ok) {
+        throw new Error('LLM API error');
       }
-      if (infrastructure.software && infrastructure.software.length > 0) {
-        response += `Software: ${infrastructure.software.join(', ')}\n\n`;
-      }
-      return response;
+
+      const result = await response.json();
+      return result[0]?.generated_text || this.generateRuleBasedResponse(question, analysis);
+    } catch (error) {
+      throw error;
     }
-    
-    return `Our department maintains excellent infrastructure with ${infrastructure.labs.length} specialized labs, ` +
-           `research facilities, and modern equipment to support both teaching and research activities in AI and Machine Learning.`;
   }
 
-  handleCalendarQuery(question, analysis) {
-    const { calendar } = this.knowledgeBase;
+  // Build context-aware prompt for LLM
+  buildPrompt(question, data, analysis) {
+    let context = "";
     
-    if (question.includes('exam') || question.includes('examination')) {
-      if (calendar.examinations && calendar.examinations.length > 0) {
-        let response = `Examination schedules for ${calendar.academicYear}:\n\n`;
-        calendar.examinations.forEach(exam => {
-          response += `• ${exam.name}: ${exam.date}\n`;
-        });
-        return response;
-      }
+    if (analysis.type === 'faculty' && analysis.keywords.length > 0) {
+      const matchingFaculty = data.faculty.filter(f => 
+        f.specialization.some(spec => analysis.keywords.includes(spec)) ||
+        f.researchAreas.some(area => analysis.keywords.includes(area))
+      );
+      
+      context = `Faculty specializing in ${analysis.keywords.join(', ')}: `;
+      context += matchingFaculty.map(f => `${f.name} (${f.designation})`).join(', ');
+    } else if (analysis.type === 'courses') {
+      context = `Available courses: ${data.courses.map(c => `${c.name} (${c.semester})`).join(', ')}`;
+    } else if (analysis.type === 'infrastructure') {
+      context = `Labs: ${data.labs.map(l => l.name).join(', ')}`;
     }
-    
-    if (question.includes('event') || question.includes('holiday')) {
-      let response = `Academic calendar for ${calendar.academicYear} includes:\n\n`;
-      if (calendar.events && calendar.events.length > 0) {
-        response += `Events: ${calendar.events.join(', ')}\n`;
-      }
-      if (calendar.holidays && calendar.holidays.length > 0) {
-        response += `Holidays: ${calendar.holidays.join(', ')}\n`;
-      }
-      return response;
-    }
-    
-    return `Our academic calendar for ${calendar.academicYear} includes detailed schedules for semesters, ` +
-           `examinations, events, and holidays. You can find specific dates and schedules in our calendar section.`;
+
+    return `Context: ${context}\nQuestion: ${question}\nAnswer concisely:`;
   }
 
-  handleContactQuery(question, analysis) {
-    const { department } = this.knowledgeBase;
+  // Fallback rule-based response (cleaner version)
+  generateRuleBasedResponse(question, analysis) {
+    const { faculty, courses, infrastructure, calendar } = this.knowledgeBase;
     
-    return `You can contact our department at:\n\n` +
-           `📞 Phone: ${department.contact.phone}\n` +
-           `📧 Email: ${department.contact.email}\n` +
-           `📍 Address: ${department.contact.address}\n\n` +
-           `For specific faculty members, you can find their individual contact information in the faculty directory.`;
+    switch (analysis.type) {
+      case 'faculty':
+        if (analysis.keywords.length > 0) {
+          const matchingFaculty = faculty.filter(f => 
+            f.specialization.some(spec => analysis.keywords.includes(spec)) ||
+            f.researchAreas.some(area => analysis.keywords.includes(area))
+          );
+          
+          if (matchingFaculty.length > 0) {
+            return `Faculty specializing in ${analysis.keywords.join(', ')}:\n` +
+                   matchingFaculty.map(f => `• ${f.name} (${f.designation}) - ${f.email}`).join('\n');
+          }
+        }
+        
+        if (question.includes('hod') || question.includes('head')) {
+          const hod = faculty.find(f => f.designation.includes('HOD'));
+          return hod ? `Head of Department: Dr. ${hod.name} (${hod.email})` : 'HOD information not available';
+        }
+        
+        return `We have ${faculty.length} faculty members. You can find their details in the faculty directory.`;
+        
+      case 'courses':
+        if (question.includes('semester')) {
+          const semester = question.match(/\d+/)?.[0];
+          if (semester) {
+            const semesterCourses = courses.filter(c => c.semester.includes(semester));
+            return semesterCourses.length > 0 
+              ? `${semester} semester courses:\n${semesterCourses.map(c => `• ${c.name} - ${c.instructor}`).join('\n')}`
+              : `No courses found for ${semester} semester`;
+          }
+        }
+        return `We offer ${courses.length} courses across different semesters.`;
+        
+      case 'infrastructure':
+        return `We have ${infrastructure.labs.length} labs: ${infrastructure.labs.map(l => l.name).join(', ')}`;
+        
+      case 'calendar':
+        return `Academic year: ${calendar.academicYear}. Check the calendar section for detailed schedules.`;
+        
+      case 'contact':
+        return `Contact: ${this.knowledgeBase.department.contact.phone} | ${this.knowledgeBase.department.contact.email}`;
+        
+      default:
+        return `I can help you with faculty, courses, infrastructure, and calendar information. What would you like to know?`;
+    }
   }
 
-  handleGeneralQuery(question, analysis) {
-    const { department, faculty, courses } = this.knowledgeBase;
-    
-    return `Welcome to the ${department.name} at ${department.college}!\n\n` +
-           `Our Vision: ${department.vision}\n\n` +
-           `Our Mission: ${department.mission}\n\n` +
-           `We have ${faculty.length} faculty members and offer ${courses.length} comprehensive courses in AI and Machine Learning. ` +
-           `Our department is equipped with state-of-the-art infrastructure and research facilities. ` +
-           `Feel free to ask me about specific faculty members, courses, infrastructure, or any other department-related information!`;
-  }
 
   calculateConfidence(analysis) {
     let confidence = 0.5; // Base confidence
@@ -666,7 +614,7 @@ app.get('/api/infrastructure/stats', (req, res) => {
 });
 
 // AI Chat endpoint with advanced intelligence
-app.post('/api/ai/chat', (req, res) => {
+app.post('/api/ai/chat', async (req, res) => {
   const { message } = req.body;
   
   if (!message || message.trim().length === 0) {
@@ -677,7 +625,7 @@ app.post('/api/ai/chat', (req, res) => {
   }
   
   try {
-    const response = aiAgent.generateResponse(message.trim());
+    const response = await aiAgent.generateResponse(message.trim());
     
     res.json({
       success: true,
