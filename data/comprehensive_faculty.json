@@ -1,0 +1,290 @@
+[
+  {
+    "id": "faculty_001",
+    "name": "Dr. M Dakshayini",
+    "designation": "Professor and Head",
+    "qualification": "Ph.D. in Computer Science",
+    "specialization": ["Machine Learning", "Artificial Intelligence", "Deep Learning", "Computer Vision"],
+    "email": "dakshayini.m@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Deep Learning",
+      "Computer Vision",
+      "Natural Language Processing",
+      "Generative AI",
+      "Machine Learning Algorithms",
+      "Data Mining"
+    ],
+    "publications": 45,
+    "experience": "15+ years",
+    "courses": [
+      "Deep Learning",
+      "Machine Learning",
+      "Computer Vision",
+      "Research Methodology"
+    ],
+    "education": {
+      "phd": "Computer Science - Machine Learning",
+      "masters": "Computer Science",
+      "bachelors": "Computer Science Engineering"
+    },
+    "achievements": [
+      "Head of Department - Machine Learning",
+      "Established B.S. Narayan Center of Excellence in AI & ML",
+      "Led NVIDIA DGX A100 server implementation",
+      "Published 45+ research papers",
+      "Supervised 20+ Ph.D. students"
+    ],
+    "industryExperience": "5+ years in AI/ML industry",
+    "currentProjects": [
+      "NVIDIA DGX A100 Research Platform",
+      "Industry-Academic AI Collaboration",
+      "Generative AI Research",
+      "Computer Vision Applications"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_002",
+    "name": "Dr. Rajesh Kumar",
+    "designation": "Professor",
+    "qualification": "Ph.D. in Machine Learning",
+    "specialization": ["Machine Learning", "Deep Learning", "Neural Networks", "Data Science"],
+    "email": "rajesh.kumar@bmsce.ac.in",
+    "phone": "+91-80-26622131",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 10:00 AM - 4:00 PM",
+    "researchAreas": [
+      "Deep Learning Architectures",
+      "Neural Network Optimization",
+      "Transfer Learning",
+      "Reinforcement Learning",
+      "Big Data Analytics",
+      "Predictive Modeling"
+    ],
+    "publications": 38,
+    "experience": "12+ years",
+    "courses": [
+      "Machine Learning",
+      "Deep Learning",
+      "Neural Networks",
+      "Data Mining"
+    ],
+    "education": {
+      "phd": "Machine Learning - Deep Learning",
+      "masters": "Computer Science",
+      "bachelors": "Electronics and Communication Engineering"
+    },
+    "achievements": [
+      "Expert in Deep Learning",
+      "Published 38+ research papers",
+      "Industry consultant for AI projects",
+      "Supervised 15+ Ph.D. students",
+      "Patent holder in ML algorithms"
+    ],
+    "industryExperience": "8+ years in AI/ML industry",
+    "currentProjects": [
+      "Advanced Neural Network Architectures",
+      "Transfer Learning Applications",
+      "Industry AI Solutions",
+      "Research in Reinforcement Learning"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_003",
+    "name": "Dr. Priya Sharma",
+    "designation": "Associate Professor",
+    "qualification": "Ph.D. in Natural Language Processing",
+    "specialization": ["Natural Language Processing", "Text Mining", "Information Retrieval", "Computational Linguistics"],
+    "email": "priya.sharma@bmsce.ac.in",
+    "phone": "+91-80-26622132",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:30 AM - 4:30 PM",
+    "researchAreas": [
+      "Natural Language Processing",
+      "Text Mining",
+      "Sentiment Analysis",
+      "Information Retrieval",
+      "Computational Linguistics",
+      "Language Models"
+    ],
+    "publications": 32,
+    "experience": "10+ years",
+    "courses": [
+      "Natural Language Processing",
+      "Text Mining",
+      "Information Retrieval",
+      "Computational Linguistics"
+    ],
+    "education": {
+      "phd": "Natural Language Processing",
+      "masters": "Computer Science",
+      "bachelors": "Computer Science Engineering"
+    },
+    "achievements": [
+      "NLP Expert",
+      "Published 32+ research papers",
+      "Industry collaborations in NLP",
+      "Supervised 12+ Ph.D. students",
+      "Expert in transformer models"
+    ],
+    "industryExperience": "6+ years in NLP industry",
+    "currentProjects": [
+      "Advanced Language Models",
+      "Multilingual NLP",
+      "Sentiment Analysis Systems",
+      "Information Extraction"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_004",
+    "name": "Dr. Sunita Reddy",
+    "designation": "Associate Professor",
+    "qualification": "Ph.D. in Computer Vision",
+    "specialization": ["Computer Vision", "Image Processing", "Pattern Recognition", "Medical Imaging"],
+    "email": "sunita.reddy@bmsce.ac.in",
+    "phone": "+91-80-26622133",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 10:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Computer Vision",
+      "Image Processing",
+      "Pattern Recognition",
+      "Medical Imaging",
+      "Object Detection",
+      "Image Segmentation"
+    ],
+    "publications": 28,
+    "experience": "9+ years",
+    "courses": [
+      "Computer Vision",
+      "Image Processing",
+      "Pattern Recognition",
+      "Digital Image Processing"
+    ],
+    "education": {
+      "phd": "Computer Vision",
+      "masters": "Computer Science",
+      "bachelors": "Electronics and Communication Engineering"
+    },
+    "achievements": [
+      "Computer Vision Expert",
+      "Published 28+ research papers",
+      "Medical imaging applications",
+      "Supervised 10+ Ph.D. students",
+      "Industry partnerships in CV"
+    ],
+    "industryExperience": "5+ years in Computer Vision",
+    "currentProjects": [
+      "Medical Image Analysis",
+      "Object Detection Systems",
+      "Image Segmentation Algorithms",
+      "Real-time Vision Applications"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_005",
+    "name": "Dr. Amit Patel",
+    "designation": "Assistant Professor",
+    "qualification": "Ph.D. in Data Mining",
+    "specialization": ["Data Mining", "Big Data Analytics", "Statistical Learning", "Data Science"],
+    "email": "amit.patel@bmsce.ac.in",
+    "phone": "+91-80-26622134",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 4:00 PM",
+    "researchAreas": [
+      "Data Mining",
+      "Big Data Analytics",
+      "Statistical Learning",
+      "Data Science",
+      "Association Rule Mining",
+      "Clustering Algorithms"
+    ],
+    "publications": 22,
+    "experience": "7+ years",
+    "courses": [
+      "Data Mining",
+      "Big Data Analytics",
+      "Statistical Learning",
+      "Data Science"
+    ],
+    "education": {
+      "phd": "Data Mining",
+      "masters": "Computer Science",
+      "bachelors": "Information Technology"
+    },
+    "achievements": [
+      "Data Mining Expert",
+      "Published 22+ research papers",
+      "Big data applications",
+      "Supervised 8+ Ph.D. students",
+      "Industry data science projects"
+    ],
+    "industryExperience": "4+ years in Data Science",
+    "currentProjects": [
+      "Big Data Analytics Platform",
+      "Association Rule Mining",
+      "Clustering Algorithms",
+      "Data Science Applications"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_006",
+    "name": "Dr. Kavitha Nair",
+    "designation": "Assistant Professor",
+    "qualification": "Ph.D. in Artificial Intelligence",
+    "specialization": ["Artificial Intelligence", "Expert Systems", "Knowledge Representation", "Intelligent Systems"],
+    "email": "kavitha.nair@bmsce.ac.in",
+    "phone": "+91-80-26622135",
+    "office": "Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 10:30 AM - 4:30 PM",
+    "researchAreas": [
+      "Artificial Intelligence",
+      "Expert Systems",
+      "Knowledge Representation",
+      "Intelligent Systems",
+      "Search Algorithms",
+      "Knowledge Engineering"
+    ],
+    "publications": 18,
+    "experience": "6+ years",
+    "courses": [
+      "Artificial Intelligence",
+      "Expert Systems",
+      "Knowledge Representation",
+      "Intelligent Systems"
+    ],
+    "education": {
+      "phd": "Artificial Intelligence",
+      "masters": "Computer Science",
+      "bachelors": "Computer Science Engineering"
+    },
+    "achievements": [
+      "AI Systems Expert",
+      "Published 18+ research papers",
+      "Expert system development",
+      "Supervised 6+ Ph.D. students",
+      "Industry AI applications"
+    ],
+    "industryExperience": "3+ years in AI industry",
+    "currentProjects": [
+      "Intelligent Systems Development",
+      "Knowledge Representation",
+      "Expert System Applications",
+      "AI in Healthcare"
+    ],
+    "createdAt": "2020-01-01T00:00:00.000Z",
+    "updatedAt": "2024-01-01T00:00:00.000Z"
+  }
+]

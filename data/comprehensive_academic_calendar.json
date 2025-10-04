@@ -1,0 +1,477 @@
+{
+  "academicYear": "2024-25",
+  "semesters": [
+    {
+      "name": "Semester III (3rd Semester)",
+      "startDate": "2024-08-01",
+      "endDate": "2024-12-15",
+      "events": [
+        {
+          "date": "2024-08-01",
+          "event": "Semester III Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2024-08-15",
+          "event": "Independence Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2024-09-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2024-10-02",
+          "event": "Gandhi Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2024-11-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2024-12-01",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2024-12-10",
+          "event": "Semester End Examination",
+          "type": "exam"
+        },
+        {
+          "date": "2024-12-15",
+          "event": "Semester III End",
+          "type": "academic"
+        }
+      ]
+    },
+    {
+      "name": "Semester IV (4th Semester)",
+      "startDate": "2025-01-15",
+      "endDate": "2025-05-30",
+      "events": [
+        {
+          "date": "2025-01-15",
+          "event": "Semester IV Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2025-01-26",
+          "event": "Republic Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2025-03-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2025-04-14",
+          "event": "Ambedkar Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2025-05-01",
+          "event": "Labour Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2025-05-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2025-05-25",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2025-05-30",
+          "event": "Semester End Examination",
+          "type": "exam"
+        }
+      ]
+    },
+    {
+      "name": "Semester V (5th Semester)",
+      "startDate": "2025-08-01",
+      "endDate": "2025-12-15",
+      "events": [
+        {
+          "date": "2025-08-01",
+          "event": "Semester V Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2025-08-15",
+          "event": "Independence Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2025-09-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2025-10-02",
+          "event": "Gandhi Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2025-11-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2025-12-01",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2025-12-10",
+          "event": "Semester End Examination",
+          "type": "exam"
+        },
+        {
+          "date": "2025-12-15",
+          "event": "Semester V End",
+          "type": "academic"
+        }
+      ]
+    },
+    {
+      "name": "Semester VI (6th Semester)",
+      "startDate": "2026-01-15",
+      "endDate": "2026-05-30",
+      "events": [
+        {
+          "date": "2026-01-15",
+          "event": "Semester VI Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2026-01-26",
+          "event": "Republic Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2026-03-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2026-04-14",
+          "event": "Ambedkar Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2026-05-01",
+          "event": "Labour Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2026-05-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2026-05-25",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2026-05-30",
+          "event": "Semester End Examination",
+          "type": "exam"
+        }
+      ]
+    },
+    {
+      "name": "Semester VII (7th Semester)",
+      "startDate": "2026-08-01",
+      "endDate": "2026-12-15",
+      "events": [
+        {
+          "date": "2026-08-01",
+          "event": "Semester VII Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2026-08-15",
+          "event": "Independence Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2026-09-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2026-10-02",
+          "event": "Gandhi Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2026-11-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2026-12-01",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2026-12-10",
+          "event": "Semester End Examination",
+          "type": "exam"
+        },
+        {
+          "date": "2026-12-15",
+          "event": "Semester VII End",
+          "type": "academic"
+        }
+      ]
+    },
+    {
+      "name": "Semester VIII (8th Semester)",
+      "startDate": "2027-01-15",
+      "endDate": "2027-05-30",
+      "events": [
+        {
+          "date": "2027-01-15",
+          "event": "Semester VIII Commencement",
+          "type": "academic"
+        },
+        {
+          "date": "2027-01-26",
+          "event": "Republic Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2027-03-15",
+          "event": "Mid-term Examination - I",
+          "type": "exam"
+        },
+        {
+          "date": "2027-04-14",
+          "event": "Ambedkar Jayanti Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2027-05-01",
+          "event": "Labour Day Holiday",
+          "type": "holiday"
+        },
+        {
+          "date": "2027-05-15",
+          "event": "Mid-term Examination - II",
+          "type": "exam"
+        },
+        {
+          "date": "2027-05-25",
+          "event": "End of Classes",
+          "type": "academic"
+        },
+        {
+          "date": "2027-05-30",
+          "event": "Final Semester End Examination",
+          "type": "exam"
+        }
+      ]
+    }
+  ],
+  "importantDates": [
+    {
+      "date": "2024-08-01",
+      "event": "Academic Year 2024-25 Commencement",
+      "type": "academic"
+    },
+    {
+      "date": "2024-08-15",
+      "event": "Independence Day",
+      "type": "holiday"
+    },
+    {
+      "date": "2024-10-02",
+      "event": "Gandhi Jayanti",
+      "type": "holiday"
+    },
+    {
+      "date": "2024-12-25",
+      "event": "Christmas Holiday",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-01-01",
+      "event": "New Year Holiday",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-01-26",
+      "event": "Republic Day",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-04-14",
+      "event": "Ambedkar Jayanti",
+      "type": "holiday"
+    },
+    {
+      "date": "2025-05-01",
+      "event": "Labour Day",
+      "type": "holiday"
+    }
+  ],
+  "examinationSchedule": [
+    {
+      "semester": "Semester III",
+      "exams": [
+        {
+          "subject": "Mathematical Foundations for Machine Learning",
+          "date": "2024-12-10",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall A"
+        },
+        {
+          "subject": "Computer Organization and Architecture",
+          "date": "2024-12-11",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall B"
+        },
+        {
+          "subject": "Data Structures",
+          "date": "2024-12-12",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall C"
+        },
+        {
+          "subject": "Probability and Statistics for Machine Learning",
+          "date": "2024-12-13",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall D"
+        },
+        {
+          "subject": "Object Oriented Programming",
+          "date": "2024-12-14",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall E"
+        },
+        {
+          "subject": "Database Management Systems",
+          "date": "2024-12-15",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall F"
+        }
+      ]
+    },
+    {
+      "semester": "Semester IV",
+      "exams": [
+        {
+          "subject": "Mathematical Foundation for Machine Learning-2",
+          "date": "2025-05-30",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall A"
+        },
+        {
+          "subject": "Operating Systems",
+          "date": "2025-05-31",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall B"
+        },
+        {
+          "subject": "Design and Analysis of Algorithms",
+          "date": "2025-06-01",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall C"
+        },
+        {
+          "subject": "Introduction to Artificial Intelligence",
+          "date": "2025-06-02",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall D"
+        },
+        {
+          "subject": "Introduction to Machine Learning",
+          "date": "2025-06-03",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall E"
+        },
+        {
+          "subject": "Inferential Statistics",
+          "date": "2025-06-04",
+          "time": "9:00 AM - 12:00 PM",
+          "venue": "Examination Hall F"
+        }
+      ]
+    }
+  ],
+  "academicEvents": [
+    {
+      "date": "2024-09-15",
+      "event": "Department Orientation Program",
+      "type": "event"
+    },
+    {
+      "date": "2024-10-15",
+      "event": "AI/ML Workshop by Industry Experts",
+      "type": "event"
+    },
+    {
+      "date": "2024-11-15",
+      "event": "Research Symposium",
+      "type": "event"
+    },
+    {
+      "date": "2024-12-01",
+      "event": "Project Exhibition",
+      "type": "event"
+    },
+    {
+      "date": "2025-02-15",
+      "event": "Industry Interaction Program",
+      "type": "event"
+    },
+    {
+      "date": "2025-03-15",
+      "event": "Technical Paper Presentation",
+      "type": "event"
+    },
+    {
+      "date": "2025-04-15",
+      "event": "Hackathon Competition",
+      "type": "event"
+    }
+  ],
+  "departmentInfo": {
+    "name": "Department of Machine Learning",
+    "established": "2020",
+    "undergraduateIntake": 360,
+    "vision": "To achieve excellent standards of quality education in the field of Artificial Intelligence and Machine Learning",
+    "mission": [
+      "To nurture the students with strong fundamentals for a successful career in the field of Artificial Intelligence and Machine Learning",
+      "To motivate the students for post-graduation and research",
+      "To create impact in the society with continuous research and innovations"
+    ],
+    "focusAreas": [
+      "Deep Learning",
+      "Data Mining",
+      "Big Data",
+      "Natural Language Processing",
+      "Generative AI"
+    ],
+    "specialFeatures": [
+      "B.S. Narayan Center of Excellence in AI & ML",
+      "NVIDIA DGX A100 server",
+      "Industry-academic synergy",
+      "Dynamic industry partnerships",
+      "Government and industry projects"
+    ]
+  },
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

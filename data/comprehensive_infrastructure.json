@@ -1,0 +1,327 @@
+{
+  "department": "Machine Learning (AI and ML)",
+  "established": "2020",
+  "undergraduateIntake": 360,
+  "labs": [
+    {
+      "name": "B.S. Narayan Center of Excellence in AI & ML",
+      "capacity": 50,
+      "location": "Department of Machine Learning, BMSCE",
+      "equipment": [
+        {
+          "name": "NVIDIA DGX A100 Server",
+          "quantity": 1,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-15",
+          "nextMaintenance": "2024-07-15",
+          "specifications": "World's first purpose-built system for Deep Learning and accelerated analytics, delivering performance of 56 instances in parallel"
+        },
+        {
+          "name": "High-Performance Computing Workstations",
+          "quantity": 20,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-10",
+          "nextMaintenance": "2024-07-10",
+          "specifications": "Dual GPU workstations with NVIDIA RTX 4090, 64GB RAM, Intel i9 processors"
+        },
+        {
+          "name": "Data Storage Systems",
+          "quantity": 5,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-05",
+          "nextMaintenance": "2024-07-05",
+          "specifications": "100TB+ storage capacity for large datasets and model training"
+        }
+      ],
+      "facilities": [
+        "High-speed internet connectivity",
+        "Climate-controlled environment",
+        "24/7 access for research",
+        "Collaborative workspace",
+        "Presentation facilities",
+        "Video conferencing setup"
+      ],
+      "availability": "24/7 for research activities",
+      "specialFeatures": [
+        "Industry-academic synergy platform",
+        "NVIDIA partnership",
+        "Research and development activities",
+        "AI adoption facilitation",
+        "Government and industry projects"
+      ]
+    },
+    {
+      "name": "Machine Learning Lab 1",
+      "capacity": 30,
+      "location": "Department of Machine Learning, BMSCE",
+      "equipment": [
+        {
+          "name": "Standard ML Workstations",
+          "quantity": 25,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-20",
+          "nextMaintenance": "2024-07-20",
+          "specifications": "Intel i7 processors, 32GB RAM, NVIDIA RTX 3080 GPUs"
+        },
+        {
+          "name": "Data Visualization Displays",
+          "quantity": 5,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-15",
+          "nextMaintenance": "2024-07-15",
+          "specifications": "4K displays for data visualization and model monitoring"
+        }
+      ],
+      "facilities": [
+        "ML software suite (TensorFlow, PyTorch, Scikit-learn)",
+        "Jupyter notebook environment",
+        "Cloud computing access",
+        "Version control systems",
+        "Collaborative coding tools"
+      ],
+      "availability": "Monday to Friday, 8:00 AM - 8:00 PM",
+      "specialFeatures": [
+        "Hands-on ML training",
+        "Project development space",
+        "Peer collaboration area"
+      ]
+    },
+    {
+      "name": "Machine Learning Lab 2",
+      "capacity": 30,
+      "location": "Department of Machine Learning, BMSCE",
+      "equipment": [
+        {
+          "name": "Advanced ML Workstations",
+          "quantity": 25,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-18",
+          "nextMaintenance": "2024-07-18",
+          "specifications": "Intel i9 processors, 64GB RAM, NVIDIA RTX 4080 GPUs"
+        },
+        {
+          "name": "Specialized ML Hardware",
+          "quantity": 10,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-12",
+          "nextMaintenance": "2024-07-12",
+          "specifications": "Edge computing devices, IoT sensors, specialized ML accelerators"
+        }
+      ],
+      "facilities": [
+        "Deep learning frameworks",
+        "Computer vision tools",
+        "NLP processing tools",
+        "Model deployment platforms",
+        "Real-time data processing"
+      ],
+      "availability": "Monday to Friday, 8:00 AM - 8:00 PM",
+      "specialFeatures": [
+        "Advanced ML research",
+        "Model deployment testing",
+        "Real-world application development"
+      ]
+    },
+    {
+      "name": "Machine Learning Lab 3",
+      "capacity": 30,
+      "location": "Department of Machine Learning, BMSCE",
+      "equipment": [
+        {
+          "name": "Research Workstations",
+          "quantity": 20,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-22",
+          "nextMaintenance": "2024-07-22",
+          "specifications": "High-end workstations with multiple GPUs for parallel processing"
+        },
+        {
+          "name": "Specialized Research Equipment",
+          "quantity": 15,
+          "condition": "excellent",
+          "lastMaintenance": "2024-01-08",
+          "nextMaintenance": "2024-07-08",
+          "specifications": "Specialized hardware for specific ML research areas"
+        }
+      ],
+      "facilities": [
+        "Research software suite",
+        "Academic collaboration tools",
+        "Publication and documentation tools",
+        "Conference facilities",
+        "Remote collaboration setup"
+      ],
+      "availability": "24/7 for research activities",
+      "specialFeatures": [
+        "Graduate research space",
+        "PhD student workstations",
+        "Research collaboration area",
+        "Academic conference facilities"
+      ]
+    }
+  ],
+  "classrooms": {
+    "total": 8,
+    "capacity": 60,
+    "facilities": [
+      "Smart boards and projectors",
+      "High-speed internet",
+      "Audio-visual equipment",
+      "Climate control",
+      "Comfortable seating",
+      "Presentation facilities",
+      "Recording capabilities"
+    ],
+    "specialFeatures": [
+      "Interactive learning environment",
+      "Remote learning capabilities",
+      "Multimedia presentation support",
+      "Collaborative learning tools"
+    ]
+  },
+  "library": {
+    "books": 5000,
+    "journals": 200,
+    "digitalResources": 10000,
+    "seatingCapacity": 100,
+    "facilities": [
+      "Digital library access",
+      "Online databases",
+      "E-books and e-journals",
+      "Research databases",
+      "Quiet study areas",
+      "Group study rooms",
+      "Computer access",
+      "Printing and scanning"
+    ],
+    "specialCollections": [
+      "AI and ML book collection",
+      "Research papers archive",
+      "Thesis and dissertation collection",
+      "Industry reports and case studies"
+    ],
+    "digitalResources": [
+      "IEEE Xplore Digital Library",
+      "ACM Digital Library",
+      "SpringerLink",
+      "ScienceDirect",
+      "Google Scholar access",
+      "Research databases"
+    ]
+  },
+  "computerLabs": {
+    "total": 4,
+    "computers": 120,
+    "specifications": "High-performance computers with latest processors, GPUs, and memory",
+    "software": [
+      "Python development environment",
+      "R programming language",
+      "MATLAB",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn",
+      "Jupyter Notebooks",
+      "Visual Studio Code",
+      "Git version control",
+      "Docker containers",
+      "Cloud computing platforms"
+    ],
+    "specialFeatures": [
+      "GPU-accelerated computing",
+      "Cloud computing access",
+      "Version control systems",
+      "Collaborative development tools",
+      "Model deployment platforms"
+    ]
+  },
+  "researchFacilities": [
+    {
+      "name": "B.S. Narayan Center of Excellence in AI & ML",
+      "description": "Premier research facility for AI and ML research with industry partnerships",
+      "equipment": [
+        "NVIDIA DGX A100 Server",
+        "High-performance computing clusters",
+        "Specialized ML hardware",
+        "Data storage systems"
+      ],
+      "capacity": 50,
+      "researchAreas": [
+        "Deep Learning",
+        "Computer Vision",
+        "Natural Language Processing",
+        "Generative AI",
+        "Data Mining",
+        "Big Data Analytics"
+      ]
+    },
+    {
+      "name": "Industry Collaboration Lab",
+      "description": "Facility for industry-academic collaboration and real-world AI projects",
+      "equipment": [
+        "Industry-standard hardware",
+        "Collaboration tools",
+        "Project management systems",
+        "Communication facilities"
+      ],
+      "capacity": 30,
+      "researchAreas": [
+        "Industry AI applications",
+        "Real-world problem solving",
+        "Commercial AI solutions",
+        "Industry partnerships"
+      ]
+    },
+    {
+      "name": "Graduate Research Lab",
+      "description": "Dedicated space for graduate students and PhD research",
+      "equipment": [
+        "Research workstations",
+        "Specialized research tools",
+        "Academic collaboration tools",
+        "Publication facilities"
+      ],
+      "capacity": 25,
+      "researchAreas": [
+        "Advanced ML research",
+        "Thesis and dissertation work",
+        "Academic publications",
+        "Research collaboration"
+      ]
+    }
+  ],
+  "specialFeatures": [
+    "NVIDIA DGX A100 server - world's first purpose-built system for Deep Learning",
+    "56 parallel instances without performance deterioration",
+    "Industry-academic synergy platform",
+    "Dynamic industry partnerships",
+    "Government and industry project facilitation",
+    "AI adoption acceleration",
+    "Research and development activities",
+    "NVIDIA partnership and support"
+  ],
+  "departmentInfo": {
+    "vision": "To achieve excellent standards of quality education in the field of Artificial Intelligence and Machine Learning",
+    "mission": [
+      "To nurture the students with strong fundamentals for a successful career in the field of Artificial Intelligence and Machine Learning",
+      "To motivate the students for post-graduation and research",
+      "To create impact in the society with continuous research and innovations"
+    ],
+    "established": "2020",
+    "undergraduateIntake": 360,
+    "focusAreas": [
+      "Deep Learning",
+      "Data Mining",
+      "Big Data",
+      "Natural Language Processing",
+      "Generative AI"
+    ],
+    "faculty": {
+      "total": 6,
+      "experienced": "Blend of experienced and innovative educators",
+      "industryExperience": "Rich industry experience",
+      "interdisciplinaryCollaborations": "Active interdisciplinary collaborations"
+    }
+  },
+  "createdAt": "2024-01-01T00:00:00.000Z",
+  "updatedAt": "2024-01-01T00:00:00.000Z"
+}

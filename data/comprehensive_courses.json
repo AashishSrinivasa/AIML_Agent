@@ -1,0 +1,528 @@
+[
+  {
+    "id": "course_001",
+    "code": "23MA3BSMML",
+    "name": "Mathematical Foundations for Machine Learning",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Calculus", "Linear Algebra", "Probability"],
+    "description": "Mathematical foundations essential for machine learning including linear algebra, calculus, probability, and statistics.",
+    "instructor": "Dr. Mathematics Faculty",
+    "schedule": "Mon, Wed, Fri 10:00 AM - 11:00 AM",
+    "room": "Mathematics Lab",
+    "objectives": [
+      "Apply mathematical concepts to machine learning problems",
+      "Understand linear algebra operations in ML",
+      "Master probability and statistics for ML",
+      "Solve optimization problems in ML"
+    ],
+    "topics": [
+      "Linear Algebra for ML",
+      "Calculus and Optimization",
+      "Probability Theory",
+      "Statistical Inference",
+      "Matrix Operations",
+      "Gradient Descent"
+    ],
+    "courseType": "Basic Science",
+    "contactHours": "2-0-1",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Linear Algebra Fundamentals",
+        "hours": 6,
+        "topics": ["Vector spaces", "Matrix operations", "Eigenvalues and eigenvectors"]
+      },
+      {
+        "number": 2,
+        "title": "Calculus and Optimization",
+        "hours": 6,
+        "topics": ["Gradients", "Hessian matrices", "Optimization techniques"]
+      },
+      {
+        "number": 3,
+        "title": "Probability and Statistics",
+        "hours": 6,
+        "topics": ["Probability distributions", "Bayesian inference", "Statistical tests"]
+      }
+    ],
+    "textBooks": [
+      "Mathematics for Machine Learning - Marc Peter Deisenroth",
+      "Linear Algebra and its Applications - David C. Lay"
+    ],
+    "referenceBooks": [
+      "Linear Algebra and Optimization for Machine Learning - Charu C. Aggarwal",
+      "Linear Algebra - Stephen H. Friedberg"
+    ],
+    "courseOutcomes": [
+      "Apply mathematical concepts to ML problems",
+      "Use linear algebra in ML algorithms",
+      "Apply probability theory in ML"
+    ],
+    "assessment": {
+      "cie": {
+        "quiz": 10,
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_002",
+    "code": "23AM3ESCOA",
+    "name": "Computer Organization and Architecture",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Digital Logic Design", "Computer Fundamentals"],
+    "description": "Understanding computer organization, architecture, and how it relates to machine learning computations.",
+    "instructor": "Dr. Computer Science Faculty",
+    "schedule": "Tue, Thu 2:00 PM - 3:30 PM",
+    "room": "Computer Lab",
+    "objectives": [
+      "Understand computer organization principles",
+      "Learn processor architecture",
+      "Understand memory hierarchy",
+      "Apply knowledge to ML system design"
+    ],
+    "topics": [
+      "Computer Organization",
+      "Processor Architecture",
+      "Memory Systems",
+      "I/O Systems",
+      "Parallel Processing",
+      "ML Hardware Acceleration"
+    ],
+    "courseType": "Engineering Science",
+    "contactHours": "3-0-0",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Computer Organization",
+        "hours": 6,
+        "topics": ["Computer components", "Instruction set architecture", "Performance metrics"]
+      },
+      {
+        "number": 2,
+        "title": "Processor Design",
+        "hours": 6,
+        "topics": ["CPU design", "Pipelining", "Branch prediction"]
+      },
+      {
+        "number": 3,
+        "title": "Memory Systems",
+        "hours": 6,
+        "topics": ["Cache memory", "Virtual memory", "Memory hierarchy"]
+      }
+    ],
+    "textBooks": [
+      "Computer Organization and Design - David A. Patterson",
+      "Computer Architecture - John L. Hennessy"
+    ],
+    "referenceBooks": [
+      "Modern Computer Architecture - Morris Mano",
+      "Computer Systems - Randal E. Bryant"
+    ],
+    "courseOutcomes": [
+      "Understand computer organization",
+      "Design efficient systems for ML",
+      "Apply architecture knowledge to ML"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_003",
+    "code": "23AM3PCDST",
+    "name": "Data Structures",
+    "credits": 4,
+    "semester": "3rd",
+    "prerequisites": ["Programming Fundamentals", "Discrete Mathematics"],
+    "description": "Essential data structures and algorithms for efficient data processing in machine learning applications.",
+    "instructor": "Dr. Programming Faculty",
+    "schedule": "Mon, Wed, Fri 11:00 AM - 12:00 PM",
+    "room": "Programming Lab",
+    "objectives": [
+      "Master fundamental data structures",
+      "Implement efficient algorithms",
+      "Apply data structures in ML",
+      "Optimize data processing"
+    ],
+    "topics": [
+      "Arrays and Linked Lists",
+      "Stacks and Queues",
+      "Trees and Graphs",
+      "Hash Tables",
+      "Sorting Algorithms",
+      "Search Algorithms"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Linear Data Structures",
+        "hours": 6,
+        "topics": ["Arrays", "Linked lists", "Stacks", "Queues"]
+      },
+      {
+        "number": 2,
+        "title": "Non-linear Data Structures",
+        "hours": 6,
+        "topics": ["Trees", "Binary trees", "Graphs", "Hash tables"]
+      },
+      {
+        "number": 3,
+        "title": "Algorithms",
+        "hours": 6,
+        "topics": ["Sorting", "Searching", "Graph algorithms", "Dynamic programming"]
+      }
+    ],
+    "textBooks": [
+      "Introduction to Algorithms - Thomas H. Cormen",
+      "Data Structures and Algorithms - Mark Allen Weiss"
+    ],
+    "referenceBooks": [
+      "The Algorithm Design Manual - Steven S. Skiena",
+      "Algorithms - Robert Sedgewick"
+    ],
+    "courseOutcomes": [
+      "Implement data structures efficiently",
+      "Apply algorithms in ML contexts",
+      "Optimize data processing"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_004",
+    "code": "23AM3PCPSM",
+    "name": "Probability and Statistics for Machine Learning",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Calculus", "Linear Algebra"],
+    "description": "Statistical foundations essential for understanding and implementing machine learning algorithms.",
+    "instructor": "Dr. Statistics Faculty",
+    "schedule": "Tue, Thu 10:00 AM - 11:30 AM",
+    "room": "Statistics Lab",
+    "objectives": [
+      "Master probability theory for ML",
+      "Understand statistical inference",
+      "Apply statistics in ML algorithms",
+      "Evaluate ML model performance"
+    ],
+    "topics": [
+      "Probability Theory",
+      "Statistical Distributions",
+      "Hypothesis Testing",
+      "Regression Analysis",
+      "Bayesian Statistics",
+      "Statistical Learning"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Probability Fundamentals",
+        "hours": 6,
+        "topics": ["Probability axioms", "Conditional probability", "Bayes theorem"]
+      },
+      {
+        "number": 2,
+        "title": "Statistical Distributions",
+        "hours": 6,
+        "topics": ["Normal distribution", "Binomial distribution", "Poisson distribution"]
+      },
+      {
+        "number": 3,
+        "title": "Statistical Inference",
+        "hours": 6,
+        "topics": ["Hypothesis testing", "Confidence intervals", "Regression analysis"]
+      }
+    ],
+    "textBooks": [
+      "Probability and Statistics for Computer Scientists - Michael Baron",
+      "Fundamental of Mathematical Statistics - S.C Gupta"
+    ],
+    "referenceBooks": [
+      "Probability & Statistics for Engineers & Scientists - Ronal E. Walpole",
+      "Statistical Inference - George Casella"
+    ],
+    "courseOutcomes": [
+      "Apply probability in ML",
+      "Use statistical methods in ML",
+      "Evaluate ML model performance"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_005",
+    "code": "24AM3PCOOP",
+    "name": "Object Oriented Programming",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Programming Fundamentals"],
+    "description": "Object-oriented programming concepts and their application in machine learning software development.",
+    "instructor": "Dr. Programming Faculty",
+    "schedule": "Mon, Wed, Fri 2:00 PM - 3:00 PM",
+    "room": "Programming Lab",
+    "objectives": [
+      "Master OOP concepts",
+      "Implement OOP in ML projects",
+      "Design ML software architecture",
+      "Apply design patterns in ML"
+    ],
+    "topics": [
+      "Classes and Objects",
+      "Inheritance and Polymorphism",
+      "Encapsulation and Abstraction",
+      "Design Patterns",
+      "Exception Handling",
+      "ML Framework Design"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "OOP Fundamentals",
+        "hours": 6,
+        "topics": ["Classes", "Objects", "Methods", "Attributes"]
+      },
+      {
+        "number": 2,
+        "title": "Advanced OOP",
+        "hours": 6,
+        "topics": ["Inheritance", "Polymorphism", "Abstraction", "Encapsulation"]
+      },
+      {
+        "number": 3,
+        "title": "Design Patterns",
+        "hours": 6,
+        "topics": ["Creational patterns", "Structural patterns", "Behavioral patterns"]
+      }
+    ],
+    "textBooks": [
+      "Object-Oriented Programming - Robert Lafore",
+      "Design Patterns - Gang of Four"
+    ],
+    "referenceBooks": [
+      "Clean Code - Robert C. Martin",
+      "Effective Java - Joshua Bloch"
+    ],
+    "courseOutcomes": [
+      "Design OOP solutions for ML",
+      "Apply design patterns in ML",
+      "Implement ML software architecture"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_006",
+    "code": "23AM3PCDBM",
+    "name": "Database Management Systems",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Data Structures"],
+    "description": "Database systems and their role in managing large datasets for machine learning applications.",
+    "instructor": "Dr. Database Faculty",
+    "schedule": "Tue, Thu 3:30 PM - 5:00 PM",
+    "room": "Database Lab",
+    "objectives": [
+      "Understand database design principles",
+      "Learn SQL for data manipulation",
+      "Apply databases in ML pipelines",
+      "Optimize data storage for ML"
+    ],
+    "topics": [
+      "Database Design",
+      "SQL Programming",
+      "Normalization",
+      "Indexing and Optimization",
+      "NoSQL Databases",
+      "ML Data Pipelines"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Database Fundamentals",
+        "hours": 6,
+        "topics": ["Database concepts", "ER modeling", "Relational model"]
+      },
+      {
+        "number": 2,
+        "title": "SQL and Query Processing",
+        "hours": 6,
+        "topics": ["SQL queries", "Joins", "Subqueries", "Views"]
+      },
+      {
+        "number": 3,
+        "title": "Database Optimization",
+        "hours": 6,
+        "topics": ["Indexing", "Query optimization", "Transaction processing"]
+      }
+    ],
+    "textBooks": [
+      "Database System Concepts - Abraham Silberschatz",
+      "SQL for Data Analysis - Cathy Tanimura"
+    ],
+    "referenceBooks": [
+      "Database Design and Implementation - Edward Sciore",
+      "NoSQL Distilled - Pramod J. Sadalage"
+    ],
+    "courseOutcomes": [
+      "Design databases for ML",
+      "Optimize data access for ML",
+      "Implement ML data pipelines"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  },
+  {
+    "id": "course_007",
+    "code": "23AM3AETFC",
+    "name": "Theoretical Foundations of Computations",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Discrete Mathematics", "Logic"],
+    "description": "Theoretical foundations of computation including automata theory, computability, and complexity theory.",
+    "instructor": "Dr. Theory Faculty",
+    "schedule": "Mon, Wed, Fri 3:00 PM - 4:00 PM",
+    "room": "Theory Lab",
+    "objectives": [
+      "Understand computational theory",
+      "Learn automata and formal languages",
+      "Apply theory to ML algorithms",
+      "Understand computational complexity"
+    ],
+    "topics": [
+      "Automata Theory",
+      "Formal Languages",
+      "Computability Theory",
+      "Complexity Theory",
+      "Turing Machines",
+      "ML Algorithm Complexity"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "3-0-0",
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 50,
+      "totalMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Automata Theory",
+        "hours": 6,
+        "topics": ["Finite automata", "Regular languages", "Context-free grammars"]
+      },
+      {
+        "number": 2,
+        "title": "Computability",
+        "hours": 6,
+        "topics": ["Turing machines", "Decidability", "Recursively enumerable languages"]
+      },
+      {
+        "number": 3,
+        "title": "Complexity Theory",
+        "hours": 6,
+        "topics": ["Time complexity", "Space complexity", "P vs NP"]
+      }
+    ],
+    "textBooks": [
+      "Introduction to the Theory of Computation - Michael Sipser",
+      "Automata Theory - Hopcroft and Ullman"
+    ],
+    "referenceBooks": [
+      "Computational Complexity - Christos Papadimitriou",
+      "Elements of the Theory of Computation - Harry Lewis"
+    ],
+    "courseOutcomes": [
+      "Understand computational limits",
+      "Analyze ML algorithm complexity",
+      "Apply theory to ML problems"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 50
+    }
+  }
+]

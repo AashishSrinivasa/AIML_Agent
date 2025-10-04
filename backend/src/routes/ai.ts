@@ -51,7 +51,7 @@ router.post('/chat', asyncHandler(async (req: Request, res: Response) => {
     });
   } catch (error) {
     console.error('Chat error:', error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       error: 'Failed to process your message. Please try again.'
     });
@@ -89,7 +89,7 @@ router.post('/suggestions', asyncHandler(async (req: Request, res: Response) => 
     });
   } catch (error) {
     console.error('Suggestions error:', error);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       error: 'Failed to generate suggestions. Please try again.'
     });
