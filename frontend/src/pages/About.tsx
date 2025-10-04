@@ -1,5 +1,6 @@
 import React from 'react';
-import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb } from 'lucide-react';
+import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, MapPin, Phone, Mail } from 'lucide-react';
+import BMSCELogo from '../components/BMSCELogo';
 
 const About: React.FC = () => {
   const features = [
@@ -41,15 +42,43 @@ const About: React.FC = () => {
     <div className="max-w-7xl mx-auto">
       {/* Hero Section */}
       <section className="text-center py-16">
-        <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-          <Bot className="w-10 h-10 text-white" />
+        <div className="flex justify-center mb-6">
+          <BMSCELogo size="xl" variant="full" className="text-center" />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           About AIML Department AI Assistant
         </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Your intelligent companion for navigating the Artificial Intelligence and Machine Learning department at BMSCE University
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+          Your intelligent companion for navigating the Artificial Intelligence and Machine Learning department at B.M.S. College of Engineering
         </p>
+        
+        {/* College Information */}
+        <div className="bg-blue-50 rounded-xl p-6 max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-blue-900 mb-4">B.M.S. College of Engineering</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
+            <div className="flex items-start space-x-3">
+              <MapPin className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-gray-900">Location</h3>
+                <p className="text-sm text-gray-600">Bull Temple Road, Basavanagudi, Bangalore - 560019</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <Phone className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-gray-900">Contact</h3>
+                <p className="text-sm text-gray-600">+91-80-26622130</p>
+              </div>
+            </div>
+            <div className="flex items-start space-x-3">
+              <Mail className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="font-semibold text-gray-900">Email</h3>
+                <p className="text-sm text-gray-600">info@bmsce.ac.in</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Mission Section */}

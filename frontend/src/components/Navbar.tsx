@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
+import BMSCELogo from './BMSCELogo';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -37,22 +38,32 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-2 group">
-              <motion.div 
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center"
-              >
-                <Bot className="w-5 h-5 text-white" />
-              </motion.div>
-              <span className={`text-xl font-bold transition-colors duration-300 ${
-                darkMode ? 'text-white' : 'gradient-text'
-              }`}>
-                AIML Department AI
-              </span>
-            </Link>
-          </div>
+                  <div className="flex items-center">
+                    <Link to="/" className="flex items-center space-x-3 group">
+                      <motion.div 
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                      >
+                        <BMSCELogo 
+                          size="md" 
+                          variant="icon"
+                          className="transition-colors duration-300"
+                        />
+                      </motion.div>
+                      <div className="flex flex-col">
+                        <span className={`text-lg font-bold transition-colors duration-300 ${
+                          darkMode ? 'text-white' : 'text-blue-600'
+                        }`}>
+                          AIML Department
+                        </span>
+                        <span className={`text-xs transition-colors duration-300 ${
+                          darkMode ? 'text-gray-300' : 'text-blue-500'
+                        }`}>
+                          AI Assistant
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">

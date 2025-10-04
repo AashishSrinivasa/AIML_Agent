@@ -13,6 +13,7 @@ import {
   GraduationCap,
   TrendingUp
 } from 'lucide-react';
+import BMSCELogo from '../components/BMSCELogo';
 
 const Home: React.FC = () => {
   const features = [
@@ -72,16 +73,16 @@ const Home: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <motion.div 
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex justify-center mb-6"
-            >
-              <div className="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Bot className="w-10 h-10" />
-              </div>
-            </motion.div>
+                    <motion.div 
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      className="flex justify-center mb-6"
+                    >
+                      <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                        <BMSCELogo size="lg" variant="icon" className="text-white" />
+                      </div>
+                    </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
