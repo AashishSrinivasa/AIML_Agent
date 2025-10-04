@@ -1,0 +1,15 @@
+# mac / editor
+.DS_Store
+.vscode/
+.idea/
+
+# language / env
+node_modules/
+.env
+__pycache__/
+*.pyc
+
+# build
+dist/
+build/
+*.log
