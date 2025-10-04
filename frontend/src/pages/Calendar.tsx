@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Calendar, Clock, MapPin, Filter, ChevronRight } from 'lucide-react';
-import { calendarApi } from '../services/api';
-import { AcademicCalendar, Event } from '../types';
+import { calendarApi } from '../services/api.ts';
+import { AcademicCalendar, Event } from '../types/index.ts';
 
 const CalendarPage: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string>('');
@@ -10,7 +10,7 @@ const CalendarPage: React.FC = () => {
 
   const { data: calendarData, isLoading: calendarLoading } = useQuery(
     ['calendar', selectedYear],
-    () => calendarApi.getCalendar(selectedYear),
+    () => calendarApi.getEvents(selectedYear),
     {
       keepPreviousData: true
     }
@@ -18,15 +18,7 @@ const CalendarPage: React.FC = () => {
 
   const { data: upcomingEvents, isLoading: upcomingLoading } = useQuery(
     ['upcoming-events', selectedYear],
-    () => calendarApi.getUpcomingEvents(10, selectedYear),
-    {
-      keepPreviousData: true
-    }
-  );
-
-  const { data: examData, isLoading: examLoading } = useQuery(
-    ['exams', selectedYear],
-    () => calendarApi.getExams(undefined, selectedYear),
+    () => calendarApi.getUpcoming(),
     {
       keepPreviousData: true
     }
@@ -105,7 +97,7 @@ const CalendarPage: React.FC = () => {
               </div>
             ) : (
               <div className="space-y-4">
-                {upcomingEvents?.data?.map((event: Event, index: number) => (
+                {upcomingEvents?.data && Array.isArray(upcomingEvents.data) ? upcomingEvents.data.map((event: Event, index: number) => (
                   <div key={index} className="flex items-center p-4 bg-gray-50 rounded-lg">
                     <div className="flex-shrink-0">
                       <div className={`w-3 h-3 rounded-full ${getEventTypeColor(event.type).replace('100', '500').replace('800', '600')}`}></div>
@@ -120,7 +112,11 @@ const CalendarPage: React.FC = () => {
                       </span>
                     </div>
                   </div>
-                ))}
+                )) : (
+                  <div className="text-center py-8">
+                    <div className="text-gray-500 text-lg">No upcoming events available</div>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -131,14 +127,18 @@ const CalendarPage: React.FC = () => {
           {/* Current Semester */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-lg font-semibold text-gray-900 mb-4">Current Semester</h3>
-            {calendarData?.data?.semesters.map((semester, index) => (
-              <div key={index} className="mb-4">
-                <h4 className="font-medium text-gray-900">{semester.name}</h4>
-                <p className="text-sm text-gray-600">
-                  {formatDate(semester.startDate)} - {formatDate(semester.endDate)}
-                </p>
-              </div>
-            ))}
+            {calendarData?.data && Array.isArray(calendarData.data) && calendarData.data.length > 0 ? (
+              calendarData.data.map((calendar, index) => (
+                <div key={index} className="mb-4">
+                  <h4 className="font-medium text-gray-900">{calendar.semester}</h4>
+                  <p className="text-sm text-gray-600">
+                    Academic Year: {calendar.year}
+                  </p>
+                </div>
+              ))
+            ) : (
+              <div className="text-gray-500 text-sm">No semester information available</div>
+            )}
           </div>
 
           {/* Event Types */}
@@ -156,55 +156,46 @@ const CalendarPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Examination Schedule */}
+      {/* Events List */}
       <div className="mt-8">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
             <Calendar className="w-5 h-5 mr-2 text-blue-600" />
-            Examination Schedule
+            All Events
           </h2>
           
-          {examLoading ? (
+          {calendarLoading ? (
             <div className="text-center py-8">
               <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
             </div>
           ) : (
-            <div className="space-y-6">
-              {examData?.data?.map((schedule: any, index: number) => (
-                <div key={index}>
-                  <h3 className="text-lg font-medium text-gray-900 mb-4">{schedule.semester} Semester</h3>
-                  <div className="overflow-x-auto">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <thead className="bg-gray-50">
-                        <tr>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Subject</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Time</th>
-                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Venue</th>
-                        </tr>
-                      </thead>
-                      <tbody className="bg-white divide-y divide-gray-200">
-                        {schedule.exams.map((exam: any, examIndex: number) => (
-                          <tr key={examIndex} className={isUpcoming(exam.date) ? 'bg-blue-50' : ''}>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                              {exam.subject}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {formatDate(exam.date)}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {exam.time}
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                              {exam.venue}
-                            </td>
-                          </tr>
+            <div className="space-y-4">
+              {calendarData?.data && Array.isArray(calendarData.data) && calendarData.data.length > 0 ? (
+                calendarData.data.map((calendar, index) => (
+                  <div key={index} className="border rounded-lg p-4">
+                    <h3 className="text-lg font-medium text-gray-900 mb-2">{calendar.semester} - {calendar.year}</h3>
+                    {calendar.events && Array.isArray(calendar.events) ? (
+                      <div className="space-y-2">
+                        {calendar.events.map((event: Event, eventIndex: number) => (
+                          <div key={eventIndex} className="flex items-center justify-between p-2 bg-gray-50 rounded">
+                            <div>
+                              <span className="font-medium">{event.title}</span>
+                              <span className="text-sm text-gray-600 ml-2">({event.type})</span>
+                            </div>
+                            <span className="text-sm text-gray-500">{formatDate(event.date)}</span>
+                          </div>
                         ))}
-                      </tbody>
-                    </table>
+                      </div>
+                    ) : (
+                      <div className="text-gray-500 text-sm">No events available for this period</div>
+                    )}
                   </div>
+                ))
+              ) : (
+                <div className="text-center py-8">
+                  <div className="text-gray-500 text-lg">No calendar data available</div>
                 </div>
-              ))}
+              )}
             </div>
           )}
         </div>

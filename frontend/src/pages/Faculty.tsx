@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Search, Mail, Phone, MapPin, Clock, BookOpen, Award, Users } from 'lucide-react';
-import { facultyApi } from '../services/api';
-import { Faculty, FacultyFilters } from '../types';
+import { facultyApi } from '../services/api.ts';
+import { Faculty, FacultyFilters } from '../types/index.ts';
 
 const FacultyPage: React.FC = () => {
   const [filters, setFilters] = useState<FacultyFilters>({});
@@ -173,7 +173,7 @@ const FacultyPage: React.FC = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {facultyData?.data?.map((faculty: Faculty) => (
+          {facultyData?.data && Array.isArray(facultyData.data) ? facultyData.data.map((faculty: Faculty) => (
             <div key={faculty.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
@@ -258,11 +258,15 @@ const FacultyPage: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )) : (
+            <div className="col-span-full text-center py-12">
+              <div className="text-gray-500 text-lg">No faculty data available</div>
+            </div>
+          )}
         </div>
       )}
 
-      {facultyData?.data?.length === 0 && !isLoading && (
+      {facultyData?.data && Array.isArray(facultyData.data) && facultyData.data.length === 0 && !isLoading && (
         <div className="text-center py-12">
           <div className="text-gray-500 text-lg">No faculty members found matching your criteria</div>
         </div>

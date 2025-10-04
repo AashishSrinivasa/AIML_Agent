@@ -30,6 +30,7 @@ export interface FacultyStats {
 // Course Types
 export interface Course {
   id: string;
+  name: string;
   title: string;
   code: string;
   credits: number;
@@ -43,12 +44,24 @@ export interface Course {
   textbooks: string[];
   references: string[];
   instructor?: string;
+  schedule?: string;
+  room?: string;
+  topics?: string[];
 }
 
 export interface CourseFilters {
   search?: string;
   semester?: number;
   type?: string;
+  instructor?: string;
+  credits?: number;
+}
+
+export interface CourseStats {
+  totalCourses: number;
+  semesters: Array<{ _id: string; count: number }>;
+  instructors: Array<{ _id: string; count: number }>;
+  credits: Array<{ _id: string; count: number }>;
 }
 
 // Academic Calendar Types
@@ -108,6 +121,13 @@ export interface ResearchFacility {
   location: string;
   availability: string;
   contact: string;
+}
+
+export interface InfrastructureStats {
+  totalLabs: number;
+  totalComputers: number;
+  totalBooks: number;
+  researchFacilities: number;
 }
 
 // Chat Types

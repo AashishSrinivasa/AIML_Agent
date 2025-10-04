@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { Search, BookOpen, Clock, MapPin, User, Award, Calendar } from 'lucide-react';
-import { courseApi } from '../services/api';
-import { Course, CourseFilters } from '../types';
+import { coursesApi } from '../services/api.ts';
+import { Course, CourseFilters } from '../types/index.ts';
 
 const Courses: React.FC = () => {
   const [filters, setFilters] = useState<CourseFilters>({});
@@ -10,13 +10,13 @@ const Courses: React.FC = () => {
 
   const { data: coursesData, isLoading, error } = useQuery(
     ['courses', filters],
-    () => courseApi.getAll(filters),
+    () => coursesApi.getAll(filters),
     {
       keepPreviousData: true
     }
   );
 
-  const { data: statsData } = useQuery('course-stats', courseApi.getStats);
+  const { data: statsData } = useQuery('course-stats', coursesApi.getStats);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -188,7 +188,7 @@ const Courses: React.FC = () => {
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {coursesData?.data?.map((course: Course) => (
+          {coursesData?.data && Array.isArray(coursesData.data) ? coursesData.data.map((course: Course) => (
             <div key={course.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
               <div className="p-6">
                 <div className="flex items-start justify-between mb-4">
@@ -266,11 +266,15 @@ const Courses: React.FC = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )) : (
+            <div className="col-span-full text-center py-12">
+              <div className="text-gray-500 text-lg">No courses data available</div>
+            </div>
+          )}
         </div>
       )}
 
-      {coursesData?.data?.length === 0 && !isLoading && (
+      {coursesData?.data && Array.isArray(coursesData.data) && coursesData.data.length === 0 && !isLoading && (
         <div className="text-center py-12">
           <div className="text-gray-500 text-lg">No courses found matching your criteria</div>
         </div>

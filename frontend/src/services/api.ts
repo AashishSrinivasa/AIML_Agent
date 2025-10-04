@@ -180,6 +180,11 @@ export const coursesApi = {
     const response = await api.get(`/courses/semester/${semester}`);
     return response.data;
   },
+
+  getStats: async (): Promise<ApiResponse<any>> => {
+    const response = await api.get('/courses/stats');
+    return response.data;
+  },
 };
 
 // Calendar API
