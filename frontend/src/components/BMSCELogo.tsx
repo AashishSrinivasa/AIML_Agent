@@ -32,91 +32,102 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      {/* Outer Circle */}
-      <circle
-        cx="50"
-        cy="50"
-        r="48"
-        fill="none"
-        stroke="#1e40af"
-        strokeWidth="2"
-      />
-      
-      {/* Inner Circle */}
-      <circle
-        cx="50"
-        cy="50"
-        r="35"
-        fill="none"
-        stroke="#3b82f6"
-        strokeWidth="1.5"
-      />
-      
-      {/* Central Symbol - Engineering Gear */}
+      {/* Outer Gear Frame */}
       <g transform="translate(50, 50)">
-        {/* Main gear */}
-        <circle
-          cx="0"
-          cy="0"
-          r="15"
-          fill="#1e40af"
-        />
-        <circle
-          cx="0"
-          cy="0"
-          r="8"
-          fill="white"
-        />
-        
         {/* Gear teeth */}
-        {Array.from({ length: 8 }, (_, i) => (
+        {Array.from({ length: 16 }, (_, i) => (
           <rect
             key={i}
             x="-1"
-            y="-20"
+            y="-48"
             width="2"
-            height="6"
-            fill="#1e40af"
-            transform={`rotate(${i * 45} 0 0)`}
+            height="8"
+            fill="#1a1a1a"
+            transform={`rotate(${i * 22.5} 0 0)`}
           />
         ))}
-        
-        {/* Inner details */}
-        <circle
-          cx="0"
-          cy="0"
-          r="3"
-          fill="#1e40af"
-        />
       </g>
+      
+      {/* Inner Black Circle with Text */}
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        fill="#1a1a1a"
+      />
       
       {/* Text around the circle */}
       <text
         x="50"
-        y="25"
-        textAnchor="middle"
-        className="fill-blue-600 font-bold text-xs"
-        fontSize="8"
-      >
-        B.M.S. COLLEGE
-      </text>
-      <text
-        x="50"
         y="35"
         textAnchor="middle"
-        className="fill-blue-600 font-bold text-xs"
-        fontSize="8"
+        className="fill-white font-bold"
+        fontSize="6"
+        fontWeight="bold"
       >
-        OF ENGINEERING
+        B.M.S. COLLEGE OF ENGINEERING
       </text>
       <text
         x="50"
-        y="75"
+        y="65"
         textAnchor="middle"
-        className="fill-blue-800 font-semibold text-xs"
-        fontSize="6"
+        className="fill-white font-bold"
+        fontSize="5"
+        fontWeight="bold"
       >
-        EST. 1946
+        BANGALORE - 560019
+      </text>
+      
+      {/* Red dots as separators */}
+      <circle cx="25" cy="50" r="1.5" fill="#dc2626" />
+      <circle cx="75" cy="50" r="1.5" fill="#dc2626" />
+      
+      {/* Central Blue Circle */}
+      <circle
+        cx="50"
+        cy="50"
+        r="25"
+        fill="#1e40af"
+      />
+      
+      {/* Bridge */}
+      <g transform="translate(50, 50)">
+        {/* Bridge towers */}
+        <rect x="-8" y="-5" width="3" height="8" fill="#1e3a8a" />
+        <rect x="5" y="-5" width="3" height="8" fill="#1e3a8a" />
+        
+        {/* Bridge deck */}
+        <rect x="-10" y="3" width="20" height="2" fill="#1e3a8a" />
+        
+        {/* Suspension cables */}
+        <path d="M-8,-5 Q0,-2 8,-5" stroke="#1e3a8a" strokeWidth="0.5" fill="none" />
+        <path d="M-8,-3 Q0,0 8,-3" stroke="#1e3a8a" strokeWidth="0.5" fill="none" />
+        <path d="M-8,-1 Q0,2 8,-1" stroke="#1e3a8a" strokeWidth="0.5" fill="none" />
+        
+        {/* Water lines below bridge */}
+        <rect x="-12" y="6" width="24" height="0.5" fill="#3b82f6" />
+        <rect x="-12" y="7" width="24" height="0.5" fill="#3b82f6" />
+        <rect x="-12" y="8" width="24" height="0.5" fill="#3b82f6" />
+      </g>
+      
+      {/* Lightning Bolt/Arrow */}
+      <g transform="translate(50, 50)">
+        <path
+          d="M-15,10 L-5,-5 L0,0 L5,-10 L15,5 L10,10 L5,5 L0,0 L-5,15 Z"
+          fill="#dc2626"
+        />
+      </g>
+      
+      {/* ESTD. 1946 Text */}
+      <text
+        x="50"
+        y="42"
+        textAnchor="middle"
+        className="fill-white font-bold"
+        fontSize="4"
+        fontWeight="bold"
+      >
+        ESTD. 1946
       </text>
     </svg>
   );
