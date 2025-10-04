@@ -1,130 +1,119 @@
-// Faculty types
+// Faculty Types
 export interface Faculty {
   id: string;
   name: string;
   designation: string;
   qualification: string;
   specialization: string[];
+  researchAreas: string[];
+  publications: number;
+  experience: string;
   email: string;
   phone: string;
   office: string;
   officeHours: string;
-  researchAreas: string[];
-  publications: number;
-  experience: string;
-  courses: string[];
-  createdAt: string;
-  updatedAt: string;
 }
 
-// Course types
+export interface FacultyFilters {
+  search?: string;
+  designation?: string;
+  specialization?: string;
+}
+
+export interface FacultyStats {
+  totalFaculty: number;
+  totalPublications: number;
+  specializations: Array<{ _id: string; count: number }>;
+  designations: Array<{ _id: string; count: number }>;
+}
+
+// Course Types
 export interface Course {
   id: string;
+  title: string;
   code: string;
-  name: string;
   credits: number;
-  semester: string;
-  prerequisites: string[];
+  semester: number;
+  type: string;
   description: string;
-  instructor: string;
-  schedule: string;
-  room: string;
+  prerequisites: string[];
   objectives: string[];
-  topics: string[];
-  createdAt: string;
-  updatedAt: string;
+  outcomes: string[];
+  syllabus: string[];
+  textbooks: string[];
+  references: string[];
+  instructor?: string;
 }
 
-// Calendar types
-export interface Event {
-  date: string;
-  event: string;
-  type: 'academic' | 'holiday' | 'exam' | 'event' | 'deadline';
+export interface CourseFilters {
+  search?: string;
+  semester?: number;
+  type?: string;
 }
 
-export interface Exam {
-  subject: string;
-  date: string;
-  time: string;
-  venue: string;
-}
-
-export interface Semester {
-  name: string;
-  startDate: string;
-  endDate: string;
+// Academic Calendar Types
+export interface AcademicCalendar {
+  id: string;
+  year: string;
+  semester: string;
   events: Event[];
 }
 
-export interface ExaminationSchedule {
-  semester: string;
-  exams: Exam[];
+export interface Event {
+  id: string;
+  title: string;
+  type: string;
+  date: string;
+  description: string;
+  location?: string;
+  time?: string;
 }
 
-export interface AcademicCalendar {
-  academicYear: string;
-  semesters: Semester[];
-  importantDates: Event[];
-  examinationSchedule: ExaminationSchedule[];
-  createdAt: string;
-  updatedAt: string;
+export interface CalendarFilters {
+  year?: string;
+  type?: string;
 }
 
-// Infrastructure types
-export interface Equipment {
+// Infrastructure Types
+export interface Infrastructure {
+  id: string;
   name: string;
-  quantity: number;
-  condition: 'excellent' | 'good' | 'fair' | 'poor';
-  lastMaintenance: string;
-  nextMaintenance: string;
+  type: string;
+  description: string;
+  capacity: number;
+  equipment: string[];
+  location: string;
+  availability: string;
+  contact: string;
 }
 
 export interface Lab {
+  id: string;
   name: string;
+  type: string;
+  description: string;
   capacity: number;
+  equipment: string[];
   location: string;
-  equipment: Equipment[];
-  facilities: string[];
   availability: string;
+  contact: string;
 }
 
 export interface ResearchFacility {
+  id: string;
   name: string;
+  type: string;
   description: string;
   equipment: string[];
-  capacity: number;
+  location: string;
+  availability: string;
+  contact: string;
 }
 
-export interface Infrastructure {
-  department: string;
-  labs: Lab[];
-  classrooms: {
-    total: number;
-    capacity: number;
-    facilities: string[];
-  };
-  library: {
-    books: number;
-    journals: number;
-    digitalResources: number;
-    seatingCapacity: number;
-    facilities: string[];
-  };
-  computerLabs: {
-    total: number;
-    computers: number;
-    specifications: string;
-    software: string[];
-  };
-  researchFacilities: ResearchFacility[];
-  createdAt: string;
-  updatedAt: string;
-}
-
-// Chat types
+// Chat Types
 export interface ChatMessage {
   id: string;
-  role: 'user' | 'assistant';
+  role: 'user' | 'assistant' | 'system';
   content: string;
   timestamp: Date;
   sources?: string[];
@@ -132,62 +121,28 @@ export interface ChatMessage {
 
 export interface AIResponse {
   response: string;
-  sources?: string[];
+  sources: string[];
   suggestions?: string[];
-  timestamp: string;
 }
 
-// API Response types
+// API Response Types
 export interface ApiResponse<T> {
   success: boolean;
   data?: T;
   error?: string;
-  count?: number;
 }
 
-// Search and filter types
-export interface FacultyFilters {
-  search?: string;
-  designation?: string;
-  specialization?: string;
-}
-
-export interface CourseFilters {
-  search?: string;
-  semester?: string;
-  instructor?: string;
-  credits?: number;
-}
-
-export interface CalendarFilters {
-  year?: string;
-  type?: string;
-  limit?: number;
-}
-
-// Statistics types
-export interface FacultyStats {
+// Statistics Types
+export interface DepartmentStats {
   totalFaculty: number;
-  designations: Array<{ _id: string; count: number }>;
-  specializations: Array<{ _id: string; count: number }>;
-  totalPublications: number;
-}
-
-export interface CourseStats {
   totalCourses: number;
-  semesters: Array<{ _id: string; count: number }>;
-  instructors: Array<{ _id: string; count: number }>;
-  credits: Array<{ _id: number; count: number }>;
+  totalLabs: number;
+  totalEvents: number;
 }
 
-export interface InfrastructureStats {
-  totalLabs: number;
-  totalClassrooms: number;
-  totalComputerLabs: number;
-  totalComputers: number;
-  totalBooks: number;
-  totalJournals: number;
-  totalEquipment: number;
-  equipmentByCondition: Record<string, number>;
-  researchFacilities: number;
+export interface SearchResult<T> {
+  items: T[];
+  total: number;
+  page: number;
+  limit: number;
 }

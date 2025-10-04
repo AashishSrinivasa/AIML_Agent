@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
-import { Building2, Monitor, BookOpen, Users, Search, MapPin, Wrench } from 'lucide-react';
+import { Building2, Monitor, BookOpen, Users, Search, MapPin, Wrench, Clock } from 'lucide-react';
 import { infrastructureApi } from '../services/api';
 import { Infrastructure, Lab, ResearchFacility } from '../types';
 
-const Infrastructure: React.FC = () => {
+const InfrastructurePage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const { data: infrastructureData, isLoading } = useQuery(
@@ -307,4 +307,4 @@ const Infrastructure: React.FC = () => {
   );
 };
 
-export default Infrastructure;
+export default InfrastructurePage;

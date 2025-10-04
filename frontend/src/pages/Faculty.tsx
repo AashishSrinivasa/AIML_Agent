@@ -4,7 +4,7 @@ import { Search, Mail, Phone, MapPin, Clock, BookOpen, Award, Users } from 'luci
 import { facultyApi } from '../services/api';
 import { Faculty, FacultyFilters } from '../types';
 
-const Faculty: React.FC = () => {
+const FacultyPage: React.FC = () => {
   const [filters, setFilters] = useState<FacultyFilters>({});
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -271,4 +271,4 @@ const Faculty: React.FC = () => {
   );
 };
 
-export default Faculty;
+export default FacultyPage;

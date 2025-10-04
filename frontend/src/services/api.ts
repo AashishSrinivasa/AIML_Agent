@@ -1,23 +1,11 @@
 import axios from 'axios';
-import { 
-  Faculty, 
-  Course, 
-  AcademicCalendar, 
-  Infrastructure, 
-  AIResponse,
-  FacultyFilters,
-  CourseFilters,
-  CalendarFilters,
-  FacultyStats,
-  CourseStats,
-  InfrastructureStats,
-  ApiResponse
-} from '../types';
 
 const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
+// Create axios instance
 const api = axios.create({
   baseURL: API_BASE_URL,
+  timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -26,10 +14,11 @@ const api = axios.create({
 // Request interceptor
 api.interceptors.request.use(
   (config) => {
-    console.log(`Making ${config.method?.toUpperCase()} request to ${config.url}`);
+    console.log(`Making ${config.method?.toUpperCase()} request to: ${config.url}`);
     return config;
   },
   (error) => {
+    console.error('Request error:', error);
     return Promise.reject(error);
   }
 );
@@ -37,114 +26,215 @@ api.interceptors.request.use(
 // Response interceptor
 api.interceptors.response.use(
   (response) => {
+    console.log(`Response from ${response.config.url}:`, response.status);
     return response;
   },
   (error) => {
-    console.error('API Error:', error.response?.data || error.message);
+    console.error('Response error:', error.response?.data || error.message);
     return Promise.reject(error);
   }
 );
 
+// Types
+export interface ApiResponse<T> {
+  success: boolean;
+  data?: T;
+  error?: string;
+}
+
+export interface Faculty {
+  id: string;
+  name: string;
+  designation: string;
+  qualification: string;
+  specialization: string[];
+  researchAreas: string[];
+  publications: number;
+  experience: string;
+  email: string;
+  phone: string;
+  office: string;
+  officeHours: string;
+}
+
+export interface FacultyFilters {
+  search?: string;
+  designation?: string;
+  specialization?: string;
+}
+
+export interface Course {
+  id: string;
+  title: string;
+  code: string;
+  credits: number;
+  semester: number;
+  type: string;
+  description: string;
+  prerequisites: string[];
+  objectives: string[];
+  outcomes: string[];
+  syllabus: string[];
+  textbooks: string[];
+  references: string[];
+  instructor?: string;
+}
+
+export interface AcademicCalendar {
+  id: string;
+  year: string;
+  semester: string;
+  events: Event[];
+}
+
+export interface Event {
+  id: string;
+  title: string;
+  type: string;
+  date: string;
+  description: string;
+  location?: string;
+  time?: string;
+}
+
+export interface Infrastructure {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  capacity: number;
+  equipment: string[];
+  location: string;
+  availability: string;
+  contact: string;
+}
+
+export interface Lab {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  capacity: number;
+  equipment: string[];
+  location: string;
+  availability: string;
+  contact: string;
+}
+
+export interface ResearchFacility {
+  id: string;
+  name: string;
+  type: string;
+  description: string;
+  equipment: string[];
+  location: string;
+  availability: string;
+  contact: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant' | 'system';
+  content: string;
+  timestamp: Date;
+  sources?: string[];
+}
+
+export interface AIResponse {
+  response: string;
+  sources: string[];
+  suggestions?: string[];
+}
+
 // Faculty API
 export const facultyApi = {
-  getAll: (filters?: FacultyFilters): Promise<ApiResponse<Faculty[]>> =>
-    api.get('/faculty', { params: filters }).then(res => res.data),
-  
-  getById: (id: string): Promise<ApiResponse<Faculty>> =>
-    api.get(`/faculty/${id}`).then(res => res.data),
-  
-  getByDesignation: (designation: string): Promise<ApiResponse<Faculty[]>> =>
-    api.get(`/faculty/designation/${designation}`).then(res => res.data),
-  
-  getBySpecialization: (specialization: string): Promise<ApiResponse<Faculty[]>> =>
-    api.get(`/faculty/specialization/${specialization}`).then(res => res.data),
-  
-  getStats: (): Promise<ApiResponse<FacultyStats>> =>
-    api.get('/faculty/stats/overview').then(res => res.data),
+  getAll: async (filters: FacultyFilters = {}): Promise<ApiResponse<Faculty[]>> => {
+    const response = await api.get('/faculty', { params: filters });
+    return response.data;
+  },
+
+  getById: async (id: string): Promise<ApiResponse<Faculty>> => {
+    const response = await api.get(`/faculty/${id}`);
+    return response.data;
+  },
+
+  getStats: async (): Promise<ApiResponse<any>> => {
+    const response = await api.get('/faculty/stats');
+    return response.data;
+  },
 };
 
-// Course API
-export const courseApi = {
-  getAll: (filters?: CourseFilters): Promise<ApiResponse<Course[]>> =>
-    api.get('/courses', { params: filters }).then(res => res.data),
-  
-  getById: (id: string): Promise<ApiResponse<Course>> =>
-    api.get(`/courses/${id}`).then(res => res.data),
-  
-  getBySemester: (semester: string): Promise<ApiResponse<Course[]>> =>
-    api.get(`/courses/semester/${semester}`).then(res => res.data),
-  
-  getByInstructor: (instructor: string): Promise<ApiResponse<Course[]>> =>
-    api.get(`/courses/instructor/${instructor}`).then(res => res.data),
-  
-  getStats: (): Promise<ApiResponse<CourseStats>> =>
-    api.get('/courses/stats/overview').then(res => res.data),
-  
-  getPrerequisites: (id: string): Promise<ApiResponse<any>> =>
-    api.get(`/courses/${id}/prerequisites`).then(res => res.data),
+// Courses API
+export const coursesApi = {
+  getAll: async (filters: any = {}): Promise<ApiResponse<Course[]>> => {
+    const response = await api.get('/courses', { params: filters });
+    return response.data;
+  },
+
+  getById: async (id: string): Promise<ApiResponse<Course>> => {
+    const response = await api.get(`/courses/${id}`);
+    return response.data;
+  },
+
+  getBySemester: async (semester: number): Promise<ApiResponse<Course[]>> => {
+    const response = await api.get(`/courses/semester/${semester}`);
+    return response.data;
+  },
 };
 
 // Calendar API
 export const calendarApi = {
-  getCalendar: (year?: string): Promise<ApiResponse<AcademicCalendar>> =>
-    api.get('/calendar', { params: { year } }).then(res => res.data),
-  
-  getEventsByType: (type: string, year?: string): Promise<ApiResponse<Event[]>> =>
-    api.get(`/calendar/events/${type}`, { params: { year } }).then(res => res.data),
-  
-  getUpcomingEvents: (limit?: number, year?: string): Promise<ApiResponse<Event[]>> =>
-    api.get('/calendar/upcoming', { params: { limit, year } }).then(res => res.data),
-  
-  getExams: (semester?: string, year?: string): Promise<ApiResponse<any[]>> =>
-    api.get('/calendar/exams', { params: { semester, year } }).then(res => res.data),
-  
-  getSemesters: (year?: string): Promise<ApiResponse<Semester[]>> =>
-    api.get('/calendar/semesters', { params: { year } }).then(res => res.data),
-  
-  getCurrentSemester: (): Promise<ApiResponse<Semester | null>> =>
-    api.get('/calendar/current-semester').then(res => res.data),
+  getEvents: async (year?: string): Promise<ApiResponse<AcademicCalendar[]>> => {
+    const response = await api.get('/calendar', { params: { year } });
+    return response.data;
+  },
+
+  getUpcoming: async (): Promise<ApiResponse<Event[]>> => {
+    const response = await api.get('/calendar/upcoming');
+    return response.data;
+  },
 };
 
 // Infrastructure API
 export const infrastructureApi = {
-  getInfrastructure: (department?: string): Promise<ApiResponse<Infrastructure>> =>
-    api.get('/infrastructure', { params: { department } }).then(res => res.data),
-  
-  getLabs: (search?: string, capacity?: number): Promise<ApiResponse<Lab[]>> =>
-    api.get('/infrastructure/labs', { params: { search, capacity } }).then(res => res.data),
-  
-  getLabByName: (labName: string): Promise<ApiResponse<Lab>> =>
-    api.get(`/infrastructure/labs/${labName}`).then(res => res.data),
-  
-  getResearchFacilities: (search?: string): Promise<ApiResponse<ResearchFacility[]>> =>
-    api.get('/infrastructure/research', { params: { search } }).then(res => res.data),
-  
-  getLibrary: (): Promise<ApiResponse<any>> =>
-    api.get('/infrastructure/library').then(res => res.data),
-  
-  getComputerLabs: (): Promise<ApiResponse<any>> =>
-    api.get('/infrastructure/computer-labs').then(res => res.data),
-  
-  getStats: (): Promise<ApiResponse<InfrastructureStats>> =>
-    api.get('/infrastructure/stats').then(res => res.data),
+  getInfrastructure: async (): Promise<ApiResponse<Infrastructure[]>> => {
+    const response = await api.get('/infrastructure');
+    return response.data;
+  },
+
+  getLabs: async (): Promise<ApiResponse<Lab[]>> => {
+    const response = await api.get('/infrastructure/labs');
+    return response.data;
+  },
+
+  getResearchFacilities: async (): Promise<ApiResponse<ResearchFacility[]>> => {
+    const response = await api.get('/infrastructure/research');
+    return response.data;
+  },
 };
 
 // AI API
 export const aiApi = {
-  chat: (message: string, history: ChatMessage[] = []): Promise<ApiResponse<AIResponse>> =>
-    api.post('/ai/chat', { message, history }).then(res => res.data),
-  
-  getSuggestions: (query: string): Promise<ApiResponse<{ suggestions: string[] }>> =>
-    api.post('/ai/suggestions', { query }).then(res => res.data),
-  
-  getHelp: (): Promise<ApiResponse<any>> =>
-    api.get('/ai/help').then(res => res.data),
-};
+  chat: async (message: string, history: ChatMessage[] = []): Promise<ApiResponse<AIResponse>> => {
+    const response = await api.post('/ai/chat', {
+      message,
+      history: history.map(msg => ({
+        role: msg.role,
+        content: msg.content
+      }))
+    });
+    return response.data;
+  },
 
-// Health check
-export const healthApi = {
-  check: (): Promise<ApiResponse<any>> =>
-    api.get('/health').then(res => res.data),
+  getSuggestions: async (query: string): Promise<ApiResponse<string[]>> => {
+    const response = await api.post('/ai/suggestions', { query });
+    return response.data;
+  },
+
+  getHelp: async (): Promise<ApiResponse<any>> => {
+    const response = await api.get('/ai/help');
+    return response.data;
+  },
 };
 
 export default api;

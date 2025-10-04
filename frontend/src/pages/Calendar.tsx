@@ -4,7 +4,7 @@ import { Calendar, Clock, MapPin, Filter, ChevronRight } from 'lucide-react';
 import { calendarApi } from '../services/api';
 import { AcademicCalendar, Event } from '../types';
 
-const Calendar: React.FC = () => {
+const CalendarPage: React.FC = () => {
   const [selectedType, setSelectedType] = useState<string>('');
   const [selectedYear, setSelectedYear] = useState<string>('');
 
@@ -213,4 +213,4 @@ const Calendar: React.FC = () => {
   );
 };
 
-export default Calendar;
+export default CalendarPage;
