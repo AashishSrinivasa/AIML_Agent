@@ -1,249 +1,319 @@
-# AIML Department AI Agent
+# AIML Department AI Agent - BMSCE
 
-A comprehensive AI-powered assistant for the AIML department at BMSCE University. This application provides intelligent responses to queries about faculty, courses, academic calendar, and infrastructure through an advanced chat interface.
+A comprehensive AI-powered web application for the Artificial Intelligence and Machine Learning Department at B.M.S. College of Engineering. Features an intelligent chatbot (LIAM) powered by Google Gemini AI, faculty management, course catalog, academic calendar, and infrastructure information.
 
 ## 🚀 Features
 
-### Core Functionality
-- **AI-Powered Chat Interface**: Intelligent responses using OpenAI GPT integration
-- **Faculty Directory**: Comprehensive information about faculty members, their specializations, and research areas
-- **Course Catalog**: Detailed course information, prerequisites, and academic planning tools
-- **Academic Calendar**: Important dates, events, and examination schedules
-- **Infrastructure Explorer**: State-of-the-art labs, equipment, and research facilities
-- **Real-time Search**: Advanced filtering and search capabilities across all data
-
-### Technical Features
-- **Responsive Design**: Mobile-first approach with Tailwind CSS
-- **Type Safety**: Full TypeScript implementation
-- **Modern UI/UX**: Clean, intuitive interface with smooth animations
-- **API Integration**: RESTful API with comprehensive error handling
-- **Data Visualization**: Interactive charts and statistics
-- **Performance Optimized**: Efficient data loading and caching
+- **AI Chatbot (LIAM)**: Intelligent assistant powered by Google Gemini AI
+- **Faculty Directory**: Complete faculty information with search and filtering
+- **Course Catalog**: Comprehensive course details for all semesters (3rd to 8th)
+- **Academic Calendar**: Event management and academic schedule
+- **Infrastructure**: Department facilities and lab information
+- **Admin Panel**: Protected interface for managing department data
+- **Modern UI**: Gen Z aesthetic with glassmorphism and animations
+- **Responsive Design**: Works seamlessly on all devices
 
 ## 🛠️ Tech Stack
 
 ### Frontend
 - **React 18** with TypeScript
 - **Tailwind CSS** for styling
-- **React Query** for data fetching and caching
-- **React Router** for navigation
 - **Framer Motion** for animations
-- **Lucide React** for icons
+- **React Query** for data fetching
+- **React Router** for navigation
 - **React Hot Toast** for notifications
 
 ### Backend
-- **Node.js** with Express
-- **TypeScript** for type safety
-- **MongoDB** with Mongoose ODM
-- **OpenAI API** for AI responses
-- **Express Rate Limiting** for API protection
-- **Helmet** for security headers
-- **CORS** for cross-origin requests
+- **Node.js** with Express.js
+- **Google Gemini AI** for chatbot intelligence
+- **JSON file-based data storage**
+- **CORS enabled** for cross-origin requests
 
 ## 📋 Prerequisites
 
-- Node.js (v16 or higher)
-- MongoDB (v4.4 or higher)
-- OpenAI API key
-- npm or yarn package manager
+Before you begin, ensure you have the following installed:
+- **Node.js** (v16 or higher) - [Download here](https://nodejs.org/)
+- **npm** (comes with Node.js)
+- **Git** - [Download here](https://git-scm.com/)
+- **Google Cloud Account** with Gemini AI API access
 
-## 🚀 Getting Started
+## 🔧 Installation & Setup
 
-### 1. Clone the Repository
+### Step 1: Clone the Repository
+
 ```bash
-git clone <repository-url>
+git clone https://github.com/your-username/aiml-department-ai-agent.git
 cd aiml-department-ai-agent
 ```
 
-### 2. Backend Setup
+### Step 2: Install Dependencies
+
+#### Backend Dependencies
 ```bash
-cd backend
 npm install
 ```
 
-Create a `.env` file in the backend directory:
-```env
-MONGODB_URI=mongodb://localhost:27017/aiml_department
-OPENAI_API_KEY=your_openai_api_key_here
-OPENAI_MODEL=gpt-3.5-turbo
-PORT=5000
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-RATE_LIMIT_WINDOW_MS=900000
-RATE_LIMIT_MAX_REQUESTS=100
-```
-
-### 3. Frontend Setup
+#### Frontend Dependencies
 ```bash
 cd frontend
 npm install
+cd ..
 ```
 
-Create a `.env` file in the frontend directory:
+### Step 3: Environment Setup
+
+1. **Create a `.env` file in the root directory:**
+```bash
+touch .env
+```
+
+2. **Add your Google Gemini API key to the `.env` file:**
 ```env
-REACT_APP_API_URL=http://localhost:5000/api
+GEMINI_API_KEY=your_gemini_api_key_here
 ```
 
-### 4. Database Setup
-Start MongoDB service and seed the database:
+3. **Get your Gemini API key:**
+   - Go to [Google AI Studio](https://aistudio.google.com/)
+   - Create a new project or select existing one
+   - Generate an API key
+   - Copy the key and paste it in your `.env` file
+
+### Step 4: Verify File Structure
+
+Ensure your project structure looks like this:
+```
+aiml-department-ai-agent/
+├── frontend/
+│   ├── public/
+│   │   ├── logo.png
+│   │   └── assets/
+│   │       └── hod.png
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   └── ...
+│   └── package.json
+├── data/
+│   ├── comprehensive_faculty.json
+│   ├── comprehensive_courses.json
+│   ├── comprehensive_academic_calendar.json
+│   └── comprehensive_infrastructure.json
+├── ai-agent.js
+├── package.json
+├── .env
+└── README.md
+```
+
+## 🚀 Running the Application
+
+### Method 1: Using Terminal Commands
+
+1. **Start the AI Agent Server (Backend):**
 ```bash
-cd backend
-npm run seed
+node ai-agent.js
 ```
+The server will start on `http://localhost:5001`
 
-### 5. Start Development Servers
-
-Backend (Terminal 1):
-```bash
-cd backend
-npm run dev
-```
-
-Frontend (Terminal 2):
+2. **Start the Frontend (in a new terminal):**
 ```bash
 cd frontend
 npm start
 ```
+The frontend will start on `http://localhost:3000`
 
-### 6. Access the Application
-- Frontend: http://localhost:3000
-- Backend API: http://localhost:5000
-- Health Check: http://localhost:5000/health
+### Method 2: Using VS Code
 
-## 📚 API Documentation
+#### Step-by-Step VS Code Setup:
 
-### Faculty Endpoints
-- `GET /api/faculty` - Get all faculty members
-- `GET /api/faculty/:id` - Get faculty by ID
-- `GET /api/faculty/designation/:designation` - Get faculty by designation
-- `GET /api/faculty/specialization/:specialization` - Get faculty by specialization
-- `GET /api/faculty/stats/overview` - Get faculty statistics
+1. **Open VS Code:**
+   - Open VS Code
+   - Click `File` → `Open Folder`
+   - Select the `aiml-department-ai-agent` folder
 
-### Course Endpoints
-- `GET /api/courses` - Get all courses
-- `GET /api/courses/:id` - Get course by ID
-- `GET /api/courses/semester/:semester` - Get courses by semester
-- `GET /api/courses/instructor/:instructor` - Get courses by instructor
-- `GET /api/courses/stats/overview` - Get course statistics
+2. **Install VS Code Extensions (Recommended):**
+   - **ES7+ React/Redux/React-Native snippets**
+   - **Tailwind CSS IntelliSense**
+   - **TypeScript Importer**
+   - **Auto Rename Tag**
+   - **Bracket Pair Colorizer**
 
-### Calendar Endpoints
-- `GET /api/calendar` - Get academic calendar
-- `GET /api/calendar/events/:type` - Get events by type
-- `GET /api/calendar/upcoming` - Get upcoming events
-- `GET /api/calendar/exams` - Get examination schedule
+3. **Open Integrated Terminal:**
+   - Press `Ctrl+`` (backtick) or `Cmd+`` on Mac
+   - Or go to `Terminal` → `New Terminal`
 
-### Infrastructure Endpoints
-- `GET /api/infrastructure` - Get infrastructure details
-- `GET /api/infrastructure/labs` - Get labs information
-- `GET /api/infrastructure/research` - Get research facilities
-- `GET /api/infrastructure/stats` - Get infrastructure statistics
+4. **Start Backend Server:**
+   ```bash
+   node ai-agent.js
+   ```
+   - Keep this terminal open
+   - You should see: `🚀 AI Agent server running on port 5001`
 
-### AI Endpoints
-- `POST /api/ai/chat` - Chat with AI assistant
-- `POST /api/ai/suggestions` - Get AI suggestions
-- `GET /api/ai/help` - Get AI capabilities
+5. **Open New Terminal Tab:**
+   - Click the `+` button in the terminal panel
+   - Or press `Ctrl+Shift+`` (backtick)
 
-## 🎯 Usage Examples
+6. **Navigate to Frontend and Start:**
+   ```bash
+   cd frontend
+   npm start
+   ```
+   - This will open your browser automatically
+   - You should see: `Compiled successfully!`
 
-### Chat Interface
-Ask the AI assistant questions like:
-- "Who teaches Machine Learning?"
-- "What courses are available in 6th semester?"
-- "When are the mid-term exams?"
-- "What labs are available in the department?"
-- "Tell me about Dr. Rajesh Kumar's research areas"
+7. **Access the Application:**
+   - Open your browser
+   - Go to `http://localhost:3000`
 
-### Faculty Search
-- Search by name, specialization, or research area
-- Filter by designation (Professor, Associate Professor, etc.)
-- View detailed profiles with contact information
+## 🎯 Usage Guide
 
-### Course Browsing
-- Browse courses by semester
-- Check prerequisites and course descriptions
-- View instructor information and schedules
+### For Students:
+- **Home Page**: Overview and quick access to chat
+- **Faculty**: Browse and search faculty information
+- **Courses**: Explore course catalog by semester
+- **Calendar**: View academic events and schedules
+- **Infrastructure**: Check department facilities
+- **Chat**: Ask LIAM (AI assistant) any questions
 
-### Calendar Management
-- View upcoming events and deadlines
-- Check examination schedules
-- Filter events by type (academic, holiday, exam, etc.)
+### For Administrators:
+- **Admin Panel**: Access with password `Aashish@15`
+- **Add/Edit Faculty**: Manage faculty information
+- **Add/Edit Courses**: Update course details
+- **Data Management**: All changes are saved automatically
 
-## 🏗️ Project Structure
+## 🔧 Troubleshooting
+
+### Common Issues:
+
+1. **"Cannot read properties of undefined" errors:**
+   - Ensure both servers are running
+   - Check if API endpoints are accessible
+   - Restart both servers
+
+2. **Gemini API errors:**
+   - Verify your API key in `.env` file
+   - Check Google Cloud billing
+   - Ensure API is enabled in Google Cloud Console
+
+3. **Port already in use:**
+   ```bash
+   # Kill processes on ports 3000 and 5001
+   npx kill-port 3000
+   npx kill-port 5001
+   ```
+
+4. **Dependencies issues:**
+   ```bash
+   # Clear npm cache and reinstall
+   npm cache clean --force
+   rm -rf node_modules package-lock.json
+   npm install
+   ```
+
+5. **Images not loading:**
+   - Ensure `logo.png` and `hod.png` are in correct directories
+   - Check file permissions
+   - Restart the development server
+
+### VS Code Specific Issues:
+
+1. **TypeScript errors:**
+   - Press `Ctrl+Shift+P` → "TypeScript: Restart TS Server"
+
+2. **IntelliSense not working:**
+   - Reload VS Code window: `Ctrl+Shift+P` → "Developer: Reload Window"
+
+3. **Terminal not working:**
+   - Check if Node.js is in PATH
+   - Restart VS Code
+
+## 📁 Project Structure
 
 ```
 aiml-department-ai-agent/
-├── backend/
+├── frontend/                 # React frontend application
+│   ├── public/              # Static assets
+│   │   ├── logo.png         # BMSCE logo
+│   │   └── assets/
+│   │       └── hod.png      # HOD image
 │   ├── src/
-│   │   ├── controllers/     # Route controllers
-│   │   ├── models/         # MongoDB models
-│   │   ├── routes/         # API routes
-│   │   ├── services/       # Business logic
-│   │   ├── utils/          # Utility functions
-│   │   └── scripts/        # Database seeding
-│   ├── data/              # JSON data files
+│   │   ├── components/      # Reusable components
+│   │   │   ├── BMSCELogo.tsx
+│   │   │   ├── Navbar.tsx
+│   │   │   └── MarkdownRenderer.tsx
+│   │   ├── pages/           # Main application pages
+│   │   │   ├── Home.tsx
+│   │   │   ├── Chat.tsx
+│   │   │   ├── Faculty.tsx
+│   │   │   ├── Courses.tsx
+│   │   │   ├── Calendar.tsx
+│   │   │   ├── Infrastructure.tsx
+│   │   │   ├── About.tsx
+│   │   │   └── Admin.tsx
+│   │   ├── services/        # API services
+│   │   │   └── api.ts
+│   │   ├── App.tsx          # Main app component
+│   │   └── index.tsx        # Entry point
 │   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/     # React components
-│   │   ├── pages/         # Page components
-│   │   ├── services/      # API services
-│   │   ├── types/         # TypeScript types
-│   │   └── utils/         # Utility functions
-│   └── package.json
-└── README.md
+├── data/                    # JSON data files
+│   ├── comprehensive_faculty.json
+│   ├── comprehensive_courses.json
+│   ├── comprehensive_academic_calendar.json
+│   └── comprehensive_infrastructure.json
+├── ai-agent.js             # Main backend server
+├── package.json            # Backend dependencies
+├── .env                    # Environment variables
+└── README.md              # This file
 ```
 
-## 🔧 Development
+## 🔐 Admin Access
 
-### Adding New Features
-1. Create models in `backend/src/models/`
-2. Add routes in `backend/src/routes/`
-3. Implement services in `backend/src/services/`
-4. Create components in `frontend/src/components/`
-5. Add pages in `frontend/src/pages/`
+- **URL**: `http://localhost:3000/admin`
+- **Password**: `Aashish@15`
+- **Features**: Add, edit, delete faculty and courses
 
-### Database Management
-- Seed data: `npm run seed`
-- Clear data: Drop the MongoDB database
-- Update data: Modify JSON files in `data/` directory
+## 🌟 Key Features Explained
 
-## 🚀 Deployment
+### LIAM AI Assistant
+- Powered by Google Gemini AI
+- Context-aware responses
+- Department-specific knowledge
+- Natural conversation flow
 
-### Backend Deployment
-1. Build the project: `npm run build`
-2. Set production environment variables
-3. Deploy to your preferred platform (Heroku, AWS, etc.)
+### Modern UI Design
+- Glassmorphism effects
+- Smooth animations with Framer Motion
+- Responsive design
+- Gen Z aesthetic
 
-### Frontend Deployment
-1. Build the project: `npm run build`
-2. Deploy the `build` folder to your hosting service
-3. Update API URL in environment variables
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License.
+### Data Management
+- JSON-based storage
+- Real-time updates
+- Admin panel for content management
+- Search and filtering capabilities
 
 ## 📞 Support
 
-For support and questions:
-- Email: aiml@bmsce.ac.in
-- Create an issue in the repository
-- Use the AI chat interface for quick help
+If you encounter any issues:
+1. Check the troubleshooting section above
+2. Ensure all prerequisites are installed
+3. Verify your API keys are correct
+4. Check the console for error messages
 
-## 🔮 Future Enhancements
+## 🚀 Deployment
 
-- [ ] User authentication and profiles
-- [ ] Real-time notifications
-- [ ] Mobile app development
-- [ ] Advanced analytics dashboard
-- [ ] Integration with university systems
-- [ ] Multi-language support
-- [ ] Voice interface integration
+For production deployment:
+1. Build the frontend: `cd frontend && npm run build`
+2. Set up environment variables on your server
+3. Use a process manager like PM2 for the backend
+4. Configure your web server (nginx/Apache) for the frontend
+
+## 📄 License
+
+This project is created for educational purposes at B.M.S. College of Engineering.
+
+---
+
+**Happy Coding! 🎉**
+
+For any questions or issues, please refer to the troubleshooting section or check the project documentation.

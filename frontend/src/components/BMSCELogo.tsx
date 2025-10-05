@@ -62,7 +62,7 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
       {/* AI/ML Themed Icon */}
       <div className="relative">
         <motion.div
-          className={`${sizeClasses[size]} bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl`}
+          className={`${sizeClasses[size]} bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl relative overflow-hidden`}
           animate={{ 
             boxShadow: [
               "0 0 20px rgba(168, 85, 247, 0.4)",
@@ -72,7 +72,14 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
           }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          <Brain className="w-6 h-6 text-white" />
+          {/* BMSCE Logo with background */}
+          <div className="w-16 h-16 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+            <img 
+              src="/logo.png" 
+              alt="BMSCE Logo" 
+              className="w-14 h-14 object-contain"
+            />
+          </div>
         </motion.div>
         
         {/* Floating Elements */}
