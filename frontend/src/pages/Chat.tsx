@@ -68,11 +68,14 @@ const Chat: React.FC = () => {
   };
 
   const suggestedQuestions = [
-    "Who teaches Machine Learning?",
-    "What courses are available in 6th semester?",
-    "When are the mid-term exams?",
-    "What labs are available in the department?",
-    "Tell me about Dr. Rajesh Kumar's research areas"
+    "Who teaches Deep Learning?",
+    "What courses are available in semester 5?",
+    "Tell me about Dr. Monika Puttaramaiah's research",
+    "What labs are available for AI research?",
+    "When are the semester exams scheduled?",
+    "What equipment is available in ML Lab 1?",
+    "Who specializes in Natural Language Processing?",
+    "What are the prerequisites for Machine Learning course?"
   ];
 
   const handleSuggestionClick = (suggestion: string) => {
