@@ -17,7 +17,7 @@ app.use(express.json());
 const facultyData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_faculty.json'), 'utf8'));
 const courseData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_courses.json'), 'utf8'));
 const calendarData = [JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_academic_calendar.json'), 'utf8'))];
-const infrastructureData = [JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_infrastructure.json'), 'utf8'))];
+const infrastructureData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_infrastructure.json'), 'utf8'));
 
 // Advanced AI Agent Class
 class AdvancedAIAgent {
@@ -47,7 +47,7 @@ class AdvancedAIAgent {
         topics: this.extractCourseTopics()
       },
       infrastructure: {
-        data: infrastructureData[0],
+        data: infrastructureData,
         searchableText: this.createSearchableInfrastructureText(),
         labs: this.extractLabInformation(),
         equipment: this.extractEquipmentInformation()
@@ -99,7 +99,7 @@ class AdvancedAIAgent {
 
   // Create searchable text for infrastructure
   createSearchableInfrastructureText() {
-    const infra = infrastructureData[0];
+    const infra = infrastructureData;
     let searchText = '';
     
     if (infra.labs) {
@@ -196,13 +196,13 @@ class AdvancedAIAgent {
 
   // Extract lab information
   extractLabInformation() {
-    const infra = infrastructureData[0];
+    const infra = infrastructureData;
     return infra.labs || {};
   }
 
   // Extract equipment information
   extractEquipmentInformation() {
-    const infra = infrastructureData[0];
+    const infra = infrastructureData;
     const equipment = [];
     
     if (infra.labs) {
@@ -344,34 +344,35 @@ class AdvancedAIAgent {
   detectIntent(question, tokens) {
     const questionLower = question.toLowerCase();
     
-    // Faculty-related intents
-    if (this.matchesPattern(questionLower, ['who teaches', 'who is', 'faculty', 'professor', 'instructor', 'teacher'])) {
+    // Greeting patterns - more conversational
+    if (this.matchesPattern(questionLower, ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'what can you do', 'help me', 'start'])) {
+      return 'greeting';
+    }
+    
+    // Faculty-related intents - more conversational
+    if (this.matchesPattern(questionLower, ['who teaches', 'who is', 'faculty', 'professor', 'instructor', 'teacher', 'dr.', 'dr ', 'sir', 'ma\'am', 'mentor', 'guide', 'staff'])) {
       return 'faculty_search';
     }
     
-    // Course-related intents
-    if (this.matchesPattern(questionLower, ['course', 'subject', 'syllabus', 'curriculum', 'semester', 'credit'])) {
+    // Course-related intents - more conversational
+    if (this.matchesPattern(questionLower, ['course', 'subject', 'syllabus', 'curriculum', 'semester', 'credit', 'study', 'learn', 'class', 'lecture', 'module'])) {
       return 'course_search';
     }
     
-    // Infrastructure-related intents
-    if (this.matchesPattern(questionLower, ['lab', 'laboratory', 'equipment', 'infrastructure', 'facility', 'computer', 'hardware'])) {
+    // Infrastructure-related intents - more conversational (check this first)
+    if (this.matchesPattern(questionLower, ['lab', 'laboratory', 'equipment', 'infrastructure', 'facility', 'computer', 'hardware', 'available', 'what\'s in', 'what is in', 'machines', 'tools', 'setup', 'software', 'ml lab', 'machine learning lab', 'lab 1', 'lab 2', 'center of excellence'])) {
       return 'infrastructure_search';
     }
     
-    // Calendar-related intents
-    if (this.matchesPattern(questionLower, ['calendar', 'schedule', 'event', 'exam', 'holiday', 'date', 'time'])) {
+    // Calendar-related intents - more conversational
+    if (this.matchesPattern(questionLower, ['calendar', 'schedule', 'event', 'exam', 'holiday', 'date', 'time', 'timing', 'upcoming', 'deadline'])) {
       return 'calendar_search';
     }
     
-    // General information
-    if (this.matchesPattern(questionLower, ['what is', 'tell me about', 'explain', 'information', 'about'])) {
+    // General information (check this last to avoid conflicts)
+    if (this.matchesPattern(questionLower, ['what is', 'tell me about', 'explain', 'information', 'about']) && 
+        !this.matchesPattern(questionLower, ['lab', 'equipment', 'facility', 'infrastructure'])) {
       return 'general_info';
-    }
-    
-    // Greeting
-    if (this.matchesPattern(questionLower, ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening'])) {
-      return 'greeting';
     }
     
     return 'general_query';
@@ -641,10 +642,19 @@ class AdvancedAIAgent {
     
     if (infra.labs) {
       Object.entries(infra.labs).forEach(([key, lab]) => {
-        if (analysis.expanded.includes('lab') || analysis.expanded.includes('laboratory')) {
+        // Check for various infrastructure-related terms
+        const searchTerms = ['lab', 'laboratory', 'equipment', 'facility', 'infrastructure', 'computer', 'hardware', 'ml lab', 'machine learning lab'];
+        const hasMatch = searchTerms.some(term => analysis.expanded.includes(term));
+        
+        if (hasMatch) {
           results[key] = lab;
         }
       });
+    }
+    
+    // If no specific matches, return all labs for general infrastructure queries
+    if (Object.keys(results).length === 0 && infra.labs) {
+      return infra.labs;
     }
     
     return results;
@@ -713,13 +723,27 @@ class AdvancedAIAgent {
   // Build advanced prompt for Llama
   buildAdvancedPrompt(question, data, analysis) {
     let context = "";
-    let systemPrompt = "You are an advanced AI assistant for the AIML (Artificial Intelligence and Machine Learning) department at B.M.S. College of Engineering. You are knowledgeable, friendly, and conversational like ChatGPT. You have comprehensive access to faculty information, course details, infrastructure data, and academic calendar. Always provide helpful, accurate, and engaging responses. Be conversational, use natural language, and make the interaction feel like talking to a knowledgeable friend who works at the college. Use emojis occasionally to make responses more engaging, but keep them professional and relevant.";
-    
+    let systemPrompt = `You are Liam, an AI assistant for the AIML department at B.M.S. College of Engineering. You're friendly, conversational, and helpful - like talking to a knowledgeable friend who works at the college.
+
+IMPORTANT RESPONSE STYLE:
+- Be conversational and natural, not robotic
+- Use bullet points (•) for lists instead of paragraphs
+- Keep responses concise but informative
+- Ask follow-up questions to engage the user
+- Use emojis sparingly but appropriately
+- Sound like you're having a real conversation
+
+RESPONSE FORMAT:
+- Start with a friendly acknowledgment
+- Present information in clear bullet points
+- End with a helpful follow-up question or offer
+- Keep it under 150 words unless detailed info is needed`;
+
     // Add conversation context
     if (this.conversationContext.length > 1) {
-      context += "Previous conversation context:\n";
-      this.conversationContext.slice(-3).forEach(conv => {
-        context += `Q: ${conv.question}\n`;
+      context += "Recent conversation:\n";
+      this.conversationContext.slice(-2).forEach(conv => {
+        context += `User: ${conv.question}\n`;
       });
       context += "\n";
     }
@@ -728,96 +752,127 @@ class AdvancedAIAgent {
     switch (analysis.intent) {
       case 'faculty_search':
         if (data.faculty.length > 0) {
-          context += "Faculty Information:\n";
-          data.faculty.forEach(faculty => {
-            context += `- ${faculty.name} (${faculty.designation})\n`;
-            context += `  Specialization: ${Array.isArray(faculty.specialization) ? faculty.specialization.join(', ') : faculty.specialization || 'N/A'}\n`;
-            context += `  Research Areas: ${Array.isArray(faculty.researchAreas) ? faculty.researchAreas.join(', ') : faculty.researchAreas || 'N/A'}\n`;
-            context += `  Email: ${faculty.email || 'N/A'}\n\n`;
+          context += "Available faculty:\n";
+          data.faculty.slice(0, 5).forEach(faculty => {
+            context += `• ${faculty.name} (${faculty.designation})\n`;
+            context += `  - Specializes in: ${Array.isArray(faculty.specialization) ? faculty.specialization.slice(0, 3).join(', ') : faculty.specialization || 'General'}\n`;
+            context += `  - Email: ${faculty.email || 'Contact department'}\n\n`;
           });
         }
         break;
         
       case 'course_search':
         if (data.courses.length > 0) {
-          context += "Course Information:\n";
-          data.courses.forEach(course => {
-            context += `- ${course.name} (${course.code})\n`;
-            context += `  Semester: ${course.semester}\n`;
-            context += `  Instructor: ${course.instructor || 'N/A'}\n`;
-            context += `  Topics: ${Array.isArray(course.topics) ? course.topics.slice(0, 5).join(', ') : course.topics || 'N/A'}\n\n`;
+          context += "Available courses:\n";
+          data.courses.slice(0, 5).forEach(course => {
+            context += `• ${course.name} (${course.code})\n`;
+            context += `  - Semester: ${course.semester}\n`;
+            context += `  - Instructor: ${course.instructor || 'TBA'}\n\n`;
           });
         }
         break;
         
       case 'infrastructure_search':
         if (Object.keys(data.infrastructure).length > 0) {
-          context += "Infrastructure Information:\n";
+          context += "Available facilities:\n";
           Object.entries(data.infrastructure).forEach(([key, lab]) => {
-            context += `- ${lab.name}\n`;
-            context += `  Capacity: ${lab.capacity}\n`;
-            context += `  Description: ${lab.description || 'N/A'}\n\n`;
+            context += `• ${lab.name}\n`;
+            context += `  - Capacity: ${lab.capacity} students\n`;
+            if (lab.equipment && lab.equipment.length > 0) {
+              context += `  - Equipment: ${lab.equipment.slice(0, 3).join(', ')}\n`;
+            }
+            context += "\n";
           });
         }
         break;
         
       case 'calendar_search':
         if (data.calendar.events && data.calendar.events.length > 0) {
-          context += "Calendar Information:\n";
-          data.calendar.events.forEach(event => {
-            context += `- ${event.name} (${event.type})\n`;
-            context += `  Date: ${event.date}\n`;
-            context += `  Description: ${event.description || 'N/A'}\n\n`;
+          context += "Upcoming events:\n";
+          data.calendar.events.slice(0, 3).forEach(event => {
+            context += `• ${event.name} - ${event.date}\n`;
           });
         }
         break;
         
       case 'greeting':
-        context += "This is a greeting. Be warm, welcoming, and enthusiastic. Offer to help with information about the AIML department, faculty, courses, or any other questions they might have. Make them feel excited about learning more about the department.\n";
+        context += "User is greeting you. Be warm and enthusiastic. Offer specific help with department info.\n";
         break;
         
       default:
-        context += "General department information available about faculty, courses, infrastructure, and academic calendar.\n";
+        context += "User needs general help. Offer specific assistance with faculty, courses, or facilities.\n";
     }
     
-    return `${systemPrompt}\n\n${context}\n\nUser Question: ${question}\n\nProvide a helpful, engaging, and conversational response that feels natural and friendly. Make it sound like you're having a conversation with a student or visitor to the college. Be informative but also personable:`;
+    return `${systemPrompt}\n\n${context}\n\nUser: ${question}\n\nLiam:`;
   }
 
   // Generate fallback response
   generateFallbackResponse(question, data, analysis) {
+    const lowerQuestion = question.toLowerCase();
+    
     switch (analysis.intent) {
       case 'faculty_search':
         if (data.faculty.length > 0) {
-          const facultyList = data.faculty.slice(0, 5).map(f => 
-            `• ${f.name} (${f.designation}) - ${Array.isArray(f.specialization) ? f.specialization.slice(0, 2).join(', ') : f.specialization || 'General'}`
-          ).join('\n');
-          return `Here are the faculty members I found:\n\n${facultyList}\n\nWould you like more details about any specific faculty member?`;
+          const facultyList = data.faculty.slice(0, 4).map(f => 
+            `• ${f.name} (${f.designation})\n  - Specializes in: ${Array.isArray(f.specialization) ? f.specialization.slice(0, 2).join(', ') : f.specialization || 'General'}\n  - Email: ${f.email || 'Contact department'}`
+          ).join('\n\n');
+          
+          return `Great! I found some faculty members for you:\n\n${facultyList}\n\nWant to know more about any specific professor? Just ask! 😊`;
         }
-        return "I couldn't find specific faculty information for your query. Could you please rephrase your question or ask about a particular specialization?";
+        return "Hmm, I couldn't find faculty matching that. Try asking about specific specializations like 'machine learning faculty' or 'AI professors' - I'll help you find the right person! 🤔";
         
       case 'course_search':
         if (data.courses.length > 0) {
-          const courseList = data.courses.slice(0, 5).map(c => 
-            `• ${c.name} (${c.code}) - Semester ${c.semester}`
-          ).join('\n');
-          return `Here are the courses I found:\n\n${courseList}\n\nWould you like more details about any specific course?`;
+          const courseList = data.courses.slice(0, 4).map(c => 
+            `• ${c.name} (${c.code})\n  - Semester: ${c.semester}\n  - Instructor: ${c.instructor || 'TBA'}`
+          ).join('\n\n');
+          
+          return `Here are the courses I found:\n\n${courseList}\n\nNeed details about any specific course? I can tell you about topics, prerequisites, or more! 📚`;
         }
-        return "I couldn't find specific course information for your query. Could you please specify the semester or course name?";
+        return "I couldn't find courses matching that. Try asking about specific semesters like 'semester 5 courses' or course names like 'machine learning' - I'll help you out! 🎓";
         
       case 'infrastructure_search':
         if (Object.keys(data.infrastructure).length > 0) {
-          const labList = Object.values(data.infrastructure).slice(0, 3).map(lab => 
-            `• ${lab.name} - Capacity: ${lab.capacity}`
-          ).join('\n');
-          return `Here are the infrastructure facilities I found:\n\n${labList}\n\nWould you like more details about any specific lab or facility?`;
+          // Check if user is asking about a specific lab
+          const lowerQuestion = question.toLowerCase();
+          if (lowerQuestion.includes('ml lab 1') || lowerQuestion.includes('machine learning lab 1')) {
+            const mlLab1 = Object.values(data.infrastructure).find(lab => lab.name === 'Machine Learning Lab 1');
+            if (mlLab1) {
+              const equipmentList = mlLab1.equipment.map(eq => 
+                `• ${eq.name} (${eq.quantity} units)\n  - Specs: ${eq.specifications}`
+              ).join('\n\n');
+              
+              return `Perfect! Here's what's available in Machine Learning Lab 1:\n\n${equipmentList}\n\nNeed more details about any specific equipment? Just ask! 🔬`;
+            }
+          }
+          
+          const labList = Object.values(data.infrastructure).slice(0, 3).map(lab => {
+            let response = `• ${lab.name}\n  - Capacity: ${lab.capacity} students`;
+            if (lab.equipment && lab.equipment.length > 0) {
+              const equipmentNames = lab.equipment.slice(0, 3).map(eq => eq.name || eq).join(', ');
+              response += `\n  - Equipment: ${equipmentNames}`;
+            }
+            return response;
+          }).join('\n\n');
+          
+          return `Here's what we have available:\n\n${labList}\n\nWant to know more about any specific lab or equipment? Just ask! 🔬`;
         }
-        return "I couldn't find specific infrastructure information for your query. Could you please specify what type of facility you're looking for?";
+        return "I couldn't find specific facilities matching that. Try asking about 'labs', 'computer facilities', or 'research equipment' - I'll show you what's available! 🏢";
         
       case 'greeting':
-        return "Hello! I'm your AI assistant for the AIML department at BMSCE. I can help you with information about faculty, courses, infrastructure, and academic calendar. What would you like to know?";
+        return "Hey there! 👋 I'm Liam, your AI assistant for the AIML department at BMSCE. I can help you with:\n\n• Faculty information\n• Course details\n• Lab facilities\n• Academic calendar\n\nWhat would you like to explore today?";
         
       default:
-        return "I can help you with information about faculty, courses, infrastructure, and academic calendar at the AIML department. Could you please be more specific about what you'd like to know?";
+        if (lowerQuestion.includes('equipment') || lowerQuestion.includes('lab')) {
+          return "Looking for lab equipment? I can help you find what's available in our facilities! Try asking about specific labs like 'ML Lab 1 equipment' or 'computer lab facilities' 🔧";
+        }
+        if (lowerQuestion.includes('course') || lowerQuestion.includes('subject')) {
+          return "Interested in courses? I can show you what's available! Try asking about specific semesters or subjects like 'semester 6 courses' or 'AI subjects' 📖";
+        }
+        if (lowerQuestion.includes('professor') || lowerQuestion.includes('teacher')) {
+          return "Looking for faculty info? I can help you find professors by specialization! Try asking about 'machine learning professors' or 'AI faculty' 👨‍🏫";
+        }
+        return "I'm here to help! 😊 Try asking about:\n\n• Faculty members\n• Courses by semester\n• Lab facilities\n• Equipment available\n\nWhat interests you most?";
     }
   }
 
