@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useQuery } from 'react-query';
-import { Search, BookOpen, Clock, MapPin, User, Award, Calendar, Filter, ChevronDown, ChevronUp, GraduationCap, Code, Database, Calculator } from 'lucide-react';
+import { Search, BookOpen, Clock, MapPin, User, Award, Calendar, Filter, ChevronDown, ChevronUp, GraduationCap, Code, Calculator } from 'lucide-react';
 import { coursesApi } from '../services/api.ts';
 import { Course, CourseFilters } from '../types/index.ts';
 
@@ -86,9 +86,6 @@ const Courses: React.FC = () => {
     e.preventDefault();
   };
 
-  const handleFilterChange = (key: keyof CourseFilters, value: string | number) => {
-    setFilters({ ...filters, [key]: value || undefined });
-  };
 
   const clearFilters = () => {
     setFilters({});

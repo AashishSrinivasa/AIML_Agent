@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
-import { Send, Bot, User, Loader2, MessageCircle, ChevronDown } from 'lucide-react';
+import { Send, Bot, User, Loader2, MessageCircle } from 'lucide-react';
 import { useQuery } from 'react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { aiApi, facultyApi } from '../services/api.ts';
@@ -169,10 +169,6 @@ const Chat: React.FC = () => {
     "Who specializes in Natural Language Processing?",
     "What are the prerequisites for Machine Learning course?"
   ];
-
-  const handleSuggestionClick = (suggestion: string) => {
-    setInputMessage(suggestion);
-  };
 
   return (
     <motion.div 
