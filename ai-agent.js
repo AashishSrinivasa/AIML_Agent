@@ -250,8 +250,9 @@ RESPONSE:`;
       return text;
 
     } catch (error) {
-      console.log('Gemini error:', error.message);
-      console.log('Using fallback response');
+      console.log('❌ Gemini error:', error.message);
+      console.log('🔄 Using fallback response');
+      console.log('💡 Make sure your GEMINI_API_KEY is valid in .env file');
       return this.generateFallbackResponse(userMessage);
     }
   }
