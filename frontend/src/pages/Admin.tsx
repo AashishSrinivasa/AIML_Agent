@@ -20,17 +20,21 @@ import AdminAuth from '../components/AdminAuth.tsx';
 interface AdminData {
   faculty: any[];
   courses: any[];
-  infrastructure: any[];
+  infrastructure: any;
+  labs: any[];
+  researchFacilities: any[];
 }
 
 const Admin: React.FC = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [showAuth, setShowAuth] = useState(false);
-  const [activeTab, setActiveTab] = useState<'faculty' | 'courses' | 'infrastructure'>('faculty');
+  const [activeTab, setActiveTab] = useState<'faculty' | 'courses' | 'infrastructure' | 'labs' | 'research'>('faculty');
   const [data, setData] = useState<AdminData>({
     faculty: [],
     courses: [],
-    infrastructure: []
+    infrastructure: {},
+    labs: [],
+    researchFacilities: []
   });
   const [editingItem, setEditingItem] = useState<any>(null);
   const [isEditing, setIsEditing] = useState(false);
@@ -54,10 +58,13 @@ const Admin: React.FC = () => {
       const coursesData = await coursesRes.json();
       const infrastructureData = await infrastructureRes.json();
 
+      const infraData = infrastructureData.data?.[0] || {};
       setData({
         faculty: facultyData.data || [],
         courses: coursesData.data || [],
-        infrastructure: infrastructureData.data || []
+        infrastructure: infraData,
+        labs: infraData.labs || [],
+        researchFacilities: infraData.researchFacilities || []
       });
     } catch (error) {
       console.error('Error loading data:', error);
@@ -66,7 +73,7 @@ const Admin: React.FC = () => {
 
   const handleLogin = (username: string, password: string): boolean => {
     // Simple authentication - in production, this should be more secure
-    if (username === 'admin' && password === 'admin123') {
+    if (username === 'admin' && password === 'Aashish@15') {
       setIsAuthenticated(true);
       setShowAuth(false);
       return true;
@@ -76,7 +83,7 @@ const Admin: React.FC = () => {
 
   const handleLogout = () => {
     setIsAuthenticated(false);
-    setData({ faculty: [], courses: [], infrastructure: [] });
+    setData({ faculty: [], courses: [], infrastructure: {}, labs: [], researchFacilities: [] });
   };
 
   const handleEdit = (item: any) => {
@@ -191,7 +198,7 @@ const Admin: React.FC = () => {
                 <Building2 className="w-6 h-6 text-purple-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{data.infrastructure.length}</div>
+                <div className="text-2xl font-bold text-gray-900">{data.labs.length + data.researchFacilities.length}</div>
                 <div className="text-gray-600">Infrastructure Items</div>
               </div>
             </div>
@@ -205,7 +212,8 @@ const Admin: React.FC = () => {
               {[
                 { id: 'faculty', label: 'Faculty', icon: Users },
                 { id: 'courses', label: 'Courses', icon: BookOpen },
-                { id: 'infrastructure', label: 'Infrastructure', icon: Building2 }
+                { id: 'labs', label: 'Labs', icon: Building2 },
+                { id: 'research', label: 'Research Facilities', icon: Building2 }
               ].map((tab) => {
                 const Icon = tab.icon;
                 return (
@@ -261,40 +269,52 @@ const Admin: React.FC = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {data[activeTab].map((item: any, index: number) => (
-                    <tr key={item.id || index} className="hover:bg-gray-50">
-                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        {item.name || item.title || 'N/A'}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {activeTab === 'faculty' ? item.designation : 
-                         activeTab === 'courses' ? item.code : 
-                         item.type || 'N/A'}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        {activeTab === 'faculty' ? 
-                          (Array.isArray(item.specialization) ? item.specialization.join(', ') : item.specialization) :
-                         activeTab === 'courses' ? item.semester :
-                         item.location || 'N/A'}
-                      </td>
-                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <div className="flex justify-end space-x-2">
-                          <button
-                            onClick={() => handleEdit(item)}
-                            className="text-blue-600 hover:text-blue-900 transition-colors duration-200"
-                          >
-                            <Edit className="w-4 h-4" />
-                          </button>
-                          <button
-                            onClick={() => handleDelete(item.id, activeTab)}
-                            className="text-red-600 hover:text-red-900 transition-colors duration-200"
-                          >
-                            <Trash2 className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
+                  {(() => {
+                    let currentData = [];
+                    if (activeTab === 'faculty') currentData = data.faculty;
+                    else if (activeTab === 'courses') currentData = data.courses;
+                    else if (activeTab === 'labs') currentData = data.labs;
+                    else if (activeTab === 'research') currentData = data.researchFacilities;
+                    
+                    return currentData.map((item: any, index: number) => (
+                      <tr key={item.id || index} className="hover:bg-gray-50">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          {item.name || item.title || 'N/A'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          {activeTab === 'faculty' ? item.designation : 
+                           activeTab === 'courses' ? item.code : 
+                           activeTab === 'labs' ? item.capacity :
+                           activeTab === 'research' ? item.capacity :
+                           'N/A'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          {activeTab === 'faculty' ? 
+                            (Array.isArray(item.specialization) ? item.specialization.join(', ') : item.specialization) :
+                           activeTab === 'courses' ? item.semester :
+                           activeTab === 'labs' ? item.location :
+                           activeTab === 'research' ? item.description?.substring(0, 50) + '...' :
+                           'N/A'}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <div className="flex justify-end space-x-2">
+                            <button
+                              onClick={() => handleEdit(item)}
+                              className="text-blue-600 hover:text-blue-900 transition-colors duration-200"
+                            >
+                              <Edit className="w-4 h-4" />
+                            </button>
+                            <button
+                              onClick={() => handleDelete(item.id, activeTab)}
+                              className="text-red-600 hover:text-red-900 transition-colors duration-200"
+                            >
+                              <Trash2 className="w-4 h-4" />
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    ));
+                  })()}
                 </tbody>
               </table>
             </div>
@@ -322,7 +342,7 @@ const Admin: React.FC = () => {
               </button>
             </div>
 
-            <div className="space-y-4">
+            <div className="space-y-4 max-h-96 overflow-y-auto">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-2">
                   Name
@@ -350,12 +370,100 @@ const Admin: React.FC = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Qualification
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.qualification || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, qualification: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
                       Email
                     </label>
                     <input
                       type="email"
                       value={editingItem.email || ''}
                       onChange={(e) => setEditingItem({ ...editingItem, email: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phone
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.phone || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, phone: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Office
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.office || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, office: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Office Hours
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.officeHours || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, officeHours: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Experience
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.experience || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, experience: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Publications
+                    </label>
+                    <input
+                      type="number"
+                      value={editingItem.publications || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, publications: parseInt(e.target.value) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Specialization (comma-separated)
+                    </label>
+                    <input
+                      type="text"
+                      value={Array.isArray(editingItem.specialization) ? editingItem.specialization.join(', ') : editingItem.specialization || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, specialization: e.target.value.split(',').map(s => s.trim()) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Research Areas (comma-separated)
+                    </label>
+                    <input
+                      type="text"
+                      value={Array.isArray(editingItem.researchAreas) ? editingItem.researchAreas.join(', ') : editingItem.researchAreas || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, researchAreas: e.target.value.split(',').map(s => s.trim()) })}
                       className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -383,6 +491,104 @@ const Admin: React.FC = () => {
                       type="number"
                       value={editingItem.credits || ''}
                       onChange={(e) => setEditingItem({ ...editingItem, credits: parseInt(e.target.value) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Semester
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.semester || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, semester: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Instructor
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.instructor || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, instructor: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Description
+                    </label>
+                    <textarea
+                      value={editingItem.description || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, description: e.target.value })}
+                      rows={3}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'labs' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Capacity
+                    </label>
+                    <input
+                      type="number"
+                      value={editingItem.capacity || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, capacity: parseInt(e.target.value) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Location
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.location || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, location: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Availability
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.availability || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, availability: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'research' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Capacity
+                    </label>
+                    <input
+                      type="number"
+                      value={editingItem.capacity || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, capacity: parseInt(e.target.value) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Description
+                    </label>
+                    <textarea
+                      value={editingItem.description || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, description: e.target.value })}
+                      rows={3}
                       className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>

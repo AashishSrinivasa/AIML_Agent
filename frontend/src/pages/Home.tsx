@@ -55,8 +55,8 @@ const Home: React.FC = () => {
   ];
 
   const stats = [
-    { label: 'Faculty Members', value: '5+', icon: Users },
-    { label: 'Courses Available', value: '5+', icon: BookOpen },
+    { label: 'Faculty Members', value: '20+', icon: Users },
+    { label: 'Courses Available', value: '25+', icon: BookOpen },
     { label: 'Research Areas', value: '15+', icon: TrendingUp },
     { label: 'Labs & Facilities', value: '10+', icon: Building2 }
   ];
@@ -89,7 +89,7 @@ const Home: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              AIML Department
+              Mr.LIAM
               <span className="block text-yellow-300">AI Assistant</span>
             </motion.h1>
             <motion.p 

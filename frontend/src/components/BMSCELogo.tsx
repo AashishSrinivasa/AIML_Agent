@@ -56,12 +56,12 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
         fill="#1a1a1a"
       />
       
-      {/* Text around the circle */}
+      {/* Text around the circle - Bright Blue */}
       <text
         x="50"
         y="35"
         textAnchor="middle"
-        className="fill-white font-bold"
+        className="fill-blue-400 font-bold"
         fontSize="6"
         fontWeight="bold"
       >
@@ -71,7 +71,7 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
         x="50"
         y="65"
         textAnchor="middle"
-        className="fill-white font-bold"
+        className="fill-blue-400 font-bold"
         fontSize="5"
         fontWeight="bold"
       >
@@ -81,13 +81,22 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
       {/* Red dots as separators */}
       <circle cx="25" cy="50" r="1.5" fill="#dc2626" />
       <circle cx="75" cy="50" r="1.5" fill="#dc2626" />
+      <circle cx="50" y="60" r="1" fill="white" />
       
-      {/* Central Blue Circle */}
+      {/* Central Blue Circle - Divided into sky and water */}
+      <defs>
+        <linearGradient id="skyWater" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stopColor="#1e40af" />
+          <stop offset="50%" stopColor="#1e40af" />
+          <stop offset="50%" stopColor="#3b82f6" />
+          <stop offset="100%" stopColor="#60a5fa" />
+        </linearGradient>
+      </defs>
       <circle
         cx="50"
         cy="50"
         r="25"
-        fill="#1e40af"
+        fill="url(#skyWater)"
       />
       
       {/* Bridge */}
@@ -104,17 +113,20 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
         <path d="M-8,-3 Q0,0 8,-3" stroke="#1e3a8a" strokeWidth="0.5" fill="none" />
         <path d="M-8,-1 Q0,2 8,-1" stroke="#1e3a8a" strokeWidth="0.5" fill="none" />
         
-        {/* Water lines below bridge */}
-        <rect x="-12" y="6" width="24" height="0.5" fill="#3b82f6" />
-        <rect x="-12" y="7" width="24" height="0.5" fill="#3b82f6" />
-        <rect x="-12" y="8" width="24" height="0.5" fill="#3b82f6" />
+        {/* Water ripples */}
+        <rect x="-12" y="8" width="24" height="0.5" fill="#93c5fd" />
+        <rect x="-12" y="9" width="24" height="0.5" fill="#93c5fd" />
+        <rect x="-12" y="10" width="24" height="0.5" fill="#93c5fd" />
+        <rect x="-12" y="11" width="24" height="0.5" fill="#93c5fd" />
       </g>
       
-      {/* Lightning Bolt/Arrow */}
+      {/* Red Lightning Bolt with White Outline */}
       <g transform="translate(50, 50)">
         <path
           d="M-15,10 L-5,-5 L0,0 L5,-10 L15,5 L10,10 L5,5 L0,0 L-5,15 Z"
           fill="#dc2626"
+          stroke="white"
+          strokeWidth="0.5"
         />
       </g>
       

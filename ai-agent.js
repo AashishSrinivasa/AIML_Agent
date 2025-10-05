@@ -706,7 +706,7 @@ class AdvancedAIAgent {
   // Build advanced prompt for Llama
   buildAdvancedPrompt(question, data, analysis) {
     let context = "";
-    let systemPrompt = "You are an intelligent AI assistant for the AIML (Artificial Intelligence and Machine Learning) department at B.M.S. College of Engineering. You have comprehensive knowledge about faculty, courses, infrastructure, and academic calendar. Provide helpful, accurate, and conversational responses.";
+    let systemPrompt = "You are an advanced AI assistant for the AIML (Artificial Intelligence and Machine Learning) department at B.M.S. College of Engineering. You are knowledgeable, friendly, and conversational like ChatGPT. You have comprehensive access to faculty information, course details, infrastructure data, and academic calendar. Always provide helpful, accurate, and engaging responses. Be conversational, use natural language, and make the interaction feel like talking to a knowledgeable friend who works at the college. Use emojis occasionally to make responses more engaging, but keep them professional and relevant.";
     
     // Add conversation context
     if (this.conversationContext.length > 1) {
@@ -766,14 +766,14 @@ class AdvancedAIAgent {
         break;
         
       case 'greeting':
-        context += "This is a greeting. Be warm and welcoming, and offer to help with information about the AIML department.\n";
+        context += "This is a greeting. Be warm, welcoming, and enthusiastic. Offer to help with information about the AIML department, faculty, courses, or any other questions they might have. Make them feel excited about learning more about the department.\n";
         break;
         
       default:
         context += "General department information available about faculty, courses, infrastructure, and academic calendar.\n";
     }
     
-    return `${systemPrompt}\n\n${context}\n\nUser Question: ${question}\n\nProvide a helpful, conversational response:`;
+    return `${systemPrompt}\n\n${context}\n\nUser Question: ${question}\n\nProvide a helpful, engaging, and conversational response that feels natural and friendly. Make it sound like you're having a conversation with a student or visitor to the college. Be informative but also personable:`;
   }
 
   // Generate fallback response
