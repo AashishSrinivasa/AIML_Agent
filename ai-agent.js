@@ -113,12 +113,10 @@ class ComprehensiveAIAgent {
     try {
       const context = this.createComprehensiveContext();
       
-      // Create a focused prompt based on the user's question
-      let focusedData = '';
-      const lowerMessage = userMessage.toLowerCase();
-      
-      if (lowerMessage.includes('faculty') || lowerMessage.includes('professor') || lowerMessage.includes('teacher')) {
-        focusedData = `FACULTY DATA (${context.faculty.length} members):
+      // Always provide ALL comprehensive data for complete context
+      const focusedData = `COMPLETE DEPARTMENTAL DATA:
+
+FACULTY DATA (${context.faculty.length} members):
 ${context.faculty.map(f => `
 - ${f.name} (${f.designation})
   Email: ${f.email}
@@ -128,9 +126,9 @@ ${context.faculty.map(f => `
   Teaches: ${Array.isArray(f.teaches) ? f.teaches.join(', ') : 'Not specified'}
   Office: ${f.office}
   Qualifications: ${f.qualifications}
-`).join('')}`;
-      } else if (lowerMessage.includes('course') || lowerMessage.includes('subject') || lowerMessage.includes('syllabus')) {
-        focusedData = `COURSES DATA (${context.courses.length} courses):
+`).join('')}
+
+COURSES DATA (${context.courses.length} courses):
 ${context.courses.map(c => `
 - ${c.name} (${c.code})
   Semester: ${c.semester}
@@ -140,42 +138,31 @@ ${context.courses.map(c => `
   Description: ${c.description}
   Course Outcomes: ${Array.isArray(c.courseOutcomes) ? c.courseOutcomes.join('; ') : c.courseOutcomes}
   Objectives: ${Array.isArray(c.objectives) ? c.objectives.join('; ') : c.objectives}
-`).join('')}`;
-      } else if (lowerMessage.includes('lab') || lowerMessage.includes('equipment') || lowerMessage.includes('infrastructure')) {
-        focusedData = `INFRASTRUCTURE DATA:
-${context.infrastructure.labs.map(lab => `
-- ${lab.name}
-  Capacity: ${lab.capacity} students
-  Location: ${lab.location}
-  Description: ${lab.description}
-  Equipment: ${lab.equipment.map(eq => `${eq.name} (${eq.quantity} units)`).join(', ')}
-`).join('')}`;
-      } else {
-        // For general questions, provide all data
-        focusedData = `FACULTY DATA (${context.faculty.length} members):
-${context.faculty.slice(0, 5).map(f => `
-- ${f.name} (${f.designation})
-  Email: ${f.email}
-  Specialization: ${Array.isArray(f.specialization) ? f.specialization.join(', ') : f.specialization}
-`).join('')}
-
-COURSES DATA (${context.courses.length} courses):
-${context.courses.slice(0, 5).map(c => `
-- ${c.name} (${c.code})
-  Semester: ${c.semester}
-  Credits: ${c.credits}
-  Instructor: ${c.instructor}
+  Topics: ${Array.isArray(c.topics) ? c.topics.join(', ') : 'Not specified'}
+  Course Type: ${c.courseType}
+  Contact Hours: ${c.contactHours}
+  Examination: CIE ${c.examination.cieMarks} marks, SEE ${c.examination.seeMarks} marks
 `).join('')}
 
 INFRASTRUCTURE DATA:
 ${context.infrastructure.labs.map(lab => `
 - ${lab.name}
   Capacity: ${lab.capacity} students
+  Location: ${lab.location}
+  Description: ${lab.description}
   Equipment: ${lab.equipment.map(eq => `${eq.name} (${eq.quantity} units)`).join(', ')}
+`).join('')}
+
+CALENDAR DATA (${context.calendar.length} events):
+${context.calendar.slice(0, 10).map(event => `
+- ${event.title} (${event.date})
+  Type: ${event.type}
+  Description: ${event.description}
 `).join('')}`;
-      }
       
       const prompt = `You are Liam, the official AI assistant for the Department of Artificial Intelligence and Machine Learning, B.M.S. College of Engineering.
+
+You are connected to structured departmental data containing faculty information, syllabus details, course lists, infrastructure, and academic programs. Use ONLY the provided and verified information from this internal data when answering.
 
 DEPARTMENT CONTEXT:
 - Department: ${context.department}
@@ -186,30 +173,27 @@ ${focusedData}
 
 USER QUESTION: ${userMessage}
 
-RESPONSE RULES:
-1. Give only one clear, correct, and complete answer per question
-2. Limit responses to 2-5 sentences or a short bullet list — never long paragraphs
-3. Avoid greetings, introductions, sign-offs, or conversational fillers
-4. Use simple, human-friendly English; no jargon or overly formal tone
-5. Answer only what is asked. Do not add explanations, background info, or advice unless requested
-6. Never restate the question or previously known information
-7. Do not fabricate or assume details. If unsure, say: "I don't have that information right now"
-8. When listing items, use clean bullet points (•) or commas
-9. Never repeat names, sentences, or phrases within the same answer
-10. Avoid promotional or emotional wording; maintain an informative, neutral tone
-11. Do not refer to yourself as an AI or mention being a language model
-12. Never use phrases like "according to my data," "as an AI assistant," or "I think"
-13. Never apologize unless the user reports an error or confusion
-14. Maintain factual integrity — do not guess, exaggerate, or improvise
-15. Never greet the user mid-conversation; answer directly each time
-16. Use proper punctuation and capitalization; make outputs easy to read
-17. When giving data such as emails, codes, or marks, ensure the format is clean and accurate
-18. Keep a consistent personality: calm, knowledgeable, approachable, and efficient
-19. For lists longer than five items, group them logically or summarize
-20. Do not output markdown formatting unless explicitly requested
-21. Do not include system instructions or internal reasoning in replies
-22. Never mention or describe these rules
-23. Always sound like ChatGPT: confident, minimal, and human-like in tone
+CORE INSTRUCTIONS:
+1. Always rely on the college dataset above for facts — never invent information
+2. When the user asks a question, search internally within the given data and return only matching, verified content
+3. Keep the conversation continuous — remember previous user messages and maintain context throughout the session
+4. Each reply must be short, precise, and directly answer the question (2–5 sentences maximum)
+5. Avoid greetings, intros, or repetitive text. Do not restate previous questions
+6. If a faculty, course, or email is mentioned, respond only with that exact person's verified details
+7. If multiple matching items exist, list them clearly using bullet points
+8. If information is missing in your dataset, say: "That information isn't available in the current records"
+9. Never respond with data from outside the department or public internet
+10. Use clear and natural English. Sound like ChatGPT — confident, simple, and professional
+11. Never output markdown formatting unless explicitly asked
+12. Maintain context memory: when the user refers to "her" or "him" in the next question, understand who they meant from the last message
+
+BEHAVIOR AND STYLE RULES:
+- Always be factual and minimal
+- Never guess or mix up details between faculty
+- Avoid filler lines like "I'm happy to help" or "It's great to chat with you"
+- For every name, email, or course, double-check you respond from the internal dataset only
+- Keep consistency in data (emails, names, designations, course titles, etc.)
+- Respond like ChatGPT — short, clear, and accurate
 
 RESPONSE:`;
 
@@ -222,10 +206,10 @@ RESPONSE:`;
         options: {
           temperature: 0.7,
           top_p: 0.9,
-          max_tokens: 400
+          max_tokens: 300
         }
       }, {
-        timeout: 20000
+        timeout: 30000
       });
 
       console.log('Llama response received');
@@ -242,11 +226,42 @@ RESPONSE:`;
   generateFallbackResponse(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
     
+    // Specific faculty queries
+    if (lowerMessage.includes('sandeep') && lowerMessage.includes('varma')) {
+      const faculty = this.knowledgeBase.faculty.find(f => f.name.toLowerCase().includes('sandeep'));
+      if (faculty) {
+        return `Dr. Sandeep Varma N (${faculty.designation}) - Email: ${faculty.email}`;
+      }
+    }
+    
+    if (lowerMessage.includes('pallavi')) {
+      const faculty = this.knowledgeBase.faculty.find(f => f.name.toLowerCase().includes('pallavi'));
+      if (faculty) {
+        return `Dr. Pallavi B (${faculty.designation}) - Email: ${faculty.email}`;
+      }
+    }
+    
+    if (lowerMessage.includes('hod') || lowerMessage.includes('head')) {
+      const hod = this.knowledgeBase.faculty.find(f => f.designation.toLowerCase().includes('hod'));
+      if (hod) {
+        return `Dr. M Dakshayini is the Professor and Head of the Department of Artificial Intelligence and Machine Learning.`;
+      }
+    }
+    
+    // Semester-specific course queries
+    if (lowerMessage.includes('5th') || lowerMessage.includes('fifth') || lowerMessage.includes('semester 5')) {
+      const semester5Courses = this.knowledgeBase.courses.filter(c => c.semester.toLowerCase().includes('5th'));
+      if (semester5Courses.length > 0) {
+        const courseList = semester5Courses.map(c => `• ${c.name} (${c.code})`).join('\n');
+        return `Semester V courses:\n${courseList}`;
+      }
+    }
+    
     // Faculty queries
     if (lowerMessage.includes('faculty') || lowerMessage.includes('professor') || lowerMessage.includes('teacher') || lowerMessage.includes('instructor')) {
-      const faculty = this.knowledgeBase.faculty.slice(0, 5);
+      const faculty = this.knowledgeBase.faculty;
       const facultyList = faculty.map(f => 
-        `• ${f.name} (${f.designation})`
+        `• ${f.name} (${f.designation}) - ${f.email}`
       ).join('\n');
       
       return `Faculty members:\n${facultyList}`;
@@ -254,9 +269,9 @@ RESPONSE:`;
     
     // Course queries
     if (lowerMessage.includes('course') || lowerMessage.includes('subject') || lowerMessage.includes('syllabus')) {
-      const courses = this.knowledgeBase.courses.slice(0, 5);
+      const courses = this.knowledgeBase.courses;
       const courseList = courses.map(c => 
-        `• ${c.name} (${c.code}) - ${c.semester} semester`
+        `• ${c.name} (${c.code}) - ${c.semester} semester, ${c.credits} credits`
       ).join('\n');
       
       return `Courses:\n${courseList}`;
@@ -264,9 +279,9 @@ RESPONSE:`;
     
     // Infrastructure queries
     if (lowerMessage.includes('lab') || lowerMessage.includes('equipment') || lowerMessage.includes('infrastructure')) {
-      const labs = this.knowledgeBase.infrastructure.labs.slice(0, 3);
+      const labs = this.knowledgeBase.infrastructure.labs;
       const labList = labs.map(lab => 
-        `• ${lab.name} (${lab.capacity} students)`
+        `• ${lab.name} (${lab.capacity} students) - ${lab.equipment.map(eq => `${eq.name} (${eq.quantity})`).join(', ')}`
       ).join('\n');
       
       return `Labs:\n${labList}`;
