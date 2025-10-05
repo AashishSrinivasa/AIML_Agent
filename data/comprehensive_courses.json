@@ -387,7 +387,9 @@
     "name": "Mathematical Foundation for Machine Learning – 2",
     "credits": 3,
     "semester": "4th",
-    "prerequisites": ["Mathematical Foundations for Machine Learning"],
+    "prerequisites": [
+      "Mathematical Foundations for Machine Learning"
+    ],
     "description": "Advanced mathematical foundations for machine learning.",
     "instructor": "Mathematics Faculty",
     "schedule": "TBD",
@@ -449,7 +451,10 @@
     "name": "Introduction to Machine Learning",
     "credits": 4,
     "semester": "4th",
-    "prerequisites": ["Mathematical Foundations for Machine Learning", "Data Structures"],
+    "prerequisites": [
+      "Mathematical Foundations for Machine Learning",
+      "Data Structures"
+    ],
     "description": "Introduction to machine learning algorithms and applications.",
     "instructor": "Dr. Monika Puttaramaiah",
     "schedule": "TBD",
@@ -503,7 +508,9 @@
     "name": "Algorithms and Data Structures",
     "credits": 4,
     "semester": "4th",
-    "prerequisites": ["Data Structures"],
+    "prerequisites": [
+      "Data Structures"
+    ],
     "description": "Advanced algorithms and data structures for efficient problem solving.",
     "instructor": "Computer Science Faculty",
     "schedule": "TBD",
@@ -556,7 +563,9 @@
     "name": "Operating Systems",
     "credits": 3,
     "semester": "4th",
-    "prerequisites": ["Computer Organization and Architecture"],
+    "prerequisites": [
+      "Computer Organization and Architecture"
+    ],
     "description": "Operating system concepts and design principles.",
     "instructor": "Computer Science Faculty",
     "schedule": "TBD",
@@ -609,7 +618,9 @@
     "name": "Computer Networks",
     "credits": 3,
     "semester": "4th",
-    "prerequisites": ["Computer Organization and Architecture"],
+    "prerequisites": [
+      "Computer Organization and Architecture"
+    ],
     "description": "Computer network protocols and architecture.",
     "instructor": "Computer Science Faculty",
     "schedule": "TBD",
@@ -662,7 +673,10 @@
     "name": "Deep Learning Fundamentals",
     "credits": 4,
     "semester": "5th",
-    "prerequisites": ["Introduction to Machine Learning", "Mathematical Foundation for Machine Learning – 2"],
+    "prerequisites": [
+      "Introduction to Machine Learning",
+      "Mathematical Foundation for Machine Learning – 2"
+    ],
     "description": "Introduction to deep learning and neural networks.",
     "instructor": "Dr. Sandeep Varma N",
     "schedule": "TBD",
@@ -716,7 +730,10 @@
     "name": "Natural Language Processing",
     "credits": 4,
     "semester": "5th",
-    "prerequisites": ["Introduction to Machine Learning", "Deep Learning Fundamentals"],
+    "prerequisites": [
+      "Introduction to Machine Learning",
+      "Deep Learning Fundamentals"
+    ],
     "description": "Natural language processing techniques and applications.",
     "instructor": "Dr. Monika Puttaramaiah",
     "schedule": "TBD",
@@ -770,7 +787,9 @@
     "name": "Computer Vision",
     "credits": 4,
     "semester": "5th",
-    "prerequisites": ["Deep Learning Fundamentals"],
+    "prerequisites": [
+      "Deep Learning Fundamentals"
+    ],
     "description": "Computer vision algorithms and applications.",
     "instructor": "Dr. Seemanthini K",
     "schedule": "TBD",
@@ -824,7 +843,10 @@
     "name": "Data Science and Analytics",
     "credits": 4,
     "semester": "5th",
-    "prerequisites": ["Introduction to Machine Learning", "Database Management Systems"],
+    "prerequisites": [
+      "Introduction to Machine Learning",
+      "Database Management Systems"
+    ],
     "description": "Data science methodologies and analytics techniques.",
     "instructor": "Dr. BHAVYASHREE H L",
     "schedule": "TBD",
@@ -878,7 +900,9 @@
     "name": "Advanced Deep Learning",
     "credits": 4,
     "semester": "6th",
-    "prerequisites": ["Deep Learning Fundamentals"],
+    "prerequisites": [
+      "Deep Learning Fundamentals"
+    ],
     "description": "Advanced deep learning architectures and techniques.",
     "instructor": "Dr. Sandeep Varma N",
     "schedule": "TBD",
@@ -932,7 +956,10 @@
     "name": "Machine Learning Lab",
     "credits": 2,
     "semester": "6th",
-    "prerequisites": ["Introduction to Machine Learning", "Deep Learning Fundamentals"],
+    "prerequisites": [
+      "Introduction to Machine Learning",
+      "Deep Learning Fundamentals"
+    ],
     "description": "Practical implementation of machine learning algorithms.",
     "instructor": "Dr. Sowmya Lakshmi B S",
     "schedule": "TBD",
@@ -982,7 +1009,10 @@
     "name": "Machine Learning Project",
     "credits": 3,
     "semester": "6th",
-    "prerequisites": ["Advanced Deep Learning", "Machine Learning Lab"],
+    "prerequisites": [
+      "Advanced Deep Learning",
+      "Machine Learning Lab"
+    ],
     "description": "Capstone project in machine learning.",
     "instructor": "Dr. Monika Puttaramaiah",
     "schedule": "TBD",
@@ -1020,7 +1050,10 @@
     "name": "Advanced Machine Learning",
     "credits": 4,
     "semester": "7th",
-    "prerequisites": ["Advanced Deep Learning", "Machine Learning Project"],
+    "prerequisites": [
+      "Advanced Deep Learning",
+      "Machine Learning Project"
+    ],
     "description": "Advanced machine learning techniques and research topics.",
     "instructor": "Dr. Sandeep Varma N",
     "schedule": "TBD",
@@ -1074,7 +1107,10 @@
     "name": "Deep Learning for Computer Vision",
     "credits": 4,
     "semester": "7th",
-    "prerequisites": ["Computer Vision", "Advanced Deep Learning"],
+    "prerequisites": [
+      "Computer Vision",
+      "Advanced Deep Learning"
+    ],
     "description": "Advanced deep learning techniques for computer vision applications.",
     "instructor": "Dr. Seemanthini K",
     "schedule": "TBD",
@@ -1128,7 +1164,10 @@
     "name": "Deep Learning for NLP",
     "credits": 4,
     "semester": "7th",
-    "prerequisites": ["Natural Language Processing", "Advanced Deep Learning"],
+    "prerequisites": [
+      "Natural Language Processing",
+      "Advanced Deep Learning"
+    ],
     "description": "Advanced deep learning techniques for natural language processing.",
     "instructor": "Dr. Monika Puttaramaiah",
     "schedule": "TBD",
@@ -1182,7 +1221,10 @@
     "name": "Big Data Analytics",
     "credits": 4,
     "semester": "7th",
-    "prerequisites": ["Data Science and Analytics", "Database Management Systems"],
+    "prerequisites": [
+      "Data Science and Analytics",
+      "Database Management Systems"
+    ],
     "description": "Big data processing and analytics techniques.",
     "instructor": "Dr. BHAVYASHREE H L",
     "schedule": "TBD",
@@ -1236,7 +1278,11 @@
     "name": "Thesis Project - Phase 1",
     "credits": 6,
     "semester": "8th",
-    "prerequisites": ["Advanced Machine Learning", "Deep Learning for Computer Vision", "Deep Learning for NLP"],
+    "prerequisites": [
+      "Advanced Machine Learning",
+      "Deep Learning for Computer Vision",
+      "Deep Learning for NLP"
+    ],
     "description": "First phase of final year thesis project in AI/ML.",
     "instructor": "Thesis Supervisor",
     "schedule": "TBD",
@@ -1274,7 +1320,9 @@
     "name": "Thesis Project - Phase 2",
     "credits": 6,
     "semester": "8th",
-    "prerequisites": ["Thesis Project - Phase 1"],
+    "prerequisites": [
+      "Thesis Project - Phase 1"
+    ],
     "description": "Second phase of final year thesis project in AI/ML.",
     "instructor": "Thesis Supervisor",
     "schedule": "TBD",
@@ -1312,7 +1360,9 @@
     "name": "Industry Project",
     "credits": 4,
     "semester": "8th",
-    "prerequisites": ["Big Data Analytics"],
+    "prerequisites": [
+      "Big Data Analytics"
+    ],
     "description": "Industry-sponsored project in AI/ML applications.",
     "instructor": "Industry Mentor",
     "schedule": "TBD",

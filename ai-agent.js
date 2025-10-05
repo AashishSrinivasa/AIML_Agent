@@ -91,7 +91,46 @@ class AIMLAgent {
 
     // Faculty routes
     this.app.get('/api/faculty', (req, res) => {
-      res.json({ data: this.knowledgeBase.faculty });
+      const { search, designation, specialization, researchArea } = req.query;
+      
+      let filteredFaculty = this.knowledgeBase.faculty;
+      
+      // Search by name, specialization, or research areas
+      if (search) {
+        const searchTerm = search.toLowerCase();
+        filteredFaculty = filteredFaculty.filter(faculty => 
+          faculty.name.toLowerCase().includes(searchTerm) ||
+          (faculty.specialization && Array.isArray(faculty.specialization) && 
+           faculty.specialization.some(spec => spec.toLowerCase().includes(searchTerm))) ||
+          (faculty.researchAreas && Array.isArray(faculty.researchAreas) && 
+           faculty.researchAreas.some(area => area.toLowerCase().includes(searchTerm)))
+        );
+      }
+      
+      // Filter by designation
+      if (designation) {
+        filteredFaculty = filteredFaculty.filter(faculty => 
+          faculty.designation && faculty.designation.toLowerCase().includes(designation.toLowerCase())
+        );
+      }
+      
+      // Filter by specialization
+      if (specialization) {
+        filteredFaculty = filteredFaculty.filter(faculty => 
+          faculty.specialization && Array.isArray(faculty.specialization) && 
+          faculty.specialization.some(spec => spec.toLowerCase().includes(specialization.toLowerCase()))
+        );
+      }
+      
+      // Filter by research area
+      if (researchArea) {
+        filteredFaculty = filteredFaculty.filter(faculty => 
+          faculty.researchAreas && Array.isArray(faculty.researchAreas) && 
+          faculty.researchAreas.some(area => area.toLowerCase().includes(researchArea.toLowerCase()))
+        );
+      }
+      
+      res.json({ data: filteredFaculty });
     });
 
     this.app.get('/api/faculty/stats/overview', (req, res) => {
@@ -106,7 +145,44 @@ class AIMLAgent {
 
     // Courses routes
     this.app.get('/api/courses', (req, res) => {
-      res.json({ data: this.knowledgeBase.courses });
+      const { search, semester, instructor, credits } = req.query;
+      
+      let filteredCourses = this.knowledgeBase.courses;
+      
+      // Search by name, code, or instructor
+      if (search) {
+        const searchTerm = search.toLowerCase();
+        filteredCourses = filteredCourses.filter(course => 
+          course.name.toLowerCase().includes(searchTerm) ||
+          course.code.toLowerCase().includes(searchTerm) ||
+          (course.instructor && course.instructor.toLowerCase().includes(searchTerm)) ||
+          (course.topics && Array.isArray(course.topics) && 
+           course.topics.some(topic => topic.toLowerCase().includes(searchTerm)))
+        );
+      }
+      
+      // Filter by semester
+      if (semester) {
+        filteredCourses = filteredCourses.filter(course => 
+          course.semester === semester
+        );
+      }
+      
+      // Filter by instructor
+      if (instructor) {
+        filteredCourses = filteredCourses.filter(course => 
+          course.instructor && course.instructor.toLowerCase().includes(instructor.toLowerCase())
+        );
+      }
+      
+      // Filter by credits
+      if (credits) {
+        filteredCourses = filteredCourses.filter(course => 
+          course.credits === parseInt(credits)
+        );
+      }
+      
+      res.json({ data: filteredCourses });
     });
 
     this.app.get('/api/courses/stats/overview', (req, res) => {

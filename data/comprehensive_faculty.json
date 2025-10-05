@@ -889,5 +889,14 @@
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_1759674601467",
+    "name": "aashish",
+    "title": "aashish",
+    "designation": "masters",
+    "qualification": "b.tech",
+    "phone": "9972315004",
+    "createdAt": "2025-10-05T14:30:01.467Z"
   }
 ]
