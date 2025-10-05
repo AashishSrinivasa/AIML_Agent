@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, MapPin, Phone, Mail, Brain, Cpu, Zap, Sparkles, GraduationCap, Microscope, Code, Database } from 'lucide-react';
+import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, Phone, Mail, Brain, Cpu, Sparkles, GraduationCap, Microscope, Code, Database } from 'lucide-react';
 import BMSCELogo from '../components/BMSCELogo.tsx';
 
 const About: React.FC = () => {
@@ -99,7 +99,17 @@ const About: React.FC = () => {
                 transition={{ duration: 0.2 }}
               >
                 <div className="w-32 h-32 bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl">
-                  <div className="w-28 h-28 rounded-xl bg-white/20 flex items-center justify-center">
+                  <img 
+                    src="/assets/hod.png" 
+                    alt="Dr. M Dakshayini - HOD" 
+                    className="w-28 h-28 rounded-xl object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="hidden w-28 h-28 rounded-xl bg-white/20 flex items-center justify-center">
                     <GraduationCap className="w-12 h-12 text-white" />
                   </div>
                 </div>
