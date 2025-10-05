@@ -4,16 +4,13 @@ import {
   Users, 
   BookOpen, 
   Building2, 
-  Settings, 
   Plus, 
   Edit, 
   Trash2, 
   Save, 
   X,
   LogOut,
-  Shield,
-  Database,
-  BarChart3
+  Shield
 } from 'lucide-react';
 import AdminAuth from '../components/AdminAuth.tsx';
 

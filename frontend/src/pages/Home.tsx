@@ -62,81 +62,185 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen dark:bg-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
       {/* Hero Section */}
-      <section className="gradient-bg text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+      <section className="relative py-24 overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+          <div className="absolute top-0 right-0 w-72 h-72 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+          <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+        </div>
+        
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-                    <motion.div 
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      className="flex justify-center mb-6"
-                    >
-                      <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                        <BMSCELogo size="lg" variant="icon" className="text-white" />
-                      </div>
-                    </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="text-4xl md:text-6xl font-bold mb-6"
-            >
-              Mr.LIAM
-              <span className="block text-yellow-300">AI Assistant</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto"
-            >
-              Your intelligent companion for navigating the Artificial Intelligence and Machine Learning department at BMSCE University
-            </motion.p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Column - Content */}
             <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  to="/chat"
-                  className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 flex items-center justify-center space-x-2"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  <span>Start Chatting</span>
-                </Link>
+              <motion.div 
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex justify-center lg:justify-start mb-8"
+              >
+                <div className="relative">
+                  <div className="w-32 h-32 bg-white/80 backdrop-blur-sm rounded-3xl flex items-center justify-center shadow-2xl border border-white/20">
+                    <BMSCELogo size="xl" variant="icon" className="drop-shadow-lg" />
+                  </div>
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                    <Sparkles className="w-4 h-4 text-white" />
+                  </div>
+                </div>
               </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Link
-                  to="/about"
-                  className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
-                >
-                  Learn More
-                </Link>
+              
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="mb-6"
+              >
+                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                  Mr.LIAM
+                </h1>
+                <div className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                  AI Assistant
+                </div>
+                <div className="text-lg text-gray-600 dark:text-gray-400">
+                  B.M.S. College of Engineering
+                </div>
+              </motion.div>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+              >
+                Your intelligent companion for navigating the Artificial Intelligence and Machine Learning department. 
+                Get instant answers, explore faculty, courses, and discover our cutting-edge facilities.
+              </motion.p>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              >
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to="/chat"
+                    className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl"
+                  >
+                    <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
+                    <span>Start Chatting</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </Link>
+                </motion.div>
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Link
+                    to="/about"
+                    className="group bg-white/80 backdrop-blur-sm text-gray-700 px-8 py-4 rounded-2xl font-semibold hover:bg-white transition-all duration-300 flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl border border-gray-200/50"
+                  >
+                    <GraduationCap className="w-5 h-5" />
+                    <span>Learn More</span>
+                  </Link>
+                </motion.div>
               </motion.div>
             </motion.div>
-          </motion.div>
+            
+            {/* Right Column - Visual Elements */}
+            <motion.div 
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative">
+                {/* Main Card */}
+                <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                        <Bot className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-800">AI-Powered Assistant</h3>
+                        <p className="text-sm text-gray-600">24/7 Available</p>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-4">
+                        <Users className="w-8 h-8 text-blue-600 mb-2" />
+                        <div className="text-2xl font-bold text-blue-600">19+</div>
+                        <div className="text-sm text-blue-700">Faculty</div>
+                      </div>
+                      <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-4">
+                        <BookOpen className="w-8 h-8 text-purple-600 mb-2" />
+                        <div className="text-2xl font-bold text-purple-600">27+</div>
+                        <div className="text-sm text-purple-700">Courses</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-4 border border-green-200">
+                      <div className="flex items-center space-x-3">
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm font-medium text-green-700">AI Assistant Online</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ y: [-10, 10, -10] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white p-3 rounded-2xl shadow-lg"
+                >
+                  <Sparkles className="w-6 h-6" />
+                </motion.div>
+                
+                <motion.div
+                  animate={{ y: [10, -10, 10] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-4 -left-4 bg-gradient-to-r from-pink-400 to-rose-500 text-white p-3 rounded-2xl shadow-lg"
+                >
+                  <TrendingUp className="w-6 h-6" />
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-white dark:bg-gray-800 transition-colors duration-300">
+      <section className="py-20 bg-white/50 backdrop-blur-sm dark:bg-gray-800/50 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent mb-4">
+              Department at a Glance
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Discover the scale and excellence of our AIML department
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -147,14 +251,16 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.05 }}
-                  className="text-center"
+                  whileHover={{ scale: 1.05, y: -5 }}
+                  className="group"
                 >
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
-                    <Icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                  <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20 group-hover:border-blue-200">
+                    <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                      <Icon className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">{stat.value}</div>
+                    <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
                   </div>
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2 transition-colors duration-300">{stat.value}</div>
-                  <div className="text-gray-600 dark:text-gray-300 transition-colors duration-300">{stat.label}</div>
                 </motion.div>
               );
             })}
@@ -163,20 +269,21 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <section className="py-24 bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6">
               Everything You Need
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto transition-colors duration-300">
-              Comprehensive information and AI-powered assistance for all your academic needs
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+              Comprehensive information and AI-powered assistance for all your academic needs. 
+              Explore, discover, and connect with our cutting-edge resources.
             </p>
           </motion.div>
 
@@ -196,24 +303,32 @@ const Home: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ scale: 1.02, y: -5 }}
+                  whileHover={{ scale: 1.03, y: -8 }}
+                  className="group"
                 >
-                  <Link
-                    to={feature.link}
-                    className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 block"
-                  >
-                    <div className={`w-12 h-12 bg-gradient-to-r ${feature.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-200`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-200">
-                      {feature.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-4 transition-colors duration-300">
-                      {feature.description}
-                    </p>
-                    <div className="flex items-center text-blue-600 dark:text-blue-400 font-medium group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-200">
-                      <span>Explore</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  <Link to={feature.link}>
+                    <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 h-full border border-white/20 group-hover:border-blue-200 relative overflow-hidden">
+                      {/* Background Gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                      
+                      <div className="relative z-10">
+                        <div className="flex items-center justify-between mb-6">
+                          <div className={`w-16 h-16 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                            <Icon className="w-8 h-8 text-white" />
+                          </div>
+                          <ArrowRight className="w-6 h-6 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-2 transition-all duration-300" />
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
+                          {feature.title}
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-300 leading-relaxed group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                          {feature.description}
+                        </p>
+                        
+                        {/* Hover Effect Line */}
+                        <div className={`absolute bottom-0 left-0 h-1 bg-gradient-to-r ${feature.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}></div>
+                      </div>
                     </div>
                   </Link>
                 </motion.div>
@@ -266,16 +381,34 @@ const Home: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
             >
-              <Link
-                to="/chat"
-                className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200 inline-flex items-center space-x-2"
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
-                <GraduationCap className="w-5 h-5" />
-                <span>Start Your Journey</span>
-              </Link>
+                <Link
+                  to="/chat"
+                  className="group bg-white text-blue-600 px-10 py-4 rounded-2xl font-semibold hover:bg-gray-50 transition-all duration-300 inline-flex items-center space-x-3 shadow-lg hover:shadow-xl"
+                >
+                  <MessageCircle className="w-6 h-6 group-hover:animate-pulse" />
+                  <span>Start Your Journey</span>
+                  <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </motion.div>
+              
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link
+                  to="/about"
+                  className="group bg-white/20 backdrop-blur-sm text-white px-10 py-4 rounded-2xl font-semibold hover:bg-white/30 transition-all duration-300 inline-flex items-center space-x-3 border border-white/30"
+                >
+                  <GraduationCap className="w-6 h-6" />
+                  <span>Learn More</span>
+                </Link>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
