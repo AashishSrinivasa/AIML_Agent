@@ -197,4 +197,95 @@ router.get('/:id/prerequisites', asyncHandler(async (req: Request, res: Response
   });
 }));
 
+// @desc    Add new course
+// @route   POST /api/courses
+// @access  Private (Admin)
+router.post('/', asyncHandler(async (req: Request, res: Response) => {
+  const coursesData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
+  );
+  
+  const newCourse = {
+    id: `course_${Date.now()}`,
+    ...req.body,
+    createdAt: new Date().toISOString()
+  };
+  
+  coursesData.push(newCourse);
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_courses.json'),
+    JSON.stringify(coursesData, null, 2)
+  );
+  
+  res.status(201).json({
+    success: true,
+    data: newCourse
+  });
+}));
+
+// @desc    Update course
+// @route   PUT /api/courses/:id
+// @access  Private (Admin)
+router.put('/:id', asyncHandler(async (req: Request, res: Response) => {
+  const coursesData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
+  );
+  
+  const courseIndex = coursesData.findIndex((course: any) => course.id === req.params.id);
+  
+  if (courseIndex === -1) {
+    return res.status(404).json({
+      success: false,
+      message: 'Course not found'
+    });
+  }
+  
+  coursesData[courseIndex] = {
+    ...coursesData[courseIndex],
+    ...req.body,
+    updatedAt: new Date().toISOString()
+  };
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_courses.json'),
+    JSON.stringify(coursesData, null, 2)
+  );
+  
+  res.json({
+    success: true,
+    data: coursesData[courseIndex]
+  });
+}));
+
+// @desc    Delete course
+// @route   DELETE /api/courses/:id
+// @access  Private (Admin)
+router.delete('/:id', asyncHandler(async (req: Request, res: Response) => {
+  const coursesData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_courses.json'), 'utf8')
+  );
+  
+  const courseIndex = coursesData.findIndex((course: any) => course.id === req.params.id);
+  
+  if (courseIndex === -1) {
+    return res.status(404).json({
+      success: false,
+      message: 'Course not found'
+    });
+  }
+  
+  const deletedCourse = coursesData.splice(courseIndex, 1)[0];
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_courses.json'),
+    JSON.stringify(coursesData, null, 2)
+  );
+  
+  res.json({
+    success: true,
+    data: deletedCourse
+  });
+}));
+
 export default router;

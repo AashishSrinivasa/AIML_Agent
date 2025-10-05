@@ -168,4 +168,95 @@ router.get('/stats/overview', asyncHandler(async (req: Request, res: Response) =
   });
 }));
 
+// @desc    Add new faculty member
+// @route   POST /api/faculty
+// @access  Private (Admin)
+router.post('/', asyncHandler(async (req: Request, res: Response) => {
+  const facultyData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
+  );
+  
+  const newFaculty = {
+    id: `faculty_${Date.now()}`,
+    ...req.body,
+    createdAt: new Date().toISOString()
+  };
+  
+  facultyData.push(newFaculty);
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_faculty.json'),
+    JSON.stringify(facultyData, null, 2)
+  );
+  
+  res.status(201).json({
+    success: true,
+    data: newFaculty
+  });
+}));
+
+// @desc    Update faculty member
+// @route   PUT /api/faculty/:id
+// @access  Private (Admin)
+router.put('/:id', asyncHandler(async (req: Request, res: Response) => {
+  const facultyData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
+  );
+  
+  const facultyIndex = facultyData.findIndex((faculty: any) => faculty.id === req.params.id);
+  
+  if (facultyIndex === -1) {
+    return res.status(404).json({
+      success: false,
+      message: 'Faculty member not found'
+    });
+  }
+  
+  facultyData[facultyIndex] = {
+    ...facultyData[facultyIndex],
+    ...req.body,
+    updatedAt: new Date().toISOString()
+  };
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_faculty.json'),
+    JSON.stringify(facultyData, null, 2)
+  );
+  
+  res.json({
+    success: true,
+    data: facultyData[facultyIndex]
+  });
+}));
+
+// @desc    Delete faculty member
+// @route   DELETE /api/faculty/:id
+// @access  Private (Admin)
+router.delete('/:id', asyncHandler(async (req: Request, res: Response) => {
+  const facultyData = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../data/comprehensive_faculty.json'), 'utf8')
+  );
+  
+  const facultyIndex = facultyData.findIndex((faculty: any) => faculty.id === req.params.id);
+  
+  if (facultyIndex === -1) {
+    return res.status(404).json({
+      success: false,
+      message: 'Faculty member not found'
+    });
+  }
+  
+  const deletedFaculty = facultyData.splice(facultyIndex, 1)[0];
+  
+  fs.writeFileSync(
+    path.join(__dirname, '../../data/comprehensive_faculty.json'),
+    JSON.stringify(facultyData, null, 2)
+  );
+  
+  res.json({
+    success: true,
+    data: deletedFaculty
+  });
+}));
+
 export default router;

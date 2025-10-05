@@ -91,20 +91,93 @@ const Admin: React.FC = () => {
   };
 
   const handleSave = async () => {
-    // In a real application, this would make API calls to save the data
-    console.log('Saving:', editingItem);
-    setIsEditing(false);
-    setEditingItem(null);
-    // Reload data after saving
-    loadData();
+    try {
+      let endpoint = '';
+      let data = { ...editingItem };
+      
+      // Remove the id from data if it's a new item
+      if (editingItem.id.startsWith('new_')) {
+        delete data.id;
+      }
+      
+      switch (activeTab) {
+        case 'faculty':
+          endpoint = '/api/faculty';
+          break;
+        case 'courses':
+          endpoint = '/api/courses';
+          break;
+        case 'infrastructure':
+          endpoint = '/api/infrastructure';
+          break;
+        default:
+          throw new Error('Invalid tab');
+      }
+      
+      const method = editingItem.id.startsWith('new_') ? 'POST' : 'PUT';
+      const url = editingItem.id.startsWith('new_') ? endpoint : `${endpoint}/${editingItem.id}`;
+      
+      const response = await fetch(url, {
+        method,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save data');
+      }
+      
+      const result = await response.json();
+      console.log('Saved successfully:', result);
+      
+      setIsEditing(false);
+      setEditingItem(null);
+      // Reload data after saving
+      loadData();
+    } catch (error) {
+      console.error('Error saving data:', error);
+      alert('Failed to save data. Please try again.');
+    }
   };
 
   const handleDelete = async (id: string, type: string) => {
     if (window.confirm('Are you sure you want to delete this item?')) {
-      // In a real application, this would make API calls to delete the data
-      console.log('Deleting:', id, type);
-      // Reload data after deletion
-      loadData();
+      try {
+        let endpoint = '';
+        
+        switch (type) {
+          case 'faculty':
+            endpoint = '/api/faculty';
+            break;
+          case 'courses':
+            endpoint = '/api/courses';
+            break;
+          case 'infrastructure':
+            endpoint = '/api/infrastructure';
+            break;
+          default:
+            throw new Error('Invalid type');
+        }
+        
+        const response = await fetch(`${endpoint}/${id}`, {
+          method: 'DELETE',
+        });
+        
+        if (!response.ok) {
+          throw new Error('Failed to delete data');
+        }
+        
+        const result = await response.json();
+        console.log('Deleted successfully:', result);
+        
+        // Reload data after deletion
+        loadData();
+      } catch (error) {
+        console.error('Error deleting data:', error);
+        alert('Failed to delete data. Please try again.');
+      }
     }
   };
 

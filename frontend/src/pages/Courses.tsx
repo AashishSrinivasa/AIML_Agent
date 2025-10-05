@@ -132,69 +132,190 @@ const Courses: React.FC = () => {
 
   if (error) {
     return (
-      <div className="text-center py-12">
-        <div className="text-red-600 text-lg">Failed to load courses data</div>
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-red-600 text-lg">Failed to load courses data</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Course Catalog</h1>
-        <p className="text-gray-600">Explore our comprehensive course offerings and academic programs</p>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 relative overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <motion.div 
+          className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        />
+        <motion.div 
+          className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        <motion.div 
+          className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, -100, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 4
+          }}
+        />
       </div>
 
-      {/* Stats */}
-      {statsData?.data && (
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <BookOpen className="w-6 h-6 text-blue-600" />
+      <div className="relative max-w-7xl mx-auto p-4 z-10">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-8 text-center"
+        >
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex justify-center mb-4"
+          >
+            <div className="relative">
+              <div className="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/20">
+                <BookOpen className="w-10 h-10 text-purple-600" />
               </div>
-              <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.total || 0}</div>
-                <div className="text-gray-600">Total Courses</div>
-              </div>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-2xl border-2 border-transparent border-t-purple-500/50"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center"
+              >
+                <Sparkles className="w-3 h-3 text-white" />
+              </motion.div>
             </div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-green-600" />
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-4"
+          >
+            Course Catalog
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto"
+          >
+            Explore our comprehensive course offerings and academic programs
+          </motion.p>
+        </motion.div>
+
+        {/* Stats */}
+        {statsData?.data && (
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8"
+          >
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20"
+            >
+              <div className="flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10 }}
+                  className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+                >
+                  <BookOpen className="w-6 h-6 text-white" />
+                </motion.div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-900">{statsData.data.total || 0}</div>
+                  <div className="text-gray-600">Total Courses</div>
+                </div>
               </div>
-              <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.semesters || 0}</div>
-                <div className="text-gray-600">Semesters</div>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20"
+            >
+              <div className="flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10 }}
+                  className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center shadow-lg"
+                >
+                  <Calendar className="w-6 h-6 text-white" />
+                </motion.div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-900">{statsData.data.semesters || 0}</div>
+                  <div className="text-gray-600">Semesters</div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                <User className="w-6 h-6 text-purple-600" />
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20"
+            >
+              <div className="flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10 }}
+                  className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center shadow-lg"
+                >
+                  <User className="w-6 h-6 text-white" />
+                </motion.div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-900">{statsData.data.totalCredits || 0}</div>
+                  <div className="text-gray-600">Total Credits</div>
+                </div>
               </div>
-              <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.totalCredits || 0}</div>
-                <div className="text-gray-600">Total Credits</div>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-white/80 backdrop-blur-xl p-6 rounded-2xl shadow-xl border border-white/20"
+            >
+              <div className="flex items-center">
+                <motion.div 
+                  whileHover={{ rotate: 10 }}
+                  className="w-12 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center shadow-lg"
+                >
+                  <Award className="w-6 h-6 text-white" />
+                </motion.div>
+                <div className="ml-4">
+                  <div className="text-2xl font-bold text-gray-900">{Math.round((statsData.data.totalCredits || 0) / (statsData.data.total || 1))}</div>
+                  <div className="text-gray-600">Avg Credits</div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                <Award className="w-6 h-6 text-orange-600" />
-              </div>
-              <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{Math.round((statsData.data.totalCredits || 0) / (statsData.data.total || 1))}</div>
-                <div className="text-gray-600">Avg Credits</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+            </motion.div>
+          </motion.div>
+        )}
 
       {/* Search and Filters */}
       <div className="bg-white rounded-lg shadow-md p-6 mb-8">
@@ -459,6 +580,7 @@ const Courses: React.FC = () => {
           ))}
         </div>
       )}
+      </div>
     </div>
   );
 };
