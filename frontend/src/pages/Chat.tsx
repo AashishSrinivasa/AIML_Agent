@@ -109,7 +109,8 @@ const Chat: React.FC = () => {
           role: 'assistant',
           content: response.data.response,
           timestamp: new Date(),
-          sources: response.data.sources
+          sources: response.data.sources,
+          suggestions: response.data.suggestions
         };
         
         setMessages(prev => [...prev, aiMessage]);
@@ -323,6 +324,22 @@ const Chat: React.FC = () => {
                                 >
                                   {source}
                                 </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {message.suggestions && message.suggestions.length > 0 && (
+                          <div className="mt-3 pt-2 border-t border-gray-200 dark:border-gray-500">
+                            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">Quick questions:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {message.suggestions.map((suggestion, index) => (
+                                <button
+                                  key={index}
+                                  onClick={() => handleSuggestionClick(suggestion)}
+                                  className="bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-xs hover:bg-blue-200 dark:hover:bg-blue-800 transition-colors"
+                                >
+                                  {suggestion}
+                                </button>
                               ))}
                             </div>
                           </div>

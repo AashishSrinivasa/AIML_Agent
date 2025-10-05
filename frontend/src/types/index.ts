@@ -138,6 +138,7 @@ export interface ChatMessage {
   content: string;
   timestamp: Date;
   sources?: string[];
+  suggestions?: string[];
 }
 
 export interface AIResponse {

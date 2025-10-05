@@ -313,9 +313,53 @@ class AdvancedAIAgent {
     return expandedText;
   }
 
+  // Fix common spelling mistakes
+  fixSpellingMistakes(question) {
+    const lowerQuestion = question.toLowerCase();
+    
+    // Common spelling mistakes mapping
+    const corrections = {
+      'quipment': 'equipment',
+      'availalbe': 'available',
+      'availble': 'available',
+      'availabe': 'available',
+      'equipmnt': 'equipment',
+      'equipmet': 'equipment',
+      'equipmen': 'equipment',
+      'machin': 'machine',
+      'machien': 'machine',
+      'machne': 'machine',
+      'profesor': 'professor',
+      'profesr': 'professor',
+      'profesoor': 'professor',
+      'cours': 'course',
+      'coursse': 'course',
+      'coursee': 'course',
+      'facult': 'faculty',
+      'faculity': 'faculty',
+      'faculyt': 'faculty',
+      'labortory': 'laboratory',
+      'labratory': 'laboratory',
+      'labortary': 'laboratory',
+      'infrastructur': 'infrastructure',
+      'infrastrucure': 'infrastructure',
+      'infrastrucutre': 'infrastructure'
+    };
+    
+    let corrected = question;
+    Object.entries(corrections).forEach(([mistake, correct]) => {
+      const regex = new RegExp(mistake, 'gi');
+      corrected = corrected.replace(regex, correct);
+    });
+    
+    return corrected;
+  }
+
   // Advanced question analysis
   analyzeQuestion(question) {
-    const expandedQuestion = this.expandAbbreviations(question);
+    // Fix common spelling mistakes first
+    const correctedQuestion = this.fixSpellingMistakes(question);
+    const expandedQuestion = this.expandAbbreviations(correctedQuestion);
     const tokens = this.tokenizer.tokenize(expandedQuestion);
     const stemmedTokens = tokens.map(token => this.stemmer.stem(token));
     
@@ -326,7 +370,7 @@ class AdvancedAIAgent {
     const entities = this.extractEntities(expandedQuestion, tokens);
     
     // Context analysis
-    const context = this.analyzeContext(expandedQuestion);
+    const context = this.analyzeContext(correctedQuestion);
     
     return {
       original: question,
@@ -344,8 +388,9 @@ class AdvancedAIAgent {
   detectIntent(question, tokens) {
     const questionLower = question.toLowerCase();
     
-    // Greeting patterns - more conversational
-    if (this.matchesPattern(questionLower, ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'what can you do', 'help me', 'start'])) {
+    // Greeting patterns - more conversational (but not for specific queries)
+    if (this.matchesPattern(questionLower, ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening']) && 
+        !this.matchesPattern(questionLower, ['lab', 'equipment', 'faculty', 'course', 'professor', 'teacher'])) {
       return 'greeting';
     }
     
@@ -354,14 +399,14 @@ class AdvancedAIAgent {
       return 'faculty_search';
     }
     
+    // Infrastructure-related intents - check this FIRST (most specific)
+    if (this.matchesPattern(questionLower, ['lab', 'laboratory', 'equipment', 'infrastructure', 'facility', 'computer', 'hardware', 'available', 'what\'s in', 'what is in', 'machines', 'tools', 'setup', 'software', 'ml lab', 'machine learning lab', 'lab 1', 'lab 2', 'center of excellence'])) {
+      return 'infrastructure_search';
+    }
+    
     // Course-related intents - more conversational
     if (this.matchesPattern(questionLower, ['course', 'subject', 'syllabus', 'curriculum', 'semester', 'credit', 'study', 'learn', 'class', 'lecture', 'module'])) {
       return 'course_search';
-    }
-    
-    // Infrastructure-related intents - more conversational (check this first)
-    if (this.matchesPattern(questionLower, ['lab', 'laboratory', 'equipment', 'infrastructure', 'facility', 'computer', 'hardware', 'available', 'what\'s in', 'what is in', 'machines', 'tools', 'setup', 'software', 'ml lab', 'machine learning lab', 'lab 1', 'lab 2', 'center of excellence'])) {
-      return 'infrastructure_search';
     }
     
     // Calendar-related intents - more conversational
@@ -490,6 +535,7 @@ class AdvancedAIAgent {
       return {
         response: response,
         sources: this.getSources(relevantData),
+        suggestions: this.generateSuggestions(analysis.intent, relevantData),
         confidence: analysis.confidence,
         intent: analysis.intent,
         entities: analysis.entities
@@ -546,6 +592,12 @@ class AdvancedAIAgent {
 
   // Search faculty based on analysis
   searchFaculty(analysis) {
+    // For faculty_search intent, always return faculty data
+    if (analysis.intent === 'faculty_search') {
+      return this.knowledgeBase.faculty.data.slice(0, 10);
+    }
+    
+    // For specific searches, try to find matches
     let results = [];
     
     // Direct name match
@@ -570,23 +622,9 @@ class AdvancedAIAgent {
       results = [...results, ...specResults];
     }
     
-    // Research area match
-    if (analysis.entities.researchAreas.length > 0) {
-      const researchResults = this.knowledgeBase.faculty.data.filter(faculty => 
-        faculty.researchAreas && Array.isArray(faculty.researchAreas) &&
-        faculty.researchAreas.some(area => 
-          analysis.entities.researchAreas.some(entity => 
-            area.toLowerCase().includes(entity)
-          )
-        )
-      );
-      results = [...results, ...researchResults];
-    }
-    
-    // Fuzzy search if no direct matches
+    // If no specific matches, return all faculty
     if (results.length === 0) {
-      const fuzzyResults = this.fuzzySearch.search(analysis.expanded);
-      results = fuzzyResults.slice(0, 5).map(result => result.item);
+      results = this.knowledgeBase.faculty.data.slice(0, 10);
     }
     
     // Remove duplicates
@@ -599,6 +637,11 @@ class AdvancedAIAgent {
 
   // Search courses based on analysis
   searchCourses(analysis) {
+    // For course_search intent, always return course data
+    if (analysis.intent === 'course_search') {
+      return this.knowledgeBase.courses.data.slice(0, 10);
+    }
+    
     let results = [];
     
     // Direct course name match
@@ -621,10 +664,9 @@ class AdvancedAIAgent {
       results = [...results, ...semResults];
     }
     
-    // Fuzzy search if no direct matches
+    // If no specific matches, return all courses
     if (results.length === 0) {
-      const fuzzyResults = this.fuzzySearch.search(analysis.expanded);
-      results = fuzzyResults.slice(0, 5).map(result => result.item);
+      results = this.knowledgeBase.courses.data.slice(0, 10);
     }
     
     // Remove duplicates
@@ -638,6 +680,12 @@ class AdvancedAIAgent {
   // Search infrastructure based on analysis
   searchInfrastructure(analysis) {
     const infra = this.knowledgeBase.infrastructure.data;
+    
+    // For infrastructure_search intent, always return infrastructure data
+    if (analysis.intent === 'infrastructure_search') {
+      return infra.labs || {};
+    }
+    
     const results = {};
     
     if (infra.labs) {
@@ -813,66 +861,60 @@ RESPONSE FORMAT:
     switch (analysis.intent) {
       case 'faculty_search':
         if (data.faculty.length > 0) {
-          const facultyList = data.faculty.slice(0, 4).map(f => 
-            `• ${f.name} (${f.designation})\n  - Specializes in: ${Array.isArray(f.specialization) ? f.specialization.slice(0, 2).join(', ') : f.specialization || 'General'}\n  - Email: ${f.email || 'Contact department'}`
-          ).join('\n\n');
+          const facultyList = data.faculty.slice(0, 3).map(f => 
+            `• ${f.name} (${f.designation})`
+          ).join('\n');
           
-          return `Great! I found some faculty members for you:\n\n${facultyList}\n\nWant to know more about any specific professor? Just ask! 😊`;
+          return `Found ${data.faculty.length} faculty members:\n\n${facultyList}`;
         }
-        return "Hmm, I couldn't find faculty matching that. Try asking about specific specializations like 'machine learning faculty' or 'AI professors' - I'll help you find the right person! 🤔";
+        return "No faculty found. Try: 'ML professors' or 'AI faculty'";
         
       case 'course_search':
         if (data.courses.length > 0) {
-          const courseList = data.courses.slice(0, 4).map(c => 
-            `• ${c.name} (${c.code})\n  - Semester: ${c.semester}\n  - Instructor: ${c.instructor || 'TBA'}`
-          ).join('\n\n');
+          const courseList = data.courses.slice(0, 3).map(c => 
+            `• ${c.name} (Sem ${c.semester})`
+          ).join('\n');
           
-          return `Here are the courses I found:\n\n${courseList}\n\nNeed details about any specific course? I can tell you about topics, prerequisites, or more! 📚`;
+          return `Found ${data.courses.length} courses:\n\n${courseList}`;
         }
-        return "I couldn't find courses matching that. Try asking about specific semesters like 'semester 5 courses' or course names like 'machine learning' - I'll help you out! 🎓";
+        return "No courses found. Try: 'semester 5 courses' or 'ML subjects'";
         
       case 'infrastructure_search':
         if (Object.keys(data.infrastructure).length > 0) {
           // Check if user is asking about a specific lab
-          const lowerQuestion = question.toLowerCase();
           if (lowerQuestion.includes('ml lab 1') || lowerQuestion.includes('machine learning lab 1')) {
             const mlLab1 = Object.values(data.infrastructure).find(lab => lab.name === 'Machine Learning Lab 1');
             if (mlLab1) {
               const equipmentList = mlLab1.equipment.map(eq => 
-                `• ${eq.name} (${eq.quantity} units)\n  - Specs: ${eq.specifications}`
-              ).join('\n\n');
+                `• ${eq.name} (${eq.quantity} units)`
+              ).join('\n');
               
-              return `Perfect! Here's what's available in Machine Learning Lab 1:\n\n${equipmentList}\n\nNeed more details about any specific equipment? Just ask! 🔬`;
+              return `ML Lab 1 Equipment:\n\n${equipmentList}`;
             }
           }
           
-          const labList = Object.values(data.infrastructure).slice(0, 3).map(lab => {
-            let response = `• ${lab.name}\n  - Capacity: ${lab.capacity} students`;
-            if (lab.equipment && lab.equipment.length > 0) {
-              const equipmentNames = lab.equipment.slice(0, 3).map(eq => eq.name || eq).join(', ');
-              response += `\n  - Equipment: ${equipmentNames}`;
-            }
-            return response;
-          }).join('\n\n');
+          const labList = Object.values(data.infrastructure).slice(0, 3).map(lab => 
+            `• ${lab.name} (${lab.capacity} students)`
+          ).join('\n');
           
-          return `Here's what we have available:\n\n${labList}\n\nWant to know more about any specific lab or equipment? Just ask! 🔬`;
+          return `Available Labs:\n\n${labList}`;
         }
-        return "I couldn't find specific facilities matching that. Try asking about 'labs', 'computer facilities', or 'research equipment' - I'll show you what's available! 🏢";
+        return "No labs found. Try: 'equipment' or 'facilities'";
         
       case 'greeting':
-        return "Hey there! 👋 I'm Liam, your AI assistant for the AIML department at BMSCE. I can help you with:\n\n• Faculty information\n• Course details\n• Lab facilities\n• Academic calendar\n\nWhat would you like to explore today?";
+        return "Hi! 👋 I'm Liam. I can help with:\n\n• Faculty info\n• Courses\n• Labs\n• Equipment\n\nWhat do you need?";
         
       default:
         if (lowerQuestion.includes('equipment') || lowerQuestion.includes('lab')) {
-          return "Looking for lab equipment? I can help you find what's available in our facilities! Try asking about specific labs like 'ML Lab 1 equipment' or 'computer lab facilities' 🔧";
+          return "Looking for equipment? Try: 'ML Lab 1 equipment' or 'available equipment'";
         }
         if (lowerQuestion.includes('course') || lowerQuestion.includes('subject')) {
-          return "Interested in courses? I can show you what's available! Try asking about specific semesters or subjects like 'semester 6 courses' or 'AI subjects' 📖";
+          return "Need course info? Try: 'semester 5 courses' or 'ML subjects'";
         }
         if (lowerQuestion.includes('professor') || lowerQuestion.includes('teacher')) {
-          return "Looking for faculty info? I can help you find professors by specialization! Try asking about 'machine learning professors' or 'AI faculty' 👨‍🏫";
+          return "Looking for faculty? Try: 'ML professors' or 'AI faculty'";
         }
-        return "I'm here to help! 😊 Try asking about:\n\n• Faculty members\n• Courses by semester\n• Lab facilities\n• Equipment available\n\nWhat interests you most?";
+        return "Hi! What can I help you with?";
     }
   }
 
@@ -886,6 +928,54 @@ RESPONSE FORMAT:
     if (data.calendar.events && data.calendar.events.length > 0) sources.push('Academic Calendar');
     
     return sources;
+  }
+
+  // Generate pre-typed question suggestions
+  generateSuggestions(intent, data) {
+    const suggestions = [];
+    
+    switch (intent) {
+      case 'faculty_search':
+        suggestions.push(
+          "Who teaches machine learning?",
+          "AI professors contact info",
+          "Faculty by specialization"
+        );
+        break;
+        
+      case 'course_search':
+        suggestions.push(
+          "Semester 5 courses",
+          "ML course details",
+          "Course prerequisites"
+        );
+        break;
+        
+      case 'infrastructure_search':
+        suggestions.push(
+          "ML Lab 1 equipment",
+          "Available facilities",
+          "Lab capacity details"
+        );
+        break;
+        
+      case 'greeting':
+        suggestions.push(
+          "Show me faculty",
+          "What courses are available?",
+          "Lab equipment info"
+        );
+        break;
+        
+      default:
+        suggestions.push(
+          "Faculty information",
+          "Course details",
+          "Lab facilities"
+        );
+    }
+    
+    return suggestions;
   }
 }
 
