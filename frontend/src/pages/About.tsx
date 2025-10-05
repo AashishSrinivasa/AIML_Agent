@@ -1,23 +1,24 @@
 import React from 'react';
-import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, MapPin, Phone, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Bot, Users, BookOpen, Calendar, Building2, Target, Award, Lightbulb, MapPin, Phone, Mail, Brain, Cpu, Zap, Sparkles, GraduationCap, Microscope, Code, Database } from 'lucide-react';
 import BMSCELogo from '../components/BMSCELogo.tsx';
 
 const About: React.FC = () => {
   const features = [
     {
       icon: Bot,
-      title: 'AI-Powered Assistant',
-      description: 'Get instant, intelligent responses to your questions about the department'
+      title: 'LIAM AI Assistant',
+      description: 'Your intelligent companion powered by Google Gemini AI for instant, smart responses'
     },
     {
       icon: Users,
-      title: 'Faculty Directory',
-      description: 'Comprehensive information about our expert faculty members and their specializations'
+      title: 'Expert Faculty',
+      description: '19+ distinguished professors and researchers specializing in AI, ML, and emerging technologies'
     },
     {
       icon: BookOpen,
-      title: 'Course Catalog',
-      description: 'Detailed course information, prerequisites, and academic planning tools'
+      title: 'Comprehensive Courses',
+      description: '27+ courses across 6 semesters covering cutting-edge AI/ML topics and practical applications'
     },
     {
       icon: Calendar,
@@ -26,207 +27,537 @@ const About: React.FC = () => {
     },
     {
       icon: Building2,
-      title: 'Infrastructure',
-      description: 'Explore our state-of-the-art labs, equipment, and research facilities'
+      title: 'State-of-the-Art Labs',
+      description: '4+ specialized labs with advanced equipment for AI/ML research and development'
     }
   ];
 
   const stats = [
-    { label: 'Faculty Members', value: '5+', icon: Users },
-    { label: 'Courses Available', value: '5+', icon: BookOpen },
+    { label: 'Faculty Members', value: '19+', icon: Users },
+    { label: 'Courses Available', value: '27+', icon: BookOpen },
     { label: 'Research Areas', value: '15+', icon: Lightbulb },
-    { label: 'Labs & Facilities', value: '10+', icon: Building2 }
+    { label: 'Specialized Labs', value: '4+', icon: Building2 }
+  ];
+
+  const researchAreas = [
+    'Machine Learning', 'Deep Learning', 'Computer Vision', 'Natural Language Processing',
+    'Artificial Intelligence', 'Data Analytics', 'Blockchain Technology', 'IoT',
+    'Cloud Computing', 'Computer Networks', 'Algorithms', 'Ad-hoc Networks',
+    'Data Mining', 'Neural Networks', 'Robotics'
   ];
 
   return (
-    <div className="max-w-7xl mx-auto">
-      {/* Hero Section */}
-      <section className="text-center py-16">
-        <div className="flex justify-center mb-6">
-          <BMSCELogo size="xl" variant="full" className="text-center" />
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          About AIML Department AI Assistant
-        </h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-          Your intelligent companion for navigating the Artificial Intelligence and Machine Learning department at B.M.S. College of Engineering
-        </p>
-        
-        {/* College Information */}
-        <div className="bg-blue-50 rounded-xl p-6 max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-blue-900 mb-4">B.M.S. College of Engineering</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            <div className="flex items-start space-x-3">
-              <MapPin className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-900">Location</h3>
-                <p className="text-sm text-gray-600">Bull Temple Road, Basavanagudi, Bangalore - 560019</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3">
-              <Phone className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-900">Contact</h3>
-                <p className="text-sm text-gray-600">+91-80-26622130</p>
-              </div>
-            </div>
-            <div className="flex items-start space-x-3">
-              <Mail className="w-5 h-5 text-blue-600 mt-1 flex-shrink-0" />
-              <div>
-                <h3 className="font-semibold text-gray-900">Email</h3>
-                <p className="text-sm text-gray-600">info@bmsce.ac.in</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 relative overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <motion.div
+          className="absolute top-20 left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ x: [0, 100, 0], y: [0, -100, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute top-40 right-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ x: [0, -100, 0], y: [0, 100, 0] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-40 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ x: [0, 50, 0], y: [0, -50, 0] }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+        />
+      </div>
 
-      {/* Mission Section */}
-      <section className="py-16 bg-gray-50 rounded-xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Hero Section with HOD */}
+        <motion.section 
+          className="text-center py-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div 
+            className="flex justify-center mb-8"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <BMSCELogo size="xl" variant="creative" className="text-center" />
+          </motion.div>
+
+          {/* HOD Section */}
+          <motion.div 
+            className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 max-w-4xl mx-auto mb-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            <div className="flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+              {/* HOD Image */}
+              <motion.div 
+                className="relative"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.2 }}
+              >
+                <div className="w-32 h-32 bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl">
+                  <img 
+                    src="/src/assets/hod.png" 
+                    alt="Dr. M Dakshayini - HOD" 
+                    className="w-28 h-28 rounded-xl object-cover"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                      target.nextElementSibling?.classList.remove('hidden');
+                    }}
+                  />
+                  <div className="hidden w-28 h-28 rounded-xl bg-white/20 flex items-center justify-center">
+                    <GraduationCap className="w-12 h-12 text-white" />
+                  </div>
+                </div>
+                <motion.div
+                  className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center"
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                >
+                  <Sparkles className="w-4 h-4 text-white" />
+                </motion.div>
+              </motion.div>
+
+              {/* HOD Info */}
+              <div className="text-left flex-1">
+                <motion.h2 
+                  className="text-3xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
+                  Dr. M Dakshayini
+                </motion.h2>
+                <motion.p 
+                  className="text-xl text-gray-700 font-semibold mb-3"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.7 }}
+                >
+                  Professor & Head of Department
+                </motion.p>
+                <motion.div 
+                  className="space-y-2"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                >
+                  <div className="flex items-center space-x-2">
+                    <Mail className="w-4 h-4 text-purple-600" />
+                    <span className="text-gray-600">dakshayini.ise@bmsce.ac.in</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Phone className="w-4 h-4 text-purple-600" />
+                    <span className="text-gray-600">+91-80-26622130</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Award className="w-4 h-4 text-purple-600" />
+                    <span className="text-gray-600">15+ years experience, 45+ publications</span>
+                  </div>
+                </motion.div>
+              </div>
+        </div>
+          </motion.div>
+
+          <motion.h1 
+            className="text-4xl md:text-6xl font-bold mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+              AIML Department
+            </span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl text-gray-700 max-w-4xl mx-auto mb-8 leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            Welcome to the <span className="font-bold text-purple-600">Artificial Intelligence & Machine Learning Department</span> at BMSCE! 
+            We're pioneering the future of AI education with cutting-edge research, expert faculty, and state-of-the-art facilities.
+          </motion.p>
+        </motion.section>
+
+        {/* Department Mission & Vision */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 mb-12"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            To provide students, faculty, and visitors with instant access to comprehensive information about our department through cutting-edge AI technology.
-          </p>
+              <motion.h2 
+                className="text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                  Our Mission & Vision
+                </span>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                To pioneer the future of AI education through cutting-edge research, innovative teaching methods, 
+                and industry collaboration, while fostering the next generation of AI leaders and innovators.
+              </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Target className="w-8 h-8 text-blue-600" />
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl"
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Target className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
+                <p className="text-gray-600">Delivering world-class AI education and research excellence</p>
+              </motion.div>
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-pink-50 to-indigo-50 rounded-2xl"
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Lightbulb className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
+                <p className="text-gray-600">Pioneering breakthrough research in AI and machine learning</p>
+              </motion.div>
+              <motion.div 
+                className="text-center p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl"
+                whileHover={{ scale: 1.05, rotateY: 5 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Users className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Community</h3>
+                <p className="text-gray-600">Building a vibrant community of AI researchers and practitioners</p>
+              </motion.div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Accessibility</h3>
-            <p className="text-gray-600">Making department information easily accessible to everyone</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Award className="w-8 h-8 text-green-600" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Excellence</h3>
-            <p className="text-gray-600">Delivering accurate and up-to-date information</p>
-          </div>
-          <div className="text-center">
-            <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Lightbulb className="w-8 h-8 text-purple-600" />
-            </div>
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
-            <p className="text-gray-600">Leveraging AI to enhance the academic experience</p>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.section>
 
-      {/* Features Section */}
-      <section className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Key Features</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover what makes our AI assistant special
-          </p>
+        {/* Research Areas */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 mb-12"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="text-center mb-12">
+              <motion.h2 
+                className="text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                  Research Areas
+                </span>
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-gray-700 max-w-3xl mx-auto"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Our faculty and students are actively engaged in cutting-edge research across multiple domains
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {researchAreas.map((area, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4 text-center hover:from-purple-200 hover:to-pink-200 transition-all duration-300 cursor-pointer"
+                  whileHover={{ scale: 1.05, rotateY: 5 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <span className="text-sm font-semibold text-gray-800">{area}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </motion.section>
+
+        {/* Key Features */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <div className="text-center mb-12">
+            <motion.h2 
+              className="text-4xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                What Makes Us Special
+              </span>
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-700 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Discover the unique features that set our department apart
+            </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-white" />
+                <motion.div 
+                  key={index} 
+                  className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300"
+                  whileHover={{ scale: 1.05, rotateY: 5 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center mb-4 shadow-lg">
+                    <Icon className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
-              </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                </motion.div>
             );
           })}
         </div>
-      </section>
+        </motion.section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl">
+        {/* Department Stats */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 text-white rounded-3xl shadow-2xl p-8"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Department Overview</h2>
-          <p className="text-xl text-blue-100">Numbers that speak for our excellence</p>
+              <motion.h2 
+                className="text-4xl font-bold mb-4"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                Department by Numbers
+              </motion.h2>
+              <motion.p 
+                className="text-xl text-purple-100"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+              >
+                Impressive statistics that showcase our excellence
+              </motion.p>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <div key={index} className="text-center">
-                <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Icon className="w-8 h-8" />
+                  <motion.div 
+                    key={index} 
+                    className="text-center"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="w-20 h-20 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
+                      <Icon className="w-10 h-10" />
                 </div>
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-blue-100">{stat.label}</div>
-              </div>
+                    <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                    <div className="text-purple-100 font-medium">{stat.label}</div>
+                  </motion.div>
             );
           })}
         </div>
-      </section>
+          </motion.div>
+        </motion.section>
 
-      {/* Technology Section */}
-      <section className="py-16">
+        {/* Technology Stack */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Technology Stack</h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Built with modern technologies for optimal performance and user experience
-          </p>
+            <motion.h2 
+              className="text-4xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                Powered by Modern Tech
+              </span>
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-700 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              Built with cutting-edge technologies for optimal performance and user experience
+            </motion.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <span className="text-blue-600 font-bold">React</span>
+            {[
+              { name: 'React', tech: 'Frontend', desc: 'React.js with TypeScript', icon: Code, color: 'from-blue-500 to-cyan-500' },
+              { name: 'Node.js', tech: 'Backend', desc: 'Node.js with Express', icon: Database, color: 'from-green-500 to-emerald-500' },
+              { name: 'Gemini AI', tech: 'AI Engine', desc: 'Google Gemini Integration', icon: Brain, color: 'from-purple-500 to-pink-500' },
+              { name: 'JSON', tech: 'Data', desc: 'Comprehensive JSON Database', icon: Cpu, color: 'from-orange-500 to-red-500' }
+            ].map((tech, index) => {
+              const Icon = tech.icon;
+              return (
+                <motion.div 
+                  key={index} 
+                  className="bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20 text-center hover:shadow-2xl transition-all duration-300"
+                  whileHover={{ scale: 1.05, rotateY: 5 }}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-r ${tech.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg`}>
+                    <Icon className="w-8 h-8 text-white" />
             </div>
-            <h3 className="font-semibold text-gray-900">Frontend</h3>
-            <p className="text-sm text-gray-600">React.js with TypeScript</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{tech.name}</h3>
+                  <p className="text-sm text-gray-600 font-medium mb-1">{tech.tech}</p>
+                  <p className="text-xs text-gray-500">{tech.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <span className="text-green-600 font-bold">Node</span>
-            </div>
-            <h3 className="font-semibold text-gray-900">Backend</h3>
-            <p className="text-sm text-gray-600">Node.js with Express</p>
-          </div>
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <span className="text-purple-600 font-bold">AI</span>
-            </div>
-            <h3 className="font-semibold text-gray-900">AI Engine</h3>
-            <p className="text-sm text-gray-600">OpenAI GPT Integration</p>
-          </div>
-          <div className="bg-white rounded-lg p-6 shadow-md text-center">
-            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-3">
-              <span className="text-orange-600 font-bold">DB</span>
-            </div>
-            <h3 className="font-semibold text-gray-900">Database</h3>
-            <p className="text-sm text-gray-600">MongoDB</p>
-          </div>
-        </div>
-      </section>
+        </motion.section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-gray-50 rounded-xl">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Get in Touch</h2>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Have questions or suggestions? We'd love to hear from you!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="mailto:aiml@bmsce.ac.in"
-              className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 text-center"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <motion.h2 
+              className="text-4xl font-bold mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
             >
-              Contact Department
-            </a>
-            <a
-              href="/chat"
-              className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors duration-200"
+              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                Ready to Connect?
+              </span>
+            </motion.h2>
+            <motion.p 
+              className="text-xl text-gray-700 mb-8 max-w-3xl mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
             >
-              Try AI Assistant
-            </a>
-          </div>
+              Have questions about our department or want to explore AI/ML opportunities? We'd love to hear from you!
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+            >
+              <motion.a
+                href="mailto:dakshayini.ise@bmsce.ac.in"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Contact HOD
+              </motion.a>
+              <motion.a
+                href="/chat"
+                className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-2xl font-bold hover:bg-purple-600 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Chat with LIAM
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </motion.section>
         </div>
-      </section>
     </div>
   );
 };

@@ -1,15 +1,17 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Brain, Cpu, Zap, Sparkles } from 'lucide-react';
 
 interface BMSCELogoProps {
   className?: string;
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'full' | 'icon' | 'text';
+  variant?: 'full' | 'icon' | 'text' | 'creative';
 }
 
 const BMSCELogo: React.FC<BMSCELogoProps> = ({ 
   className = '', 
   size = 'md', 
-  variant = 'full' 
+  variant = 'creative' 
 }) => {
   const sizeClasses = {
     sm: 'w-8 h-8',
@@ -51,14 +53,92 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
     </div>
   );
 
+  const creativeLogo = (
+    <motion.div 
+      className={`flex items-center space-x-3 ${className}`}
+      whileHover={{ scale: 1.05 }}
+      transition={{ duration: 0.2 }}
+    >
+      {/* AI/ML Themed Icon */}
+      <div className="relative">
+        <motion.div
+          className={`${sizeClasses[size]} bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl`}
+          animate={{ 
+            boxShadow: [
+              "0 0 20px rgba(168, 85, 247, 0.4)",
+              "0 0 30px rgba(236, 72, 153, 0.6)",
+              "0 0 20px rgba(168, 85, 247, 0.4)"
+            ]
+          }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
+          <Brain className="w-6 h-6 text-white" />
+        </motion.div>
+        
+        {/* Floating Elements */}
+        <motion.div
+          className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center"
+          animate={{ 
+            scale: [1, 1.2, 1],
+            rotate: [0, 180, 360]
+          }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          <Sparkles className="w-2 h-2 text-white" />
+        </motion.div>
+        
+        <motion.div
+          className="absolute -bottom-1 -left-1 w-3 h-3 bg-green-400 rounded-full"
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+        />
+      </div>
+
+      {/* Department Text */}
+      <div className={`${textSizeClasses[size]} font-bold`}>
+        <motion.div 
+          className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          AIML Department
+        </motion.div>
+        <motion.div 
+          className="text-xs text-gray-600 font-normal flex items-center space-x-1"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          <Cpu className="w-3 h-3" />
+          <span>AI & Machine Learning</span>
+        </motion.div>
+        <motion.div 
+          className="text-xs text-blue-500 font-normal flex items-center space-x-1"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+        >
+          <Zap className="w-3 h-3" />
+          <span>Powered by LIAM</span>
+        </motion.div>
+      </div>
+    </motion.div>
+  );
+
   switch (variant) {
     case 'icon':
       return icon;
     case 'text':
       return text;
     case 'full':
-    default:
       return fullLogo;
+    case 'creative':
+    default:
+      return creativeLogo;
   }
 };
 
