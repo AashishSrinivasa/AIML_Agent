@@ -87,12 +87,19 @@ class DemoAIAgent {
         break;
         
       case 'career_guidance':
-        response = `To become a data scientist, focus on these courses:
-• 3rd Semester: Mathematical Foundations, Data Structures, Probability & Statistics
-• 4th Semester: Introduction to Machine Learning, Algorithms
-• 5th Semester: Data Science and Analytics, Deep Learning Fundamentals
+        const dataScienceCourses = this.knowledgeBase.courses.filter(c => 
+          c.name.toLowerCase().includes('data') || 
+          c.name.toLowerCase().includes('machine learning') ||
+          c.name.toLowerCase().includes('analytics')
+        );
+        if (dataScienceCourses.length > 0) {
+          response = `To become a data scientist, focus on these courses:
+${dataScienceCourses.slice(0, 5).map(c => `• ${c.semester}: ${c.name} (${c.credits} credits)`).join('\n')}
 
 These courses will give you the foundation needed for a data science career.`;
+        } else {
+          response = `To become a data scientist, focus on courses in Machine Learning, Data Analytics, and Statistics. Check the courses page for detailed information.`;
+        }
         suggestions = [
           'What courses should I take for data science?',
           'Show me faculty who specialize in AI',
@@ -206,6 +213,37 @@ For specific faculty details, ask about individual members.`;
         ];
         break;
         
+      case 'course_query':
+        if (lowerMessage.includes('all courses') || lowerMessage.includes('available courses')) {
+          const allCourses = this.knowledgeBase.courses.slice(0, 8).map(c => 
+            `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} credits`).join('\n');
+          response = `Available Courses:
+${allCourses}
+
+... and ${this.knowledgeBase.courses.length - 8} more courses.
+
+For detailed course information, visit the Courses page.`;
+        } else if (lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
+          const mlCourses = this.knowledgeBase.courses.filter(c => 
+            c.name.toLowerCase().includes('machine learning') || 
+            c.name.toLowerCase().includes('ml')
+          );
+          if (mlCourses.length > 0) {
+            response = `Machine Learning Courses:
+${mlCourses.map(c => `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} credits`).join('\n')}`;
+          } else {
+            response = `Machine Learning courses are available across different semesters. Check the Courses page for detailed information.`;
+          }
+        } else {
+          response = `I can help you with course information. We have ${this.knowledgeBase.courses.length} courses across 6 semesters (3rd to 8th). What specific course information do you need?`;
+        }
+        suggestions = [
+          'Show me all available courses',
+          'What machine learning courses are there?',
+          'Tell me about semester 5 courses'
+        ];
+        break;
+        
       default:
         response = `I can help you with faculty information, course details, academic guidance, and department facilities. What specific information do you need?`;
         suggestions = [
@@ -228,26 +266,30 @@ For specific faculty details, ask about individual members.`;
   analyzeUserIntent(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
     
-    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-      return 'greeting';
+    // Prioritize specific queries first
+    if (lowerMessage.includes('course') || lowerMessage.includes('subject') || lowerMessage.includes('syllabus') || lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
+      return 'course_query';
     }
-    if (lowerMessage.includes('career') || lowerMessage.includes('become')) {
-      return 'career_guidance';
-    }
-    if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('sandeep') || lowerMessage.includes('pallavi') || lowerMessage.includes('hod')) {
-      return 'contact_information';
+    if (lowerMessage.includes('semester') && lowerMessage.includes('course')) {
+      return 'semester_course_query';
     }
     if (lowerMessage.includes('teaches') || lowerMessage.includes('who teaches')) {
       return 'faculty_course_mapping';
     }
-    if (lowerMessage.includes('semester') && lowerMessage.includes('course')) {
-      return 'semester_course_query';
+    if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('sandeep') || lowerMessage.includes('pallavi') || lowerMessage.includes('hod')) {
+      return 'contact_information';
+    }
+    if (lowerMessage.includes('career') || lowerMessage.includes('become')) {
+      return 'career_guidance';
     }
     if (lowerMessage.includes('lab') || lowerMessage.includes('infrastructure') || lowerMessage.includes('facility')) {
       return 'infrastructure_query';
     }
     if (lowerMessage.includes('show') && lowerMessage.includes('faculty') || lowerMessage.includes('all faculty')) {
       return 'faculty_listing';
+    }
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+      return 'greeting';
     }
     
     return 'general_inquiry';
