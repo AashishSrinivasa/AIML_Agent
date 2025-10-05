@@ -57,7 +57,7 @@ const FacultyPage: React.FC = () => {
                 <Users className="w-6 h-6 text-blue-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.totalFaculty}</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.total || 0}</div>
                 <div className="text-gray-600">Total Faculty</div>
               </div>
             </div>
@@ -68,8 +68,8 @@ const FacultyPage: React.FC = () => {
                 <Award className="w-6 h-6 text-green-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.totalPublications}</div>
-                <div className="text-gray-600">Publications</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.professors || 0}</div>
+                <div className="text-gray-600">Professors</div>
               </div>
             </div>
           </div>
@@ -79,8 +79,8 @@ const FacultyPage: React.FC = () => {
                 <BookOpen className="w-6 h-6 text-purple-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.specializations.length}</div>
-                <div className="text-gray-600">Specializations</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.associateProfessors || 0}</div>
+                <div className="text-gray-600">Associate Professors</div>
               </div>
             </div>
           </div>
@@ -90,8 +90,8 @@ const FacultyPage: React.FC = () => {
                 <Users className="w-6 h-6 text-orange-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.designations.length}</div>
-                <div className="text-gray-600">Designations</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.assistantProfessors || 0}</div>
+                <div className="text-gray-600">Assistant Professors</div>
               </div>
             </div>
           </div>
@@ -132,11 +132,9 @@ const FacultyPage: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Designations</option>
-              {statsData?.data?.designations && Array.isArray(statsData.data.designations) ? statsData.data.designations.map((designation: any) => (
-                <option key={designation._id} value={designation._id}>
-                  {designation._id} ({designation.count})
-                </option>
-              )) : null}
+              <option value="Professor">Professor</option>
+              <option value="Associate Professor">Associate Professor</option>
+              <option value="Assistant Professor">Assistant Professor</option>
             </select>
           </div>
           <div>
@@ -147,11 +145,16 @@ const FacultyPage: React.FC = () => {
               className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             >
               <option value="">All Specializations</option>
-              {statsData?.data?.specializations && Array.isArray(statsData.data.specializations) ? statsData.data.specializations.map((specialization: any) => (
-                <option key={specialization._id} value={specialization._id}>
-                  {specialization._id} ({specialization.count})
-                </option>
-              )) : null}
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Deep Learning">Deep Learning</option>
+              <option value="Natural Language Processing">Natural Language Processing</option>
+              <option value="Computer Vision">Computer Vision</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Artificial Intelligence">Artificial Intelligence</option>
+              <option value="Neural Networks">Neural Networks</option>
+              <option value="Data Mining">Data Mining</option>
+              <option value="Big Data">Big Data</option>
+              <option value="Generative AI">Generative AI</option>
             </select>
           </div>
           <div>

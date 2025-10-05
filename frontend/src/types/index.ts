@@ -32,28 +32,38 @@ export interface FacultyStats {
 export interface Course {
   id: string;
   name: string;
-  title: string;
   code: string;
   credits: number;
-  semester: number;
-  type: string;
-  description: string;
+  semester: string;
   prerequisites: string[];
-  objectives: string[];
-  outcomes: string[];
-  syllabus: string[];
-  textbooks: string[];
-  references: string[];
+  description: string;
   instructor?: string;
   schedule?: string;
   room?: string;
-  topics?: string[];
+  objectives: string[];
+  topics: string[];
+  courseType: string;
+  contactHours: string;
+  totalLectureHours: number;
+  examination: {
+    cieMarks: number;
+    seeMarks: number;
+  };
+  units: Array<{
+    number: number;
+    title: string;
+    hours: number;
+    topics: string[];
+  }>;
+  textBooks: string[];
+  referenceBooks: string[];
+  courseOutcomes: string[];
 }
 
 export interface CourseFilters {
   search?: string;
-  semester?: number;
-  type?: string;
+  semester?: string;
+  courseType?: string;
   instructor?: string;
   credits?: number;
 }

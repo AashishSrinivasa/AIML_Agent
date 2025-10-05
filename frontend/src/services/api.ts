@@ -65,19 +65,33 @@ export interface FacultyFilters {
 
 export interface Course {
   id: string;
-  title: string;
+  name: string;
   code: string;
   credits: number;
-  semester: number;
-  type: string;
-  description: string;
+  semester: string;
   prerequisites: string[];
-  objectives: string[];
-  outcomes: string[];
-  syllabus: string[];
-  textbooks: string[];
-  references: string[];
+  description: string;
   instructor?: string;
+  schedule?: string;
+  room?: string;
+  objectives: string[];
+  topics: string[];
+  courseType: string;
+  contactHours: string;
+  totalLectureHours: number;
+  examination: {
+    cieMarks: number;
+    seeMarks: number;
+  };
+  units: Array<{
+    number: number;
+    title: string;
+    hours: number;
+    topics: string[];
+  }>;
+  textBooks: string[];
+  referenceBooks: string[];
+  courseOutcomes: string[];
 }
 
 export interface AcademicCalendar {

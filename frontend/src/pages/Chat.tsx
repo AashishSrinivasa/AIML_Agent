@@ -103,7 +103,7 @@ const Chat: React.FC = () => {
       const response = await aiApi.chat(inputMessage.trim(), messages);
       console.log('API Response:', response);
       
-      if (response.success && response.data) {
+      if (response.data) {
         const aiMessage: ChatMessage = {
           id: (Date.now() + 1).toString(),
           role: 'assistant',

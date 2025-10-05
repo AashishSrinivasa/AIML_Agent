@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { useQuery } from 'react-query';
 import { Search, BookOpen, Clock, MapPin, User, Award, Calendar, Filter, ChevronDown, ChevronUp, GraduationCap, Code, Calculator } from 'lucide-react';
-import { coursesApi } from '../services/api.ts';
-import { Course, CourseFilters } from '../types/index.ts';
+import { coursesApi, Course } from '../services/api.ts';
+import { CourseFilters } from '../types/index.ts';
 
 const Courses: React.FC = () => {
   const [filters, setFilters] = useState<CourseFilters>({});
@@ -44,7 +44,7 @@ const Courses: React.FC = () => {
       filtered = filtered.filter(course => 
         course.name.toLowerCase().includes(searchLower) ||
         course.code.toLowerCase().includes(searchLower) ||
-        course.instructor.toLowerCase().includes(searchLower) ||
+        (course.instructor || '').toLowerCase().includes(searchLower) ||
         (course.topics && Array.isArray(course.topics) && 
          course.topics.some(topic => topic.toLowerCase().includes(searchLower)))
       );
@@ -154,7 +154,7 @@ const Courses: React.FC = () => {
                 <BookOpen className="w-6 h-6 text-blue-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.totalCourses}</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.total || 0}</div>
                 <div className="text-gray-600">Total Courses</div>
               </div>
             </div>
@@ -165,7 +165,7 @@ const Courses: React.FC = () => {
                 <Calendar className="w-6 h-6 text-green-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.semesters?.length || 0}</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.semesters || 0}</div>
                 <div className="text-gray-600">Semesters</div>
               </div>
             </div>
@@ -176,8 +176,8 @@ const Courses: React.FC = () => {
                 <User className="w-6 h-6 text-purple-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.instructors?.length || 0}</div>
-                <div className="text-gray-600">Instructors</div>
+                <div className="text-2xl font-bold text-gray-900">{statsData.data.totalCredits || 0}</div>
+                <div className="text-gray-600">Total Credits</div>
               </div>
             </div>
           </div>
@@ -187,8 +187,8 @@ const Courses: React.FC = () => {
                 <Award className="w-6 h-6 text-orange-600" />
               </div>
               <div className="ml-4">
-                <div className="text-2xl font-bold text-gray-900">{statsData.data.credits?.length || 0}</div>
-                <div className="text-gray-600">Credit Options</div>
+                <div className="text-2xl font-bold text-gray-900">{Math.round((statsData.data.totalCredits || 0) / (statsData.data.total || 1))}</div>
+                <div className="text-gray-600">Avg Credits</div>
               </div>
             </div>
           </div>
@@ -448,7 +448,7 @@ const Courses: React.FC = () => {
                       </div>
                       <div>
                         <span className="text-gray-600">Total:</span>
-                        <span className="font-medium ml-1">{course.examination.totalMarks}</span>
+                        <span className="font-medium ml-1">{course.examination.cieMarks + course.examination.seeMarks}</span>
                       </div>
                     </div>
                   </div>
