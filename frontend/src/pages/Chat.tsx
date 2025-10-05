@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { Send, Bot, User, Loader2, MessageCircle } from 'lucide-react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
+import { Send, Bot, User, Loader2, MessageCircle, ChevronDown } from 'lucide-react';
 import { useQuery } from 'react-query';
 import { motion, AnimatePresence } from 'framer-motion';
-import { aiApi } from '../services/api.ts';
+import { aiApi, facultyApi } from '../services/api.ts';
 import { ChatMessage } from '../types/index.ts';
 import toast from 'react-hot-toast';
 
@@ -10,9 +10,71 @@ const Chat: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [inputMessage, setInputMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [selectedSuggestionIndex, setSelectedSuggestionIndex] = useState(-1);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const { data: helpData } = useQuery('ai-help', aiApi.getHelp);
+  const { data: facultyData } = useQuery('faculty', facultyApi.getAll);
+
+  // Generate autocomplete suggestions
+  const suggestions = useMemo(() => {
+    if (!inputMessage.trim() || inputMessage.length < 2) return [];
+    
+    const searchTerm = inputMessage.toLowerCase();
+    const suggestionsList: string[] = [];
+    
+    // Faculty name suggestions
+    if (facultyData?.data && Array.isArray(facultyData.data)) {
+      facultyData.data.forEach(faculty => {
+        if (faculty.name.toLowerCase().includes(searchTerm)) {
+          suggestionsList.push(`Tell me about ${faculty.name}`);
+        }
+        if (faculty.name.toLowerCase().startsWith(searchTerm)) {
+          suggestionsList.push(`Who is ${faculty.name}?`);
+        }
+      });
+    }
+    
+    // Common question patterns
+    const commonPatterns = [
+      'Who teaches',
+      'What courses',
+      'Tell me about',
+      'What labs',
+      'When are',
+      'What equipment',
+      'Who specializes in',
+      'What are the prerequisites',
+      'What is',
+      'How to',
+      'Where is',
+      'When is'
+    ];
+    
+    commonPatterns.forEach(pattern => {
+      if (pattern.toLowerCase().includes(searchTerm)) {
+        suggestionsList.push(pattern);
+      }
+    });
+    
+    // Specialization suggestions
+    const specializations = [
+      'Machine Learning', 'Deep Learning', 'Natural Language Processing',
+      'Computer Vision', 'Data Science', 'Artificial Intelligence',
+      'Neural Networks', 'Reinforcement Learning', 'Data Mining'
+    ];
+    
+    specializations.forEach(spec => {
+      if (spec.toLowerCase().includes(searchTerm)) {
+        suggestionsList.push(`Who teaches ${spec}?`);
+        suggestionsList.push(`What courses cover ${spec}?`);
+      }
+    });
+    
+    return [...new Set(suggestionsList)].slice(0, 5);
+  }, [inputMessage, facultyData]);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -63,8 +125,38 @@ const Chat: React.FC = () => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
-      handleSendMessage();
+      if (selectedSuggestionIndex >= 0 && suggestions[selectedSuggestionIndex]) {
+        setInputMessage(suggestions[selectedSuggestionIndex]);
+        setShowSuggestions(false);
+        setSelectedSuggestionIndex(-1);
+      } else {
+        handleSendMessage();
+      }
+    } else if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setSelectedSuggestionIndex(prev => 
+        prev < suggestions.length - 1 ? prev + 1 : prev
+      );
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setSelectedSuggestionIndex(prev => prev > 0 ? prev - 1 : -1);
+    } else if (e.key === 'Escape') {
+      setShowSuggestions(false);
+      setSelectedSuggestionIndex(-1);
     }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputMessage(e.target.value);
+    setShowSuggestions(e.target.value.length >= 2);
+    setSelectedSuggestionIndex(-1);
+  };
+
+  const handleSuggestionClick = (suggestion: string) => {
+    setInputMessage(suggestion);
+    setShowSuggestions(false);
+    setSelectedSuggestionIndex(-1);
+    inputRef.current?.focus();
   };
 
   const suggestedQuestions = [
@@ -269,29 +361,75 @@ const Chat: React.FC = () => {
 
         {/* Input */}
         <div className="border-t dark:border-gray-600 p-4 bg-white dark:bg-gray-800 transition-colors duration-300">
-          <div className="flex space-x-2">
-            <input
-              type="text"
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              onKeyPress={handleKeyPress}
-              placeholder="Ask me anything about the AIML department..."
-              className="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-300"
-              disabled={isLoading}
-            />
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={handleSendMessage}
-              disabled={!inputMessage.trim() || isLoading}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center space-x-2"
-            >
-              {isLoading ? (
-                <Loader2 className="w-4 h-4 animate-spin" />
-              ) : (
-                <Send className="w-4 h-4" />
-              )}
-            </motion.button>
+          <div className="relative">
+            <div className="flex space-x-2">
+              <div className="flex-1 relative">
+                <input
+                  ref={inputRef}
+                  type="text"
+                  value={inputMessage}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyPress}
+                  onFocus={() => setShowSuggestions(inputMessage.length >= 2)}
+                  onBlur={() => setTimeout(() => setShowSuggestions(false), 200)}
+                  placeholder="Ask me anything about the AIML department..."
+                  className="w-full border border-gray-300 dark:border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors duration-300"
+                  disabled={isLoading}
+                />
+                
+                {/* Autocomplete Suggestions */}
+                <AnimatePresence>
+                  {showSuggestions && suggestions.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg shadow-lg z-50 max-h-60 overflow-y-auto"
+                    >
+                      {suggestions.map((suggestion, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: index * 0.05 }}
+                          onClick={() => handleSuggestionClick(suggestion)}
+                          className={`px-4 py-2 cursor-pointer text-sm transition-colors duration-200 ${
+                            index === selectedSuggestionIndex
+                              ? 'bg-blue-100 dark:bg-blue-900 text-blue-900 dark:text-blue-100'
+                              : 'hover:bg-gray-100 dark:hover:bg-gray-600 text-gray-900 dark:text-gray-100'
+                          } ${index === 0 ? 'rounded-t-lg' : ''} ${
+                            index === suggestions.length - 1 ? 'rounded-b-lg' : ''
+                          }`}
+                        >
+                          {suggestion}
+                        </motion.div>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+              
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={handleSendMessage}
+                disabled={!inputMessage.trim() || isLoading}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 flex items-center space-x-2"
+              >
+                {isLoading ? (
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4" />
+                )}
+              </motion.button>
+            </div>
+            
+            {/* Suggestion hint */}
+            {showSuggestions && suggestions.length > 0 && (
+              <div className="mt-2 text-xs text-gray-500 dark:text-gray-400">
+                Use ↑↓ to navigate, Enter to select, Esc to close
+              </div>
+            )}
           </div>
         </div>
       </div>
