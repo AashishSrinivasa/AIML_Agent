@@ -1,16 +1,35 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
-const axios = require('axios');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class ComprehensiveAIAgent {
   constructor() {
     this.app = express();
     this.port = 5001;
     this.knowledgeBase = {};
-    this.llamaModel = 'llama3:latest';
-    this.llamaUrl = 'http://localhost:11434/api/generate';
+    this.conversationHistory = new Map(); // Store conversation context per session
+    
+    // Initialize Google Gemini AI
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.log('❌ GEMINI_API_KEY not found in environment variables.');
+      console.log('📋 Please run: node setup-gemini.js to set up your API key');
+      process.exit(1);
+    }
+    
+    this.genAI = new GoogleGenerativeAI(apiKey);
+    this.model = this.genAI.getGenerativeModel({ 
+      model: "gemini-1.5-flash",
+      generationConfig: {
+        temperature: 0.7,
+        topP: 0.9,
+        maxOutputTokens: 500,
+      }
+    });
+    console.log('✅ Google Gemini AI initialized successfully');
     
     this.setupMiddleware();
     this.loadComprehensiveData();
@@ -108,13 +127,33 @@ class ComprehensiveAIAgent {
     return context;
   }
 
-  // Generate intelligent response using Llama 3.0
-  async generateIntelligentResponse(userMessage, history = []) {
+  // Generate intelligent response using Google Gemini with advanced features
+  async generateIntelligentResponse(userMessage, history = [], sessionId = 'default') {
     try {
       const context = this.createComprehensiveContext();
       
-      // Always provide ALL comprehensive data for complete context
-      const focusedData = `COMPLETE DEPARTMENTAL DATA:
+      // Get conversation history for this session
+      const conversationHistory = this.conversationHistory.get(sessionId) || [];
+      
+      // Analyze user intent and extract key information
+      const intent = this.analyzeUserIntent(userMessage);
+      const extractedInfo = this.extractKeyInformation(userMessage, context);
+      
+      // Build conversation context
+      const conversationContext = conversationHistory.length > 0 ? 
+        `\nCONVERSATION HISTORY:\n${conversationHistory.slice(-3).map(msg => `${msg.role}: ${msg.content}`).join('\n')}` : '';
+      
+      // Create enhanced prompt with advanced features
+      const prompt = `You are Liam, the official AI assistant for the Department of Artificial Intelligence and Machine Learning, B.M.S. College of Engineering.
+
+You are connected to structured departmental data containing faculty information, syllabus details, course lists, infrastructure, and academic programs. Use ONLY the provided and verified information from this internal data when answering.
+
+DEPARTMENT CONTEXT:
+- Department: ${context.department}
+- Established: ${context.infrastructure.established}
+- Undergraduate Intake: ${context.infrastructure.undergraduateIntake} students
+
+COMPLETE DEPARTMENTAL DATA:
 
 FACULTY DATA (${context.faculty.length} members):
 ${context.faculty.map(f => `
@@ -158,65 +197,58 @@ ${context.calendar.slice(0, 10).map(event => `
 - ${event.title} (${event.date})
   Type: ${event.type}
   Description: ${event.description}
-`).join('')}`;
-      
-      const prompt = `You are Liam, the official AI assistant for the Department of Artificial Intelligence and Machine Learning, B.M.S. College of Engineering.
+`).join('')}
 
-You are connected to structured departmental data containing faculty information, syllabus details, course lists, infrastructure, and academic programs. Use ONLY the provided and verified information from this internal data when answering.
-
-DEPARTMENT CONTEXT:
-- Department: ${context.department}
-- Established: ${context.infrastructure.established}
-- Undergraduate Intake: ${context.infrastructure.undergraduateIntake} students
-
-${focusedData}
+${conversationContext}
 
 USER QUESTION: ${userMessage}
+DETECTED INTENT: ${intent}
+EXTRACTED INFO: ${JSON.stringify(extractedInfo)}
 
-CORE INSTRUCTIONS:
+ADVANCED INSTRUCTIONS:
 1. Always rely on the college dataset above for facts — never invent information
-2. When the user asks a question, search internally within the given data and return only matching, verified content
-3. Keep the conversation continuous — remember previous user messages and maintain context throughout the session
-4. Each reply must be short, precise, and directly answer the question (2–5 sentences maximum)
-5. Avoid greetings, intros, or repetitive text. Do not restate previous questions
-6. If a faculty, course, or email is mentioned, respond only with that exact person's verified details
-7. If multiple matching items exist, list them clearly using bullet points
-8. If information is missing in your dataset, say: "That information isn't available in the current records"
-9. Never respond with data from outside the department or public internet
-10. Use clear and natural English. Sound like ChatGPT — confident, simple, and professional
-11. Never output markdown formatting unless explicitly asked
-12. Maintain context memory: when the user refers to "her" or "him" in the next question, understand who they meant from the last message
+2. Use conversation history to understand context and references (like "her", "him", "that course", etc.)
+3. For course pathway questions, provide step-by-step guidance based on prerequisites
+4. For faculty matching, consider specializations, research areas, and teaching subjects
+5. For complex queries, break down into logical steps and provide comprehensive answers
+6. Always suggest 2-3 relevant follow-up questions at the end of your response
+7. Use bullet points for lists, but keep responses concise (2-5 sentences + suggestions)
+8. If user asks about career paths, provide course recommendations and faculty mentors
+9. For semester-specific questions, consider prerequisite chains and course progression
+10. Maintain context memory throughout the conversation
 
-BEHAVIOR AND STYLE RULES:
-- Always be factual and minimal
-- Never guess or mix up details between faculty
-- Avoid filler lines like "I'm happy to help" or "It's great to chat with you"
-- For every name, email, or course, double-check you respond from the internal dataset only
-- Keep consistency in data (emails, names, designations, course titles, etc.)
-- Respond like ChatGPT — short, clear, and accurate
+RESPONSE FORMAT:
+[Your main answer in 2-5 sentences]
+
+SUGGESTED FOLLOW-UP QUESTIONS:
+• [Question 1]
+• [Question 2] 
+• [Question 3]
 
 RESPONSE:`;
 
-      console.log('Calling Llama with prompt length:', prompt.length);
+      console.log('Calling Gemini with advanced features, prompt length:', prompt.length);
       
-      const response = await axios.post(this.llamaUrl, {
-        model: this.llamaModel,
-        prompt: prompt,
-        stream: false,
-        options: {
-          temperature: 0.7,
-          top_p: 0.9,
-          max_tokens: 300
-        }
-      }, {
-        timeout: 30000
-      });
+      const result = await this.model.generateContent(prompt);
+      const response = await result.response;
+      const text = response.text();
 
-      console.log('Llama response received');
-      return response.data.response;
+      // Update conversation history
+      conversationHistory.push({ role: 'user', content: userMessage });
+      conversationHistory.push({ role: 'assistant', content: text });
+      
+      // Keep only last 10 messages to manage memory
+      if (conversationHistory.length > 10) {
+        conversationHistory.splice(0, conversationHistory.length - 10);
+      }
+      
+      this.conversationHistory.set(sessionId, conversationHistory);
+
+      console.log('Gemini response received with context memory');
+      return text;
 
     } catch (error) {
-      console.log('Llama error:', error.message);
+      console.log('Gemini error:', error.message);
       console.log('Using fallback response');
       return this.generateFallbackResponse(userMessage);
     }
@@ -295,39 +327,160 @@ RESPONSE:`;
     return `I can help with faculty, courses, infrastructure, and academic calendar information. What specific information do you need?`;
   }
 
-  // Generate suggestions based on context
-  generateSuggestions(userMessage) {
+  // Advanced intent analysis
+  analyzeUserIntent(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
     
+    if (lowerMessage.includes('career') || lowerMessage.includes('path') || lowerMessage.includes('become')) {
+      return 'career_guidance';
+    }
+    if (lowerMessage.includes('prerequisite') || lowerMessage.includes('before') || lowerMessage.includes('need to take')) {
+      return 'prerequisite_analysis';
+    }
+    if (lowerMessage.includes('teaches') || lowerMessage.includes('instructor') || lowerMessage.includes('who teaches')) {
+      return 'faculty_course_mapping';
+    }
+    if (lowerMessage.includes('semester') && (lowerMessage.includes('what') || lowerMessage.includes('courses'))) {
+      return 'semester_course_query';
+    }
+    if (lowerMessage.includes('research') || lowerMessage.includes('specialization')) {
+      return 'research_interest_matching';
+    }
+    if (lowerMessage.includes('email') || lowerMessage.includes('contact')) {
+      return 'contact_information';
+    }
+    if (lowerMessage.includes('lab') || lowerMessage.includes('equipment') || lowerMessage.includes('infrastructure')) {
+      return 'infrastructure_query';
+    }
     if (lowerMessage.includes('faculty') || lowerMessage.includes('professor')) {
-      return [
-        "Show me all faculty members",
-        "Who teaches machine learning?",
-        "Faculty contact information"
-      ];
+      return 'faculty_information';
     }
-    
     if (lowerMessage.includes('course') || lowerMessage.includes('subject')) {
-      return [
-        "Show me all courses",
-        "Semester 5 courses",
-        "Course prerequisites"
-      ];
+      return 'course_information';
     }
     
-    if (lowerMessage.includes('lab') || lowerMessage.includes('equipment')) {
-      return [
-        "Show me all labs",
-        "ML Lab 1 equipment",
-        "Lab capacity details"
-      ];
+    return 'general_inquiry';
+  }
+
+  // Extract key information from user message
+  extractKeyInformation(userMessage, context) {
+    const lowerMessage = userMessage.toLowerCase();
+    const extracted = {
+      semester: null,
+      facultyName: null,
+      courseName: null,
+      specialization: null,
+      intent: null
+    };
+    
+    // Extract semester
+    const semesterMatch = lowerMessage.match(/(\d+)(?:st|nd|rd|th)?\s*semester/);
+    if (semesterMatch) {
+      extracted.semester = semesterMatch[1];
     }
     
-    return [
-      "Faculty information",
-      "Course details", 
-      "Lab facilities"
-    ];
+    // Extract faculty name
+    for (const faculty of context.faculty) {
+      const nameParts = faculty.name.toLowerCase().split(' ');
+      for (const part of nameParts) {
+        if (lowerMessage.includes(part) && part.length > 2) {
+          extracted.facultyName = faculty.name;
+          break;
+        }
+      }
+      if (extracted.facultyName) break;
+    }
+    
+    // Extract course name
+    for (const course of context.courses) {
+      const courseWords = course.name.toLowerCase().split(' ');
+      for (const word of courseWords) {
+        if (lowerMessage.includes(word) && word.length > 3) {
+          extracted.courseName = course.name;
+          break;
+        }
+      }
+      if (extracted.courseName) break;
+    }
+    
+    // Extract specialization
+    const specializations = ['machine learning', 'deep learning', 'computer vision', 'nlp', 'data science', 'ai', 'artificial intelligence'];
+    for (const spec of specializations) {
+      if (lowerMessage.includes(spec)) {
+        extracted.specialization = spec;
+        break;
+      }
+    }
+    
+    return extracted;
+  }
+
+  // Generate smart suggestions based on context and intent
+  generateSuggestions(userMessage, intent = null, extractedInfo = null) {
+    if (!intent) {
+      intent = this.analyzeUserIntent(userMessage);
+    }
+    
+    const suggestions = [];
+    
+    switch (intent) {
+      case 'career_guidance':
+        suggestions.push(
+          'What courses should I take for data science?',
+          'Show me faculty who specialize in AI',
+          'What are the prerequisites for machine learning courses?'
+        );
+        break;
+        
+      case 'faculty_course_mapping':
+        suggestions.push(
+          'What other courses does this faculty teach?',
+          'Show me all faculty members',
+          'What are their research areas?'
+        );
+        break;
+        
+      case 'semester_course_query':
+        suggestions.push(
+          'What are the prerequisites for these courses?',
+          'Who teaches these courses?',
+          'Show me courses from other semesters'
+        );
+        break;
+        
+      case 'research_interest_matching':
+        suggestions.push(
+          'What courses cover this topic?',
+          'Show me faculty research areas',
+          'What labs work on this research?'
+        );
+        break;
+        
+      case 'infrastructure_query':
+        suggestions.push(
+          'What equipment is available in other labs?',
+          'Show me all lab capacities',
+          'What research facilities are there?'
+        );
+        break;
+        
+      case 'prerequisite_analysis':
+        suggestions.push(
+          'Show me the complete course pathway',
+          'What courses can I take next semester?',
+          'Who teaches the prerequisite courses?'
+        );
+        break;
+        
+      default:
+        suggestions.push(
+          'Tell me about the faculty',
+          'What courses are available?',
+          'Show me the labs'
+        );
+    }
+    
+    return suggestions;
   }
 
   setupRoutes() {
@@ -375,33 +528,41 @@ RESPONSE:`;
       res.json({ data: this.knowledgeBase.calendar });
     });
 
-    // AI Chat API
+    // AI Chat API with advanced features
     this.app.post('/api/ai/chat', async (req, res) => {
       try {
-        const { message, history = [] } = req.body;
+        const { message, history = [], sessionId = 'default' } = req.body;
         
         if (!message) {
           return res.status(400).json({ error: 'Message is required' });
         }
 
-        const response = await this.generateIntelligentResponse(message, history);
-        const suggestions = this.generateSuggestions(message);
+        console.log('Received message:', message, 'Session:', sessionId);
+        
+        // Analyze intent and extract information
+        const intent = this.analyzeUserIntent(message);
+        const context = this.createComprehensiveContext();
+        const extractedInfo = this.extractKeyInformation(message, context);
+        
+        // Generate intelligent response with context
+        const response = await this.generateIntelligentResponse(message, history, sessionId);
+        
+        // Generate smart suggestions based on intent
+        const suggestions = this.generateSuggestions(message, intent, extractedInfo);
 
         res.json({
           data: {
             response: response,
-            sources: ['Comprehensive Knowledge Base'],
+            sources: ['Faculty Directory', 'Course Catalog', 'Infrastructure Guide', 'Academic Calendar'],
             suggestions: suggestions,
-            confidence: 0.9,
-            intent: 'intelligent_response',
+            confidence: 0.95,
+            intent: intent,
+            extractedInfo: extractedInfo,
             entities: {
-              faculty: [],
-              courses: [],
-              specializations: [],
-              researchAreas: [],
-              semesters: [],
-              equipment: [],
-              locations: []
+              faculty: extractedInfo.facultyName ? [extractedInfo.facultyName] : [],
+              courses: extractedInfo.courseName ? [extractedInfo.courseName] : [],
+              specializations: extractedInfo.specialization ? [extractedInfo.specialization] : [],
+              semesters: extractedInfo.semester ? [extractedInfo.semester] : []
             }
           }
         });
