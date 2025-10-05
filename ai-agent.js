@@ -237,11 +237,38 @@ RESPONSE:`;
     // Generate response based on intent
     switch (intent) {
       case 'greeting':
-        response = `Hello! I'm Liam, your AI assistant for the AIML department at BMSCE. I can help you with faculty information, course details, academic guidance, and more. What would you like to know?`;
+        response = `Hello! I'm Liam, your AI assistant for the AIML Department at BMSCE. I'm here to help you with any questions about our department, faculty, courses, facilities, or academic information. What would you like to know about the Department of Artificial Intelligence and Machine Learning?`;
         suggestions = [
+          'Where is the AIML department located?',
           'Tell me about the faculty members',
-          'What courses are available?',
-          'Show me the department facilities'
+          'What courses are available?'
+        ];
+        break;
+        
+      case 'department_location':
+        response = `The Department of Artificial Intelligence and Machine Learning is located on the 7th floor of the PG Block at B.M.S. College of Engineering, Basavanagudi, Bengaluru. You can reach us at hod.mel@bmsce.ac.in for any department-related queries.`;
+        suggestions = [
+          'What is the vision of the AIML department?',
+          'Who is the Head of the Department?',
+          'When was the department established?'
+        ];
+        break;
+        
+      case 'department_overview':
+        response = `The Department of Artificial Intelligence and Machine Learning at BMSCE offers a four-year B.E. program specializing in AI and ML. Our department was established in 2020 under the Faculty of Engineering and Technology. Our vision is to produce globally competent engineers skilled in AI and ML who contribute to technology, innovation, and research for societal development.`;
+        suggestions = [
+          'Who is the Head of the Department?',
+          'What courses are offered?',
+          'Tell me about the faculty'
+        ];
+        break;
+        
+      case 'hod_information':
+        response = `Dr. M. Dakshayini is the Professor and Head of the Department of Artificial Intelligence and Machine Learning. You can contact the department at hod.mel@bmsce.ac.in for any academic or administrative queries.`;
+        suggestions = [
+          'What is the department vision?',
+          'Where is the department located?',
+          'Tell me about the faculty members'
         ];
         break;
         
@@ -531,11 +558,11 @@ ${mlCourseList}
         break;
         
       default:
-        response = `I can help you with faculty information, course details, academic guidance, and department facilities. What specific information do you need?`;
+        response = `I'm here to help you with information about the AIML Department at BMSCE. I can assist you with details about our faculty, courses, department location, facilities, academic calendar, and more. What specific information would you like to know?`;
         suggestions = [
-          'Tell me about the faculty',
-          'What courses are available?',
-          'Show me the labs'
+          'Where is the AIML department located?',
+          'Tell me about the faculty members',
+          'What courses are available?'
         ];
     }
     
@@ -553,6 +580,15 @@ ${mlCourseList}
     const lowerMessage = userMessage.toLowerCase();
     
     // Prioritize specific queries first
+    if (lowerMessage.includes('where') && (lowerMessage.includes('department') || lowerMessage.includes('located') || lowerMessage.includes('location'))) {
+      return 'department_location';
+    }
+    if (lowerMessage.includes('what is aiml') || lowerMessage.includes('aiml department') || lowerMessage.includes('department overview') || lowerMessage.includes('vision') || lowerMessage.includes('established')) {
+      return 'department_overview';
+    }
+    if (lowerMessage.includes('hod') || lowerMessage.includes('head of department') || lowerMessage.includes('who is the head')) {
+      return 'hod_information';
+    }
     if (lowerMessage.includes('course') || lowerMessage.includes('subject') || lowerMessage.includes('syllabus') || lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
       return 'course_query';
     }
@@ -562,7 +598,7 @@ ${mlCourseList}
     if (lowerMessage.includes('teaches') || lowerMessage.includes('who teaches')) {
       return 'faculty_course_mapping';
     }
-    if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('sandeep') || lowerMessage.includes('pallavi') || lowerMessage.includes('hod')) {
+    if (lowerMessage.includes('email') || lowerMessage.includes('contact') || lowerMessage.includes('sandeep') || lowerMessage.includes('pallavi')) {
       return 'contact_information';
     }
     if (lowerMessage.includes('career') || lowerMessage.includes('become')) {
