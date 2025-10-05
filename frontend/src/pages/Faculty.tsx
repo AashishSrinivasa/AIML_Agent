@@ -428,7 +428,7 @@ const FacultyPage: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+              </motion.div>
             )) : (
               <div className="col-span-full text-center py-12">
                 <div className="text-gray-500 text-lg">No faculty data available</div>
