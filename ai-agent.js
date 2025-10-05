@@ -673,11 +673,16 @@ class AdvancedAIAgent {
     const prompt = this.buildAdvancedPrompt(question, data, analysis);
     
     try {
+      // Create AbortController for timeout
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+      
       const response = await fetch('http://localhost:11434/api/generate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
+        signal: controller.signal,
         body: JSON.stringify({
           model: 'llama3:latest',
           prompt: prompt,
@@ -685,10 +690,12 @@ class AdvancedAIAgent {
           options: {
             temperature: 0.7,
             top_p: 0.9,
-            max_tokens: 500
+            max_tokens: 300 // Reduced tokens for faster response
           }
         })
       });
+      
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         throw new Error(`Llama API error: ${response.status}`);
