@@ -29,7 +29,7 @@ const BMSCELogo: React.FC<BMSCELogoProps> = ({
 
   const icon = (
     <img
-      src="/logo.png"
+      src="/logo.svg"
       alt="BMSCE Logo"
       className={`${sizeClasses[size]} ${className} object-contain`}
     />

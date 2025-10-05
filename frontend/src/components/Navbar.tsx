@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun, Shield, Sparkles, Zap } from 'lucide-react';
+import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BMSCELogo from './BMSCELogo.tsx';
 
@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               >
                 <BMSCELogo 
                   size="lg" 
-                  variant="full"
+                  variant="creative"
                   className="transition-all duration-300"
                 />
               </motion.div>
