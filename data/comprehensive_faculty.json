@@ -4,7 +4,15 @@
     "name": "Dr. M Dakshayini",
     "designation": "Professor & HOD",
     "qualification": "Ph.D.",
-    "specialization": ["Computer Networks", "Algorithms", "Cloud Computing", "Ad-hoc Networks", "IoT", "Data Analytics", "Blockchain Technology"],
+    "specialization": [
+      "Computer Networks",
+      "Algorithms",
+      "Cloud Computing",
+      "Ad-hoc Networks",
+      "IoT",
+      "Data Analytics",
+      "Blockchain Technology"
+    ],
     "email": "dakshayini.ise@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -44,14 +52,19 @@
       "IoT and Data Analytics Applications"
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
-    "updatedAt": "2024-01-01T00:00:00.000Z"
+    "updatedAt": "2025-10-05T14:29:17.044Z"
   },
   {
     "id": "faculty_002",
     "name": "Dr. Gowrishankar",
     "designation": "Professor",
     "qualification": "B.E., M.Tech, Ph.D.",
-    "specialization": ["Deep Learning", "Wireless Networks", "Analytical Modelling", "Performance Evolution"],
+    "specialization": [
+      "Deep Learning",
+      "Wireless Networks",
+      "Analytical Modelling",
+      "Performance Evolution"
+    ],
     "email": "gowrishankar.cse@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -94,7 +107,14 @@
     "name": "Dr. Monika Puttaramaiah",
     "designation": "Associate Professor",
     "qualification": "BE(CSE), M.Tech(CSE), Ph.D(CSE-ML)",
-    "specialization": ["Natural Language Processing", "Deep Learning", "Semantic Web", "Web Mining", "Artificial Intelligence", "Machine Learning"],
+    "specialization": [
+      "Natural Language Processing",
+      "Deep Learning",
+      "Semantic Web",
+      "Web Mining",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
     "email": "monika.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -139,7 +159,14 @@
     "name": "Dr. Sandeep Varma N",
     "designation": "Associate Professor",
     "qualification": "B.Tech, M.Tech, Ph.D.",
-    "specialization": ["Data Privacy", "Formal Verification Techniques", "Data Engineering", "Machine Learning", "Deep Learning", "Physics Informed Neural Networks"],
+    "specialization": [
+      "Data Privacy",
+      "Formal Verification Techniques",
+      "Data Engineering",
+      "Machine Learning",
+      "Deep Learning",
+      "Physics Informed Neural Networks"
+    ],
     "email": "sandeep.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -184,7 +211,13 @@
     "name": "Dr. Seemanthini K",
     "designation": "Associate Professor",
     "qualification": "B.E, M.Tech, Ph.D",
-    "specialization": ["Artificial Intelligence", "Machine Learning", "Computer Vision", "Deep Learning", "Generative AI"],
+    "specialization": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Vision",
+      "Deep Learning",
+      "Generative AI"
+    ],
     "email": "seemanthinik.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -228,7 +261,11 @@
     "name": "Chethana V",
     "designation": "Assistant Professor",
     "qualification": "BE, M.Tech",
-    "specialization": ["Digital Image Processing", "Artificial Intelligence", "Machine Learning"],
+    "specialization": [
+      "Digital Image Processing",
+      "Artificial Intelligence",
+      "Machine Learning"
+    ],
     "email": "chethana.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -269,7 +306,10 @@
     "name": "BHAVYASHREE H L",
     "designation": "Assistant Professor",
     "qualification": "B.E, M.Tech",
-    "specialization": ["Machine Learning", "Data Science"],
+    "specialization": [
+      "Machine Learning",
+      "Data Science"
+    ],
     "email": "bhavyashreehl.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -307,7 +347,11 @@
     "name": "Dr. Jahnavi S",
     "designation": "Assistant Professor",
     "qualification": "B.E., M.Tech, Ph.D.",
-    "specialization": ["Visual Crypto Biometrics", "Multimodal Steganography", "Blockchain Technology"],
+    "specialization": [
+      "Visual Crypto Biometrics",
+      "Multimodal Steganography",
+      "Blockchain Technology"
+    ],
     "email": "jahnavis.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -348,7 +392,12 @@
     "name": "Dr. Sowmya Lakshmi B S",
     "designation": "Assistant Professor",
     "qualification": "B.E, M.Tech, Ph.D",
-    "specialization": ["Deep Learning", "Machine Learning", "Natural Language Processing", "Information Retrieval"],
+    "specialization": [
+      "Deep Learning",
+      "Machine Learning",
+      "Natural Language Processing",
+      "Information Retrieval"
+    ],
     "email": "sowmyalakshmibs.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -391,7 +440,14 @@
     "name": "Dr. Vinutha H",
     "designation": "Assistant Professor",
     "qualification": "Ph.D",
-    "specialization": ["Computer Vision", "Pattern Recognition", "Soft Computing", "Machine Learning", "Artificial Intelligence", "Cloud Computing"],
+    "specialization": [
+      "Computer Vision",
+      "Pattern Recognition",
+      "Soft Computing",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Cloud Computing"
+    ],
     "email": "vinuthah.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -436,7 +492,11 @@
     "name": "Kusha K R",
     "designation": "Assistant Professor",
     "qualification": "B.E, M.Tech, Ph.D (CSE)",
-    "specialization": ["Machine Learning", "Knowledge Data Discovery", "Wireless Sensor Networks"],
+    "specialization": [
+      "Machine Learning",
+      "Knowledge Data Discovery",
+      "Wireless Sensor Networks"
+    ],
     "email": "kushakr.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -477,7 +537,10 @@
     "name": "Pallavi B",
     "designation": "Assistant Professor",
     "qualification": "M.Tech",
-    "specialization": ["Machine Learning", "Data Analytics"],
+    "specialization": [
+      "Machine Learning",
+      "Data Analytics"
+    ],
     "email": "pallavib.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -515,7 +578,10 @@
     "name": "Prof. Lavanya B Koppal",
     "designation": "Assistant Professor",
     "qualification": "M.Tech",
-    "specialization": ["Digital Image Processing", "Pattern Recognition"],
+    "specialization": [
+      "Digital Image Processing",
+      "Pattern Recognition"
+    ],
     "email": "lavanyabk.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -553,7 +619,10 @@
     "name": "Shridevi A Desai",
     "designation": "Assistant Professor",
     "qualification": "B.E, M.Tech",
-    "specialization": ["Machine Learning", "Data Science"],
+    "specialization": [
+      "Machine Learning",
+      "Data Science"
+    ],
     "email": "shrideviad.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -591,7 +660,10 @@
     "name": "SONIYA L",
     "designation": "Assistant Professor",
     "qualification": "B.E(CSE), MTECH (CSE)",
-    "specialization": ["Machine Learning", "Cyber Security"],
+    "specialization": [
+      "Machine Learning",
+      "Cyber Security"
+    ],
     "email": "soniya.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -629,7 +701,11 @@
     "name": "SPOORTHI G S",
     "designation": "Assistant Professor",
     "qualification": "D.M.C.S, B.E, M.Tech, (Ph.D)",
-    "specialization": ["Artificial Intelligence", "Machine Learning", "Computer Networks"],
+    "specialization": [
+      "Artificial Intelligence",
+      "Machine Learning",
+      "Computer Networks"
+    ],
     "email": "spoorthigs.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -669,7 +745,11 @@
     "name": "Supriya P",
     "designation": "Assistant Professor",
     "qualification": "BE (CSE), MTech (Software Engineering)",
-    "specialization": ["Machine Learning", "Artificial Intelligence", "Natural Language Processing"],
+    "specialization": [
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Natural Language Processing"
+    ],
     "email": "supriyap.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -709,7 +789,17 @@
     "name": "Swaroop B.M.",
     "designation": "Assistant Professor",
     "qualification": "B.E. (CS), Masters(CS)",
-    "specialization": ["Operating Systems", "Machine Learning", "Data Mining", "Data Analysis & Modelling Techniques", "Bioinformatics", "Federated Learning", "Quantum Computing", "Multimodal AI", "Agentic AI"],
+    "specialization": [
+      "Operating Systems",
+      "Machine Learning",
+      "Data Mining",
+      "Data Analysis & Modelling Techniques",
+      "Bioinformatics",
+      "Federated Learning",
+      "Quantum Computing",
+      "Multimodal AI",
+      "Agentic AI"
+    ],
     "email": "swaroop.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",
@@ -757,7 +847,12 @@
     "name": "Varsha R",
     "designation": "Assistant Professor",
     "qualification": "BE, MTECH",
-    "specialization": ["Machine Learning", "Deep Learning", "Natural Language Processing", "Image Processing"],
+    "specialization": [
+      "Machine Learning",
+      "Deep Learning",
+      "Natural Language Processing",
+      "Image Processing"
+    ],
     "email": "varshar.mel@bmsce.ac.in",
     "phone": "+91-80-26622130",
     "office": "Department of Machine Learning, BMSCE",

@@ -48,9 +48,9 @@ const Admin: React.FC = () => {
   const loadData = async () => {
     try {
       const [facultyRes, coursesRes, infrastructureRes] = await Promise.all([
-        fetch('http://localhost:5001/api/faculty'),
-        fetch('http://localhost:5001/api/courses'),
-        fetch('http://localhost:5001/api/infrastructure')
+        fetch('/api/faculty'),
+        fetch('/api/courses'),
+        fetch('/api/infrastructure')
       ]);
 
       const facultyData = await facultyRes.json();

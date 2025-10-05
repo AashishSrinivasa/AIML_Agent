@@ -162,6 +162,156 @@ class AIMLAgent {
         }
       });
     });
+
+    // Faculty CRUD routes
+    this.app.post('/api/faculty', (req, res) => {
+      try {
+        const newFaculty = {
+          id: `faculty_${Date.now()}`,
+          ...req.body,
+          createdAt: new Date().toISOString()
+        };
+        
+        this.knowledgeBase.faculty.push(newFaculty);
+        this.saveFacultyData();
+        
+        res.status(201).json({
+          success: true,
+          data: newFaculty
+        });
+      } catch (error) {
+        console.error('Error creating faculty:', error);
+        res.status(500).json({ error: 'Failed to create faculty member' });
+      }
+    });
+
+    this.app.put('/api/faculty/:id', (req, res) => {
+      try {
+        const facultyIndex = this.knowledgeBase.faculty.findIndex(f => f.id === req.params.id);
+        
+        if (facultyIndex === -1) {
+          return res.status(404).json({
+            success: false,
+            message: 'Faculty member not found'
+          });
+        }
+        
+        this.knowledgeBase.faculty[facultyIndex] = {
+          ...this.knowledgeBase.faculty[facultyIndex],
+          ...req.body,
+          updatedAt: new Date().toISOString()
+        };
+        
+        this.saveFacultyData();
+        
+        res.json({
+          success: true,
+          data: this.knowledgeBase.faculty[facultyIndex]
+        });
+      } catch (error) {
+        console.error('Error updating faculty:', error);
+        res.status(500).json({ error: 'Failed to update faculty member' });
+      }
+    });
+
+    this.app.delete('/api/faculty/:id', (req, res) => {
+      try {
+        const facultyIndex = this.knowledgeBase.faculty.findIndex(f => f.id === req.params.id);
+        
+        if (facultyIndex === -1) {
+          return res.status(404).json({
+            success: false,
+            message: 'Faculty member not found'
+          });
+        }
+        
+        const deletedFaculty = this.knowledgeBase.faculty.splice(facultyIndex, 1)[0];
+        this.saveFacultyData();
+        
+        res.json({
+          success: true,
+          data: deletedFaculty
+        });
+      } catch (error) {
+        console.error('Error deleting faculty:', error);
+        res.status(500).json({ error: 'Failed to delete faculty member' });
+      }
+    });
+
+    // Courses CRUD routes
+    this.app.post('/api/courses', (req, res) => {
+      try {
+        const newCourse = {
+          id: `course_${Date.now()}`,
+          ...req.body,
+          createdAt: new Date().toISOString()
+        };
+        
+        this.knowledgeBase.courses.push(newCourse);
+        this.saveCoursesData();
+        
+        res.status(201).json({
+          success: true,
+          data: newCourse
+        });
+      } catch (error) {
+        console.error('Error creating course:', error);
+        res.status(500).json({ error: 'Failed to create course' });
+      }
+    });
+
+    this.app.put('/api/courses/:id', (req, res) => {
+      try {
+        const courseIndex = this.knowledgeBase.courses.findIndex(c => c.id === req.params.id);
+        
+        if (courseIndex === -1) {
+          return res.status(404).json({
+            success: false,
+            message: 'Course not found'
+          });
+        }
+        
+        this.knowledgeBase.courses[courseIndex] = {
+          ...this.knowledgeBase.courses[courseIndex],
+          ...req.body,
+          updatedAt: new Date().toISOString()
+        };
+        
+        this.saveCoursesData();
+        
+        res.json({
+          success: true,
+          data: this.knowledgeBase.courses[courseIndex]
+        });
+      } catch (error) {
+        console.error('Error updating course:', error);
+        res.status(500).json({ error: 'Failed to update course' });
+      }
+    });
+
+    this.app.delete('/api/courses/:id', (req, res) => {
+      try {
+        const courseIndex = this.knowledgeBase.courses.findIndex(c => c.id === req.params.id);
+        
+        if (courseIndex === -1) {
+          return res.status(404).json({
+            success: false,
+            message: 'Course not found'
+          });
+        }
+        
+        const deletedCourse = this.knowledgeBase.courses.splice(courseIndex, 1)[0];
+        this.saveCoursesData();
+        
+        res.json({
+          success: true,
+          data: deletedCourse
+        });
+      } catch (error) {
+        console.error('Error deleting course:', error);
+        res.status(500).json({ error: 'Failed to delete course' });
+      }
+    });
   }
 
   async generateIntelligentResponse(userMessage, sessionId) {
@@ -764,6 +914,26 @@ Contact these faculty members for computer vision guidance and research opportun
     }
     
     this.conversationHistory.set(sessionId, conversationHistory);
+  }
+
+  saveFacultyData() {
+    try {
+      const facultyPath = path.join(__dirname, 'data/comprehensive_faculty.json');
+      fs.writeFileSync(facultyPath, JSON.stringify(this.knowledgeBase.faculty, null, 2));
+      console.log('✅ Faculty data saved successfully');
+    } catch (error) {
+      console.error('❌ Error saving faculty data:', error);
+    }
+  }
+
+  saveCoursesData() {
+    try {
+      const coursesPath = path.join(__dirname, 'data/comprehensive_courses.json');
+      fs.writeFileSync(coursesPath, JSON.stringify(this.knowledgeBase.courses, null, 2));
+      console.log('✅ Courses data saved successfully');
+    } catch (error) {
+      console.error('❌ Error saving courses data:', error);
+    }
   }
 
   startServer() {
