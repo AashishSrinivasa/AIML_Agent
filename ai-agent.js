@@ -647,6 +647,9 @@ Contact these faculty members for computer vision guidance and research opportun
     if (lowerMessage.includes('career') || lowerMessage.includes('become')) {
       return 'career_guidance';
     }
+    if (lowerMessage.includes('faculty') || lowerMessage.includes('professor') || lowerMessage.includes('teacher') || lowerMessage.includes('staff')) {
+      return 'faculty_listing';
+    }
     if (lowerMessage.includes('show') && lowerMessage.includes('faculty') || lowerMessage.includes('all faculty')) {
       return 'faculty_listing';
     }
