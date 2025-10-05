@@ -72,7 +72,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
               >
                 <BMSCELogo 
                   size="lg" 
-                  variant="creative"
+                  variant="full"
                   className="transition-all duration-300"
                 />
               </motion.div>
