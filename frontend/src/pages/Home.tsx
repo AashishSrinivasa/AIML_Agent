@@ -157,7 +157,7 @@ const Home: React.FC = () => {
                 className="mb-6"
               >
                 <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
-                  Mr.LIAM
+                  LIAM
                 </h1>
                 <div className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
                   AI Assistant

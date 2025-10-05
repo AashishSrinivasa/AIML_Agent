@@ -72,7 +72,7 @@ const Admin: React.FC = () => {
 
   const handleLogin = (username: string, password: string): boolean => {
     // Simple authentication - in production, this should be more secure
-    if (username === 'admin' && password === 'Aashish@15') {
+    if ((username === 'ChittyChittyBangBang' || username === 'aashish') && password === 'Aashish@15') {
       setIsAuthenticated(true);
       setShowAuth(false);
       return true;

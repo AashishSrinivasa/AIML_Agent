@@ -5,28 +5,33 @@
     "name": "Mathematical Foundations for Machine Learning",
     "credits": 3,
     "semester": "3rd",
-    "prerequisites": [],
-    "description": "Mathematical foundations essential for machine learning.",
-    "instructor": "Mathematics Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "prerequisites": ["Calculus", "Linear Algebra", "Probability"],
+    "description": "Mathematical foundations essential for machine learning including linear algebra, calculus, probability, and statistics.",
+    "instructor": "Dr. Mathematics Faculty",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Understand linear-algebra tools used in ML and allied fields.",
-      "Apply vector-calculus and optimization in AI/ML contexts.",
-      "Develop analytical and lifelong-learning skills in applied mathematics."
+      "Apply mathematical concepts to machine learning problems",
+      "Understand linear algebra operations in ML",
+      "Master probability and statistics for ML",
+      "Solve optimization problems in ML"
     ],
     "topics": [
-      "Linear Transformations",
-      "Vector Norms",
-      "Inner Product Spaces",
-      "Eigenvalues and Eigenvectors"
+      "Linear Algebra for ML",
+      "Calculus and Optimization",
+      "Probability Theory",
+      "Statistical Inference",
+      "Matrix Operations",
+      "Gradient Descent"
     ],
     "courseType": "Basic Science",
-    "contactHours": "2–0–1",
+    "contactHours": "2-0-1",
     "totalLectureHours": 26,
     "examination": {
+      "duration": "3 hours",
       "cieMarks": 50,
-      "seeMarks": 100
+      "seeMarks": 100,
+      "totalMarks": 150
     },
     "units": [
       {
@@ -40,18 +45,71 @@
           "Singular & non-singular transformations",
           "Determinant of large matrices and computational complexity"
         ]
+      },
+      {
+        "number": 2,
+        "title": "Linear Transformations – II",
+        "hours": 5,
+        "topics": [
+          "Algebra of linear transformations",
+          "Geometric transformations",
+          "Composition of transformations",
+          "Affine subspaces and transformations"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Vector Norms and Inner Product Spaces",
+        "hours": 5,
+        "topics": [
+          "Vector and matrix norms",
+          "Inner products, orthogonality, and distances",
+          "Orthonormal basis and condition numbers"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Applications of Inner Product",
+        "hours": 5,
+        "topics": [
+          "Orthogonal complements & projections",
+          "Gram–Schmidt process",
+          "Orthogonal matrices, least-square approximation",
+          "Metric spaces and rotations"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Eigenvalues and Eigenvectors",
+        "hours": 5,
+        "topics": [
+          "Eigenspaces, characteristic and minimal polynomials",
+          "Eigen decomposition and diagonalization",
+          "Symmetric matrices and spectral norm"
+        ]
       }
     ],
     "textBooks": [
-      "Mathematics for Machine Learning – M.P. Deisenroth, A. Aldo Faisal, C. Ong, Cambridge, 2020"
+      "Mathematics for Machine Learning – M.P. Deisenroth, A. Aldo Faisal, C. Ong, Cambridge, 2020",
+      "Linear Algebra and Its Applications – D.C. Lay et al., Pearson, 2021",
+      "Linear Algebra: An Introduction – R. Bronson & G. Costa, Academic Press, 2007"
     ],
     "referenceBooks": [
-      "Linear Algebra and Optimization for Machine Learning – Charu Aggarwal, Springer, 2020"
+      "Linear Algebra and Optimization for Machine Learning – Charu Aggarwal, Springer, 2020",
+      "Linear Algebra – S. Friedberg et al., Pearson, 2019",
+      "Schaum's Outline: Linear Algebra – Lipschutz & Lipson, McGraw Hill, 2017"
     ],
     "courseOutcomes": [
-      "Apply calculus and linear algebra concepts to ML problems.",
-      "Implement mathematical concepts in ML using modern tools."
-    ]
+      "Apply calculus and linear algebra concepts to ML problems",
+      "Implement mathematical concepts in ML using modern tools"
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
     "id": "course_002",
@@ -60,49 +118,97 @@
     "credits": 3,
     "semester": "3rd",
     "prerequisites": [],
-    "description": "Understanding the functional blocks and architecture of computers.",
-    "instructor": "Computer Science Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "Covers the basic functional blocks of a computer, instruction set architecture, data representation, computer arithmetic, CPU design, memory systems, and pipelining.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Understand computer architecture fundamentals.",
-      "Apply architectural principles for performance optimization.",
-      "Analyze trade-offs in speed, cost, and energy."
+      "Comprehend the basic principles and components of computer architecture.",
+      "Apply principles of computer organization and architecture to improve the performance of computer systems.",
+      "Analyze the performance of different computer architectures and evaluate trade-offs in terms of speed, cost, and energy consumption."
     ],
     "topics": [
-      "Functional Blocks of a Computer",
-      "Data Representation and Arithmetic",
-      "CPU Control and Memory Design",
-      "Peripheral Devices and I/O Systems",
-      "Pipelining & Memory Organization"
+      "CPU Architecture",
+      "Instruction Set Architecture",
+      "Data Representation",
+      "Computer Arithmetic",
+      "Memory Systems",
+      "Pipelining"
     ],
     "courseType": "Engineering Science",
-    "contactHours": "3–0–0",
+    "contactHours": "3-0-0",
     "totalLectureHours": 36,
     "examination": {
+      "duration": "3 hours",
       "cieMarks": 50,
       "seeMarks": 100
     },
     "units": [
       {
         "number": 1,
-        "title": "Functional Blocks of a Computer",
+        "title": "Basic Functional Blocks",
         "hours": 6,
         "topics": [
-          "CPU, memory, I/O subsystems, control unit, instruction set architecture, registers, addressing modes."
+          "CPU, memory, I/O subsystems, control unit",
+          "Instruction set architecture, execution cycle, addressing modes"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Data Representation and Computer Arithmetic",
+        "hours": 8,
+        "topics": [
+          "Signed, fixed and floating-point representations",
+          "Integer addition, subtraction, multiplication, and division"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "CPU Control Unit and Memory Design",
+        "hours": 7,
+        "topics": [
+          "Hardwired and micro-programmed design",
+          "Semiconductor memory technologies"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Peripheral Devices and I/O",
+        "hours": 7,
+        "topics": [
+          "I/O transfers (program controlled, interrupt driven, DMA)",
+          "Privileged instructions, software interrupts and exceptions"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Pipelining and Memory Organization",
+        "hours": 8,
+        "topics": [
+          "Basic concepts of pipelining, throughput, speedup, hazards",
+          "Hierarchical memory organization, cache memory"
         ]
       }
     ],
     "textBooks": [
-      "Computer Organization and Design – Patterson & Hennessy, Elsevier, 2011"
+      "Computer Organization and Design: The Hardware/Software Interface, David A. Patterson and John L. Hennessy, 4th, Elsevier, 2011",
+      "Computer Architecture and Organization, John P. Hayes, McGraw Hill, 2017"
     ],
     "referenceBooks": [
-      "Computer Organization – Hamacher, McGraw Hill, 2019"
+      "Computer Organization, Carl Hamacher, 5th Edition, McGraw Hill Publishers, 2019"
     ],
     "courseOutcomes": [
-      "Understand computer architecture fundamentals.",
-      "Apply architectural principles for performance optimization."
-    ]
+      "Comprehend the basic principles and components of computer architecture.",
+      "Apply principles of computer organization and architecture to improve the performance of computer systems.",
+      "Analyze the performance of different computer architectures and evaluate trade-offs in terms of speed, cost, and energy consumption."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
     "id": "course_003",
@@ -111,49 +217,98 @@
     "credits": 4,
     "semester": "3rd",
     "prerequisites": [],
-    "description": "Introduction to data structures and their applications.",
-    "instructor": "Programming Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "A comprehensive course on fundamental data structures including linked lists, stacks, queues, trees, and their applications.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Design efficient data organization methods using linear structures.",
-      "Apply recursion and linear structures to real-world problems.",
-      "Implement applications using non-linear structures."
+      "Design various methodology for organizing data and solving basic programming challenges using Linear Data Structures.",
+      "Apply the concepts of Linear Data Structures and Recursive techniques to handle problems in real time applications through programming.",
+      "Analyze and implement application based real time solutions using Non-linear Data structures."
     ],
     "topics": [
-      "Introduction to Data Structures",
-      "Linked Lists and Stacks",
-      "Recursion and Queues",
-      "Trees",
+      "Linked Lists",
+      "Stacks",
+      "Queues",
+      "Recursion",
+      "Binary Trees",
       "Balanced Trees"
     ],
     "courseType": "Professional Core",
-    "contactHours": "3–0–1",
+    "contactHours": "3-0-1",
     "totalLectureHours": 36,
     "examination": {
+      "duration": "3 hours",
       "cieMarks": 50,
       "seeMarks": 100
     },
     "units": [
       {
         "number": 1,
-        "title": "Introduction to Data Structures",
+        "title": "Introduction to Linked Lists",
         "hours": 8,
         "topics": [
-          "Definition, classification, dynamic memory allocation, singly linked lists and applications."
+          "Dynamic Memory allocation",
+          "Singly Linked List operations and applications"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Advanced Linked Lists and Stacks",
+        "hours": 7,
+        "topics": [
+          "Doubly Linked Lists, Circular Linked List",
+          "Stack implementation and applications (Infix to postfix)"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Recursion and Queues",
+        "hours": 6,
+        "topics": [
+          "Efficiency of Recursion",
+          "Queue implementation and types (Circular, Deque, priority)"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Binary Trees",
+        "hours": 7,
+        "topics": [
+          "Binary Tree properties and representations",
+          "Binary Search Trees operations and applications"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Balanced Trees",
+        "hours": 8,
+        "topics": [
+          "AVL Trees",
+          "Splay trees",
+          "Red-Black Trees"
         ]
       }
     ],
     "textBooks": [
-      "Data Structures and Algorithms in Python – Goodrich et al., Wiley, 2013"
+      "Data Structures and algorithms in Python, Michael T. Goodrich, Roberto Tamassia, Michel H Goldwasser, John Wiley & Sons, Incorporated, 2013",
+      "Python Data Structures and Algorithms, Benjamin Baka, Packt Publishing Ltd, 2017"
     ],
     "referenceBooks": [
-      "Algorithmic Thinking with Python – Narasimha Karumanchi, Career Monk, 2015"
+      "Data Structures and Algorithmic Thinking with Python, by Narasimha Krumanchi, 1st Edition, Career Monk Publications, 2015"
     ],
     "courseOutcomes": [
-      "Design efficient data organization methods using linear structures.",
-      "Apply recursion and linear structures to real-world problems."
-    ]
+      "Design various methodology for organizing data and solving basic programming challenges using Linear Data Structures.",
+      "Apply the concepts of Linear Data Structures and Recursive techniques to handle problems in real time applications through programming.",
+      "Analyze and implement application based real time solutions using Non-linear Data structures."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
     "id": "course_004",
@@ -162,98 +317,201 @@
     "credits": 3,
     "semester": "3rd",
     "prerequisites": [],
-    "description": "Probability and statistics concepts for machine learning.",
-    "instructor": "Mathematics Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "This course covers foundational concepts in probability and statistics essential for machine learning, including Bayesian probability, random variables, and descriptive statistics.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Analyze data distributions and predict outcomes using probability.",
-      "Apply statistical knowledge to uncertain data.",
-      "Derive relationships among sample features using statistical tools."
+      "Analyze real time challenges based on distribution of data and predict future estimations.",
+      "Apply statistical knowledge to understand uncertainty and formulate automated solutions.",
+      "Analyze the relationship between features and apply algorithms to handle data efficiently."
     ],
     "topics": [
-      "Introduction to Probability",
       "Bayesian Probability",
-      "Discrete Random Variables",
-      "Continuous Random Variables",
-      "Descriptive Statistics"
+      "Discrete and Continuous Random Variables",
+      "Descriptive Statistics",
+      "Probability Distributions",
+      "Naive Bayes"
     ],
     "courseType": "Professional Core",
-    "contactHours": "2–0–1",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
     "examination": {
+      "duration": "3 hours",
       "cieMarks": 50,
       "seeMarks": 100
     },
     "units": [
       {
         "number": 1,
-        "title": "Introduction to Probability",
-        "hours": 0,
+        "title": "Probability",
+        "hours": 5,
         "topics": [
-          "Joint, marginal, conditional probability; uncertainty in ML."
+          "Joint, Marginal, and Conditional Probability",
+          "Uncertainty in Machine Learning"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Bayesian Probability",
+        "hours": 5,
+        "topics": [
+          "Bayes Theorem",
+          "Maximum a Posteriori",
+          "Naive Bayes Classifier"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Discrete Random Variables",
+        "hours": 6,
+        "topics": [
+          "Expectation and variance",
+          "Covariance and correlation",
+          "Bernoulli, Binomial, Geometric, Poisson distributions"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Continuous Random variables",
+        "hours": 5,
+        "topics": [
+          "Probability density",
+          "Union, Exponential, Normal distributions",
+          "Pareto Distribution and Central Limit Theorem"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Introduction to statistics",
+        "hours": 5,
+        "topics": [
+          "Population and sample, parameters and statistics",
+          "Mean, Median, Quantiles, Variance, Standard Deviation"
         ]
       }
     ],
     "textBooks": [
-      "Probability and Statistics for Computer Scientists – Michael Baron, CRC, 2019"
+      "Probability and Statistics for Computer Scientists, Michael Baron, CRC press, 2019",
+      "Probability for machine learning Discover how to harness uncertainty with Python, Jason Brownlee"
     ],
     "referenceBooks": [
-      "Probability, Statistics, Queuing Theory – Kishore Trivedi, Wiley, 2008"
+      "Probability, Statistics, Queuing theory and Computer Science Applications, Kishore S Trivedi, 2nd Edition, Willey Publishers, 2008"
     ],
     "courseOutcomes": [
-      "Analyze data distributions and predict outcomes using probability.",
-      "Apply statistical knowledge to uncertain data."
-    ]
+      "Analyze the real time challenges based on distribution of data, predict future estimations using the concept of probability and acquire skills to better handle the present situation.",
+      "Apply statistical knowledge to understand the uncertainty in daily applications and formulate automated solutions.",
+      "Analyze the relationship between the features extracted from the samples and apply the learnt algorithms to handle data efficiently."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
     "id": "course_005",
     "code": "24AM3PCOOP",
-    "name": "Object-Oriented Programming",
+    "name": "Object Oriented Programming",
     "credits": 3,
     "semester": "3rd",
     "prerequisites": [],
-    "description": "Object-oriented programming concepts.",
-    "instructor": "Programming Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "An introduction to Object-Oriented Programming principles including classes, objects, encapsulation, abstraction, inheritance, and polymorphism, as well as concurrency and memory management.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Apply OOP concepts for reusability.",
-      "Model object interactions effectively.",
-      "Implement OOP principles using modern tools."
+      "Exhibit object-oriented programming paradigm to enhance code reusability.",
+      "Design and Model efficient class and object interaction mechanisms.",
+      "Demonstrate object-oriented principles and practices through modern tools."
     ],
     "topics": [
-      "Introduction to OOP",
-      "Encapsulation & Abstraction",
-      "Inheritance & Polymorphism",
+      "OOP Principles",
+      "Encapsulation",
+      "Abstraction",
+      "Inheritance",
+      "Polymorphism",
       "Concurrency",
       "Memory Management"
     ],
     "courseType": "Professional Core",
-    "contactHours": "2–0–1",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
     "examination": {
+      "duration": "3 hours",
       "cieMarks": 50,
       "seeMarks": 100
     },
     "units": [
       {
         "number": 1,
-        "title": "Introduction to OOP",
-        "hours": 0,
+        "title": "Introduction to Classes and Objects",
+        "hours": 5,
         "topics": [
-          "Abstract machines, class-object modeling, methods, attributes."
+          "Class and Object Modeling",
+          "Defining and calling functions in classes",
+          "Initializing parameters"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Encapsulation and Abstraction",
+        "hours": 5,
+        "topics": [
+          "Encapsulations with functions and objects",
+          "Abstract base classes"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Inheritance and Polymorphism",
+        "hours": 6,
+        "topics": [
+          "Extending built-ins, overriding and super",
+          "Multiple Inheritance, Diamond problem",
+          "Polymorphism for operators, Magic methods"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Concurrency",
+        "hours": 5,
+        "topics": [
+          "Processes and Threads, Thread life cycle",
+          "Synchronizing Threads, Inter-Thread Communication, Thread Deadlock"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Memory Management and Timers",
+        "hours": 5,
+        "topics": [
+          "Object lifetime, Reference count, Garbage collection",
+          "Implementing timers in python"
         ]
       }
     ],
     "textBooks": [
-      "Programming Languages: Principles and Paradigms – Maurizio Gabbrielli, Springer, 2023"
+      "Programming Languages: Principles and Paradigms, springer, Maurizio Gabbrielli, Simone Martini, 2nd Edition, Springer, 2023",
+      "Python 3 object-oriented programming, 2nd Edition, Dusty Phillips, 2015"
     ],
     "referenceBooks": [
-      "Object Oriented Python – Irv Kalb, 2022"
+      "Object oriented python, Irv Kalb, 2022"
     ],
     "courseOutcomes": [
-      "Apply OOP concepts for reusability.",
-      "Model object interactions effectively."
-    ]
+      "Exhibit object-oriented programming paradigm to enhance code reusability.",
+      "Design and Model efficient class and object interaction mechanisms using Object-oriented problem-solving techniques.",
+      "Demonstrate object-oriented principles and practices through modern tools."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
     "id": "course_006",
@@ -262,24 +520,256 @@
     "credits": 3,
     "semester": "3rd",
     "prerequisites": [],
-    "description": "Database management systems concepts.",
-    "instructor": "Computer Science Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "This course covers fundamentals of database systems, including data modeling, relational models, database design, transaction processing, storage, indexing, and an introduction to NoSQL databases.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Apply DBMS concepts to real-world systems.",
-      "Design conceptual data models for business applications.",
-      "Use query processing techniques effectively."
+      "Apply and Analyze the concepts of database management system for various real-world applications.",
+      "Develop and exhibit a conceptual framework for business applications through design and demonstration.",
+      "Conduct experiments to showcase the practical application of query processing techniques."
     ],
     "topics": [
-      "Introduction",
-      "ER Model & Relational Concepts",
-      "Database Design & Normalization",
-      "Storage & Indexing",
+      "Data Modeling",
+      "Relational Model",
+      "Database Design",
+      "Normalization",
+      "Transaction Processing",
+      "Storage and Indexing",
       "NoSQL Databases"
     ],
     "courseType": "Professional Core",
-    "contactHours": "2–0–1",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Databases",
+        "hours": 5,
+        "topics": [
+          "Database management system characteristics",
+          "Three schema architecture and Data Independence",
+          "Centralized and Client/Server Architectures"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Conceptual Relational Data Modeling",
+        "hours": 5,
+        "topics": [
+          "Entity Types, Sets, Attributes, Relationship Types",
+          "Weak Entity Types",
+          "Relational Model Constraints and Schemas"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Database Design and Transaction Processing",
+        "hours": 6,
+        "topics": [
+          "Functional Dependencies, Normal Forms (2NF, 3NF, BCNF)",
+          "Transaction Concepts, Desirable Properties of Transactions"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Storage and Indexing",
+        "hours": 5,
+        "topics": [
+          "Magnetic Disks, RAID",
+          "Indexing and Hashing (B+ tree, B Tree, Static/Dynamic Hashing)"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "NoSQL",
+        "hours": 5,
+        "topics": [
+          "SQL versus NoSQL",
+          "Types of NoSQL Databases, CAP theorem",
+          "MongoDB concepts"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Fundamentals of Database Systems, Ramez Elmasri and Shamkant B. Navathe, 5th Edition, Pearson Education, 2008"
+    ],
+    "referenceBooks": [
+      "Database System Concepts, Abraham Silberschatz, Henry F. Korth and S. Sudarshan, 6th Edition, Tata Mc Graw Hill, 2011"
+    ],
+    "courseOutcomes": [
+      "Apply and Analyze the concepts of database management system for various real-world applications.",
+      "Develop and exhibit a conceptual framework for business applications through the process of design and demonstration.",
+      "Conduct experiments to showcase the practical application of query processing techniques."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_007",
+    "code": "23AM3AETFC",
+    "name": "Theoretical Foundations of Computations",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": [],
+    "description": "A course on the theory of computation, covering finite automata, regular languages, context-free grammars, pushdown automata, and Turing machines.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply formal notations with related concepts to provide a basic construct of computation.",
+      "Analyze the constructs of a machine representation of formal languages.",
+      "Design formal machines that can recognize patterns and syntaxes of mathematical models."
+    ],
+    "topics": [
+      "Finite Automata",
+      "Regular Languages",
+      "Context-Free Grammars",
+      "Pushdown Automata",
+      "Turing Machines"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Finite Automata (FA)",
+        "hours": 8,
+        "topics": [
+          "Deterministic Finite Automata (DFA)",
+          "Nondeterministic Finite Automata (NFA)",
+          "Equivalence of NFA and DFA"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Regular Languages and Expressions",
+        "hours": 6,
+        "topics": [
+          "Proving Languages Not to be Regular",
+          "Closure Properties",
+          "Equivalence of FA and Regular Expressions"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Context Free Grammars (CFG) and Languages (CFL)",
+        "hours": 8,
+        "topics": [
+          "Ambiguity in Grammars",
+          "Chomsky Normal Form (CNF)",
+          "Greibach Normal Form (GNF)",
+          "Pumping Lemma"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Pushdown Automata",
+        "hours": 7,
+        "topics": [
+          "Deterministic and Non-Deterministic Pushdown Automaton",
+          "Equivalence of PDA's and CFG's"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Turing Machines (TM)",
+        "hours": 7,
+        "topics": [
+          "Deterministic & Non-Deterministic TM",
+          "Undecidable Problems",
+          "Post's Correspondence Problem"
+        ]
+      }
+    ],
+    "textBooks": [
+      "An Introduction to Formal Languages and Automata, Peter Linz, 6th Edition, Jones & Bartlett Learning, 2017"
+    ],
+    "referenceBooks": [
+      "Introduction to Automata Theory, Languages and Computation, John E. Hopcroft, Rajeev Motwani, Jeffrey D. Ullman, 3rd Edition, Pearson, 2007"
+    ],
+    "courseOutcomes": [
+      "Apply formal notations with related concepts to provide basic construct of computation.",
+      "Analyze the constructs of a machine representation of formal languages and implement solutions towards designing of system software.",
+      "Design formal machines that can recognize the patterns and syntaxes of mathematical models."
+    ],
+    "assessment": {
+      "cie": {
+        "tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_008",
+    "code": "23NCMC3PE1",
+    "name": "Physical Education-1",
+    "credits": 0,
+    "semester": "3rd",
+    "prerequisites": [],
+    "description": "A non-credit mandatory course focusing on physical education.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Non-credit Mandatory",
+    "contactHours": "1 hour",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 0,
+      "seeMarks": 0
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_009",
+    "code": "23MA4BSMML",
+    "name": "Mathematical Foundation for Machine Learning - 2",
+    "credits": 3,
+    "semester": "4th",
+    "prerequisites": ["23MA3BSMML"],
+    "description": "An advanced course on the mathematical foundations for machine learning, focusing on matrix operations, vector calculus, and optimization.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Appreciate the importance of linear algebra in computer and allied engineering science.",
+      "Gain the knowledge of linear algebra tools and concepts to implement them in their core domain.",
+      "Improve their mathematical thinking and acquire skills required for sustained lifelong learning."
+    ],
+    "topics": [
+      "Matrix Decompositions",
+      "Vector Calculus",
+      "Backpropagation",
+      "Univariate and Multivariable Optimization",
+      "Gradient Descent"
+    ],
+    "courseType": "Basic Science",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "labHours": 13,
     "examination": {
       "cieMarks": 50,
       "seeMarks": 100
@@ -287,49 +777,112 @@
     "units": [
       {
         "number": 1,
-        "title": "Introduction",
-        "hours": 0,
+        "title": "Matrix Operation in Machine Learning",
+        "hours": 6,
         "topics": [
-          "Databases, DBMS architecture, data models, schemas."
+          "LU and Cholesky decomposition",
+          "Singular value decomposition (SVD)",
+          "Principal Component Analysis (PCA)",
+          "Moore-Penrose pseudoinverse"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Vector Calculus",
+        "hours": 5,
+        "topics": [
+          "Differentiation and partial differentials",
+          "Gradients of vector-valued functions and matrices",
+          "Multivariate Taylor series"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Applications of Vector Calculus",
+        "hours": 5,
+        "topics": [
+          "Backpropagation and automatic differentiation",
+          "Gradients in a deep network",
+          "Gradient of Quadratic Cost and Mean Squared Error"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Univariate Optimization",
+        "hours": 5,
+        "topics": [
+          "Local and global optima, convex sets",
+          "Optimization using gradient descent and NR method",
+          "Legendre-Fenchel Transform"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Multivariable Optimization",
+        "hours": 5,
+        "topics": [
+          "Sequential search (3-point, Fibonacci)",
+          "Constrained optimization using Lagrange multipliers",
+          "KKT optimality conditions"
         ]
       }
     ],
+    "labExperiments": [
+      "LU and Cholesky decomposition",
+      "SVD and PCA",
+      "Automatic Differentiation and Backpropagation",
+      "Computing gradients and Hessian Matrices",
+      "Gradient descent and NR method",
+      "Lagrange's multiplier method",
+      "Sequential search methods"
+    ],
     "textBooks": [
-      "Fundamentals of Database Systems – Elmasri & Navathe, Pearson, 2008"
+      "Mathematics for Machine learning, Marc Peter Deisennroth, A. Aldo Faisal, Cheng Soon Ong, 2020, Cambridge University Press."
     ],
     "referenceBooks": [
-      "Database System Concepts – Silberschatz et al., McGraw Hill, 2011"
+      "Linear Algebra and Optimization for Machine Learning, Charu C. Aggarwal, Springer, 2020."
     ],
     "courseOutcomes": [
-      "Apply DBMS concepts to real-world systems.",
-      "Design conceptual data models for business applications."
-    ]
+      "Apply the concepts of Calculus and Linear Algebra to problems in Machine learning.",
+      "Apply the concepts of Calculus and Linear Algebra to Machine learning through modern IT tools."
+    ],
+    "assessment": {
+      "cie_theory": {
+        "quiz": 10,
+        "aat": 10,
+        "test1": 40,
+        "test2": 40
+      },
+      "see": 100
+    }
   },
   {
-    "id": "course_007",
-    "code": "23AM3AETFC",
-    "name": "Theoretical Foundations of Computation",
+    "id": "course_010",
+    "code": "24AM4ESOPS",
+    "name": "Operating Systems",
     "credits": 3,
-    "semester": "3rd",
+    "semester": "4th",
     "prerequisites": [],
-    "description": "Theoretical foundations of computation.",
-    "instructor": "Mathematics Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "This course provides a comprehensive overview of operating system concepts, including processes, threads, memory management, deadlocks, and file systems.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Use formal notations to define computation constructs.",
-      "Analyze formal machine representations of languages.",
-      "Design machines to recognize syntactic patterns."
+      "Apply the fundamental concepts of modern operating systems.",
+      "Analyze and solve operating system issues to improve system performance and reliability.",
+      "Design solutions for scheduling real-time applications to meet real-world demands effectively."
     ],
     "topics": [
-      "Finite Automata",
-      "Regular Languages & Expressions",
-      "Context-Free Grammars",
-      "Pushdown Automata",
-      "Turing Machines"
+      "Processes and Threads",
+      "Inter-process Communication",
+      "Scheduling",
+      "Memory Management",
+      "Virtual Memory",
+      "Deadlocks",
+      "File Systems"
     ],
-    "courseType": "Ability Enhancement",
-    "contactHours": "3–0–0",
+    "courseType": "Engineering Science",
+    "contactHours": "3-0-0",
     "totalLectureHours": 36,
     "examination": {
       "cieMarks": 50,
@@ -338,40 +891,664 @@
     "units": [
       {
         "number": 1,
-        "title": "Finite Automata",
-        "hours": 0,
+        "title": "Introduction to Processes and Threads",
+        "hours": 7,
         "topics": [
-          "DFA, NFA, ε-NFA, equivalence, applications."
+          "Operating System Concepts, System Calls",
+          "The Process Model, Process States",
+          "The Classical Thread Model"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Inter-process Communication and Scheduling",
+        "hours": 7,
+        "topics": [
+          "Race Conditions, Critical Regions, Semaphores, Mutexes",
+          "Scheduling algorithms (FCFS, SJF, Round-Robin, Priority)",
+          "Case studies: Dining Philosophers, Readers and Writers"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Memory Management",
+        "hours": 8,
+        "topics": [
+          "Swapping, Contiguous memory allocation, Paging, Segmentation",
+          "Demand paging, Page replacement, Thrashing"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Deadlocks and Disk Management",
+        "hours": 8,
+        "topics": [
+          "Deadlock Detection, Recovery, Avoidance, Prevention",
+          "Disk Arm Scheduling Algorithms"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "File System",
+        "hours": 6,
+        "topics": [
+          "File concept, Access methods, Directory structure",
+          "Allocation methods, Free space management"
         ]
       }
     ],
     "textBooks": [
-      "Introduction to Formal Languages & Automata – Peter Linz, 6th Ed., 2017"
+      "Modern operating systems, Tanenbaum, Andrew, 4th Edition, Pearson Education, 2015.",
+      "Operating System Concepts, Abraham Silberschatz, Peter Baer Galvin, Greg Gagne, 9th Edition, Wiley India, 2013."
     ],
     "referenceBooks": [
-      "Automata Theory, Languages & Computation – Hopcroft, Motwani, Ullman"
+      "Operating Systems: Internals and Design Principles, William Stallings, 9th Edition, Pearson, 2008."
     ],
     "courseOutcomes": [
-      "Use formal notations to define computation constructs.",
-      "Analyze formal machine representations of languages."
-    ]
+      "Apply the fundamental concepts of modern operating systems.",
+      "Analyze and solve operating system issues, to improve system performance and reliability.",
+      "Design solutions for scheduling real-time applications to meet real-world demands effectively."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
-    "id": "course_008",
-    "code": "23NCMC3PE1",
-    "name": "Physical Education – I",
-    "credits": 0,
-    "semester": "3rd",
+    "id": "course_011",
+    "code": "24AM4PCDAA",
+    "name": "Design and Analysis of Algorithms",
+    "credits": 3,
+    "semester": "4th",
     "prerequisites": [],
-    "description": "Non-credit mandatory physical education course.",
-    "instructor": "Physical Education Department",
-    "schedule": "TBD",
-    "room": "TBD",
+    "description": "A course covering fundamental algorithm analysis techniques and various algorithm design strategies like brute force, divide and conquer, greedy, dynamic programming, and more.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply knowledge of computing and mathematics to algorithm analysis and design.",
+      "Analyze a problem and identify the time complexity of algorithms for an appropriate solution.",
+      "Assess the performance of different algorithms and their limitations."
+    ],
+    "topics": [
+      "Algorithm Analysis",
+      "Brute Force",
+      "Divide and Conquer",
+      "Greedy Technique",
+      "Decrease and Conquer",
+      "Dynamic Programming",
+      "Backtracking",
+      "Branch and Bound"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Fundamentals of Algorithm Analysis",
+        "hours": 7,
+        "topics": [
+          "Framework for Analysis of algorithm efficiency",
+          "Asymptotic Notations",
+          "Mathematical Analysis of Non recursive and Recursive algorithms"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Brute Force, Divide and Conquer, Greedy Technique",
+        "hours": 7,
+        "topics": [
+          "Sorting, String Matching",
+          "Master Theorem, Merge sort, Quicksort",
+          "Minimum Spanning tree"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Decrease and Conquer, Space-Time Trade-offs",
+        "hours": 8,
+        "topics": [
+          "DFS, BFS, Topological Sorting",
+          "Horspool Algorithm, Hashing"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Transform and Conquer, Dynamic Programming",
+        "hours": 7,
+        "topics": [
+          "Pre-sorting, 2-3 Trees, Heapsort",
+          "Binomial Coefficient, Floyd's Algorithm, Knapsack Problem"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Limitations, Backtracking, Branch and Bound",
+        "hours": 7,
+        "topics": [
+          "Decision Trees, P, NP and NP-Complete Problems",
+          "N queens problem, Sum of subset problem",
+          "Traveling Salesman problem, Assignment problem"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Introduction to the design and analysis of algorithms, by Anany Levitin, 3rd Edition, Pearson Education, 2023.",
+      "Computer Algorithms, by Horowitz E., Sahani S., Rajasekharan S., 3rd Edition, Universities Press, 2022."
+    ],
+    "referenceBooks": [
+      "Introduction to Algorithms, Cormen T.H, Leiserson C. E, Rivest R.L, Stein C, 4th Edition, The MIT Press 2022."
+    ],
+    "courseOutcomes": [
+      "Apply knowledge of computing and mathematics to algorithm analysis and design.",
+      "Analyze a problem and identify the time complexity of algorithms for an appropriate solution.",
+      "Assess the performance of different algorithms and their limitations."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_012",
+    "code": "24AM4PCIAI",
+    "name": "Introduction to Artificial Intelligence",
+    "credits": 3,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "An introductory course to AI, covering intelligent agents, problem-solving, search strategies, knowledge representation, and expert systems.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply principles of Artificial Intelligence (AI) to solve real-world problems.",
+      "Analyze the performance and limitations of different search algorithms in solving Al problems.",
+      "Assess and provide solutions for Al based applications."
+    ],
+    "topics": [
+      "Intelligent Agents",
+      "Uninformed and Informed Search",
+      "Knowledge Representation",
+      "Propositional and First-Order Logic",
+      "Adversarial Search",
+      "Expert Systems"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to AI and Uninformed Search",
+        "hours": 7,
+        "topics": [
+          "Intelligent Agents",
+          "Problem formulation",
+          "Uniform Cost Search, Depth Limited Search"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Informed (Heuristic) Search Strategies",
+        "hours": 8,
+        "topics": [
+          "Generate-and-Test, Hill Climbing, Best-first-Search",
+          "Constraint Satisfaction, Means-ends Analysis"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Knowledge Representation and Logic",
+        "hours": 8,
+        "topics": [
+          "Propositional Logic",
+          "First-Order Logic",
+          "Forward and Backward Chaining"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Knowledge Rules, Adversarial Search, and Uncertainty",
+        "hours": 7,
+        "topics": [
+          "Procedural vs Declarative Knowledge",
+          "Game theory, alpha-beta search",
+          "Acting under uncertainty"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Expert Systems",
+        "hours": 6,
+        "topics": [
+          "Architecture and Roles of expert systems",
+          "Knowledge Acquisition",
+          "Typical systems: MYCIN, DART, XOON"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Artificial Intelligence - A Modern Approach, Stuart Russell and Peter Norvig, 4th Edition, Pearson, 2022.",
+      "Artificial Intelligence, Elaine Rich, Kevin Knight, Shivashankar B Nair, 3rd Edition, Mc Graw Hill Education, 2015."
+    ],
+    "referenceBooks": [
+      "Introduction to Artificial Intelligence and Expert Systems, Dan W Patterson, 1st Edition, Pearson, 2015."
+    ],
+    "courseOutcomes": [
+      "Apply principles of Artificial Intelligence (AI) to solve real-world problems.",
+      "Analyze the performance and limitations of different search algorithms in solving Al problems.",
+      "Assess and provide solutions for Al based applications."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_013",
+    "code": "24AM4PCIML",
+    "name": "Introduction to Machine Learning",
+    "credits": 4,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "An introductory course to machine learning, covering concept learning, supervised learning (decision trees, SVMs), Bayesian learning, unsupervised learning (clustering), and dimensionality reduction.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply the concepts of Machine Learning techniques to solve problems across various domains.",
+      "Analyze the given data for modeling and prediction using machine learning techniques.",
+      "Provide solutions for real time applications using Machine Learning techniques."
+    ],
+    "topics": [
+      "Concept Learning",
+      "Supervised Learning",
+      "Bayesian Learning",
+      "Ensemble Learning",
+      "Unsupervised Learning",
+      "Dimensionality Reduction"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction and Concept Learning",
+        "hours": 7,
+        "topics": [
+          "Designing a Learning system",
+          "Find-S algorithm, Candidate Elimination algorithm"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Supervised Machine Learning",
+        "hours": 8,
+        "topics": [
+          "Decision Trees",
+          "Support Vector Machines (Linear and Non-Linear)",
+          "k-Nearest Neighbor Learning"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Bayesian and Ensemble Learning",
+        "hours": 7,
+        "topics": [
+          "Naïve Bayes Classifier, Bayesian Belief Network, EM Algorithm",
+          "Bagging, Boosting, Stacking"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Unsupervised Machine Learning",
+        "hours": 7,
+        "topics": [
+          "Clustering: K means, Spectral, Hierarchical",
+          "Association rule mining, Anomaly detection"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Dimensionality Reduction",
+        "hours": 7,
+        "topics": [
+          "PCA, Kernel PCA, LLE",
+          "Linear Discriminant Analysis (LDA)"
+        ]
+      }
+    ],
+    "labExperiments": [
+      "Find-S algorithm",
+      "Candidate Elimination algorithm",
+      "ID3 algorithm",
+      "Support Vector Machine",
+      "k-Nearest Neighbor algorithm",
+      "EM algorithm",
+      "Naïve Bayes classifier",
+      "k-Means algorithm",
+      "Apriori Algorithm",
+      "Principle Component Analysis"
+    ],
+    "textBooks": [
+      "Machine Learning, Tom Mitchell, McGraw Hill, 3rd Edition, 1997.",
+      "Introduction to Machine Learning, Ethem Alpaydın, 3rd Edition, MIT press, 2014."
+    ],
+    "referenceBooks": [
+      "MACHINE LEARNING An Algorithmic Perspective, Stephen Marsland, 2nd Edition, 2015."
+    ],
+    "courseOutcomes": [
+      "Apply the concepts of Machine Learning techniques to solve the problems across various domains.",
+      "Analyze the given data for modeling and prediction using machine learning techniques.",
+      "Provide solutions for real time applications using Machine Learning techniques."
+    ],
+    "assessment": {
+      "cie_theory": {
+        "best_of_two_tests": 20,
+        "quiz": 5
+      },
+      "cie_lab": {
+        "cie": 20,
+        "aat": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_014",
+    "code": "24AM4PCIST",
+    "name": "Inferential Statistics",
+    "credits": 3,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "This course covers inferential statistics, including sampling techniques, hypothesis testing, and various statistical tests like t-test, F-test, and Chi-square test.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply appropriate sampling methods for different types of data and research scenarios.",
+      "Analyzing the effectiveness of statistical estimators for reliable estimations.",
+      "Formulate a suitable hypothesis, make informed decisions based on data, and draw valid conclusions."
+    ],
+    "topics": [
+      "Sampling Techniques",
+      "Hypothesis Testing",
+      "Confidence Intervals",
+      "t-test",
+      "F-test",
+      "Chi-square Test"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-1-0",
+    "totalLectureHours": 26,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Estimation",
+        "hours": 5,
+        "topics": [
+          "Population and Sample, Statistic and Parameter",
+          "Unbiasedness, Consistency, Sufficiency and Efficiency",
+          "Parametric and Non-Parametric Tests"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Sampling Techniques",
+        "hours": 5,
+        "topics": [
+          "Simple Random Sampling, Systematic Sampling",
+          "Stratified Random Sampling, Clustered Sampling"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Fundamentals of Inference",
+        "hours": 5,
+        "topics": [
+          "Null and Alternate Hypothesis, Type-I and Type-II Errors",
+          "Level of Significance, Critical Region, P-Value",
+          "Construction of Confidence Intervals"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Hypothesis Testing I",
+        "hours": 6,
+        "topics": [
+          "Test of Significance of Single Proportion",
+          "Test of Significance of Difference of Proportions",
+          "Test of Significance for Single Mean and difference of two means"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Hypothesis Testing II",
+        "hours": 5,
+        "topics": [
+          "t-distribution and t-tests (Single Mean, Difference, Paired)",
+          "F-Distribution and F-test",
+          "Chi-square Test"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Probability and Statistics for Computer Scientists, Michael Baron, 3rd Edition, Chapman and Hall, 2019",
+      "Fundamental of Mathematical Statistics, S.C Gupta and V.K Kapoor, 12th Edition, Sultan Chand and Sons, 2020"
+    ],
+    "referenceBooks": [
+      "Probability & Statistics for Engineers & Scientists, Ronal E. Walpole, et al., 9th Edition, Pearson, 2016"
+    ],
+    "courseOutcomes": [
+      "Apply appropriate sampling methods for different types of data and research scenarios.",
+      "Analyzing the effectiveness of statistical estimators for reliable estimations.",
+      "Formulate a suitable hypothesis, make informed decisions based on data, and draw valid conclusions."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_015",
+    "code": "24AM4PCAAL",
+    "name": "Algorithm Analysis Laboratory",
+    "credits": 1,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "A laboratory course focused on the practical implementation and analysis of various algorithm design strategies.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Implement programs to solve computational problems using suitable algorithm design strategy.",
+      "Evaluate the asymptotic performance of algorithms and write formal correctness proof for algorithms.",
+      "Conduct experiments to choose appropriate algorithms for the given real time problem."
+    ],
+    "topics": [
+      "Time Complexity Analysis",
+      "Brute force method",
+      "Divide and conquer",
+      "Greedy technique",
+      "Decrease and conquer",
+      "Space and time tradeoff",
+      "Transform and conquer",
+      "Dynamic programming",
+      "Backtracking",
+      "Branch and bound"
+    ],
+    "courseType": "Professional Core Lab",
+    "contactHours": "0-0-1",
+    "totalLectureHours": 0,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "labExperiments": [
+      "Time Complexity Analysis",
+      "Brute force method",
+      "Divide and conquer",
+      "Greedy technique",
+      "Decrease and conquer technique",
+      "Space and time tradeoff techniques",
+      "Transform and conquer technique",
+      "Dynamic programming",
+      "Backtracking",
+      "Branch and bound technique"
+    ],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Implement programs to solve computational problems using suitable algorithm design strategy.",
+      "Evaluate the asymptotic performance of algorithms and write formal correctness proof for algorithms.",
+      "Conduct experiments to choose appropriate algorithms for the given real time problem."
+    ],
+    "assessment": {
+      "cie": {
+        "cie_1": 20,
+        "cie_2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_016",
+    "code": "22MA4AEUHV",
+    "name": "Universal Human Values",
+    "credits": 2,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "A course on universal human values to promote ethical and responsible behavior.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [],
     "topics": [],
-    "courseType": "Non-credit Mandatory Course",
-    "contactHours": "1 Hr/Week",
-    "totalLectureHours": 0,
+    "courseType": "Ability Enhancement",
+    "contactHours": "1-0-0",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 50
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_017",
+    "code": "24AM4AEJAP",
+    "name": "Java Programming",
+    "credits": 1,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "A lab-based course on core Java programming concepts including data types, collections, exception handling, and packages.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply the core concepts of Java to build console-based applications.",
+      "Analyze the need of Java collection framework to handle group of objects.",
+      "Design and implement robust and modular Java applications using modern integrated tools."
+    ],
+    "topics": [
+      "Java Fundamentals",
+      "Wrapper Classes",
+      "Strings",
+      "Arrays and Vectors",
+      "Generics",
+      "Collections Framework",
+      "Exception Handling",
+      "Interfaces and Packages"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "0-0-1",
+    "totalLabHours": 12,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "labExperiments": [
+      "Fundamentals of JAVA, Datatypes.",
+      "Wrapper Classes, Boxing and Unboxing mechanisms.",
+      "Strings, StringBuilder and StringBuffer",
+      "Enumerations, Arrays",
+      "Vectors",
+      "Generics",
+      "Collections Framework",
+      "Exception Handling",
+      "Interface",
+      "Java Packages"
+    ],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Apply the core concepts of Java to build console-based applications.",
+      "Analyze the need of Java collection framework to handle group of objects.",
+      "Design and implement robust and modular Java applications using modern integrated tools."
+    ],
+    "assessment": {
+      "cie": {
+        "cie_1": 20,
+        "cie_2": 30
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_018",
+    "code": "23NCMC4PE2",
+    "name": "Physical Education",
+    "credits": 0,
+    "semester": "4th",
+    "prerequisites": [],
+    "description": "A non-credit mandatory course focusing on physical education.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Non-credit Mandatory",
+    "contactHours": "1 hour",
+    "totalLectureHours": null,
     "examination": {
       "cieMarks": 0,
       "seeMarks": 0
@@ -379,35 +1556,1423 @@
     "units": [],
     "textBooks": [],
     "referenceBooks": [],
-    "courseOutcomes": []
+    "courseOutcomes": [],
+    "assessment": null
   },
   {
-    "id": "course_009",
-    "code": "23MA4BSMML",
-    "name": "Mathematical Foundation for Machine Learning – 2",
-    "credits": 3,
-    "semester": "4th",
-    "prerequisites": [
-      "Mathematical Foundations for Machine Learning"
-    ],
-    "description": "Advanced mathematical foundations for machine learning.",
-    "instructor": "Mathematics Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
+    "id": "course_019",
+    "code": "24AM5PCDEL",
+    "name": "Deep Learning",
+    "credits": 4,
+    "semester": "5th",
+    "prerequisites": ["24AM4PCIML"],
+    "description": "A comprehensive course on deep learning, covering perceptrons, backpropagation, deep feedforward networks, CNNs, and RNNs.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Understand linear-algebra tools used in ML and allied fields.",
-      "Apply vector-calculus and optimization in AI/ML contexts.",
-      "Develop analytical and lifelong-learning skills in applied mathematics."
+      "Apply back propagation and supervised learning techniques to train neural networks.",
+      "Analyze and implement regularization techniques and convolutional networks to enhance model performance.",
+      "Evaluate the architecture and applications of recurrent neural networks."
     ],
     "topics": [
-      "Matrix Operations in Machine Learning",
-      "Vector Calculus",
-      "Applications of Vector Calculus",
-      "Univariate Optimization",
-      "Multivariable Optimization",
-      "Mathematics Lab"
+      "Multilayer Perceptrons",
+      "Backpropagation",
+      "Deep Feedforward Networks",
+      "Regularization and Optimization",
+      "Convolutional Networks (CNN)",
+      "Recurrent Neural Networks (RNN)",
+      "LSTM, GRUs"
     ],
-    "courseType": "Basic Science",
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Neural Networks",
+        "hours": 8,
+        "topics": [
+          "Single Layer Perceptron",
+          "Multilayer Perceptron and Back Propagation Algorithm"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Deep Feedforward Networks",
+        "hours": 7,
+        "topics": [
+          "Gradient-Based Learning",
+          "Hidden Units, Architecture",
+          "Heuristics for faster training"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Network Training and Optimization",
+        "hours": 7,
+        "topics": [
+          "Regularization, Dataset Augmentation",
+          "Early Stopping, Dropout, Adversarial Training",
+          "Optimization techniques: Adaboost and RMSprop"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Convolutional Networks (CNN)",
+        "hours": 7,
+        "topics": [
+          "Structure of CNN",
+          "Training a CNN - Backpropagation through Convolutions"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Recurrent Neural Networks (RNN)",
+        "hours": 7,
+        "topics": [
+          "Architecture, Back Propagation",
+          "Bidirectional RNN, Multilayer RNN",
+          "LSTM, GRUS, Applications of RNN"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Deep Learning, lan Goodfellow, Yoshua Bengio, Aaron Courville, MIT press, 2016.",
+      "Neural Networks and Deep Learning, Charu C Agarwal, 1st Edition, Springer, 2016."
+    ],
+    "referenceBooks": [
+      "Pattern Recognition and Machine Learning, Christopher M. Bishop, Springer, 2006."
+    ],
+    "courseOutcomes": [
+      "Apply back propagation and supervised learning techniques to train neural networks.",
+      "Analyze and implement regularization techniques and convolutional networks to enhance model performance.",
+      "Evaluate the architecture and applications of recurrent neural networks."
+    ],
+    "assessment": {
+      "cie_theory": {
+        "best_of_two_tests": 20,
+        "aat_quiz": 5
+      },
+      "cie_lab": {
+        "cie_1": 10,
+        "cie_2": 10,
+        "aat": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_020",
+    "code": "24AM5PCCNS",
+    "name": "Computer Networks",
+    "credits": 2,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "This course covers the fundamentals of computer networking, from network architecture and protocols to internetworking, transport protocols, and security.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply protocols and routing mechanism principles and practices for error free data transmission over a network.",
+      "Analyze IP mechanisms for designing and implementing appropriate network requirements.",
+      "Examine various security mechanisms to protect data from various network attacks."
+    ],
+    "topics": [
+      "Network Architecture",
+      "Data Link Layer",
+      "Internetworking and Routing",
+      "Transport Protocols (TCP/UDP)",
+      "Congestion Control",
+      "Network Security"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-0",
+    "totalLectureHours": 26,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Computer Network",
+        "hours": 6,
+        "topics": [
+          "Network Architecture",
+          "Implementation of Network software",
+          "Performance measures"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Connecting to Network",
+        "hours": 5,
+        "topics": [
+          "Encoding, Framing, Error Detection",
+          "Reliable transmission, 802.XX protocols"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Internetworking",
+        "hours": 5,
+        "topics": [
+          "Switching and bridging",
+          "Routing, Global Internet",
+          "Deployment of IPv6"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "End to End Protocols and Congestion Control",
+        "hours": 5,
+        "topics": [
+          "UDP, TCP, RTP",
+          "TCP congestion control and congestion avoidance"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Network Security and Applications",
+        "hours": 5,
+        "topics": [
+          "Cryptography, Authentication protocols, Firewalls",
+          "Traditional, Multimedia, and infrastructure applications"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Computer Networks: A Systems Approach, Larry L Peterson and Bruce S Davie, 5th Edition, Morgan Kufmann, 2021."
+    ],
+    "referenceBooks": [
+      "Computer Networking: A Top-Down Approach Featuring the Internet, JamesKurose and Keith Ross, 8th Edition, Pearson, 2021."
+    ],
+    "courseOutcomes": [
+      "Apply protocols and routing mechanism principles and practices for error free data transmission over a network.",
+      "Analyze IP mechanisms for designing and implementing appropriate network requirements.",
+      "Examine various security mechanisms to protect data from various network attacks."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_021",
+    "code": "24AM5PCSML",
+    "name": "Statistical Modeling",
+    "credits": 4,
+    "semester": "5th",
+    "prerequisites": ["23AM3PCPSM"],
+    "description": "This course covers statistical modeling techniques including simple and multiple linear regression, logistic regression, and Hidden Markov Models.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply the concepts of statistical modeling on quantitative and qualitative data.",
+      "Analyze mathematical methods to solve problems involving stochasticity.",
+      "Design and conduct experiments for real time data using modern tools."
+    ],
+    "topics": [
+      "Simple and Multiple Linear Regression",
+      "Residual Analysis",
+      "Model Diagnostics and Validation",
+      "Categorical Data Analysis",
+      "Logistic Regression",
+      "Hidden Markov Models"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Simple Linear Regression",
+        "hours": 6,
+        "topics": [
+          "Least square estimation",
+          "Hypothesis testing, Interval estimation",
+          "Coefficient of Determination (R^2), ANOVA"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Multiple Linear Regression",
+        "hours": 8,
+        "topics": [
+          "Estimation of Model parameters, Gauss-Markov Theorem",
+          "Residual Analysis, Multicollinearity, Heteroscedasticity, Autocorrelation",
+          "Ridge and LASSO Regression"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Model Diagnostics and Validation",
+        "hours": 7,
+        "topics": [
+          "Identifying Outlying and Influential Cases",
+          "Model Validation: AIC, BIC, Mallow's Cp Criterion"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Categorical Data Analysis",
+        "hours": 8,
+        "topics": [
+          "Contingency tables, Odds Ratio, logit",
+          "Chi-squared Tests for Independence",
+          "Logistic Regression Models and ROC Curves"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Hidden Markov Models",
+        "hours": 7,
+        "topics": [
+          "Algorithms for HMMs (Forward-Backward, Viterbi)",
+          "HMM Training, Gaussian Mixture Models with HMMs"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Introduction to Linear Regression Analysis, Douglas Montgomery, Elizabeth A. Peck, G. Geoffrey vining, Wiley.",
+      "An Introduction to Categorical data analysis, Alan Agresti, Wiley, 3 Edition, 2019."
+    ],
+    "referenceBooks": [
+      "Applied Linear Regression Models, Michael H. Kutner, et al., 4th Edition, McGraw-Hill, 2004."
+    ],
+    "courseOutcomes": [
+      "Apply the concepts of statistical modeling on quantitative and qualitative data.",
+      "Analyze mathematical methods to solve problems involving stochasticity.",
+      "Design and conduct experiments for real time data using modern tools."
+    ],
+    "assessment": {
+      "cie_theory": {
+        "best_of_two_tests": 20,
+        "aat_quiz": 5
+      },
+      "cie_lab": {
+        "test": 20,
+        "aat": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_022",
+    "code": "24AM5PCDAV",
+    "name": "Data Analysis and Visualization",
+    "credits": 2,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "This course covers data analysis steps, data processing, exploratory data analysis, and various data visualization techniques and systems.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Understand and interpret data plots and core data visualization concepts.",
+      "Explore the relationship between two continuous variables using scatter plots and line plots.",
+      "Develop proficiency in crafting visually engaging representations of complex datasets."
+    ],
+    "topics": [
+      "Data Processing",
+      "Exploratory Data Analysis",
+      "Visual Perception Principles",
+      "Statistical Charts",
+      "Visualization of Networks and Volumetric Data"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "1-0-1",
+    "totalLectureHours": 12,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Data Analysis",
+        "hours": 2,
+        "topics": [
+          "Data Analysis Steps, Issues, Applications",
+          "Types of Data"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Data Processing and Exploratory Data Analysis",
+        "hours": 3,
+        "topics": [
+          "Handling Missing data, Data Transformation, Data Wrangling",
+          "Exploring Data Distribution, Correlation"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Introduction to Visualization",
+        "hours": 3,
+        "topics": [
+          "Visual perception, Gestalt principles",
+          "Statistical charts (Bar, Line, Histogram, Pie, Box Plot, Scatter plot)"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Advanced Visualization Techniques",
+        "hours": 2,
+        "topics": [
+          "Visualization of groups, trees, graphs, clusters, networks",
+          "Visualization of text and text documents"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Specialized Visualization",
+        "hours": 2,
+        "topics": [
+          "Visualization of volumetric data, vector fields",
+          "Visualization of maps, geographic information, GIS systems"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Interactive Data Visualization: Foundations, Techniques, and Applications Ward, Grinstein Keim,. Natick: A K Peters, Ltd, 1st Edition, 2010.",
+      "Practical Statistics for Data Scientists, Peter Bruce, Andrew Bruce & Peter Gedeck, 2nd Edition, 2020."
+    ],
+    "referenceBooks": [
+      "Data Visualization: A Practical Introduction Kieran Healy, 1st Edition, 2018."
+    ],
+    "courseOutcomes": [
+      "To understand and interpret data plots core data visualization concepts such as correlation, linear relationships, and log scales.",
+      "To explore the relationship between two continuous variables using scatter plots and line plots.",
+      "Develop proficiency in crafting visually engaging representations of complex datasets, ensuring clarity and accessibility for diverse audiences."
+    ],
+    "assessment": {
+      "cie_theory": {
+        "best_of_two_tests": 20,
+        "aat_quiz": 5
+      },
+      "cie_lab": {
+        "cie_1": 10,
+        "cie_2": 10,
+        "aat": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_023",
+    "code": "24AM5PCNIC",
+    "name": "Nature Inspired Computing",
+    "credits": 2,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "This course explores computing paradigms inspired by nature, including Swarm Intelligence, Genetic Algorithms, and other nature-inspired optimization algorithms.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Comprehend the needs for present and future computing paradigm changes with examples found in the real world.",
+      "Apply the Nature Inspired Computing approaches in the context of problem-solving.",
+      "Analyze the emulation of natural phenomena in computers."
+    ],
+    "topics": [
+      "Swarm Intelligence",
+      "Genetic Algorithms",
+      "Ant Colony Optimization",
+      "Particle Swarm Optimization",
+      "Cuckoo Search",
+      "Grey Wolf Optimization"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-0",
+    "totalLectureHours": 26,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction",
+        "hours": 5,
+        "topics": [
+          "From Nature-to-Nature Computing",
+          "Parallelism and Distributivity, Interactivity, Adaptation"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Swarm Intelligence",
+        "hours": 5,
+        "topics": [
+          "Ant Colony Optimization",
+          "Bee Colony Optimization",
+          "Particle Swarm Optimization (PSO)"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Genetic Algorithms (GA)",
+        "hours": 6,
+        "topics": [
+          "Operators (Encoding, Selection, Cross Over, Mutation)",
+          "Schema Theorem, Classification of GA"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Nature Inspired Algorithms",
+        "hours": 5,
+        "topics": [
+          "Cuckoo search, Firefly algorithm",
+          "Social spider algorithm, Harmony search algorithm"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Nature-Inspired Optimization Algorithms",
+        "hours": 5,
+        "topics": [
+          "Grey Wolf Optimization",
+          "Dragon Fly Optimization",
+          "Whale Optimization Algorithm"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Leandro Nunes de Castro, \"Fundamentals of Natural Computing, Basic Concepts, Algorithms and Applications\", Chapman & Hall/ CRC, Taylor and Francis Group, 2007."
+    ],
+    "referenceBooks": [
+      "Floreano D. and Mattiussi C., \"Bio-Inspired Artificial Intelligence: Theories, Methods, and Technologies\", MIT Press, Cambridge, MA, 2008."
+    ],
+    "courseOutcomes": [
+      "Comprehend the needs for present and future computing paradigm changes with examples found in the real world.",
+      "Apply the Nature Inspired Computing approaches in the context of problem-solving.",
+      "Analyze the emulation of natural phenomena in computers."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_024",
+    "code": "23CV5HSEVS",
+    "name": "Environmental Studies",
+    "credits": 1,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "A mandatory course on environmental studies.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Humanities and Social Sciences",
+    "contactHours": "1-0-0",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 50
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_025",
+    "code": "PE-1",
+    "name": "Professional Elective - 1",
+    "credits": 3,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "Professional Elective course. Options include Digital Image Processing, Knowledge Discovery, Internet of Things, and Product, services and IT service management.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [
+      "Digital Image Processing",
+      "Knowledge Discovery",
+      "Internet of Things",
+      "IT Service Management"
+    ],
+    "courseType": "Professional Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_026",
+    "code": "24AM5PWMPW",
+    "name": "Mini Project Work",
+    "credits": 2,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "A mini project to develop machine learning/deep learning projects by adopting various technologies, evaluated in two reviews.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Assess research methods and algorithms to tackle real-world engineering challenges.",
+      "Apply domain knowledge to create a practical solution addressing societal and engineering challenges.",
+      "Demonstrate effective collaboration to document and present implemented solutions."
+    ],
+    "topics": [
+      "Literature Survey",
+      "Problem Formulation",
+      "System Design",
+      "Implementation",
+      "Testing and Analysis"
+    ],
+    "courseType": "Project Work",
+    "contactHours": "0-0-2",
+    "totalLectureHours": 0,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Assess research methods and algorithms in technical literature to tackle real-world engineering challenges through prior knowledge application and thorough investigation.",
+      "Apply domain knowledge and relevant technologies to create a practical solution addressing societal and engineering challenges through the development of a mini project.",
+      "Demonstrate effective collaboration within the team to document and collectively present the implemented solutions."
+    ],
+    "assessment": {
+      "cie": {
+        "review_1": 20,
+        "review_2": 30
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_027",
+    "code": "24AM5AERMD",
+    "name": "Research Methodology",
+    "credits": 2,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "This course introduces research methodology, including defining research problems, literature review, research design, data collection, and report writing.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Analyze and apply relevant research methods and techniques.",
+      "Distinguishing qualitative and quantitative research types.",
+      "Demonstrate enhanced research writing skills using modern tools."
+    ],
+    "topics": [
+      "Research Process",
+      "Literature Review",
+      "Research Design",
+      "Data Collection",
+      "Measurement and Scaling",
+      "Report Writing"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "2-0-0",
+    "totalLectureHours": 26,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Research",
+        "hours": 5,
+        "topics": [
+          "Meaning, Objectives, Types of Research",
+          "Defining the Research Problem"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Literature Review and Research Design",
+        "hours": 6,
+        "topics": [
+          "Searching and reviewing literature",
+          "Developing theoretical and conceptual frameworks",
+          "Features of a Good Design"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Measurement and Scaling",
+        "hours": 5,
+        "topics": [
+          "Qualitative and Quantitative Data",
+          "Classifications of Measurement Scales",
+          "Scaling Technics"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Data Collection",
+        "hours": 5,
+        "topics": [
+          "Experimental and Surveys",
+          "Collection of Primary and Secondary Data",
+          "Case Study Method"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Interpretation and Report Writing",
+        "hours": 5,
+        "topics": [
+          "Technique of Interpretation",
+          "Different Steps in Writing Report",
+          "Layout of the Research Report"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Research Methodology: Methods and Techniques, C.R. Kothari and Gaurav Garg, 4th Edition, New Age International, 2018."
+    ],
+    "referenceBooks": [
+      "Research Methodology a step-by step guide for beginners, Ranjit Kumar, 3rd Edition, SAGE Publications, 2011."
+    ],
+    "courseOutcomes": [
+      "Analyze and apply relevant research methods and techniques appropriate to identified research study.",
+      "Distinguishing qualitative and quantitative research types.",
+      "Demonstrate enhanced research writing skills using modern tools like LaTeX, EndNote and alike."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_028",
+    "code": "24NCMC5PE3",
+    "name": "Physical Education",
+    "credits": 0,
+    "semester": "5th",
+    "prerequisites": [],
+    "description": "A non-credit mandatory course focusing on physical education.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Non-credit Mandatory",
+    "contactHours": "1 hour",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 0,
+      "seeMarks": 0
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_029",
+    "code": "24AM6PCSEP",
+    "name": "Software Engineering and Project Management",
+    "credits": 3,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "This course covers software engineering principles, process models, requirements engineering, software metrics, design patterns, testing strategies, and project management techniques.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply techniques, principles and practices for requirements to managing the software systems.",
+      "Analyze software requirements, models and metrics for developing quality software.",
+      "Design, demonstrate and document the solutions for given software including project management."
+    ],
+    "topics": [
+      "Software Process Models",
+      "Requirements Engineering",
+      "Software Metrics",
+      "UML Modeling",
+      "Software Testing",
+      "Design Patterns",
+      "Project Management"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Overview of Software Engineering",
+        "hours": 6,
+        "topics": [
+          "Process Models (Waterfall, V-Model, Spiral, Agile, Scrum)",
+          "Requirements Engineering, SRS Document"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Software Metrics and Modeling",
+        "hours": 8,
+        "topics": [
+          "Size-Oriented Metrics, Halsted Metrics, Cyclomatic Complexity",
+          "Unified Modeling Language (Use Cases, Class, Sequence diagrams)"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Software Testing",
+        "hours": 8,
+        "topics": [
+          "Verification and Validation",
+          "White Box-Testing (Basis Path Testing)",
+          "Black Box Testing (Equivalence Partitioning, Boundary Value Analysis)"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Patterns",
+        "hours": 6,
+        "topics": [
+          "Architectural Patterns: Layers, Pipes and Filters",
+          "Model-View-Controller"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Project Management",
+        "hours": 8,
+        "topics": [
+          "Components of SPM",
+          "Managing human and technical resources",
+          "Costing and pricing of projects"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Software engineering: a practitioner's approach, Roger S. Pressman, Palgrave macmillan, 7th Edition, 2017.",
+      "Pattern-Oriented Software Architecture A System of Patterns, Frank Buschmann, et al., Volume 1, Wiley, 1996."
+    ],
+    "referenceBooks": [
+      "Software Engineering, Sommerville, I., Pearson Education Limited, 10th Edition, 2017."
+    ],
+    "courseOutcomes": [
+      "Apply techniques, principles and practices for requirements to managing the software systems.",
+      "Analyze software requirements, models and metrics for developing quality software.",
+      "Design, demonstrate and document the solutions for given software including project management."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "quiz": 5,
+        "aat": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_030",
+    "code": "24AM6PCPAG",
+    "name": "Parallel Architectures and Programming",
+    "credits": 2,
+    "semester": "6th",
+    "prerequisites": ["23AM3ESCOA"],
+    "description": "This course covers parallel computer architecture, memory subsystems, pipelining, and GPU programming with CUDA.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Assess the performance and scalability of parallel programming solutions.",
+      "Demonstrate proficiency in CUDA programming language and its applications.",
+      "Apply optimization techniques to enhance the performance of GPU-accelerated applications."
+    ],
+    "topics": [
+      "Parallel Computer Architecture",
+      "Memory and I/O Subsystems",
+      "Pipelining and Vector Processing",
+      "GPU Architecture",
+      "CUDA Programming"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-0",
+    "totalLectureHours": 26,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Parallel Computer Architecture",
+        "hours": 5,
+        "topics": [
+          "Computer Architecture vs Parallel Computer Architecture",
+          "Performance Measurement in Parallel Computing"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Memory and Input-Output Subsystems",
+        "hours": 5,
+        "topics": [
+          "Virtual memory system",
+          "Cache memories and management"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Principles of Pipelining and Vector Processing",
+        "hours": 6,
+        "topics": [
+          "Overlapped parallelism",
+          "Instruction and arithmetic pipelines"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "GPU Programming",
+        "hours": 5,
+        "topics": [
+          "GPU Architecture vs CPU Architecture",
+          "Programming Models: CUDA (Threads, Blocks, Grids)"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Computer Unified Device Architecture (CUDA)",
+        "hours": 5,
+        "topics": [
+          "Architecture of CUDA",
+          "Parallelism and program structure of CUDA"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Computer architecture and Parallel processing, Kai Hwang and Briggs, McGraw-Hill.",
+      "CUDA By Example, Jason Sanders, Edward Kandrot, Addison_Wesley."
+    ],
+    "referenceBooks": [
+      "Introduction to Parallel Computing, Ananth Grama, et al., Pearson Education."
+    ],
+    "courseOutcomes": [
+      "Assess the performance and scalability of parallel programming solutions.",
+      "Demonstrate proficiency in CUDA programming language and its applications in various domains.",
+      "Apply optimization techniques to enhance the performance of GPU-accelerated applications."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_031",
+    "code": "24AM6PCAGA",
+    "name": "Autoencoders and Generative AI",
+    "credits": 4,
+    "semester": "6th",
+    "prerequisites": ["24AM5PCDEL"],
+    "description": "This course covers autoencoders, Restricted Boltzmann Machines, deep generative models, and Generative Adversarial Networks (GANs).",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply deep generative models for various data types and evaluate their performance.",
+      "Analyze the architecture and applications of generative AI, including large language models (LLMs).",
+      "Evaluate the principles and challenges of training Generative Adversarial Networks (GANs)."
+    ],
+    "topics": [
+      "Autoencoders (AE)",
+      "Variational Autoencoders (VAEs)",
+      "Restricted Boltzmann Machines (RBMs)",
+      "Representation Learning",
+      "Deep Generative Models",
+      "Generative Adversarial Networks (GANs)"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Autoencoders",
+        "hours": 8,
+        "topics": [
+          "Undercomplete and Regularized AE",
+          "Denoising Autoencoders, Contractive Autoencoders",
+          "Variational Autoencoders (VAEs)"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Restricted Boltzmann Machines and Representation Learning",
+        "hours": 8,
+        "topics": [
+          "Restricted Boltzmann Machines (RBMs)",
+          "Greedy Layer-wise Unsupervised Learning",
+          "Transfer Learning & Domain Adaption"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Deep Generative Models",
+        "hours": 7,
+        "topics": [
+          "Deep Belief Networks, Deep Boltzmann Machines",
+          "Directed Generative Nets, Generative Stochastic Networks"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Introduction to Generative Al",
+        "hours": 7,
+        "topics": [
+          "Overview and applications of generative Al",
+          "Generative models vs. discriminative models"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Generative Adversarial Networks (GANs)",
+        "hours": 7,
+        "topics": [
+          "Generator, Discriminator, Adversarial Process",
+          "GAN Architectures: Vanilla GAN, DCGAN, Conditional GANs"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Deep Learning, lan Goodfellow, Yoshua Bengio, and Aaron Courville, MIT Press, 2016.",
+      "GANs in Action, Jakub Langr and Vladimir Bok, Manning Publications, 2019."
+    ],
+    "referenceBooks": [
+      "Generative Deep Learning, David Foster, O'Reilly, Second Edition."
+    ],
+    "courseOutcomes": [
+      "Apply deep generative models for various data types and evaluate their performance.",
+      "Analyze the architecture and applications of generative AI, including large language models (LLMs).",
+      "Evaluate the principles and challenges of training Generative Adversarial Networks (GANs)."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_032",
+    "code": "24AM6PCREL",
+    "name": "Reinforcement Learning",
+    "credits": 3,
+    "semester": "6th",
+    "prerequisites": ["24AM4PCIML"],
+    "description": "This course introduces reinforcement learning, covering Markov Decision Processes, dynamic programming, Monte Carlo methods, temporal-difference learning, and deep reinforcement learning.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Analyze Markov Decision Processes and implement dynamic programming and Monte Carlo methods.",
+      "Apply temporal-difference learning techniques, including Sarsa and Q-learning.",
+      "Evaluate the use of eligibility traces and planning techniques in reinforcement learning."
+    ],
+    "topics": [
+      "Markov Decision Processes",
+      "Dynamic Programming",
+      "Monte Carlo Methods",
+      "Temporal-Difference Learning (Sarsa, Q-Learning)",
+      "Deep Reinforcement Learning (DQN, Policy Gradient)",
+      "Transfer Learning"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction and Tabular Solution Methods",
+        "hours": 7,
+        "topics": [
+          "Elements of Reinforcement Learning",
+          "n-Armed Bandit Problem, Action-Value Methods"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Markov Decision Processes and Dynamic Programming",
+        "hours": 8,
+        "topics": [
+          "Agent-Environment Interface, Value Functions, Bellman Equation",
+          "Policy Evaluation, Improvement, Iteration"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Monte Carlo Methods and Temporal-Difference Learning",
+        "hours": 8,
+        "topics": [
+          "Monte Carlo Prediction and Control",
+          "TD Prediction, Sarsa, Q-Learning"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Deep Reinforcement Learning",
+        "hours": 7,
+        "topics": [
+          "Deep Q-Networks (DQN)",
+          "Policy Gradient Methods (REINFORCE)",
+          "Actor-Critic methods (A3C, A2C)"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Eligibility Traces and Transfer Learning",
+        "hours": 7,
+        "topics": [
+          "n-Step prediction, Forward and Backward View of TD",
+          "Transfer Learning Techniques"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Reinforcement learning: An introduction, Richard S.Sutton and Andrew G. Barto, MIT Press, 2019."
+    ],
+    "referenceBooks": [
+      "Deep Reinforcement Learning Hands-On, Maxim Lapan, Packt Publishing, 2018."
+    ],
+    "courseOutcomes": [
+      "Analyze Markov Decision Processes and implement dynamic programming and Monte Carlo methods for policy evaluation and improvement.",
+      "Apply temporal-difference learning techniques, including Sarsa and Q-learning, to optimize decision-making in reinforcement learning environments.",
+      "Evaluate the use of eligibility traces and planning techniques in reinforcement learning."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_033",
+    "code": "24AM6PCSCL",
+    "name": "Soft Computing Lab",
+    "credits": 1,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "A lab course on soft computing techniques, including fuzzy logic, genetic algorithms, and nature-inspired optimization algorithms.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply the concepts of soft computing techniques for real-world scenario.",
+      "Analyze nature-inspired optimization algorithms in the computer engineering field.",
+      "Design solutions for real time problems using modern tools."
+    ],
+    "topics": [
+      "Fuzzy Logic",
+      "Genetic Algorithms",
+      "Ant Colony Optimization",
+      "Particle Swarm Optimization",
+      "Grey Wolf Optimization"
+    ],
+    "courseType": "Professional Core Lab",
+    "contactHours": "0-0-1",
+    "totalLabHours": 12,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "labExperiments": [
+      "Fuzzy Relations and Defuzzification techniques",
+      "Genetic Algorithm",
+      "Parallel algorithms (e.g., Merge sort)",
+      "Ant Colony Optimization",
+      "Particle Swarm Optimization (PSO)",
+      "Grey Wolf Optimization",
+      "Perceptron with Hebb's/Delta rule"
+    ],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Apply the concepts of soft computing techniques for real-world scenario.",
+      "Analyze nature-inspired optimization algorithms in the computer engineering field.",
+      "Design solutions for real time problems using modern tools."
+    ],
+    "assessment": {
+      "cie": {
+        "cie_1": 20,
+        "cie_2": 30
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_034",
+    "code": "PE-2",
+    "name": "Professional Elective - 2",
+    "credits": 3,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "Professional Elective course. Options include Computer Vision, Big Data Analytics, and Robotic Process Automation.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [
+      "Computer Vision",
+      "Big Data Analytics",
+      "Robotic Process Automation"
+    ],
+    "courseType": "Professional Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_035",
+    "code": "OE-1",
+    "name": "Open Elective - 1",
+    "credits": 3,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "Open Elective course. Options include Introduction to Artificial Intelligence, Introduction to Machine Learning, and Introduction to Neural Networks.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [
+      "Introduction to Artificial Intelligence",
+      "Introduction to Machine Learning",
+      "Introduction to Neural Networks"
+    ],
+    "courseType": "Open Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_036",
+    "code": "24AM6PWPW1",
+    "name": "Project work -1",
+    "credits": 2,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "The first phase of a two-semester project, focusing on literature survey, problem statement definition, and high-level design.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Synthesize existing knowledge thorough literature review to identify gaps in existing system.",
+      "Develop a comprehensive project proposal, including objectives, scope, and deliverables.",
+      "Prepare and present a progress report summarizing the project's high-level and detailed design."
+    ],
+    "topics": [
+      "Literature Survey",
+      "Problem Definition and Scope",
+      "System Architecture",
+      "Component Design"
+    ],
+    "courseType": "Project Work",
+    "contactHours": "0-0-2",
+    "totalLectureHours": 0,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Synthesize existing knowledge thorough literature review to identify gaps in existing system.",
+      "Develop a comprehensive project proposal, including objectives, scope, deliverables and justify their project's relevance.",
+      "Prepare and present a progress report summarizing their project high level and detailed design."
+    ],
+    "assessment": {
+      "cie": {
+        "review_1": 20,
+        "review_2": 30
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_037",
+    "code": "24AM6AEMLO",
+    "name": "Machine Learning Operations (MLOPS)",
+    "credits": 1,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "A lab-based course on MLOps, covering data ingestion, model training, deployment, monitoring, and CI/CD pipelines.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Comprehend the complete process from data preparation to monitoring and maintenance.",
+      "Leverage MLOps principles and tools to efficiently scale, manage, and automate model deployment.",
+      "Acquire skills to select the ideal MLOps stack and leverage Git and GitOps."
+    ],
+    "topics": [
+      "Data Ingestion and Pre-processing",
+      "Model Training and Tuning",
+      "Model Versioning and Deployment",
+      "CI/CD Pipeline",
+      "Monitoring and Logging",
+      "Workflow Orchestration"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "0-0-1",
+    "totalLabHours": 12,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "labExperiments": [
+      "Data Ingestion and Pre-processing",
+      "Model Training and Hyperparameter Tuning",
+      "Model Evaluation and Validation",
+      "Model Versioning and Management (DVC, MLflow)",
+      "Model Deployment (REST API with Flask/FastAPI, Docker)",
+      "Automated Testing and CI/CD Pipeline (Jenkins, GitHub Actions)",
+      "Monitoring and Logging",
+      "Data Drift and Model Retraining",
+      "Orchestration with Workflow Management Tools (Airflow, Kubeflow)",
+      "Collaboration and Version Control with Git and GitOps"
+    ],
+    "textBooks": [
+      "Machine Practical MLOps, by Noah Gift, Alfredo Deza, Released September 2021 Publisher(s): O'Reilly Media, Inc."
+    ],
+    "referenceBooks": [
+      "Introducing MLOps, by Mark Treveil, et al., Released November 2020, Publisher(s): O'Reilly Media, Inc."
+    ],
+    "courseOutcomes": [
+      "Comprehend the complete process from data preparation, model training, evaluation, and deployment to monitoring and maintenance.",
+      "Leverage MLOps principles and tools to efficiently scale, manage, and automate the deployment of machine learning models in production environments.",
+      "Acquire the skills to select the ideal MLOps stack and leverage Git and GitOps for efficient version control and seamless collaboration in machine learning initiatives."
+    ],
+    "assessment": {
+      "cie": {
+        "cie_1": 20,
+        "cie_2": 30
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_038",
+    "code": "24NCMC6PE4",
+    "name": "Physical Education",
+    "credits": 0,
+    "semester": "6th",
+    "prerequisites": [],
+    "description": "A non-credit mandatory course focusing on physical education.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Non-credit Mandatory",
+    "contactHours": "1 hour",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 0,
+      "seeMarks": 0
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_039",
+    "code": "24AM7PCTSA",
+    "name": "Time Series Analysis",
+    "credits": 3,
+    "semester": "7th",
+    "prerequisites": ["24AM5PCSML"],
+    "description": "This course covers time series analysis, including components of time series, forecasting techniques, stationary and non-stationary models (ARMA, ARIMA), and models of heteroscedasticity (ARCH, GARCH).",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [
+      "Apply effective techniques on time-dependent information to construct predictive models.",
+      "Develop skills in identifying appropriate time series models using diagnostic tools and statistical inference.",
+      "Develop time series and financial models tailored for real-time applications."
+    ],
+    "topics": [
+      "Time Series Components",
+      "Forecasting Techniques",
+      "Stationary Time Series Models (AR, MA, ARMA)",
+      "Non-Stationary Time Series Models (ARIMA, SARIMA)",
+      "Heteroscedasticity Models (ARCH, GARCH)"
+    ],
+    "courseType": "Professional Core",
     "contactHours": "2-0-1",
     "totalLectureHours": 26,
     "examination": {
@@ -417,981 +2982,382 @@
     "units": [
       {
         "number": 1,
-        "title": "Matrix Operations in Machine Learning",
+        "title": "Introduction to Time Series",
+        "hours": 5,
+        "topics": [
+          "Time series components (Trend, Seasonal, Cyclical, Irregular)",
+          "Measuring Trend and Seasonal Variations"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Forecasting Techniques",
+        "hours": 5,
+        "topics": [
+          "Moving Average Models (Simple, Weighted)",
+          "Exponential Smoothening (Simple, Holt, Holt-Winters)"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Stationary Time Series Models",
+        "hours": 5,
+        "topics": [
+          "Autocorrelation function (ACF), Partial autocorrelation function (PACF)",
+          "AR Process, MA Process, ARMA Process"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Non-Stationary Time Series Models",
+        "hours": 5,
+        "topics": [
+          "Random walk process, Dicky Fuller Unit Root Test",
+          "ARIMA Model, SARIMA Model",
+          "Transforming non-stationary series"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Time Series Models of Heteroscedasticity",
         "hours": 6,
         "topics": [
-          "LU and Cholesky decomposition, SVD and data compression.",
-          "Principal Component Analysis (PCA).",
-          "Moore–Penrose pseudoinverse."
+          "ARCH Model, GARCH Model",
+          "Model Identification using ACF and PACF",
+          "Maximum Likelihood Estimation"
         ]
       }
-    ],
-    "textBooks": [
-      "Mathematics for Machine Learning – M.P. Deisenroth, A. Aldo Faisal, C. Ong, Cambridge, 2020"
-    ],
-    "referenceBooks": [
-      "Linear Algebra and Optimization for Machine Learning – Charu Aggarwal, Springer, 2020"
-    ],
-    "courseOutcomes": [
-      "Apply calculus and linear algebra concepts to ML problems.",
-      "Implement mathematical concepts in ML using modern tools."
     ],
     "labExperiments": [
-      "LU & Cholesky decomposition",
-      "SVD and PCA",
-      "Automatic differentiation and back-propagation",
-      "Hessian matrices and eigenvalues",
-      "Gradient descent and Newton–Raphson methods",
-      "Lagrange multipliers, 3-point and Fibonacci search"
-    ]
-  },
-  {
-    "id": "course_010",
-    "code": "23AM4PCML1",
-    "name": "Introduction to Machine Learning",
-    "credits": 4,
-    "semester": "4th",
-    "prerequisites": [
-      "Mathematical Foundations for Machine Learning",
-      "Data Structures"
-    ],
-    "description": "Introduction to machine learning algorithms and applications.",
-    "instructor": "Dr. Monika Puttaramaiah",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand fundamental machine learning concepts and algorithms.",
-      "Apply supervised and unsupervised learning techniques.",
-      "Implement machine learning models using Python."
-    ],
-    "topics": [
-      "Introduction to ML",
-      "Supervised Learning",
-      "Unsupervised Learning",
-      "Model Evaluation",
-      "Feature Engineering"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Introduction to Machine Learning",
-        "hours": 8,
-        "topics": [
-          "What is Machine Learning",
-          "Types of Learning",
-          "Applications of ML",
-          "Python for ML"
-        ]
-      }
+      "Time Series analysis in Python",
+      "Forecasting Techniques",
+      "Determining Stationarity, Trend, Seasonality",
+      "Fitting AR, MA, ARMA, ARIMA Models",
+      "Fitting ARCH and GARCH Models"
     ],
     "textBooks": [
-      "Pattern Recognition and Machine Learning – Christopher Bishop, Springer, 2006"
+      "Introduction to Time Series Analysis and Forecasting, Douglas C. Montgomery, Cheryl L. Jennings, Murat Kulahci, 2nd Edition, Wiley, 2015."
     ],
     "referenceBooks": [
-      "The Elements of Statistical Learning – Hastie, Tibshirani, Friedman, Springer, 2009"
+      "Hands-On Time Series Analysis with R, Rami Krispin, Packt Publishing Ltd, 2019."
     ],
     "courseOutcomes": [
-      "Understand fundamental machine learning concepts and algorithms.",
-      "Apply supervised and unsupervised learning techniques."
-    ]
+      "Apply effective techniques on time-dependent information to construct predictive models and facilitate decision-making processes.",
+      "Develop skills in identifying appropriate time series models by utilizing a range of diagnostic tools and statistical inference techniques.",
+      "Develop time series and financial models tailored for real-time applications."
+    ],
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat": 5,
+        "quiz": 5
+      },
+      "see": 100
+    }
   },
   {
-    "id": "course_011",
-    "code": "23AM4PCAL1",
-    "name": "Algorithms and Data Structures",
-    "credits": 4,
-    "semester": "4th",
-    "prerequisites": [
-      "Data Structures"
-    ],
-    "description": "Advanced algorithms and data structures for efficient problem solving.",
-    "instructor": "Computer Science Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Design and analyze efficient algorithms.",
-      "Implement advanced data structures.",
-      "Solve complex computational problems."
-    ],
-    "topics": [
-      "Algorithm Analysis",
-      "Sorting Algorithms",
-      "Searching Algorithms",
-      "Graph Algorithms",
-      "Dynamic Programming"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Algorithm Analysis",
-        "hours": 8,
-        "topics": [
-          "Time and Space Complexity",
-          "Big O Notation",
-          "Algorithm Design Techniques"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Introduction to Algorithms – Cormen, Leiserson, Rivest, Stein, MIT Press, 2009"
-    ],
-    "referenceBooks": [
-      "Algorithms – Sedgewick, Wayne, Addison-Wesley, 2011"
-    ],
-    "courseOutcomes": [
-      "Design and analyze efficient algorithms.",
-      "Implement advanced data structures."
-    ]
-  },
-  {
-    "id": "course_012",
-    "code": "23AM4PCOS1",
-    "name": "Operating Systems",
-    "credits": 3,
-    "semester": "4th",
-    "prerequisites": [
-      "Computer Organization and Architecture"
-    ],
-    "description": "Operating system concepts and design principles.",
-    "instructor": "Computer Science Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand operating system concepts and design.",
-      "Analyze process management and scheduling.",
-      "Implement system programming concepts."
-    ],
-    "topics": [
-      "Introduction to OS",
-      "Process Management",
-      "Memory Management",
-      "File Systems",
-      "I/O Systems"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-0",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Introduction to Operating Systems",
-        "hours": 8,
-        "topics": [
-          "OS Functions and Services",
-          "System Calls",
-          "OS Structure"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Operating System Concepts – Silberschatz, Galvin, Gagne, Wiley, 2018"
-    ],
-    "referenceBooks": [
-      "Modern Operating Systems – Tanenbaum, Bos, Pearson, 2014"
-    ],
-    "courseOutcomes": [
-      "Understand operating system concepts and design.",
-      "Analyze process management and scheduling."
-    ]
-  },
-  {
-    "id": "course_013",
-    "code": "23AM4PCNW1",
-    "name": "Computer Networks",
-    "credits": 3,
-    "semester": "4th",
-    "prerequisites": [
-      "Computer Organization and Architecture"
-    ],
-    "description": "Computer network protocols and architecture.",
-    "instructor": "Computer Science Faculty",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand network protocols and architecture.",
-      "Analyze network performance and security.",
-      "Implement network applications."
-    ],
-    "topics": [
-      "Network Fundamentals",
-      "Protocol Stack",
-      "Network Security",
-      "Wireless Networks",
-      "Network Programming"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-0",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Network Fundamentals",
-        "hours": 8,
-        "topics": [
-          "Network Types",
-          "Topology",
-          "Protocols"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Computer Networks – Tanenbaum, Wetherall, Pearson, 2011"
-    ],
-    "referenceBooks": [
-      "Computer Networking: A Top-Down Approach – Kurose, Ross, Pearson, 2017"
-    ],
-    "courseOutcomes": [
-      "Understand network protocols and architecture.",
-      "Analyze network performance and security."
-    ]
-  },
-  {
-    "id": "course_014",
-    "code": "23AM4PCDL1",
-    "name": "Deep Learning Fundamentals",
-    "credits": 4,
-    "semester": "5th",
-    "prerequisites": [
-      "Introduction to Machine Learning",
-      "Mathematical Foundation for Machine Learning – 2"
-    ],
-    "description": "Introduction to deep learning and neural networks.",
-    "instructor": "Dr. Sandeep Varma N",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand deep learning concepts and architectures.",
-      "Implement neural networks using frameworks.",
-      "Apply deep learning to real-world problems."
-    ],
-    "topics": [
-      "Neural Networks",
-      "Backpropagation",
-      "Convolutional Neural Networks",
-      "Recurrent Neural Networks",
-      "Deep Learning Frameworks"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Neural Networks Fundamentals",
-        "hours": 8,
-        "topics": [
-          "Perceptron",
-          "Multi-layer Perceptron",
-          "Activation Functions",
-          "Loss Functions"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Deep Learning – Ian Goodfellow, Yoshua Bengio, Aaron Courville, MIT Press, 2016"
-    ],
-    "referenceBooks": [
-      "Neural Networks and Deep Learning – Michael Nielsen, 2019"
-    ],
-    "courseOutcomes": [
-      "Understand deep learning concepts and architectures.",
-      "Implement neural networks using frameworks."
-    ]
-  },
-  {
-    "id": "course_015",
-    "code": "23AM5PCNLP",
-    "name": "Natural Language Processing",
-    "credits": 4,
-    "semester": "5th",
-    "prerequisites": [
-      "Introduction to Machine Learning",
-      "Deep Learning Fundamentals"
-    ],
-    "description": "Natural language processing techniques and applications.",
-    "instructor": "Dr. Monika Puttaramaiah",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand NLP concepts and techniques.",
-      "Implement text processing and analysis.",
-      "Build NLP applications."
-    ],
-    "topics": [
-      "Text Preprocessing",
-      "Language Models",
-      "Named Entity Recognition",
-      "Sentiment Analysis",
-      "Machine Translation"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Text Preprocessing",
-        "hours": 8,
-        "topics": [
-          "Tokenization",
-          "Stemming and Lemmatization",
-          "Stop Words Removal",
-          "Text Normalization"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Speech and Language Processing – Jurafsky, Martin, Pearson, 2020"
-    ],
-    "referenceBooks": [
-      "Natural Language Processing with Python – Bird, Klein, Loper, O'Reilly, 2009"
-    ],
-    "courseOutcomes": [
-      "Understand NLP concepts and techniques.",
-      "Implement text processing and analysis."
-    ]
-  },
-  {
-    "id": "course_016",
-    "code": "23AM5PCCV1",
-    "name": "Computer Vision",
-    "credits": 4,
-    "semester": "5th",
-    "prerequisites": [
-      "Deep Learning Fundamentals"
-    ],
-    "description": "Computer vision algorithms and applications.",
-    "instructor": "Dr. Seemanthini K",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand computer vision concepts.",
-      "Implement image processing algorithms.",
-      "Build computer vision applications."
-    ],
-    "topics": [
-      "Image Processing",
-      "Feature Detection",
-      "Object Recognition",
-      "Image Segmentation",
-      "Video Analysis"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Image Processing Fundamentals",
-        "hours": 8,
-        "topics": [
-          "Image Representation",
-          "Filtering",
-          "Edge Detection",
-          "Morphological Operations"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Computer Vision: Algorithms and Applications – Richard Szeliski, Springer, 2010"
-    ],
-    "referenceBooks": [
-      "Digital Image Processing – Gonzalez, Woods, Pearson, 2018"
-    ],
-    "courseOutcomes": [
-      "Understand computer vision concepts.",
-      "Implement image processing algorithms."
-    ]
-  },
-  {
-    "id": "course_017",
-    "code": "23AM5PCDS1",
-    "name": "Data Science and Analytics",
-    "credits": 4,
-    "semester": "5th",
-    "prerequisites": [
-      "Introduction to Machine Learning",
-      "Database Management Systems"
-    ],
-    "description": "Data science methodologies and analytics techniques.",
-    "instructor": "Dr. BHAVYASHREE H L",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand data science lifecycle.",
-      "Apply statistical and machine learning techniques.",
-      "Build data-driven solutions."
-    ],
-    "topics": [
-      "Data Collection",
-      "Data Cleaning",
-      "Exploratory Data Analysis",
-      "Statistical Modeling",
-      "Data Visualization"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Data Science Lifecycle",
-        "hours": 8,
-        "topics": [
-          "Problem Definition",
-          "Data Collection",
-          "Data Understanding",
-          "Data Preparation"
-        ]
-      }
-    ],
-    "textBooks": [
-      "The Data Science Handbook – Field Cady, Wiley, 2017"
-    ],
-    "referenceBooks": [
-      "Data Science from Scratch – Joel Grus, O'Reilly, 2019"
-    ],
-    "courseOutcomes": [
-      "Understand data science lifecycle.",
-      "Apply statistical and machine learning techniques."
-    ]
-  },
-  {
-    "id": "course_018",
-    "code": "23AM5PCDL2",
-    "name": "Advanced Deep Learning",
-    "credits": 4,
-    "semester": "6th",
-    "prerequisites": [
-      "Deep Learning Fundamentals"
-    ],
-    "description": "Advanced deep learning architectures and techniques.",
-    "instructor": "Dr. Sandeep Varma N",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand advanced deep learning architectures.",
-      "Implement state-of-the-art models.",
-      "Apply deep learning to complex problems."
-    ],
-    "topics": [
-      "Advanced CNN Architectures",
-      "Attention Mechanisms",
-      "Transformer Models",
-      "Generative Models",
-      "Reinforcement Learning"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Advanced CNN Architectures",
-        "hours": 8,
-        "topics": [
-          "ResNet",
-          "DenseNet",
-          "EfficientNet",
-          "Vision Transformer"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Deep Learning – Ian Goodfellow, Yoshua Bengio, Aaron Courville, MIT Press, 2016"
-    ],
-    "referenceBooks": [
-      "Hands-On Machine Learning – Aurélien Géron, O'Reilly, 2019"
-    ],
-    "courseOutcomes": [
-      "Understand advanced deep learning architectures.",
-      "Implement state-of-the-art models."
-    ]
-  },
-  {
-    "id": "course_019",
-    "code": "23AM6PCMLL",
-    "name": "Machine Learning Lab",
+    "id": "course_040",
+    "code": "24AM7PCLLM",
+    "name": "Natural Language Processing for LLM",
     "credits": 2,
-    "semester": "6th",
-    "prerequisites": [
-      "Introduction to Machine Learning",
-      "Deep Learning Fundamentals"
-    ],
-    "description": "Practical implementation of machine learning algorithms.",
-    "instructor": "Dr. Sowmya Lakshmi B S",
-    "schedule": "TBD",
-    "room": "ML Lab 1",
+    "semester": "7th",
+    "prerequisites": [],
+    "description": "This course covers Natural Language Processing (NLP) with a focus on Large Language Models (LLMs), including text preprocessing, text representation, language modeling, Transformers architecture, prompt engineering, and Reinforcement Learning with Human Feedback (RLHF).",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
     "objectives": [
-      "Implement machine learning algorithms from scratch.",
-      "Use popular ML libraries and frameworks.",
-      "Build end-to-end ML projects."
+      "Apply foundations of natural language processing to build NLP applications.",
+      "Analyze NLP tasks using existing algorithms.",
+      "Conduct experiments to implement building blocks of NLP."
     ],
     "topics": [
-      "Python for ML",
-      "Scikit-learn",
-      "TensorFlow/PyTorch",
-      "Model Deployment",
-      "ML Pipeline"
+      "Text Preprocessing and Representation",
+      "Language Modeling (N-grams, BERT)",
+      "Transformers Architecture",
+      "Prompt Engineering",
+      "Reinforcement Learning with Human Feedback (RLHF)",
+      "Retrieval-Augmented Generation (RAG)",
+      "LangChain"
     ],
     "courseType": "Professional Core",
-    "contactHours": "0-0-2",
-    "totalLectureHours": 0,
+    "contactHours": "2-0-0",
+    "totalLectureHours": 26,
     "examination": {
       "cieMarks": 50,
-      "seeMarks": 50
+      "seeMarks": 100
     },
-    "units": [],
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction and Text Preprocessing",
+        "hours": 5,
+        "topics": [
+          "Phases of NLP",
+          "Text Normalization, Tokenization, Lemmatization, Stemming"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Text Representation and Parsing",
+        "hours": 5,
+        "topics": [
+          "Vector Semantics, TF-IDF, Word embeddings",
+          "Constituency Parsing, Dependency Parsing"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Language Modeling and Generative AI",
+        "hours": 5,
+        "topics": [
+          "N-grams, Pre-trained Language Models (BERT)",
+          "Transformers Architecture, Multihead Attention",
+          "Prompt Engineering, Parameter Efficient Fine-Tuning (PEFT)"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Reinforcement Learning with Human Feedback",
+        "hours": 6,
+        "topics": [
+          "RLHF: Reward model, Fine-tuning with reinforcement learning",
+          "Proximal policy optimization",
+          "Retrieval-Augmented Generation (RAG)"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Model Optimizations and Deployment",
+        "hours": 5,
+        "topics": [
+          "Chain-of-thought, Program-aided language models (PAL)",
+          "LangChain framework",
+          "Responsible Al in Generative Al"
+        ]
+      }
+    ],
     "textBooks": [
-      "Python Machine Learning – Sebastian Raschka, Packt, 2019"
+      "Speech and Language Processing: An introduction to Natural Language Processing, Computational Linguistics and Speech Recognition, Daniel Jurafsky, James H Martin, 3rd Edition, Prentice Hall, 2024."
     ],
     "referenceBooks": [
-      "Hands-On Machine Learning – Aurélien Géron, O'Reilly, 2019"
+      "Natural Language Processing with Transformers: Building Language Applications with Hugging Face, Lewis Tunstall, Leandro von Werra, Thomas Wolf, O'Reilly Media, Inc, 2022."
     ],
     "courseOutcomes": [
-      "Implement machine learning algorithms from scratch.",
-      "Use popular ML libraries and frameworks."
+      "Apply foundations of natural language processing in linguistics and formal language theory to build NLP applications.",
+      "Analyze NLP tasks using existing algorithms.",
+      "Conduct experiments to implement building blocks of NLP."
     ],
-    "labExperiments": [
-      "Linear Regression Implementation",
-      "Classification Algorithms",
-      "Clustering Techniques",
-      "Neural Network Implementation",
-      "Model Evaluation and Validation",
-      "Feature Engineering"
-    ]
+    "assessment": {
+      "cie": {
+        "best_of_two_tests": 40,
+        "aat_quiz": 10
+      },
+      "see": 100
+    }
   },
   {
-    "id": "course_020",
-    "code": "23AM6PCPRJ",
-    "name": "Machine Learning Project",
+    "id": "course_041",
+    "code": "PE-3",
+    "name": "Professional Elective - 3",
     "credits": 3,
-    "semester": "6th",
-    "prerequisites": [
-      "Advanced Deep Learning",
-      "Machine Learning Lab"
-    ],
-    "description": "Capstone project in machine learning.",
-    "instructor": "Dr. Monika Puttaramaiah",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Apply ML knowledge to solve real-world problems.",
-      "Design and implement complete ML solutions.",
-      "Present and document ML projects."
-    ],
+    "semester": "7th",
+    "prerequisites": [],
+    "description": "Professional Elective course. Options include Video Analytics using OpenCV, Social Network Analysis, and Cyber Physical Systems.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
     "topics": [
-      "Project Planning",
-      "Data Collection",
-      "Model Development",
-      "Evaluation",
-      "Documentation"
+      "Video Analytics",
+      "Social Network Analysis",
+      "Cyber Physical Systems"
     ],
-    "courseType": "Professional Core",
-    "contactHours": "0-0-3",
-    "totalLectureHours": 0,
+    "courseType": "Professional Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
     "examination": {
-      "cieMarks": 100,
-      "seeMarks": 0
+      "cieMarks": 50,
+      "seeMarks": 100
     },
     "units": [],
     "textBooks": [],
     "referenceBooks": [],
-    "courseOutcomes": [
-      "Apply ML knowledge to solve real-world problems.",
-      "Design and implement complete ML solutions."
-    ]
+    "courseOutcomes": [],
+    "assessment": null
   },
   {
-    "id": "course_021",
-    "code": "23AM7PCMLL",
-    "name": "Advanced Machine Learning",
-    "credits": 4,
+    "id": "course_042",
+    "code": "OE-2",
+    "name": "Open Elective - 2",
+    "credits": 3,
     "semester": "7th",
-    "prerequisites": [
-      "Advanced Deep Learning",
-      "Machine Learning Project"
-    ],
-    "description": "Advanced machine learning techniques and research topics.",
-    "instructor": "Dr. Sandeep Varma N",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand cutting-edge ML techniques.",
-      "Explore research areas in ML.",
-      "Implement advanced ML algorithms."
-    ],
+    "prerequisites": [],
+    "description": "Open Elective course. Options include Introduction to AI, Introduction to Machine Learning, and Introduction to Neural Networks.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
     "topics": [
-      "Ensemble Methods",
-      "Bayesian Machine Learning",
-      "Transfer Learning",
-      "Meta Learning",
-      "Federated Learning"
+      "Introduction to AI",
+      "Introduction to Machine Learning",
+      "Introduction to Neural Networks"
     ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
+    "courseType": "Open Elective",
+    "contactHours": "3-0-0",
     "totalLectureHours": 36,
     "examination": {
       "cieMarks": 50,
       "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Ensemble Methods",
-        "hours": 8,
-        "topics": [
-          "Bagging",
-          "Boosting",
-          "Random Forest",
-          "Stacking"
-        ]
-      }
-    ],
-    "textBooks": [
-      "The Elements of Statistical Learning – Hastie, Tibshirani, Friedman, Springer, 2009"
-    ],
-    "referenceBooks": [
-      "Pattern Recognition and Machine Learning – Christopher Bishop, Springer, 2006"
-    ],
-    "courseOutcomes": [
-      "Understand cutting-edge ML techniques.",
-      "Explore research areas in ML."
-    ]
-  },
-  {
-    "id": "course_022",
-    "code": "23AM7PCDL3",
-    "name": "Deep Learning for Computer Vision",
-    "credits": 4,
-    "semester": "7th",
-    "prerequisites": [
-      "Computer Vision",
-      "Advanced Deep Learning"
-    ],
-    "description": "Advanced deep learning techniques for computer vision applications.",
-    "instructor": "Dr. Seemanthini K",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Master advanced CV techniques.",
-      "Implement state-of-the-art vision models.",
-      "Build production-ready CV systems."
-    ],
-    "topics": [
-      "Object Detection",
-      "Image Segmentation",
-      "3D Computer Vision",
-      "Video Understanding",
-      "Medical Image Analysis"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Object Detection",
-        "hours": 8,
-        "topics": [
-          "R-CNN Family",
-          "YOLO",
-          "SSD",
-          "RetinaNet"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Computer Vision: Algorithms and Applications – Richard Szeliski, Springer, 2010"
-    ],
-    "referenceBooks": [
-      "Deep Learning for Computer Vision – Rajalingappaa Shanmugamani, Packt, 2018"
-    ],
-    "courseOutcomes": [
-      "Master advanced CV techniques.",
-      "Implement state-of-the-art vision models."
-    ]
-  },
-  {
-    "id": "course_023",
-    "code": "23AM7PCDL4",
-    "name": "Deep Learning for NLP",
-    "credits": 4,
-    "semester": "7th",
-    "prerequisites": [
-      "Natural Language Processing",
-      "Advanced Deep Learning"
-    ],
-    "description": "Advanced deep learning techniques for natural language processing.",
-    "instructor": "Dr. Monika Puttaramaiah",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Master advanced NLP techniques.",
-      "Implement state-of-the-art language models.",
-      "Build production-ready NLP systems."
-    ],
-    "topics": [
-      "Word Embeddings",
-      "Sequence Models",
-      "Attention Mechanisms",
-      "Transformer Architecture",
-      "Large Language Models"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Word Embeddings",
-        "hours": 8,
-        "topics": [
-          "Word2Vec",
-          "GloVe",
-          "FastText",
-          "Contextual Embeddings"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Speech and Language Processing – Jurafsky, Martin, Pearson, 2020"
-    ],
-    "referenceBooks": [
-      "Natural Language Processing with Transformers – Tunstall, von Werra, Wolf, O'Reilly, 2022"
-    ],
-    "courseOutcomes": [
-      "Master advanced NLP techniques.",
-      "Implement state-of-the-art language models."
-    ]
-  },
-  {
-    "id": "course_024",
-    "code": "23AM7PCDS2",
-    "name": "Big Data Analytics",
-    "credits": 4,
-    "semester": "7th",
-    "prerequisites": [
-      "Data Science and Analytics",
-      "Database Management Systems"
-    ],
-    "description": "Big data processing and analytics techniques.",
-    "instructor": "Dr. BHAVYASHREE H L",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Understand big data technologies.",
-      "Process large-scale datasets.",
-      "Build scalable analytics solutions."
-    ],
-    "topics": [
-      "Hadoop Ecosystem",
-      "Spark",
-      "NoSQL Databases",
-      "Stream Processing",
-      "Data Lakes"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "3-0-1",
-    "totalLectureHours": 36,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 100
-    },
-    "units": [
-      {
-        "number": 1,
-        "title": "Hadoop Ecosystem",
-        "hours": 8,
-        "topics": [
-          "HDFS",
-          "MapReduce",
-          "Hive",
-          "Pig"
-        ]
-      }
-    ],
-    "textBooks": [
-      "Hadoop: The Definitive Guide – Tom White, O'Reilly, 2015"
-    ],
-    "referenceBooks": [
-      "Learning Spark – Jules Damji, Brooke Wenig, Tathagata Das, Denny Lee, O'Reilly, 2020"
-    ],
-    "courseOutcomes": [
-      "Understand big data technologies.",
-      "Process large-scale datasets."
-    ]
-  },
-  {
-    "id": "course_025",
-    "code": "23AM8PCTH1",
-    "name": "Thesis Project - Phase 1",
-    "credits": 6,
-    "semester": "8th",
-    "prerequisites": [
-      "Advanced Machine Learning",
-      "Deep Learning for Computer Vision",
-      "Deep Learning for NLP"
-    ],
-    "description": "First phase of final year thesis project in AI/ML.",
-    "instructor": "Thesis Supervisor",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Conduct independent research in AI/ML.",
-      "Develop novel solutions to complex problems.",
-      "Document and present research findings."
-    ],
-    "topics": [
-      "Literature Review",
-      "Problem Definition",
-      "Methodology Design",
-      "Preliminary Implementation",
-      "Progress Report"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "0-0-6",
-    "totalLectureHours": 0,
-    "examination": {
-      "cieMarks": 100,
-      "seeMarks": 0
     },
     "units": [],
     "textBooks": [],
     "referenceBooks": [],
-    "courseOutcomes": [
-      "Conduct independent research in AI/ML.",
-      "Develop novel solutions to complex problems."
-    ]
+    "courseOutcomes": [],
+    "assessment": null
   },
   {
-    "id": "course_026",
-    "code": "23AM8PCTH2",
-    "name": "Thesis Project - Phase 2",
-    "credits": 6,
-    "semester": "8th",
-    "prerequisites": [
-      "Thesis Project - Phase 1"
-    ],
-    "description": "Second phase of final year thesis project in AI/ML.",
-    "instructor": "Thesis Supervisor",
-    "schedule": "TBD",
-    "room": "TBD",
-    "objectives": [
-      "Complete thesis implementation and evaluation.",
-      "Write comprehensive thesis document.",
-      "Present and defend thesis work."
-    ],
-    "topics": [
-      "Full Implementation",
-      "Experimentation",
-      "Results Analysis",
-      "Thesis Writing",
-      "Final Presentation"
-    ],
-    "courseType": "Professional Core",
-    "contactHours": "0-0-6",
-    "totalLectureHours": 0,
-    "examination": {
-      "cieMarks": 50,
-      "seeMarks": 50
-    },
-    "units": [],
-    "textBooks": [],
-    "referenceBooks": [],
-    "courseOutcomes": [
-      "Complete thesis implementation and evaluation.",
-      "Write comprehensive thesis document."
-    ]
-  },
-  {
-    "id": "course_027",
-    "code": "23AM8PCPRJ",
-    "name": "Industry Project",
+    "id": "course_043",
+    "code": "24AM7PWPW2",
+    "name": "Project work-2",
     "credits": 4,
-    "semester": "8th",
-    "prerequisites": [
-      "Big Data Analytics"
-    ],
-    "description": "Industry-sponsored project in AI/ML applications.",
-    "instructor": "Industry Mentor",
-    "schedule": "TBD",
-    "room": "Industry Partner Location",
-    "objectives": [
-      "Work on real-world industry problems.",
-      "Apply AI/ML skills in professional setting.",
-      "Develop industry-relevant solutions."
-    ],
+    "semester": "7th",
+    "prerequisites": ["24AM6PWPW1"],
+    "description": "The second phase of the project, focusing on the implementation, testing, and completion of the project defined in Phase 1.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
     "topics": [
-      "Industry Problem Analysis",
-      "Solution Design",
       "Implementation",
-      "Testing and Validation",
-      "Project Documentation"
+      "Testing",
+      "Result Analysis",
+      "Documentation",
+      "Presentation"
     ],
-    "courseType": "Professional Core",
+    "courseType": "Project Work",
     "contactHours": "0-0-4",
     "totalLectureHours": 0,
     "examination": {
-      "cieMarks": 100,
-      "seeMarks": 0
+      "cieMarks": 50,
+      "seeMarks": 100
     },
     "units": [],
     "textBooks": [],
     "referenceBooks": [],
-    "courseOutcomes": [
-      "Work on real-world industry problems.",
-      "Apply AI/ML skills in professional setting."
-    ]
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_044",
+    "code": "25MA7HSIKL",
+    "name": "Indian Knowledge Systems",
+    "credits": 1,
+    "semester": "7th",
+    "prerequisites": [],
+    "description": "A course on Indian Knowledge Systems.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Humanities and Social Sciences",
+    "contactHours": "1-0-0",
+    "totalLectureHours": null,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 50
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_045",
+    "code": "PE-4",
+    "name": "Professional Elective - 4",
+    "credits": 3,
+    "semester": "8th",
+    "prerequisites": [],
+    "description": "Professional Elective course. Options include Financial Mathematics, Financial Management, and Entrepreneurship and Management.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [
+      "Financial Mathematics",
+      "Financial Management",
+      "Entrepreneurship and Management"
+    ],
+    "courseType": "Professional Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_046",
+    "code": "OE-3",
+    "name": "Open Elective - 3",
+    "credits": 3,
+    "semester": "8th",
+    "prerequisites": [],
+    "description": "Open Elective course. Options include Introduction to AI, Introduction to Machine Learning, and Introduction to Neural Networks.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [
+      "Introduction to AI",
+      "Introduction to Machine Learning",
+      "Introduction to Neural Networks"
+    ],
+    "courseType": "Open Elective",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
+  },
+  {
+    "id": "course_047",
+    "code": "24AM8SRINT",
+    "name": "Internship",
+    "credits": 10,
+    "semester": "8th",
+    "prerequisites": [],
+    "description": "A mandatory internship of 16-20 weeks to provide practical industry experience.",
+    "instructor": "To be assigned",
+    "schedule": "To be assigned",
+    "room": "To be assigned",
+    "objectives": [],
+    "topics": [],
+    "courseType": "Internship",
+    "contactHours": "0-0-10",
+    "totalLectureHours": 0,
+    "examination": {
+      "cieMarks": 50,
+      "seeMarks": 100
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [],
+    "assessment": null
   }
 ]
