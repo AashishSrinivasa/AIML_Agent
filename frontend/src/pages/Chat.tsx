@@ -4,6 +4,7 @@ import { useQuery } from 'react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { aiApi, facultyApi } from '../services/api.ts';
 import { ChatMessage } from '../types/index.ts';
+import MarkdownRenderer from '../components/MarkdownRenderer.tsx';
 import toast from 'react-hot-toast';
 
 const Chat: React.FC = () => {
@@ -301,7 +302,7 @@ const Chat: React.FC = () => {
                   className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg transition-colors duration-300 ${
+                    className={`max-w-xs lg:max-w-2xl px-4 py-3 rounded-lg transition-colors duration-300 ${
                       message.role === 'user'
                         ? 'bg-blue-500 text-white'
                         : 'bg-gray-100 dark:bg-gray-600 text-gray-800 dark:text-gray-200'
@@ -312,7 +313,9 @@ const Chat: React.FC = () => {
                         <Bot className="w-4 h-4 mt-1 flex-shrink-0" />
                       )}
                       <div className="flex-1">
-                        <p className="text-sm">{message.content}</p>
+                        <div className="text-sm">
+                          <MarkdownRenderer content={message.content} />
+                        </div>
                         {message.sources && message.sources.length > 0 && (
                           <div className="mt-2 pt-2 border-t border-gray-200 dark:border-gray-500">
                             <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Sources:</p>
