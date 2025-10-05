@@ -252,10 +252,19 @@ RESPONSE:`;
           c.name.toLowerCase().includes('analytics')
         );
         if (dataScienceCourses.length > 0) {
-          response = `To become a data scientist, focus on these courses:
-${dataScienceCourses.slice(0, 5).map(c => `• ${c.semester}: ${c.name} (${c.credits} credits)`).join('\n')}
+          const courseList = dataScienceCourses.slice(0, 5).map(c => 
+            `**📚 ${c.name}**\n• **Semester:** ${c.semester}\n• **Credits:** ${c.credits}\n• **Code:** ${c.code}\n`).join('\n');
+          response = `🎯 **Data Science Career Pathway:**
 
-These courses will give you the foundation needed for a data science career.`;
+${courseList}
+
+**🚀 Career Development Tips:**
+• **Foundation:** Build strong mathematical and statistical skills
+• **Programming:** Master Python, R, and SQL
+• **Projects:** Work on real-world data science projects
+• **Networking:** Connect with faculty and industry professionals
+
+**💡 These courses will give you the foundation needed for a data science career.**`;
         } else {
           response = `To become a data scientist, focus on courses in Machine Learning, Data Analytics, and Statistics. Check the courses page for detailed information.`;
         }
@@ -272,10 +281,19 @@ These courses will give you the foundation needed for a data science career.`;
             f.specialization && f.specialization.some(s => s.toLowerCase().includes('computer vision'))
           );
           if (computerVisionFaculty.length > 0) {
-            response = `Computer Vision courses are taught by:
-• Dr. Vinutha H - specializes in Computer Vision and Pattern Recognition
-• Dr. Seemanthini K - expert in Computer Vision and Deep Learning
-• Dr. Sowmya Lakshmi B S - focuses on Deep Learning and Computer Vision`;
+            const facultyList = computerVisionFaculty.map(f => 
+              `**👨‍🏫 ${f.name}**\n• **Designation:** ${f.designation}\n• **Specialization:** ${f.specialization ? f.specialization.join(', ') : 'Computer Vision'}\n• **Email:** ${f.email}\n`).join('\n');
+            response = `👁️ **Computer Vision Faculty:**
+
+${facultyList}
+
+**🎯 Computer Vision Expertise:**
+• **Image Processing:** Advanced algorithms and techniques
+• **Pattern Recognition:** Machine learning applications
+• **Deep Learning:** Neural networks for computer vision
+• **Research Areas:** Cutting-edge CV research projects
+
+**📧 Contact these faculty members for computer vision guidance and research opportunities.**`;
           } else {
             response = `Computer Vision courses are taught by faculty members specializing in Computer Vision, Deep Learning, and Pattern Recognition.`;
           }
@@ -293,19 +311,84 @@ These courses will give you the foundation needed for a data science career.`;
         if (lowerMessage.includes('sandeep') && lowerMessage.includes('varma')) {
           const sandeep = this.knowledgeBase.faculty.find(f => f.name.toLowerCase().includes('sandeep'));
           if (sandeep) {
-            response = `Dr. Sandeep Varma N (${sandeep.designation}) - Email: ${sandeep.email}`;
+            response = `👨‍🏫 **Dr. Sandeep Varma N**
+
+**📋 Contact Information:**
+• **Designation:** ${sandeep.designation}
+• **Email:** ${sandeep.email}
+• **Phone:** ${sandeep.phone || 'Available on request'}
+• **Office:** ${sandeep.office || 'Department of AIML'}
+
+**🔬 Specialization:**
+• ${sandeep.specialization ? sandeep.specialization.join('\n• ') : 'Data Privacy, Machine Learning'}
+
+**📧 You can reach out for academic guidance and research collaboration.**`;
           } else {
-            response = `Dr. Sandeep Varma N - Email: sandeep.mel@bmsce.ac.in`;
+            response = `👨‍🏫 **Dr. Sandeep Varma N**
+
+**📋 Contact Information:**
+• **Email:** sandeep.mel@bmsce.ac.in
+• **Department:** Artificial Intelligence and Machine Learning
+• **Specialization:** Data Privacy, Machine Learning
+
+**📧 Available for academic consultations and research guidance.**`;
           }
         } else if (lowerMessage.includes('pallavi')) {
           const pallavi = this.knowledgeBase.faculty.find(f => f.name.toLowerCase().includes('pallavi'));
           if (pallavi) {
-            response = `Dr. Pallavi B (${pallavi.designation}) - Email: ${pallavi.email}`;
+            response = `👩‍🏫 **Dr. Pallavi B**
+
+**📋 Contact Information:**
+• **Designation:** ${pallavi.designation}
+• **Email:** ${pallavi.email}
+• **Phone:** ${pallavi.phone || 'Available on request'}
+• **Office:** ${pallavi.office || 'Department of AIML'}
+
+**🔬 Specialization:**
+• ${pallavi.specialization ? pallavi.specialization.join('\n• ') : 'Machine Learning, Data Analytics'}
+
+**📧 You can reach out for academic guidance and research collaboration.**`;
           } else {
-            response = `Dr. Pallavi B - Email: pallavib.mel@bmsce.ac.in`;
+            response = `👩‍🏫 **Dr. Pallavi B**
+
+**📋 Contact Information:**
+• **Email:** pallavib.mel@bmsce.ac.in
+• **Department:** Artificial Intelligence and Machine Learning
+• **Specialization:** Machine Learning, Data Analytics
+
+**📧 Available for academic consultations and research guidance.**`;
           }
         } else if (lowerMessage.includes('hod') || lowerMessage.includes('head')) {
-          response = `Dr. M Dakshayini is the Professor and Head of the Department of Artificial Intelligence and Machine Learning.`;
+          const hod = this.knowledgeBase.faculty.find(f => f.designation.includes('HOD') || f.designation.includes('Head'));
+          if (hod) {
+            response = `👨‍💼 **Dr. M Dakshayini**
+
+**📋 Department Leadership:**
+• **Position:** Professor and Head of the Department
+• **Department:** Artificial Intelligence and Machine Learning
+• **Email:** ${hod.email}
+• **Office:** ${hod.office || 'Department of AIML'}
+
+**🎯 Department Vision:**
+• Leading innovation in AI/ML education
+• Fostering research excellence
+• Building industry partnerships
+
+**📧 Contact for department-related queries and academic leadership.**`;
+          } else {
+            response = `👨‍💼 **Dr. M Dakshayini**
+
+**📋 Department Leadership:**
+• **Position:** Professor and Head of the Department
+• **Department:** Artificial Intelligence and Machine Learning
+
+**🎯 Department Vision:**
+• Leading innovation in AI/ML education
+• Fostering research excellence
+• Building industry partnerships
+
+**📧 Contact for department-related queries and academic leadership.**`;
+          }
         } else {
           response = `I can help you find faculty contact information. Which faculty member are you looking for?`;
         }
@@ -319,13 +402,19 @@ These courses will give you the foundation needed for a data science career.`;
       case 'semester_course_query':
         const semester5Courses = this.knowledgeBase.courses.filter(c => c.semester.toLowerCase().includes('5th'));
         if (semester5Courses.length > 0) {
-          response = `Semester V courses include:
-• Deep Learning Fundamentals (4 credits)
-• Natural Language Processing (4 credits)
-• Computer Vision (4 credits)
-• Data Science and Analytics (4 credits)
+          const courseList = semester5Courses.map(c => 
+            `**📚 ${c.name}**\n• **Code:** ${c.code}\n• **Credits:** ${c.credits}\n• **Instructor:** ${c.instructor || 'TBA'}\n• **Type:** ${c.courseType}\n`).join('\n');
+          response = `📖 **Semester V Courses:**
 
-These courses build on your foundation from previous semesters.`;
+${courseList}
+
+**🎯 Semester V Highlights:**
+• **Advanced Topics:** Deep Learning, NLP, Computer Vision
+• **Practical Focus:** Hands-on projects and labs
+• **Industry Relevance:** Real-world applications
+• **Prerequisites:** Strong foundation from previous semesters
+
+**💡 These courses build on your foundation from previous semesters.**`;
         } else {
           response = `Semester 5 courses focus on advanced topics like Deep Learning, NLP, Computer Vision, and Data Science.`;
         }
@@ -339,13 +428,33 @@ These courses build on your foundation from previous semesters.`;
       case 'infrastructure_query':
         if (this.knowledgeBase.infrastructure && this.knowledgeBase.infrastructure.labs) {
           const labs = this.knowledgeBase.infrastructure.labs;
-          response = `Available Labs:
-• ${labs[0].name} - ${labs[0].capacity} students, ${labs[0].location}
-• ${labs[1].name} - ${labs[1].capacity} students, ${labs[1].location}
-• ${labs[2].name} - ${labs[2].capacity} students, ${labs[2].location}
-• ${labs[3].name} - ${labs[3].capacity} students, ${labs[3].location}
+          response = `🏢 **Available Labs:**
 
-All labs are equipped with modern computing facilities and specialized software.`;
+**🔬 B.S. Narayan Center of Excellence in AI & ML**
+• **Capacity:** 50 students
+• **Location:** Department of Machine Learning, BMSCE
+• **Features:** Advanced AI/ML research facilities
+
+**💻 Machine Learning Lab 1**
+• **Capacity:** 30 students
+• **Location:** Department of Machine Learning, BMSCE
+• **Features:** Modern computing workstations
+
+**💻 Machine Learning Lab 2**
+• **Capacity:** 30 students
+• **Location:** Department of Machine Learning, BMSCE
+• **Features:** Specialized ML software
+
+**💻 Machine Learning Lab 3**
+• **Capacity:** 30 students
+• **Location:** Department of Machine Learning, BMSCE
+• **Features:** High-performance computing
+
+**✨ All labs are equipped with:**
+• Modern computing facilities
+• Specialized AI/ML software
+• High-speed internet connectivity
+• Research-grade equipment`;
         } else {
           response = `The department has 4 modern computer labs with advanced computing facilities for AI/ML research and development.`;
         }
@@ -358,13 +467,18 @@ All labs are equipped with modern computing facilities and specialized software.
         
       case 'faculty_listing':
         const facultyList = this.knowledgeBase.faculty.slice(0, 5).map(f => 
-          `• ${f.name} (${f.designation}) - ${f.specialization ? f.specialization[0] : 'AI/ML'}`).join('\n');
-        response = `Faculty Members:
+          `**👨‍🏫 ${f.name}**\n• **Designation:** ${f.designation}\n• **Specialization:** ${f.specialization ? f.specialization[0] : 'AI/ML'}\n• **Email:** ${f.email}\n`).join('\n');
+        response = `👥 **Faculty Members:**
+
 ${facultyList}
 
-... and ${this.knowledgeBase.faculty.length - 5} more faculty members.
+**📊 Department Statistics:**
+• **Total Faculty:** ${this.knowledgeBase.faculty.length} members
+• **Professors:** ${this.knowledgeBase.faculty.filter(f => f.designation.includes('Professor')).length}
+• **Associate Professors:** ${this.knowledgeBase.faculty.filter(f => f.designation.includes('Associate')).length}
+• **Assistant Professors:** ${this.knowledgeBase.faculty.filter(f => f.designation.includes('Assistant')).length}
 
-For specific faculty details, ask about individual members.`;
+**💡 For specific faculty details, ask about individual members.**`;
         suggestions = [
           'Tell me about Dr. Sandeep Varma',
           'Who teaches computer vision?',
@@ -375,21 +489,34 @@ For specific faculty details, ask about individual members.`;
       case 'course_query':
         if (lowerMessage.includes('all courses') || lowerMessage.includes('available courses')) {
           const allCourses = this.knowledgeBase.courses.slice(0, 8).map(c => 
-            `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} credits`).join('\n');
-          response = `Available Courses:
+            `**📚 ${c.name}**\n• **Code:** ${c.code}\n• **Semester:** ${c.semester}\n• **Credits:** ${c.credits}\n• **Instructor:** ${c.instructor || 'TBA'}\n`).join('\n');
+          response = `📖 **Available Courses:**
+
 ${allCourses}
 
-... and ${this.knowledgeBase.courses.length - 8} more courses.
+**📊 Course Statistics:**
+• **Total Courses:** ${this.knowledgeBase.courses.length} courses
+• **Semesters Covered:** 3rd to 8th (6 semesters)
+• **Total Credits:** ${this.knowledgeBase.courses.reduce((sum, c) => sum + c.credits, 0)} credits
 
-For detailed course information, visit the Courses page.`;
+**💡 For detailed course information, visit the Courses page.**`;
         } else if (lowerMessage.includes('machine learning') || lowerMessage.includes('ml')) {
           const mlCourses = this.knowledgeBase.courses.filter(c => 
             c.name.toLowerCase().includes('machine learning') || 
             c.name.toLowerCase().includes('ml')
           );
           if (mlCourses.length > 0) {
-            response = `Machine Learning Courses:
-${mlCourses.map(c => `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} credits`).join('\n')}`;
+            const mlCourseList = mlCourses.map(c => 
+              `**🤖 ${c.name}**\n• **Code:** ${c.code}\n• **Semester:** ${c.semester}\n• **Credits:** ${c.credits}\n• **Instructor:** ${c.instructor || 'TBA'}\n`).join('\n');
+            response = `🤖 **Machine Learning Courses:**
+
+${mlCourseList}
+
+**🎯 ML Course Highlights:**
+• **Foundation Courses:** Mathematical foundations and statistics
+• **Core ML:** Introduction to ML and advanced topics
+• **Practical Labs:** Hands-on ML lab sessions
+• **Projects:** Real-world ML project implementation`;
           } else {
             response = `Machine Learning courses are available across different semesters. Check the Courses page for detailed information.`;
           }
