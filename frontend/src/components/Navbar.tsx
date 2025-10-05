@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun, Shield } from 'lucide-react';
+import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun, Shield, Sparkles, Zap } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BMSCELogo from './BMSCELogo.tsx';
 
@@ -31,115 +31,201 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`sticky top-0 z-50 shadow-lg transition-colors duration-300 ${
-        darkMode 
-          ? 'bg-gray-800 border-b border-gray-700' 
-          : 'bg-white border-b border-gray-200'
-      }`}
+      className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-white/20 dark:border-gray-700/20 shadow-xl"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
-                  <div className="flex items-center">
-                    <Link to="/" className="flex items-center space-x-3 group">
-                      <motion.div 
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <BMSCELogo 
-                          size="md" 
-                          variant="icon"
-                          className="transition-colors duration-300"
-                        />
-                      </motion.div>
-                      <div className="flex flex-col">
-                        <span className={`text-lg font-bold transition-colors duration-300 ${
-                          darkMode ? 'text-white' : 'text-blue-600'
-                        }`}>
-                          AIML Department
-                        </span>
-                        <span className={`text-xs transition-colors duration-300 ${
-                          darkMode ? 'text-gray-300' : 'text-blue-500'
-                        }`}>
-                          AI Assistant
-                        </span>
-                      </div>
-                    </Link>
-                  </div>
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div
+          className="absolute -top-4 -left-4 w-24 h-24 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 20, 0], 
+            y: [0, -10, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute -top-4 -right-4 w-24 h-24 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, -20, 0], 
+            y: [0, 10, 0],
+            scale: [1, 0.9, 1]
+          }}
+          transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          {/* Logo Section */}
+          <motion.div 
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <Link to="/" className="flex items-center space-x-4 group">
+              <motion.div 
+                whileHover={{ scale: 1.05, rotate: 2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                <BMSCELogo 
+                  size="lg" 
+                  variant="creative"
+                  className="transition-all duration-300"
+                />
+              </motion.div>
+            </Link>
+          </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navigation.map((item) => {
+          <motion.div 
+            className="hidden md:flex items-center space-x-2"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {navigation.map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={item.name}
-                  whileHover={{ scale: 1.05 }}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+                  whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
                     to={item.href}
-                    className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                    className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-2xl text-sm font-semibold transition-all duration-300 group ${
                       isActive(item.href)
-                        ? darkMode 
-                          ? 'bg-blue-900 text-blue-300' 
-                          : 'bg-blue-100 text-blue-700'
-                        : darkMode
-                          ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                          : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-800/80 hover:shadow-lg hover:shadow-purple-500/10'
                     }`}
                   >
-                    <Icon className="w-4 h-4" />
-                    <span>{item.name}</span>
+                    <Icon className={`w-4 h-4 transition-all duration-300 ${
+                      isActive(item.href) ? 'text-white' : 'text-purple-600 dark:text-purple-400 group-hover:scale-110'
+                    }`} />
+                    <span className="relative z-10">{item.name}</span>
+                    {isActive(item.href) && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl"
+                        layoutId="activeTab"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                    {!isActive(item.href) && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    )}
                   </Link>
                 </motion.div>
               );
             })}
             
             {/* Dark Mode Toggle */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={toggleDarkMode}
-              className={`p-2 rounded-lg transition-colors duration-200 ${
-                darkMode 
-                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              className="ml-4"
             >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
-          </div>
+              <motion.button
+                whileHover={{ scale: 1.1, rotate: 15 }}
+                whileTap={{ scale: 0.9 }}
+                onClick={toggleDarkMode}
+                className={`relative p-3 rounded-2xl transition-all duration-300 shadow-lg ${
+                  darkMode 
+                    ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-yellow-500/25' 
+                    : 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 shadow-gray-500/10'
+                }`}
+              >
+                {darkMode ? (
+                  <motion.div
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <Sun className="w-5 h-5" />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    initial={{ rotate: 0 }}
+                    animate={{ rotate: -15 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Moon className="w-5 h-5" />
+                  </motion.div>
+                )}
+                <motion.div
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-purple-500 rounded-full"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                />
+              </motion.button>
+            </motion.div>
+          </motion.div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center space-x-2">
+          <motion.div 
+            className="md:hidden flex items-center space-x-3"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.1, rotate: 15 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={toggleDarkMode}
+              className={`p-3 rounded-2xl transition-all duration-300 shadow-lg ${
+                darkMode 
+                  ? 'bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-yellow-500/25' 
+                  : 'bg-gradient-to-r from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-600 text-gray-700 dark:text-gray-300 shadow-gray-500/10'
+              }`}
+            >
+              {darkMode ? (
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Sun className="w-5 h-5" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: -15 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Moon className="w-5 h-5" />
+                </motion.div>
+              )}
+            </motion.button>
+            
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={toggleDarkMode}
-              className={`p-2 rounded-lg transition-colors duration-200 ${
-                darkMode 
-                  ? 'bg-gray-700 text-yellow-400 hover:bg-gray-600' 
-                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-              }`}
-            >
-              {darkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-            </motion.button>
-            
-            <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 ${
-                darkMode
-                  ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                  : 'text-gray-600 hover:text-blue-600 hover:bg-gray-100'
-              }`}
+              className="inline-flex items-center justify-center p-3 rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
             >
-              {isOpen ? (
-                <X className="block h-6 w-6" />
-              ) : (
-                <Menu className="block h-6 w-6" />
-              )}
-            </button>
-          </div>
+              <motion.div
+                animate={{ rotate: isOpen ? 180 : 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {isOpen ? (
+                  <X className="block h-6 w-6" />
+                ) : (
+                  <Menu className="block h-6 w-6" />
+                )}
+              </motion.div>
+            </motion.button>
+          </motion.div>
         </div>
       </div>
 
@@ -151,34 +237,43 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
           exit={{ opacity: 0, height: 0 }}
           className="md:hidden"
         >
-          <div className={`px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t transition-colors duration-300 ${
-            darkMode 
-              ? 'bg-gray-800 border-gray-700' 
-              : 'bg-white border-gray-200'
-          }`}>
-            {navigation.map((item) => {
+          <div className="px-4 pt-4 pb-6 space-y-2 bg-white/95 dark:bg-gray-900/95 backdrop-blur-xl border-t border-white/20 dark:border-gray-700/20">
+            {navigation.map((item, index) => {
               const Icon = item.icon;
               return (
                 <motion.div
                   key={item.name}
-                  whileHover={{ scale: 1.02 }}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                  whileHover={{ scale: 1.02, x: 5 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Link
                     to={item.href}
                     onClick={() => setIsOpen(false)}
-                    className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    className={`relative flex items-center space-x-3 px-4 py-3 rounded-2xl text-base font-semibold transition-all duration-300 group ${
                       isActive(item.href)
-                        ? darkMode
-                          ? 'bg-blue-900 text-blue-300'
-                          : 'bg-blue-100 text-blue-700'
-                        : darkMode
-                          ? 'text-gray-300 hover:text-blue-400 hover:bg-gray-700'
-                          : 'text-gray-600 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25'
+                        : 'text-gray-700 dark:text-gray-300 hover:bg-white/80 dark:hover:bg-gray-800/80 hover:shadow-lg hover:shadow-purple-500/10'
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
-                    <span>{item.name}</span>
+                    <Icon className={`w-5 h-5 transition-all duration-300 ${
+                      isActive(item.href) ? 'text-white' : 'text-purple-600 dark:text-purple-400 group-hover:scale-110'
+                    }`} />
+                    <span className="relative z-10">{item.name}</span>
+                    {isActive(item.href) && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl"
+                        layoutId="activeMobileTab"
+                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                      />
+                    )}
+                    {!isActive(item.href) && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    )}
                   </Link>
                 </motion.div>
               );

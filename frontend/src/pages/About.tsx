@@ -100,7 +100,7 @@ const About: React.FC = () => {
               >
                 <div className="w-32 h-32 bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl">
                   <img 
-                    src="/src/assets/hod.png" 
+                    src="/assets/hod.png" 
                     alt="Dr. M Dakshayini - HOD" 
                     className="w-28 h-28 rounded-xl object-cover"
                     onError={(e) => {
@@ -180,9 +180,103 @@ const About: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            Welcome to the <span className="font-bold text-purple-600">Artificial Intelligence & Machine Learning Department</span> at BMSCE! 
-            We're pioneering the future of AI education with cutting-edge research, expert faculty, and state-of-the-art facilities.
+            Welcome to the <span className="font-bold text-purple-600">Department of Machine Learning</span> at BMSCE! 
+            Established in 2020, we're a rapidly growing discipline focused on advancing education and research in Artificial Intelligence and Machine Learning.
           </motion.p>
+        </motion.section>
+
+        {/* Department Overview */}
+        <motion.section 
+          className="py-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.div 
+            className="bg-white/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8 mb-12"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="text-center mb-12">
+              <motion.h2 
+                className="text-4xl font-bold mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent">
+                  Department Overview
+                </span>
+              </motion.h2>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+              {/* Department Info */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <GraduationCap className="w-8 h-8 text-purple-600 mr-3" />
+                  About Our Department
+                </h3>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    The Department of Machine Learning at B.M.S. College of Engineering, established in <span className="font-bold text-purple-600">2020</span>, 
+                    is a rapidly growing discipline focused on advancing education and research in Artificial Intelligence and Machine Learning.
+                  </p>
+                  <p>
+                    With an undergraduate intake of <span className="font-bold text-purple-600">360 students</span>, the department emphasizes cutting-edge areas such as:
+                  </p>
+                  <div className="grid grid-cols-2 gap-2 mt-4">
+                    {['Deep Learning', 'Data Mining', 'Big Data', 'Natural Language Processing', 'Generative AI', 'Computer Vision'].map((area, index) => (
+                      <div key={index} className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span className="text-sm font-medium">{area}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p>
+                    Our faculty, a blend of experienced and innovative educators, excels in making complex concepts accessible and engaging, 
+                    enriched by industry experience and interdisciplinary collaborations.
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* B.S. Narayan Center */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <Microscope className="w-8 h-8 text-purple-600 mr-3" />
+                  B.S. Narayan Center of Excellence
+                </h3>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p>
+                    The <span className="font-bold text-purple-600">B.S. Narayan Center of Excellence (CoE) in AI & ML</span> manages research and development 
+                    activities related to AI at the Department of Machine Learning, BMSCE.
+                  </p>
+                  <p>
+                    It fosters dynamic industry-academic synergy for AI adoption, impactful projects with industry and government, 
+                    facilitating the <span className="font-bold text-purple-600">NVIDIA DGX A100 server</span>.
+                  </p>
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 mt-4">
+                    <p className="text-sm font-medium text-gray-800">
+                      The world's first purpose-built system for Deep Learning and accelerated analytics, delivering performance of 
+                      <span className="font-bold text-purple-600"> 56 instances in parallel</span> without any deterioration of performance and computations.
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
         </motion.section>
 
         {/* Department Mission & Vision */}
@@ -217,12 +311,12 @@ const About: React.FC = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                To pioneer the future of AI education through cutting-edge research, innovative teaching methods, 
-                and industry collaboration, while fostering the next generation of AI leaders and innovators.
+                We are dedicated to achieving excellent standards of quality education in the field of Artificial Intelligence and Machine Learning, 
+                nurturing students with strong fundamentals for successful careers in AI/ML.
               </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div 
                 className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
@@ -234,8 +328,8 @@ const About: React.FC = () => {
                 <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Excellence</h3>
-                <p className="text-gray-600">Delivering world-class AI education and research excellence</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Vision</h3>
+                <p className="text-gray-600">To achieve excellent standards of quality education in the field of Artificial Intelligence and Machine Learning.</p>
               </motion.div>
               <motion.div 
                 className="text-center p-6 bg-gradient-to-br from-pink-50 to-indigo-50 rounded-2xl"
@@ -246,10 +340,10 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Lightbulb className="w-8 h-8 text-white" />
+                  <GraduationCap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Innovation</h3>
-                <p className="text-gray-600">Pioneering breakthrough research in AI and machine learning</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Mission 1</h3>
+                <p className="text-gray-600">To nurture students with strong fundamentals for a successful career in AI & ML and motivate them for post-graduation and research.</p>
               </motion.div>
               <motion.div 
                 className="text-center p-6 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-2xl"
@@ -260,10 +354,10 @@ const About: React.FC = () => {
                 viewport={{ once: true }}
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Users className="w-8 h-8 text-white" />
+                  <Lightbulb className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Community</h3>
-                <p className="text-gray-600">Building a vibrant community of AI researchers and practitioners</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Mission 2</h3>
+                <p className="text-gray-600">To create impact in society with continuous research and innovations in AI & ML technologies.</p>
               </motion.div>
             </div>
           </motion.div>
@@ -332,7 +426,7 @@ const About: React.FC = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <div className="text-center mb-12">
+        <div className="text-center mb-12">
             <motion.h2 
               className="text-4xl font-bold mb-6"
               initial={{ opacity: 0, y: 20 }}
