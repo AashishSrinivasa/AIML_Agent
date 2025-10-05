@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 class DemoAIAgent {
   constructor() {
@@ -11,6 +13,24 @@ class DemoAIAgent {
     this.port = 5001;
     this.knowledgeBase = {};
     this.conversationHistory = new Map();
+    
+    // Initialize Google Gemini AI
+    const apiKey = process.env.GEMINI_API_KEY;
+    if (!apiKey) {
+      console.log('❌ GEMINI_API_KEY not found in environment variables.');
+      console.log('📋 Please set your API key in .env file');
+    } else {
+      this.genAI = new GoogleGenerativeAI(apiKey);
+      this.model = this.genAI.getGenerativeModel({ 
+        model: "gemini-1.5-flash",
+        generationConfig: {
+          temperature: 0.7,
+          topP: 0.9,
+          maxOutputTokens: 500,
+        }
+      });
+      console.log('✅ Google Gemini AI initialized successfully');
+    }
     
     this.setupMiddleware();
     this.loadComprehensiveData();
@@ -58,8 +78,8 @@ class DemoAIAgent {
     }
   }
 
-  // Advanced intelligent response simulation
-  generateIntelligentResponse(userMessage, sessionId = 'default') {
+  // Advanced intelligent response with Gemini integration
+  async generateIntelligentResponse(userMessage, sessionId = 'default') {
     const lowerMessage = userMessage.toLowerCase();
     
     // Get conversation history
@@ -68,6 +88,145 @@ class DemoAIAgent {
     // Analyze intent
     const intent = this.analyzeUserIntent(userMessage);
     const extractedInfo = this.extractKeyInformation(userMessage);
+    
+    // Try Gemini first if available
+    if (this.model) {
+      try {
+        const geminiResponse = await this.generateGeminiResponse(userMessage, conversationHistory, intent, extractedInfo);
+        if (geminiResponse) {
+          // Update conversation history
+          conversationHistory.push({ role: 'user', content: userMessage });
+          conversationHistory.push({ role: 'assistant', content: geminiResponse.response });
+          if (conversationHistory.length > 10) {
+            conversationHistory.splice(0, conversationHistory.length - 10);
+          }
+          this.conversationHistory.set(sessionId, conversationHistory);
+          
+          return geminiResponse;
+        }
+      } catch (error) {
+        console.log('❌ Gemini error:', error.message);
+        console.log('🔄 Using fallback response');
+      }
+    }
+    
+    // Fallback to rule-based response
+    return this.generateFallbackResponse(userMessage, sessionId, intent, extractedInfo);
+  }
+
+  // Generate response using Gemini
+  async generateGeminiResponse(userMessage, conversationHistory, intent, extractedInfo) {
+    const context = this.createComprehensiveContext();
+    
+    // Build conversation context
+    const conversationContext = conversationHistory.length > 0 ? 
+      `\nCONVERSATION HISTORY:\n${conversationHistory.slice(-3).map(msg => `${msg.role}: ${msg.content}`).join('\n')}` : '';
+    
+    const prompt = `You are Liam, the official AI assistant for the Department of Artificial Intelligence and Machine Learning, B.M.S. College of Engineering.
+
+You are connected to structured departmental data. Use ONLY the provided information from this internal data when answering.
+
+DEPARTMENT CONTEXT:
+- Department: ${context.department}
+- Established: ${context.infrastructure.established}
+- Undergraduate Intake: ${context.infrastructure.undergraduateIntake} students
+
+COMPLETE DEPARTMENTAL DATA:
+
+FACULTY DATA (${context.faculty.length} members):
+${context.faculty.map(f => `
+- ${f.name} (${f.designation})
+  Email: ${f.email}
+  Phone: ${f.phone}
+  Specialization: ${Array.isArray(f.specialization) ? f.specialization.join(', ') : f.specialization}
+  Research Areas: ${Array.isArray(f.researchAreas) ? f.researchAreas.join(', ') : f.researchAreas}
+  Teaches: ${Array.isArray(f.teaches) ? f.teaches.join(', ') : 'Not specified'}
+  Office: ${f.office}
+  Qualifications: ${f.qualifications}
+`).join('')}
+
+COURSES DATA (${context.courses.length} courses):
+${context.courses.map(c => `
+- ${c.name} (${c.code})
+  Semester: ${c.semester}
+  Credits: ${c.credits}
+  Instructor: ${c.instructor}
+  Prerequisites: ${Array.isArray(c.prerequisites) ? c.prerequisites.join(', ') : c.prerequisites}
+  Description: ${c.description}
+  Course Outcomes: ${Array.isArray(c.courseOutcomes) ? c.courseOutcomes.join('; ') : c.courseOutcomes}
+  Objectives: ${Array.isArray(c.objectives) ? c.objectives.join('; ') : c.objectives}
+  Topics: ${Array.isArray(c.topics) ? c.topics.join(', ') : 'Not specified'}
+  Course Type: ${c.courseType}
+  Contact Hours: ${c.contactHours}
+  Examination: CIE ${c.examination.cieMarks} marks, SEE ${c.examination.seeMarks} marks
+`).join('')}
+
+INFRASTRUCTURE DATA:
+${context.infrastructure.labs.map(lab => `
+- ${lab.name}
+  Capacity: ${lab.capacity} students
+  Location: ${lab.location}
+  Description: ${lab.description}
+  Equipment: ${lab.equipment.map(eq => `${eq.name} (${eq.quantity} units)`).join(', ')}
+`).join('')}
+
+${conversationContext}
+
+USER QUESTION: ${userMessage}
+DETECTED INTENT: ${intent}
+EXTRACTED INFO: ${JSON.stringify(extractedInfo)}
+
+INSTRUCTIONS:
+1. Always rely on the college dataset above for facts — never invent information
+2. Use conversation history to understand context and references
+3. For greetings (hello, hi, hey), respond warmly and introduce yourself as Liam
+4. For course questions, provide specific course details from the data
+5. For faculty questions, provide specific faculty information from the data
+6. For infrastructure questions, provide specific lab and facility information
+7. Always suggest 2-3 relevant follow-up questions at the end
+8. Use bullet points for lists, but keep responses concise (2-5 sentences + suggestions)
+9. Be friendly and professional in all interactions
+
+RESPONSE FORMAT:
+[Your main answer in 2-5 sentences]
+
+SUGGESTED FOLLOW-UP QUESTIONS:
+• [Question 1]
+• [Question 2] 
+• [Question 3]
+
+RESPONSE:`;
+
+    const result = await this.model.generateContent(prompt);
+    const response = await result.response;
+    const text = response.text();
+    
+    // Extract suggestions from the response
+    const suggestionsMatch = text.match(/SUGGESTED FOLLOW-UP QUESTIONS:\s*•\s*(.+?)\s*•\s*(.+?)\s*•\s*(.+?)(?:\n|$)/s);
+    const suggestions = suggestionsMatch ? [
+      suggestionsMatch[1].trim(),
+      suggestionsMatch[2].trim(),
+      suggestionsMatch[3].trim()
+    ] : [
+      'Tell me about the faculty members',
+      'What courses are available?',
+      'Show me the department facilities'
+    ];
+    
+    return {
+      response: text.replace(/SUGGESTED FOLLOW-UP QUESTIONS:.*$/s, '').trim(),
+      suggestions: suggestions,
+      intent: intent,
+      extractedInfo: extractedInfo
+    };
+  }
+
+  // Fallback response generation
+  generateFallbackResponse(userMessage, sessionId, intent, extractedInfo) {
+    const lowerMessage = userMessage.toLowerCase();
+    
+    // Get conversation history
+    const conversationHistory = this.conversationHistory.get(sessionId) || [];
     
     // Update conversation history
     conversationHistory.push({ role: 'user', content: userMessage });
@@ -312,6 +471,17 @@ ${mlCourses.map(c => `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} c
     return extracted;
   }
 
+  // Create comprehensive context from knowledge base
+  createComprehensiveContext() {
+    return {
+      department: "Department of Artificial Intelligence and Machine Learning",
+      faculty: this.knowledgeBase.faculty || [],
+      courses: this.knowledgeBase.courses || [],
+      infrastructure: this.knowledgeBase.infrastructure || { labs: [], established: "2020", undergraduateIntake: 60 },
+      calendar: this.knowledgeBase.calendar || []
+    };
+  }
+
   setupRoutes() {
     // AI Chat API
     this.app.post('/api/ai/chat', async (req, res) => {
@@ -324,7 +494,7 @@ ${mlCourses.map(c => `• ${c.name} (${c.code}) - ${c.semester} - ${c.credits} c
 
         console.log('💬 Received message:', message);
         
-        const result = this.generateIntelligentResponse(message, sessionId);
+        const result = await this.generateIntelligentResponse(message, sessionId);
         
         res.json({
           data: {
