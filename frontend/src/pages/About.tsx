@@ -100,7 +100,7 @@ const About: React.FC = () => {
               >
                 <div className="w-32 h-32 bg-gradient-to-br from-purple-500 via-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center shadow-xl">
                   <img 
-                    src="/assets/hod.png" 
+                    src={hodImage} 
                     alt="Dr. M Dakshayini - HOD" 
                     className="w-28 h-28 rounded-xl object-cover"
                     onError={(e) => {
