@@ -208,14 +208,16 @@ EXTRACTED INFO: ${JSON.stringify(extractedInfo)}
 ADVANCED INSTRUCTIONS:
 1. Always rely on the college dataset above for facts — never invent information
 2. Use conversation history to understand context and references (like "her", "him", "that course", etc.)
-3. For course pathway questions, provide step-by-step guidance based on prerequisites
-4. For faculty matching, consider specializations, research areas, and teaching subjects
-5. For complex queries, break down into logical steps and provide comprehensive answers
-6. Always suggest 2-3 relevant follow-up questions at the end of your response
-7. Use bullet points for lists, but keep responses concise (2-5 sentences + suggestions)
-8. If user asks about career paths, provide course recommendations and faculty mentors
-9. For semester-specific questions, consider prerequisite chains and course progression
-10. Maintain context memory throughout the conversation
+3. For greetings (hello, hi, hey), respond warmly and introduce yourself as Liam, the AI assistant for AIML department
+4. For course pathway questions, provide step-by-step guidance based on prerequisites
+5. For faculty matching, consider specializations, research areas, and teaching subjects
+6. For complex queries, break down into logical steps and provide comprehensive answers
+7. Always suggest 2-3 relevant follow-up questions at the end of your response
+8. Use bullet points for lists, but keep responses concise (2-5 sentences + suggestions)
+9. If user asks about career paths, provide course recommendations and faculty mentors
+10. For semester-specific questions, consider prerequisite chains and course progression
+11. Maintain context memory throughout the conversation
+12. Be friendly and professional in all interactions
 
 RESPONSE FORMAT:
 [Your main answer in 2-5 sentences]
@@ -320,8 +322,8 @@ RESPONSE:`;
     }
     
     // Greeting
-    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
-      return `I can help with faculty, courses, labs, and academic information. What do you need?`;
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || lowerMessage.includes('good morning') || lowerMessage.includes('good afternoon') || lowerMessage.includes('good evening')) {
+      return `Hello! I'm Liam, your AI assistant for the AIML department at BMSCE. I can help you with faculty information, course details, academic guidance, and more. What would you like to know?`;
     }
     
     return `I can help with faculty, courses, infrastructure, and academic calendar information. What specific information do you need?`;
@@ -330,6 +332,13 @@ RESPONSE:`;
   // Advanced intent analysis
   analyzeUserIntent(userMessage) {
     const lowerMessage = userMessage.toLowerCase();
+    
+    // Greeting detection
+    if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey') || 
+        lowerMessage.includes('good morning') || lowerMessage.includes('good afternoon') || 
+        lowerMessage.includes('good evening') || lowerMessage.includes('greetings')) {
+      return 'greeting';
+    }
     
     if (lowerMessage.includes('career') || lowerMessage.includes('path') || lowerMessage.includes('become')) {
       return 'career_guidance';
@@ -424,6 +433,14 @@ RESPONSE:`;
     const suggestions = [];
     
     switch (intent) {
+      case 'greeting':
+        suggestions.push(
+          'Tell me about the faculty members',
+          'What courses are available?',
+          'Show me the department facilities'
+        );
+        break;
+        
       case 'career_guidance':
         suggestions.push(
           'What courses should I take for data science?',
