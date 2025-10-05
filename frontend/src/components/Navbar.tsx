@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun } from 'lucide-react';
+import { Menu, X, Bot, Users, BookOpen, Calendar, Building2, Info, Moon, Sun, Shield } from 'lucide-react';
 import { motion } from 'framer-motion';
 import BMSCELogo from './BMSCELogo.tsx';
 
@@ -21,6 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, toggleDarkMode }) => {
     { name: 'Calendar', href: '/calendar', icon: Calendar },
     { name: 'Infrastructure', href: '/infrastructure', icon: Building2 },
     { name: 'About', href: '/about', icon: Info },
+    { name: 'Admin', href: '/admin', icon: Shield },
   ];
 
   const isActive = (path: string) => location.pathname === path;

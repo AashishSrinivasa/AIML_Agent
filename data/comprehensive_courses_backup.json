@@ -1,0 +1,910 @@
+[
+  {
+    "id": "course_001",
+    "code": "23MA3BSMML",
+    "name": "Mathematical Foundations for Machine Learning",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Calculus", "Linear Algebra", "Probability"],
+    "description": "Mathematical foundations essential for machine learning including linear algebra, calculus, probability, and statistics.",
+    "instructor": "Dr. Mathematics Faculty",
+    "schedule": "Mon, Wed, Fri 10:00 AM - 11:00 AM",
+    "room": "Mathematics Lab",
+    "objectives": [
+      "Apply mathematical concepts to machine learning problems",
+      "Understand linear algebra operations in ML",
+      "Master probability and statistics for ML",
+      "Solve optimization problems in ML"
+    ],
+    "topics": [
+      "Linear Algebra for ML",
+      "Calculus and Optimization",
+      "Probability Theory",
+      "Statistical Inference",
+      "Matrix Operations",
+      "Gradient Descent"
+    ],
+    "courseType": "Basic Science",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Linear Transformations – I",
+        "hours": 6,
+        "topics": [
+          "Linear transformations and matrices",
+          "Matrix as a linear transformation",
+          "One-one and onto transformations",
+          "Singular & non-singular transformations",
+          "Determinant of large matrices and computational complexity"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Linear Transformations – II",
+        "hours": 5,
+        "topics": [
+          "Algebra of linear transformations",
+          "Geometric transformations",
+          "Composition of transformations",
+          "Affine subspaces and transformations"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Vector Norms and Inner Product Spaces",
+        "hours": 5,
+        "topics": [
+          "Vector and matrix norms (1L, L∞, Frobenius)",
+          "Inner products, orthogonality, and distances",
+          "Orthonormal basis and condition numbers"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Applications of Inner Product",
+        "hours": 5,
+        "topics": [
+          "Orthogonal complements & projections",
+          "Gram–Schmidt process",
+          "Orthogonal matrices, least-square approximation",
+          "Metric spaces and rotations"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Eigenvalues and Eigenvectors",
+        "hours": 5,
+        "topics": [
+          "Eigenspaces, characteristic and minimal polynomials",
+          "Eigen decomposition and diagonalization",
+          "Symmetric matrices and spectral norm"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Mathematics for Machine Learning – M.P. Deisenroth, A. Aldo Faisal, C. Ong, Cambridge, 2020",
+      "Linear Algebra and Its Applications – D.C. Lay et al., Pearson, 2021",
+      "Linear Algebra: An Introduction – R. Bronson & G. Costa, Academic Press, 2007"
+    ],
+    "referenceBooks": [
+      "Linear Algebra and Optimization for Machine Learning – Charu Aggarwal, Springer, 2020",
+      "Linear Algebra – S. Friedberg et al., Pearson, 2019",
+      "Schaum's Outline: Linear Algebra – Lipschutz & Lipson, McGraw Hill, 2017"
+    ],
+    "courseOutcomes": [
+      "Apply calculus and linear algebra concepts to ML problems",
+      "Implement mathematical concepts in ML using modern tools"
+    ],
+    "assessment": {
+      "cie": {
+        "quiz": 10,
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_002",
+    "code": "23MA4BSMML",
+    "name": "Mathematical Foundation for Machine Learning – 2",
+    "credits": 3,
+    "semester": "4th",
+    "prerequisites": ["Mathematical Foundations for Machine Learning"],
+    "description": "Advanced mathematical foundations for machine learning including matrix operations, vector calculus, and optimization techniques.",
+    "instructor": "Dr. Mathematics Faculty",
+    "schedule": "Mon, Wed, Fri 10:00 AM - 11:00 AM",
+    "room": "Mathematics Lab",
+    "objectives": [
+      "Understand linear-algebra tools used in ML and allied fields",
+      "Apply vector-calculus and optimization in AI/ML contexts",
+      "Develop analytical and lifelong-learning skills in applied mathematics"
+    ],
+    "topics": [
+      "Matrix Operations in ML",
+      "Vector Calculus",
+      "Applications of Vector Calculus",
+      "Univariate Optimization",
+      "Multivariable Optimization"
+    ],
+    "courseType": "Basic Science",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "labHours": 13,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150,
+      "weightage": "50%"
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Matrix Operations in Machine Learning",
+        "hours": 6,
+        "topics": [
+          "LU and Cholesky decomposition",
+          "SVD and data compression",
+          "Principal Component Analysis (PCA)",
+          "Moore–Penrose pseudoinverse"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Vector Calculus",
+        "hours": 5,
+        "topics": [
+          "Functions of several variables, partial derivatives",
+          "Gradients of vector-valued functions and matrices",
+          "Multivariate Taylor series, linearization"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Applications of Vector Calculus",
+        "hours": 5,
+        "topics": [
+          "Back-propagation and automatic differentiation",
+          "Gradients in deep networks and quadratic cost functions",
+          "Mean-squared error gradient descent"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Univariate Optimization",
+        "hours": 5,
+        "topics": [
+          "Local & global optima, convex sets and functions",
+          "Hessian matrix and optimization",
+          "Gradient descent and Newton–Raphson methods",
+          "Legendre–Fenchel transform and convex conjugates"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Multivariable Optimization",
+        "hours": 5,
+        "topics": [
+          "Sequential search, 3-point search and Fibonacci search",
+          "Constrained optimization using Lagrange multipliers",
+          "Karush–Kuhn–Tucker (KKT) conditions"
+        ]
+      }
+    ],
+    "labExperiments": [
+      "LU & Cholesky decomposition",
+      "SVD and PCA",
+      "Automatic differentiation and back-propagation",
+      "Hessian matrices and eigenvalues",
+      "Gradient descent and Newton–Raphson methods",
+      "Lagrange multipliers, 3-point and Fibonacci search"
+    ],
+    "textBooks": [
+      "Mathematics for Machine Learning – M.P. Deisenroth, A. Aldo Faisal, C. Ong, Cambridge, 2020",
+      "Linear Algebra and Its Applications – D.C. Lay et al., Pearson, 2021"
+    ],
+    "referenceBooks": [
+      "Linear Algebra and Optimization for Machine Learning – Charu Aggarwal, Springer, 2020",
+      "Linear Algebra – S. Friedberg et al., Pearson, 2019"
+    ],
+    "courseOutcomes": [
+      "Apply calculus and linear algebra concepts to ML problems",
+      "Implement mathematical concepts in ML using modern tools"
+    ],
+    "assessment": {
+      "cie": {
+        "quiz": 10,
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_003",
+    "code": "23AM3ESCOA",
+    "name": "Computer Organization and Architecture",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Digital Logic Design", "Computer Fundamentals"],
+    "description": "Understanding computer organization, architecture, and how it relates to machine learning computations.",
+    "instructor": "Dr. Computer Science Faculty",
+    "schedule": "Tue, Thu 2:00 PM - 3:30 PM",
+    "room": "Computer Lab",
+    "objectives": [
+      "Understand computer organization principles",
+      "Learn processor architecture",
+      "Understand memory hierarchy",
+      "Apply knowledge to ML system design"
+    ],
+    "topics": [
+      "Computer Organization",
+      "Processor Architecture",
+      "Memory Systems",
+      "I/O Systems",
+      "Parallel Processing",
+      "ML Hardware Acceleration"
+    ],
+    "courseType": "Engineering Science",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Functional Blocks of a Computer",
+        "hours": 6,
+        "topics": [
+          "CPU, memory, I/O subsystems",
+          "Control unit, instruction set architecture",
+          "Registers, addressing modes"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Data Representation and Arithmetic",
+        "hours": 8,
+        "topics": [
+          "Signed, fixed, and floating-point numbers",
+          "Arithmetic operations (adders, multipliers, division)"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "CPU Control and Memory Design",
+        "hours": 7,
+        "topics": [
+          "Hardwired vs microprogrammed control",
+          "Memory technologies"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Peripheral Devices and I/O Systems",
+        "hours": 7,
+        "topics": [
+          "Interrupts, DMA",
+          "Privileged instructions, process transitions"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Pipelining & Memory Organization",
+        "hours": 8,
+        "topics": [
+          "Pipeline concepts, hazards",
+          "Cache memory, mapping and replacement policies"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Computer Organization and Design – Patterson & Hennessy, Elsevier, 2011",
+      "Computer Architecture and Organization – J.P. Hayes, McGraw Hill, 2017",
+      "Computer Systems Design and Architecture – Heuring & Jordan, Pearson, 2003"
+    ],
+    "referenceBooks": [
+      "Computer Organization – Hamacher, McGraw Hill, 2019",
+      "Computer System Architecture – Morris Mano, Pearson, 2017",
+      "Computer Organization & Architecture – William Stallings, Pearson, 2016"
+    ],
+    "courseOutcomes": [
+      "Understand computer architecture fundamentals",
+      "Apply architectural principles for performance optimization",
+      "Analyze trade-offs in speed, cost, and energy"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_004",
+    "code": "23AM3PCDST",
+    "name": "Data Structures",
+    "credits": 4,
+    "semester": "3rd",
+    "prerequisites": ["Programming Fundamentals", "Discrete Mathematics"],
+    "description": "Essential data structures and algorithms for efficient data processing in machine learning applications.",
+    "instructor": "Dr. Programming Faculty",
+    "schedule": "Mon, Wed, Fri 11:00 AM - 12:00 PM",
+    "room": "Programming Lab",
+    "objectives": [
+      "Master fundamental data structures",
+      "Implement efficient algorithms",
+      "Apply data structures in ML",
+      "Optimize data processing"
+    ],
+    "topics": [
+      "Arrays and Linked Lists",
+      "Stacks and Queues",
+      "Trees and Graphs",
+      "Hash Tables",
+      "Sorting Algorithms",
+      "Search Algorithms"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "3-0-1",
+    "totalLectureHours": 36,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Data Structures",
+        "hours": 8,
+        "topics": [
+          "Definition, classification",
+          "Dynamic memory allocation",
+          "Singly linked lists and applications"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Linked Lists and Stacks",
+        "hours": 7,
+        "topics": [
+          "Doubly and circular linked lists",
+          "Stacks (arrays & linked list)",
+          "Postfix operations"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Recursion and Queues",
+        "hours": 6,
+        "topics": [
+          "Recursive functions",
+          "Queues (types and applications)"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Trees",
+        "hours": 7,
+        "topics": [
+          "Binary trees, traversals",
+          "BSTs, threaded trees",
+          "Applications"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Balanced Trees",
+        "hours": 8,
+        "topics": [
+          "AVL, Splay, Red-Black trees",
+          "Rotations and operations"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Data Structures and Algorithms in Python – Goodrich et al., Wiley, 2013",
+      "Python Data Structures and Algorithms – Benjamin Baka, Packt, 2017"
+    ],
+    "referenceBooks": [
+      "Algorithmic Thinking with Python – Narasimha Karumanchi, Career Monk, 2015",
+      "Hands-on Data Structures and Algorithms with Python – Basant Agarwal, Packt, 2022"
+    ],
+    "courseOutcomes": [
+      "Design efficient data organization methods using linear structures",
+      "Apply recursion and linear structures to real-world problems",
+      "Implement applications using non-linear structures"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_005",
+    "code": "23AM3PCPSM",
+    "name": "Probability and Statistics for Machine Learning",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Calculus", "Linear Algebra"],
+    "description": "Statistical foundations essential for understanding and implementing machine learning algorithms.",
+    "instructor": "Dr. Statistics Faculty",
+    "schedule": "Tue, Thu 10:00 AM - 11:30 AM",
+    "room": "Statistics Lab",
+    "objectives": [
+      "Master probability theory for ML",
+      "Understand statistical inference",
+      "Apply statistics in ML algorithms",
+      "Evaluate ML model performance"
+    ],
+    "topics": [
+      "Probability Theory",
+      "Statistical Distributions",
+      "Hypothesis Testing",
+      "Regression Analysis",
+      "Bayesian Statistics",
+      "Statistical Learning"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to Probability",
+        "hours": 5,
+        "topics": [
+          "Joint, marginal, conditional probability",
+          "Uncertainty in ML"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Bayesian Probability",
+        "hours": 5,
+        "topics": [
+          "Bayes theorem",
+          "MAP estimation",
+          "Naive Bayes classifier"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Discrete Random Variables",
+        "hours": 5,
+        "topics": [
+          "Expectation, variance, covariance",
+          "Bernoulli, Binomial, Poisson distributions"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Continuous Random Variables",
+        "hours": 5,
+        "topics": [
+          "Normal, Exponential, Pareto distributions",
+          "Central Limit Theorem"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Descriptive Statistics",
+        "hours": 6,
+        "topics": [
+          "Mean, median, variance, standard deviation",
+          "Quartiles"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Probability and Statistics for Computer Scientists – Michael Baron, CRC, 2019",
+      "Probability for Machine Learning – Jason Brownlee"
+    ],
+    "referenceBooks": [
+      "Probability, Statistics, Queuing Theory – Kishore Trivedi, Wiley, 2008"
+    ],
+    "courseOutcomes": [
+      "Analyze data distributions and predict outcomes using probability",
+      "Apply statistical knowledge to uncertain data",
+      "Derive relationships among sample features using statistical tools"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_006",
+    "code": "24AM3PCOOP",
+    "name": "Object-Oriented Programming",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Programming Fundamentals"],
+    "description": "Object-oriented programming concepts and their application in machine learning software development.",
+    "instructor": "Dr. Programming Faculty",
+    "schedule": "Mon, Wed, Fri 2:00 PM - 3:00 PM",
+    "room": "Programming Lab",
+    "objectives": [
+      "Master OOP concepts",
+      "Implement OOP in ML projects",
+      "Design ML software architecture",
+      "Apply design patterns in ML"
+    ],
+    "topics": [
+      "Classes and Objects",
+      "Inheritance and Polymorphism",
+      "Encapsulation and Abstraction",
+      "Design Patterns",
+      "Exception Handling",
+      "ML Framework Design"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction to OOP",
+        "hours": 5,
+        "topics": [
+          "Abstract machines",
+          "Class-object modeling",
+          "Methods, attributes"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Encapsulation & Abstraction",
+        "hours": 5,
+        "topics": [
+          "Private variables",
+          "Abstract base classes",
+          "Real-world examples"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Inheritance & Polymorphism",
+        "hours": 5,
+        "topics": [
+          "Multiple inheritance",
+          "Super keyword",
+          "Magic methods"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Concurrency",
+        "hours": 5,
+        "topics": [
+          "Threads, thread life cycle",
+          "Synchronization, deadlocks"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Memory Management",
+        "hours": 6,
+        "topics": [
+          "Garbage collection",
+          "Object lifetime",
+          "Timers"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Programming Languages: Principles and Paradigms – Maurizio Gabbrielli, Springer, 2023",
+      "Python 3 Object-Oriented Programming – Dusty Phillips, 2015"
+    ],
+    "referenceBooks": [
+      "Object Oriented Python – Irv Kalb, 2022",
+      "Concepts of Programming Languages – Robert Sebesta, 2012"
+    ],
+    "courseOutcomes": [
+      "Apply OOP concepts for reusability",
+      "Model object interactions effectively",
+      "Implement OOP principles using modern tools"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_007",
+    "code": "23AM3PCDBM",
+    "name": "Database Management Systems",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Data Structures"],
+    "description": "Database systems and their role in managing large datasets for machine learning applications.",
+    "instructor": "Dr. Database Faculty",
+    "schedule": "Tue, Thu 3:30 PM - 5:00 PM",
+    "room": "Database Lab",
+    "objectives": [
+      "Understand database design principles",
+      "Learn SQL for data manipulation",
+      "Apply databases in ML pipelines",
+      "Optimize data storage for ML"
+    ],
+    "topics": [
+      "Database Design",
+      "SQL Programming",
+      "Normalization",
+      "Indexing and Optimization",
+      "NoSQL Databases",
+      "ML Data Pipelines"
+    ],
+    "courseType": "Professional Core",
+    "contactHours": "2-0-1",
+    "totalLectureHours": 26,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Introduction",
+        "hours": 5,
+        "topics": [
+          "Databases, DBMS architecture",
+          "Data models, schemas"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "ER Model & Relational Concepts",
+        "hours": 5,
+        "topics": [
+          "Entities, relationships, attributes",
+          "Relational constraints"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Database Design & Normalization",
+        "hours": 5,
+        "topics": [
+          "Functional dependencies",
+          "2NF, 3NF, BCNF",
+          "Transaction processing"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Storage & Indexing",
+        "hours": 5,
+        "topics": [
+          "File organization",
+          "B+ trees, hashing",
+          "RAID"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "NoSQL Databases",
+        "hours": 6,
+        "topics": [
+          "SQL vs NoSQL",
+          "CAP theorem",
+          "MongoDB basics"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Fundamentals of Database Systems – Elmasri & Navathe, Pearson, 2008"
+    ],
+    "referenceBooks": [
+      "Database System Concepts – Silberschatz et al., McGraw Hill, 2011",
+      "Introduction to Database Systems – C.J. Date, Pearson, 2006"
+    ],
+    "courseOutcomes": [
+      "Apply DBMS concepts to real-world systems",
+      "Design conceptual data models for business applications",
+      "Use query processing techniques effectively"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_008",
+    "code": "23AM3AETFC",
+    "name": "Theoretical Foundations of Computation",
+    "credits": 3,
+    "semester": "3rd",
+    "prerequisites": ["Discrete Mathematics", "Logic"],
+    "description": "Theoretical foundations of computation including automata theory, computability, and complexity theory.",
+    "instructor": "Dr. Theory Faculty",
+    "schedule": "Mon, Wed, Fri 3:00 PM - 4:00 PM",
+    "room": "Theory Lab",
+    "objectives": [
+      "Understand computational theory",
+      "Learn automata and formal languages",
+      "Apply theory to ML algorithms",
+      "Understand computational complexity"
+    ],
+    "topics": [
+      "Automata Theory",
+      "Formal Languages",
+      "Computability Theory",
+      "Complexity Theory",
+      "Turing Machines",
+      "ML Algorithm Complexity"
+    ],
+    "courseType": "Ability Enhancement",
+    "contactHours": "3-0-0",
+    "totalLectureHours": 36,
+    "examination": {
+      "duration": "3 hours",
+      "cieMarks": 50,
+      "seeMarks": 100,
+      "totalMarks": 150
+    },
+    "units": [
+      {
+        "number": 1,
+        "title": "Finite Automata",
+        "hours": 7,
+        "topics": [
+          "DFA, NFA, ε-NFA",
+          "Equivalence, applications"
+        ]
+      },
+      {
+        "number": 2,
+        "title": "Regular Languages & Expressions",
+        "hours": 7,
+        "topics": [
+          "Closures, equivalence proofs",
+          "Applications"
+        ]
+      },
+      {
+        "number": 3,
+        "title": "Context-Free Grammars",
+        "hours": 7,
+        "topics": [
+          "Ambiguity, CNF & GNF",
+          "Pumping lemma, applications"
+        ]
+      },
+      {
+        "number": 4,
+        "title": "Pushdown Automata",
+        "hours": 7,
+        "topics": [
+          "Deterministic and non-deterministic PDA",
+          "Equivalence with CFGs"
+        ]
+      },
+      {
+        "number": 5,
+        "title": "Turing Machines",
+        "hours": 8,
+        "topics": [
+          "Deterministic & non-deterministic TM",
+          "Undecidable problems",
+          "Post's correspondence"
+        ]
+      }
+    ],
+    "textBooks": [
+      "Introduction to Formal Languages & Automata – Peter Linz, 6th Ed., 2017"
+    ],
+    "referenceBooks": [
+      "Automata Theory, Languages & Computation – Hopcroft, Motwani, Ullman",
+      "Theory of Computation – John Martin, McGraw Hill, 2011"
+    ],
+    "courseOutcomes": [
+      "Use formal notations to define computation constructs",
+      "Analyze formal machine representations of languages",
+      "Design machines to recognize syntactic patterns"
+    ],
+    "assessment": {
+      "cie": {
+        "test1": 20,
+        "test2": 20,
+        "aat": 10
+      },
+      "see": 100
+    }
+  },
+  {
+    "id": "course_009",
+    "code": "23NCMC3PE1",
+    "name": "Physical Education – I",
+    "credits": 0,
+    "semester": "3rd",
+    "prerequisites": [],
+    "description": "Non-credit mandatory course for physical education and wellness.",
+    "instructor": "Physical Education Instructor",
+    "schedule": "As per schedule",
+    "room": "Sports Complex",
+    "objectives": [
+      "Promote physical fitness and wellness",
+      "Develop sports skills and teamwork",
+      "Maintain healthy lifestyle"
+    ],
+    "topics": [
+      "Physical Fitness",
+      "Sports Activities",
+      "Health and Wellness",
+      "Team Building"
+    ],
+    "courseType": "Non-credit Mandatory",
+    "contactHours": "1-0-0",
+    "totalLectureHours": 13,
+    "examination": {
+      "duration": "N/A",
+      "cieMarks": 0,
+      "seeMarks": 0,
+      "totalMarks": 0
+    },
+    "units": [],
+    "textBooks": [],
+    "referenceBooks": [],
+    "courseOutcomes": [
+      "Maintain physical fitness",
+      "Participate in sports activities",
+      "Develop healthy lifestyle habits"
+    ],
+    "assessment": {
+      "cie": {
+        "participation": 100
+      },
+      "see": 0
+    }
+  }
+]

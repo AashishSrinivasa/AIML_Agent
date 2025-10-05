@@ -1,0 +1,415 @@
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import { 
+  Users, 
+  BookOpen, 
+  Building2, 
+  Settings, 
+  Plus, 
+  Edit, 
+  Trash2, 
+  Save, 
+  X,
+  LogOut,
+  Shield,
+  Database,
+  BarChart3
+} from 'lucide-react';
+import AdminAuth from '../components/AdminAuth.tsx';
+
+interface AdminData {
+  faculty: any[];
+  courses: any[];
+  infrastructure: any[];
+}
+
+const Admin: React.FC = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showAuth, setShowAuth] = useState(false);
+  const [activeTab, setActiveTab] = useState<'faculty' | 'courses' | 'infrastructure'>('faculty');
+  const [data, setData] = useState<AdminData>({
+    faculty: [],
+    courses: [],
+    infrastructure: []
+  });
+  const [editingItem, setEditingItem] = useState<any>(null);
+  const [isEditing, setIsEditing] = useState(false);
+
+  // Load data on component mount
+  useEffect(() => {
+    if (isAuthenticated) {
+      loadData();
+    }
+  }, [isAuthenticated]);
+
+  const loadData = async () => {
+    try {
+      const [facultyRes, coursesRes, infrastructureRes] = await Promise.all([
+        fetch('http://localhost:5001/api/faculty'),
+        fetch('http://localhost:5001/api/courses'),
+        fetch('http://localhost:5001/api/infrastructure')
+      ]);
+
+      const facultyData = await facultyRes.json();
+      const coursesData = await coursesRes.json();
+      const infrastructureData = await infrastructureRes.json();
+
+      setData({
+        faculty: facultyData.data || [],
+        courses: coursesData.data || [],
+        infrastructure: infrastructureData.data || []
+      });
+    } catch (error) {
+      console.error('Error loading data:', error);
+    }
+  };
+
+  const handleLogin = (username: string, password: string): boolean => {
+    // Simple authentication - in production, this should be more secure
+    if (username === 'admin' && password === 'admin123') {
+      setIsAuthenticated(true);
+      setShowAuth(false);
+      return true;
+    }
+    return false;
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setData({ faculty: [], courses: [], infrastructure: [] });
+  };
+
+  const handleEdit = (item: any) => {
+    setEditingItem({ ...item });
+    setIsEditing(true);
+  };
+
+  const handleSave = async () => {
+    // In a real application, this would make API calls to save the data
+    console.log('Saving:', editingItem);
+    setIsEditing(false);
+    setEditingItem(null);
+    // Reload data after saving
+    loadData();
+  };
+
+  const handleDelete = async (id: string, type: string) => {
+    if (window.confirm('Are you sure you want to delete this item?')) {
+      // In a real application, this would make API calls to delete the data
+      console.log('Deleting:', id, type);
+      // Reload data after deletion
+      loadData();
+    }
+  };
+
+  const handleAddNew = () => {
+    const newItem = {
+      id: `new_${Date.now()}`,
+      name: '',
+      // Add other default fields based on activeTab
+    };
+    setEditingItem(newItem);
+    setIsEditing(true);
+  };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Shield className="w-16 h-16 text-blue-600 mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Admin Panel</h1>
+          <p className="text-gray-600 mb-6">Access restricted to authorized personnel only</p>
+          <button
+            onClick={() => setShowAuth(true)}
+            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+          >
+            Login to Admin Panel
+          </button>
+        </div>
+        {showAuth && (
+          <AdminAuth
+            onLogin={handleLogin}
+            onCancel={() => setShowAuth(false)}
+          />
+        )}
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-gray-50">
+      {/* Header */}
+      <div className="bg-white shadow-sm border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center space-x-3">
+              <Shield className="w-8 h-8 text-blue-600" />
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
+                <p className="text-sm text-gray-600">Manage AIML Department Data</p>
+              </div>
+            </div>
+            <button
+              onClick={handleLogout}
+              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+            >
+              <LogOut className="w-5 h-5" />
+              <span>Logout</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <Users className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="ml-4">
+                <div className="text-2xl font-bold text-gray-900">{data.faculty.length}</div>
+                <div className="text-gray-600">Faculty Members</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                <BookOpen className="w-6 h-6 text-green-600" />
+              </div>
+              <div className="ml-4">
+                <div className="text-2xl font-bold text-gray-900">{data.courses.length}</div>
+                <div className="text-gray-600">Courses</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="flex items-center">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                <Building2 className="w-6 h-6 text-purple-600" />
+              </div>
+              <div className="ml-4">
+                <div className="text-2xl font-bold text-gray-900">{data.infrastructure.length}</div>
+                <div className="text-gray-600">Infrastructure Items</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Tabs */}
+        <div className="bg-white rounded-lg shadow-md mb-8">
+          <div className="border-b border-gray-200">
+            <nav className="flex space-x-8 px-6">
+              {[
+                { id: 'faculty', label: 'Faculty', icon: Users },
+                { id: 'courses', label: 'Courses', icon: BookOpen },
+                { id: 'infrastructure', label: 'Infrastructure', icon: Building2 }
+              ].map((tab) => {
+                const Icon = tab.icon;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id as any)}
+                    className={`flex items-center space-x-2 py-4 px-1 border-b-2 font-medium text-sm ${
+                      activeTab === tab.id
+                        ? 'border-blue-500 text-blue-600'
+                        : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                    }`}
+                  >
+                    <Icon className="w-5 h-5" />
+                    <span>{tab.label}</span>
+                  </button>
+                );
+              })}
+            </nav>
+          </div>
+
+          {/* Tab Content */}
+          <div className="p-6">
+            <div className="flex justify-between items-center mb-6">
+              <h2 className="text-xl font-semibold text-gray-900 capitalize">
+                Manage {activeTab}
+              </h2>
+              <button
+                onClick={handleAddNew}
+                className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                <Plus className="w-5 h-5" />
+                <span>Add New</span>
+              </button>
+            </div>
+
+            {/* Data Table */}
+            <div className="overflow-x-auto">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Name
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {activeTab === 'faculty' ? 'Designation' : activeTab === 'courses' ? 'Code' : 'Type'}
+                    </th>
+                    <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      {activeTab === 'faculty' ? 'Specialization' : activeTab === 'courses' ? 'Semester' : 'Location'}
+                    </th>
+                    <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      Actions
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {data[activeTab].map((item: any, index: number) => (
+                    <tr key={item.id || index} className="hover:bg-gray-50">
+                      <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        {item.name || item.title || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {activeTab === 'faculty' ? item.designation : 
+                         activeTab === 'courses' ? item.code : 
+                         item.type || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        {activeTab === 'faculty' ? 
+                          (Array.isArray(item.specialization) ? item.specialization.join(', ') : item.specialization) :
+                         activeTab === 'courses' ? item.semester :
+                         item.location || 'N/A'}
+                      </td>
+                      <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                        <div className="flex justify-end space-x-2">
+                          <button
+                            onClick={() => handleEdit(item)}
+                            className="text-blue-600 hover:text-blue-900 transition-colors duration-200"
+                          >
+                            <Edit className="w-4 h-4" />
+                          </button>
+                          <button
+                            onClick={() => handleDelete(item.id, activeTab)}
+                            className="text-red-600 hover:text-red-900 transition-colors duration-200"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Edit Modal */}
+      {isEditing && editingItem && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white rounded-xl shadow-2xl p-6 w-full max-w-2xl mx-4 max-h-[90vh] overflow-y-auto"
+          >
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-semibold text-gray-900">
+                Edit {activeTab.slice(0, -1)}
+              </h3>
+              <button
+                onClick={() => setIsEditing(false)}
+                className="text-gray-400 hover:text-gray-600"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-2">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  value={editingItem.name || editingItem.title || ''}
+                  onChange={(e) => setEditingItem({ ...editingItem, name: e.target.value, title: e.target.value })}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+              </div>
+
+              {activeTab === 'faculty' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Designation
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.designation || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, designation: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      value={editingItem.email || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, email: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </>
+              )}
+
+              {activeTab === 'courses' && (
+                <>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Course Code
+                    </label>
+                    <input
+                      type="text"
+                      value={editingItem.code || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, code: e.target.value })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Credits
+                    </label>
+                    <input
+                      type="number"
+                      value={editingItem.credits || ''}
+                      onChange={(e) => setEditingItem({ ...editingItem, credits: parseInt(e.target.value) })}
+                      className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </>
+              )}
+            </div>
+
+            <div className="flex justify-end space-x-4 mt-6">
+              <button
+                onClick={() => setIsEditing(false)}
+                className="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors duration-200"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleSave}
+                className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                <Save className="w-4 h-4" />
+                <span>Save Changes</span>
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default Admin;

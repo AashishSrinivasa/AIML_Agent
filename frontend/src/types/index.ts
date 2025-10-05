@@ -18,6 +18,7 @@ export interface FacultyFilters {
   search?: string;
   designation?: string;
   specialization?: string;
+  researchArea?: string;
 }
 
 export interface FacultyStats {

@@ -14,6 +14,7 @@ import Courses from './pages/Courses.tsx';
 import Calendar from './pages/Calendar.tsx';
 import Infrastructure from './pages/Infrastructure.tsx';
 import About from './pages/About.tsx';
+import Admin from './pages/Admin.tsx';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -61,6 +62,7 @@ function App() {
                 <Route path="/calendar" element={<Calendar />} />
                 <Route path="/infrastructure" element={<Infrastructure />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/admin" element={<Admin />} />
               </Routes>
             </AnimatePresence>
           </main>

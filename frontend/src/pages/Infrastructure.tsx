@@ -12,16 +12,6 @@ const InfrastructurePage: React.FC = () => {
     () => infrastructureApi.getInfrastructure()
   );
 
-  const { data: labsData } = useQuery(
-    ['labs', searchTerm],
-    () => infrastructureApi.getLabs()
-  );
-
-  const { data: researchData } = useQuery(
-    'research-facilities',
-    () => infrastructureApi.getResearchFacilities()
-  );
-
   if (isLoading) {
     return (
       <div className="text-center py-12">
@@ -48,7 +38,7 @@ const InfrastructurePage: React.FC = () => {
             </div>
             <div className="ml-4">
               <div className="text-2xl font-bold text-gray-900">
-                {labsData?.data && Array.isArray(labsData.data) ? labsData.data.length : 0}
+                {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.labs ? infrastructureData.data[0].labs.length : 0}
               </div>
               <div className="text-gray-600">Labs</div>
             </div>
@@ -61,9 +51,9 @@ const InfrastructurePage: React.FC = () => {
             </div>
             <div className="ml-4">
               <div className="text-2xl font-bold text-gray-900">
-                {infrastructureData?.data && Array.isArray(infrastructureData.data) ? infrastructureData.data.length : 0}
+                {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.computerLabs ? infrastructureData.data[0].computerLabs.total : 0}
               </div>
-              <div className="text-gray-600">Facilities</div>
+              <div className="text-gray-600">Computer Labs</div>
             </div>
           </div>
         </div>
@@ -74,7 +64,7 @@ const InfrastructurePage: React.FC = () => {
             </div>
             <div className="ml-4">
               <div className="text-2xl font-bold text-gray-900">
-                {researchData?.data && Array.isArray(researchData.data) ? researchData.data.length : 0}
+                {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.researchFacilities ? infrastructureData.data[0].researchFacilities.length : 0}
               </div>
               <div className="text-gray-600">Research Facilities</div>
             </div>
@@ -87,10 +77,10 @@ const InfrastructurePage: React.FC = () => {
             </div>
             <div className="ml-4">
               <div className="text-2xl font-bold text-gray-900">
-                {infrastructureData?.data && Array.isArray(infrastructureData.data) ? 
-                  infrastructureData.data.reduce((total, item) => total + (item.capacity || 0), 0) : 0}
+                {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.labs ? 
+                  infrastructureData.data[0].labs.reduce((total, lab) => total + (lab.capacity || 0), 0) : 0}
               </div>
-              <div className="text-gray-600">Total Capacity</div>
+              <div className="text-gray-600">Total Lab Capacity</div>
             </div>
           </div>
         </div>
@@ -115,7 +105,7 @@ const InfrastructurePage: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Laboratories</h2>
           <div className="space-y-6">
-            {labsData?.data && Array.isArray(labsData.data) ? labsData.data.map((lab: Lab, index: number) => (
+            {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.labs ? infrastructureData.data[0].labs.map((lab: Lab, index: number) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -189,7 +179,7 @@ const InfrastructurePage: React.FC = () => {
         <div>
           <h2 className="text-2xl font-semibold text-gray-900 mb-6">Research Facilities</h2>
           <div className="space-y-6">
-            {researchData?.data && Array.isArray(researchData.data) ? researchData.data.map((facility: ResearchFacility, index: number) => (
+            {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.researchFacilities ? infrastructureData.data[0].researchFacilities.map((facility: ResearchFacility, index: number) => (
               <div key={index} className="bg-white rounded-lg shadow-md p-6">
                 <div className="flex items-start justify-between mb-4">
                   <div>
@@ -230,44 +220,102 @@ const InfrastructurePage: React.FC = () => {
         </div>
       </div>
 
-      {/* General Infrastructure */}
-      <div className="mt-8">
+      {/* Library and Computer Labs */}
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Library */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
-            <Building2 className="w-6 h-6 mr-2 text-blue-600" />
-            General Infrastructure
+            <BookOpen className="w-6 h-6 mr-2 text-purple-600" />
+            Library
           </h2>
           
-          {infrastructureData?.data && Array.isArray(infrastructureData.data) ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {infrastructureData.data.map((facility: Infrastructure, index: number) => (
-                <div key={index} className="border rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{facility.name}</h3>
-                  <p className="text-sm text-gray-600 mb-2">{facility.description}</p>
-                  <div className="space-y-2">
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Type:</span>
-                      <span className="font-medium">{facility.type}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Capacity:</span>
-                      <span className="font-medium">{facility.capacity}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Location:</span>
-                      <span className="font-medium">{facility.location}</span>
-                    </div>
-                    <div className="flex justify-between text-sm">
-                      <span className="text-gray-500">Availability:</span>
-                      <span className="font-medium">{facility.availability}</span>
-                    </div>
-                  </div>
+          {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.library ? (
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                  <div className="text-2xl font-bold text-purple-600">{infrastructureData.data[0].library.books}</div>
+                  <div className="text-sm text-gray-600">Books</div>
                 </div>
-              ))}
+                <div className="text-center p-4 bg-purple-50 rounded-lg">
+                  <div className="text-2xl font-bold text-purple-600">{infrastructureData.data[0].library.journals}</div>
+                  <div className="text-sm text-gray-600">Journals</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-gray-900 mb-2">Digital Resources</h4>
+                <div className="flex flex-wrap gap-2">
+                  {infrastructureData.data[0].library.digitalResources.map((resource, index) => (
+                    <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                      {resource}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-gray-900 mb-2">Facilities</h4>
+                <div className="flex flex-wrap gap-2">
+                  {infrastructureData.data[0].library.facilities.map((facility, index) => (
+                    <span key={index} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded">
+                      {facility}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
           ) : (
             <div className="text-center py-8">
-              <div className="text-gray-500 text-lg">No infrastructure data available</div>
+              <div className="text-gray-500 text-lg">No library data available</div>
+            </div>
+          )}
+        </div>
+
+        {/* Computer Labs */}
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-6 flex items-center">
+            <Monitor className="w-6 h-6 mr-2 text-green-600" />
+            Computer Labs
+          </h2>
+          
+          {infrastructureData?.data && Array.isArray(infrastructureData.data) && infrastructureData.data[0]?.computerLabs ? (
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center p-4 bg-green-50 rounded-lg">
+                  <div className="text-2xl font-bold text-green-600">{infrastructureData.data[0].computerLabs.total}</div>
+                  <div className="text-sm text-gray-600">Computer Labs</div>
+                </div>
+                <div className="text-center p-4 bg-green-50 rounded-lg">
+                  <div className="text-2xl font-bold text-green-600">{infrastructureData.data[0].computerLabs.computers}</div>
+                  <div className="text-sm text-gray-600">Computers</div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-gray-900 mb-2">Software Available</h4>
+                <div className="flex flex-wrap gap-2">
+                  {infrastructureData.data[0].computerLabs.software.map((software, index) => (
+                    <span key={index} className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">
+                      {software}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="font-medium text-gray-900 mb-2">Special Features</h4>
+                <div className="flex flex-wrap gap-2">
+                  {infrastructureData.data[0].computerLabs.specialFeatures.map((feature, index) => (
+                    <span key={index} className="bg-orange-100 text-orange-800 text-xs px-2 py-1 rounded">
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-8">
+              <div className="text-gray-500 text-lg">No computer lab data available</div>
             </div>
           )}
         </div>

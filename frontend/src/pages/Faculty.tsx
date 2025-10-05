@@ -123,7 +123,7 @@ const FacultyPage: React.FC = () => {
           </div>
         </form>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">Designation</label>
             <select
@@ -152,6 +152,26 @@ const FacultyPage: React.FC = () => {
                   {specialization._id} ({specialization.count})
                 </option>
               )) : null}
+            </select>
+          </div>
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-2">Research Area</label>
+            <select
+              value={filters.researchArea || ''}
+              onChange={(e) => handleFilterChange('researchArea', e.target.value)}
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            >
+              <option value="">All Research Areas</option>
+              <option value="Machine Learning">Machine Learning</option>
+              <option value="Deep Learning">Deep Learning</option>
+              <option value="Natural Language Processing">Natural Language Processing</option>
+              <option value="Computer Vision">Computer Vision</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Artificial Intelligence">Artificial Intelligence</option>
+              <option value="Neural Networks">Neural Networks</option>
+              <option value="Data Mining">Data Mining</option>
+              <option value="Big Data">Big Data</option>
+              <option value="Generative AI">Generative AI</option>
             </select>
           </div>
           <div className="flex items-end">
