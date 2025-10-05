@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { useQuery } from 'react-query';
-import { Search, BookOpen, Clock, MapPin, User, Award, Calendar, Filter, ChevronDown, ChevronUp, GraduationCap, Code, Calculator } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Search, BookOpen, Clock, MapPin, User, Award, Calendar, Filter, ChevronDown, ChevronUp, GraduationCap, Code, Calculator, Sparkles, Zap } from 'lucide-react';
 import { coursesApi, Course } from '../services/api.ts';
 import { CourseFilters } from '../types/index.ts';
 

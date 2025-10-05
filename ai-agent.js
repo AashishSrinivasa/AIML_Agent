@@ -22,7 +22,7 @@ class AIMLAgent {
     } else {
       this.genAI = new GoogleGenerativeAI(apiKey);
       this.model = this.genAI.getGenerativeModel({ 
-        model: "gemini-1.5-flash",
+        model: "gemini-2.5-flash",
         generationConfig: {
           temperature: 0.7,
           topP: 0.9,
@@ -125,7 +125,9 @@ class AIMLAgent {
 
     // Calendar routes
     this.app.get('/api/calendar', (req, res) => {
-      res.json({ data: this.knowledgeBase.calendar });
+      // Return the full calendar object, not just events
+      const calendarData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_academic_calendar.json'), 'utf8'));
+      res.json({ data: calendarData });
     });
 
     // AI Chat route
@@ -172,15 +174,21 @@ class AIMLAgent {
     // Try Gemini first if available
     if (this.model) {
       try {
+        console.log('🤖 Attempting Gemini response...');
         const geminiResponse = await this.generateGeminiResponse(userMessage, intent, extractedInfo, conversationHistory);
         if (geminiResponse) {
+          console.log('✅ Gemini response successful');
           this.updateConversationHistory(sessionId, userMessage, geminiResponse.response);
           return geminiResponse;
+        } else {
+          console.log('❌ Gemini returned null, using fallback');
         }
       } catch (error) {
-        console.log('Gemini error:', error.message);
+        console.log('❌ Gemini error:', error.message);
         console.log('Using fallback response');
       }
+    } else {
+      console.log('❌ Gemini model not available, using fallback');
     }
     
     // Fallback to rule-based response
@@ -195,7 +203,7 @@ class AIMLAgent {
       ? `\n\nCONVERSATION HISTORY:\n${conversationHistory.map(msg => `${msg.role}: ${msg.content}`).join('\n')}`
       : '';
 
-    const prompt = `You are Liam, an AI assistant for the AIML Department at BMSCE. You have access to comprehensive data about the department.
+    const prompt = `You are LIAM, an AI assistant for the AIML Department at BMSCE. You have access to comprehensive data about the department.
 
 FACULTY DATA:
 ${context.faculty.map(f => `
@@ -262,9 +270,12 @@ SUGGESTED FOLLOW-UP QUESTIONS:
 RESPONSE:`;
 
     try {
+      console.log('📤 Sending prompt to Gemini...');
       const result = await this.model.generateContent(prompt);
       const response = result.response;
       const text = response.text();
+      
+      console.log('📥 Received response from Gemini:', text.substring(0, 100) + '...');
       
       // Parse the response to extract main answer and suggestions
       const parts = text.split('SUGGESTED FOLLOW-UP QUESTIONS:');
@@ -284,7 +295,8 @@ RESPONSE:`;
         extractedInfo: extractedInfo
       };
     } catch (error) {
-      console.error('Gemini generation error:', error);
+      console.error('❌ Gemini generation error:', error);
+      console.error('Error details:', error.message);
       return null;
     }
   }
@@ -296,11 +308,20 @@ RESPONSE:`;
     
     switch (intent) {
       case 'greeting':
-        response = `Hello! I'm Liam, your AI assistant for the AIML Department at BMSCE. I'm here to help you with any questions about our department, faculty, courses, facilities, or academic information. What would you like to know about the Department of Artificial Intelligence and Machine Learning?`;
+        response = `**Hey there! I'm LIAM ✨ Your AI companion for the AIML Department at BMSCE!** 
+
+I'm here to help you with everything about our amazing department! I have access to comprehensive data about:
+
+• **19 faculty members** with their specializations and research areas
+• **27 courses** across 6 semesters (3rd to 8th)
+• **4 specialized labs** with cutting-edge equipment and facilities
+• **Department information** including location, vision, and HOD details
+
+What would you like to know about the Department of Artificial Intelligence and Machine Learning? 🚀`;
         suggestions = [
           'Where is the AIML department located?',
           'Tell me about the faculty members',
-          'What courses are available?'
+          'What courses are available in 5th semester?'
         ];
         break;
         

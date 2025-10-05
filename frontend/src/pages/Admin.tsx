@@ -10,7 +10,9 @@ import {
   Save, 
   X,
   LogOut,
-  Shield
+  Shield,
+  Sparkles,
+  Zap
 } from 'lucide-react';
 import AdminAuth from '../components/AdminAuth.tsx';
 
@@ -118,17 +120,106 @@ const Admin: React.FC = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <Shield className="w-16 h-16 text-blue-600 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold text-gray-900 mb-2">Admin Panel</h1>
-          <p className="text-gray-600 mb-6">Access restricted to authorized personnel only</p>
-          <button
-            onClick={() => setShowAuth(true)}
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+      <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 relative overflow-hidden flex items-center justify-center">
+        {/* Enhanced Background Elements */}
+        <div className="fixed inset-0 pointer-events-none">
+          <motion.div 
+            className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            animate={{ 
+              x: [0, 100, 0],
+              y: [0, -50, 0],
+              scale: [1, 1.2, 1]
+            }}
+            transition={{ 
+              duration: 20, 
+              repeat: Infinity, 
+              ease: "easeInOut" 
+            }}
+          />
+          <motion.div 
+            className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            animate={{ 
+              x: [0, -100, 0],
+              y: [0, 50, 0],
+              scale: [1, 0.8, 1]
+            }}
+            transition={{ 
+              duration: 25, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 2
+            }}
+          />
+          <motion.div 
+            className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            animate={{ 
+              x: [0, 50, 0],
+              y: [0, -100, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 30, 
+              repeat: Infinity, 
+              ease: "easeInOut",
+              delay: 4
+            }}
+          />
+        </div>
+
+        <div className="relative z-10 text-center">
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-6"
           >
+            <div className="relative">
+              <div className="w-20 h-20 bg-white/80 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-2xl border border-white/20">
+                <Shield className="w-10 h-10 text-purple-600" />
+              </div>
+              <motion.div
+                animate={{ rotate: 360 }}
+                transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                className="absolute inset-0 rounded-2xl border-2 border-transparent border-t-purple-500/50"
+              />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -top-1 -right-1 w-6 h-6 bg-yellow-400 rounded-full flex items-center justify-center"
+              >
+                <Sparkles className="w-3 h-3 text-white" />
+              </motion.div>
+            </div>
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 bg-clip-text text-transparent mb-4"
+          >
+            Admin Panel
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="text-xl text-gray-600 dark:text-gray-300 mb-8"
+          >
+            Access restricted to authorized personnel only
+          </motion.p>
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setShowAuth(true)}
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold text-lg"
+          >
+            <Zap className="w-5 h-5 inline mr-2" />
             Login to Admin Panel
-          </button>
+          </motion.button>
         </div>
         {showAuth && (
           <AdminAuth
@@ -141,25 +232,91 @@ const Admin: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 relative overflow-hidden">
+      {/* Enhanced Background Elements */}
+      <div className="fixed inset-0 pointer-events-none">
+        <motion.div 
+          className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 100, 0],
+            y: [0, -50, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 20, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        />
+        <motion.div 
+          className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, -100, 0],
+            y: [0, 50, 0],
+            scale: [1, 0.8, 1]
+          }}
+          transition={{ 
+            duration: 25, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        <motion.div 
+          className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          animate={{ 
+            x: [0, 50, 0],
+            y: [0, -100, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 30, 
+            repeat: Infinity, 
+            ease: "easeInOut",
+            delay: 4
+          }}
+        />
+      </div>
+
       {/* Header */}
-      <div className="bg-white shadow-sm border-b">
+      <div className="relative z-10 bg-white/80 backdrop-blur-xl shadow-xl border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center space-x-3">
-              <Shield className="w-8 h-8 text-blue-600" />
+          <div className="flex justify-between items-center py-6">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="flex items-center space-x-4"
+            >
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <motion.div
+                  animate={{ scale: [1, 1.2, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full flex items-center justify-center"
+                >
+                  <Sparkles className="w-2 h-2 text-white" />
+                </motion.div>
+              </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900">Admin Panel</h1>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Admin Panel</h1>
                 <p className="text-sm text-gray-600">Manage AIML Department Data</p>
               </div>
-            </div>
-            <button
+            </motion.div>
+            <motion.button
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={handleLogout}
-              className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm text-gray-700 hover:text-purple-600 px-4 py-2 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <LogOut className="w-5 h-5" />
-              <span>Logout</span>
-            </button>
+              <span className="font-medium">Logout</span>
+            </motion.button>
           </div>
         </div>
       </div>
