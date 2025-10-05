@@ -99,7 +99,9 @@ const Chat: React.FC = () => {
     setIsLoading(true);
 
     try {
+      console.log('Sending message:', inputMessage.trim());
       const response = await aiApi.chat(inputMessage.trim(), messages);
+      console.log('API Response:', response);
       
       if (response.success && response.data) {
         const aiMessage: ChatMessage = {
@@ -112,11 +114,14 @@ const Chat: React.FC = () => {
         
         setMessages(prev => [...prev, aiMessage]);
       } else {
+        console.error('API Error:', response.error);
         throw new Error(response.error || 'Failed to get response');
       }
     } catch (error) {
-      console.error('Chat error:', error);
-      toast.error('Failed to send message. Please try again.');
+      console.error('Chat error details:', error);
+      console.error('Error message:', error.message);
+      console.error('Error stack:', error.stack);
+      toast.error(`Failed to send message: ${error.message || 'Please try again.'}`);
     } finally {
       setIsLoading(false);
     }
