@@ -142,3 +142,10 @@ You now have a working AIML Department website with an AI chatbot!
 - You can customize the content through the admin panel
 
 **Happy Learning! 🚀**
+
+to run:
+pkill -f "node ai-agent.js" && sleep 2 && node ai-agent.js
+
+pkill -f "react-scripts" && sleep 2 && cd frontend && npm start
+
+sleep 5 && echo "🚀 Checking server status..." && curl -s http://localhost:5001/api/health || echo "Backend starting..." && curl -s http://localhost:3000 > /dev/null && echo "✅ Frontend is running at http://localhost:3000" || echo "Frontend starting..."

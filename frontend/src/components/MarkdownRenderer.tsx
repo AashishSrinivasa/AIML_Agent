@@ -27,11 +27,19 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
         }
       });
       
-      // Check if this paragraph contains bullet points
-      if (paragraph.includes('•')) {
+      // Check if this paragraph contains bullet points (both • and * formats)
+      if (paragraph.includes('•') || paragraph.includes('*   **')) {
         const lines = paragraph.split('\n');
-        const listItems = lines.filter(line => line.trim().startsWith('•'));
-        const nonListContent = lines.filter(line => !line.trim().startsWith('•'));
+        const listItems = lines.filter(line => 
+          line.trim().startsWith('•') || 
+          line.trim().startsWith('*   **') ||
+          (line.trim().startsWith('*') && line.includes('**'))
+        );
+        const nonListContent = lines.filter(line => 
+          !line.trim().startsWith('•') && 
+          !line.trim().startsWith('*   **') &&
+          !(line.trim().startsWith('*') && line.includes('**'))
+        );
         
         return (
           <div key={paragraphIndex} className="mb-3">
@@ -45,13 +53,25 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({ content, className 
               </div>
             )}
             {listItems.length > 0 && (
-              <ul className="list-none space-y-1 ml-4">
-                {listItems.map((item, itemIndex) => (
-                  <li key={itemIndex} className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2 mt-1">•</span>
-                    <span className="flex-1">{renderInlineMarkdown(item.replace('•', '').trim())}</span>
-                  </li>
-                ))}
+              <ul className="list-none space-y-2 ml-4">
+                {listItems.map((item, itemIndex) => {
+                  // Clean up the bullet point marker
+                  const cleanItem = item.replace(/^[•\*]\s*/, '').trim();
+                  
+                  // Check if this is a sub-item (indented)
+                  const isSubItem = item.startsWith('    *') || item.startsWith('    •');
+                  
+                  return (
+                    <li key={itemIndex} className={`flex items-start ${isSubItem ? 'ml-4' : ''}`}>
+                      <span className="text-blue-600 dark:text-blue-400 mr-2 mt-1 flex-shrink-0">
+                        {isSubItem ? '◦' : '•'}
+                      </span>
+                      <div className="flex-1">
+                        {renderInlineMarkdown(cleanItem)}
+                      </div>
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>

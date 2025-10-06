@@ -2,11 +2,16 @@
   "department": "Machine Learning (AI and ML)",
   "established": "2020",
   "undergraduateIntake": 360,
+  "location": {
+    "building": "PJ Block",
+    "floor": "7th Floor",
+    "description": "The AIML Department is located on the 7th floor of PJ Block at BMSCE. All labs, classrooms, and faculty staff rooms are situated here."
+  },
   "labs": [
     {
       "name": "B.S. Narayan Center of Excellence in AI & ML",
       "capacity": 50,
-      "location": "Department of Machine Learning, BMSCE",
+      "location": "PJ Block, 7th Floor, BMSCE",
       "equipment": [
         {
           "name": "NVIDIA DGX A100 Server",
@@ -53,7 +58,7 @@
     {
       "name": "Machine Learning Lab 1",
       "capacity": 30,
-      "location": "Department of Machine Learning, BMSCE",
+      "location": "PJ Block, 7th Floor, BMSCE",
       "equipment": [
         {
           "name": "Standard ML Workstations",
@@ -89,7 +94,7 @@
     {
       "name": "Machine Learning Lab 2",
       "capacity": 30,
-      "location": "Department of Machine Learning, BMSCE",
+      "location": "PJ Block, 7th Floor, BMSCE",
       "equipment": [
         {
           "name": "Advanced ML Workstations",
@@ -125,7 +130,7 @@
     {
       "name": "Machine Learning Lab 3",
       "capacity": 30,
-      "location": "Department of Machine Learning, BMSCE",
+      "location": "PJ Block, 7th Floor, BMSCE",
       "equipment": [
         {
           "name": "Research Workstations",

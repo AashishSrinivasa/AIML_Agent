@@ -15,10 +15,12 @@ class AIMLAgent {
     this.conversationHistory = new Map();
     
     // Initialize Google Gemini AI
-    const apiKey = process.env.GEMINI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyBQmFySnKjg0GbjYHvUI6Pfpl-9e2GYYTY';
     if (!apiKey) {
       console.log('❌ GEMINI_API_KEY not found in environment variables.');
       console.log('📋 Please set your API key in .env file');
+      this.genAI = null;
+      this.model = null;
     } else {
       this.genAI = new GoogleGenerativeAI(apiKey);
       this.model = this.genAI.getGenerativeModel({ 
@@ -407,18 +409,18 @@ class AIMLAgent {
           this.updateConversationHistory(sessionId, userMessage, geminiResponse.response);
           return geminiResponse;
         } else {
-          console.log('❌ Gemini returned null, using fallback');
+          console.log('❌ Gemini returned null, using enhanced fallback');
         }
       } catch (error) {
         console.log('❌ Gemini error:', error.message);
-        console.log('Using fallback response');
+        console.log('Using enhanced fallback response');
       }
     } else {
-      console.log('❌ Gemini model not available, using fallback');
+      console.log('❌ Gemini model not available, using enhanced fallback');
     }
     
-    // Fallback to rule-based response
-    const fallbackResponse = this.generateFallbackResponse(userMessage, intent, extractedInfo, sessionId);
+    // Enhanced fallback response with more intelligence
+    const fallbackResponse = this.generateIntelligentFallbackResponse(userMessage, intent, extractedInfo, sessionId);
     this.updateConversationHistory(sessionId, userMessage, fallbackResponse.response);
     return fallbackResponse;
   }
@@ -429,8 +431,9 @@ class AIMLAgent {
       ? `\n\nCONVERSATION HISTORY:\n${conversationHistory.map(msg => `${msg.role}: ${msg.content}`).join('\n')}`
       : '';
 
-    const prompt = `You are LIAM, an AI assistant for the AIML Department at BMSCE. You have access to comprehensive data about the department.
+    const prompt = `You are LIAM, an AI assistant for the AIML Department at BMSCE. Provide ChatGPT-quality responses that are concise, relevant, and perfectly formatted.
 
+DEPARTMENT DATA (use when relevant):
 FACULTY DATA:
 ${context.faculty.map(f => `
 - ${f.name}
@@ -458,6 +461,8 @@ ${context.courses.map(c => `
 `).join('')}
 
 INFRASTRUCTURE DATA:
+Department Location: ${context.infrastructure.location ? `${context.infrastructure.location.building}, ${context.infrastructure.location.floor} - ${context.infrastructure.location.description}` : 'PJ Block, 7th Floor - All labs, classrooms, and faculty staff rooms are located here'}
+
 ${context.infrastructure.labs.map(lab => `
 - ${lab.name}
   Capacity: ${lab.capacity} students
@@ -474,57 +479,360 @@ USER QUESTION: ${userMessage}
 DETECTED INTENT: ${intent}
 EXTRACTED INFO: ${JSON.stringify(extractedInfo)}
 
-INSTRUCTIONS:
-1. Always use the exact data provided above - never invent information
-2. For equipment queries, provide specific equipment details from the infrastructure data
-3. For lab queries, provide specific lab information including equipment and facilities
-4. For faculty queries, provide specific faculty information from the data
-5. For course queries, provide specific course details from the data
-6. Be conversational and helpful, like a knowledgeable department assistant
-7. Provide 2-3 relevant follow-up suggestions
-8. Use markdown formatting with **bold** for headers and • for bullet points
-9. Keep responses concise but informative
+CRITICAL INSTRUCTIONS:
+1. Answer what is asked with sufficient detail - be informative and relevant
+2. Use formal, professional tone like ChatGPT
+3. Format responses with proper bullet points using • symbol
+4. Provide comprehensive information - maximum 8-10 bullet points
+5. For department queries, use exact data provided above
+6. For general questions, provide accurate, detailed answers
+7. Include relevant context and additional useful information
+8. Always provide 2-3 relevant follow-up suggestions
+9. Use **bold** for important headers and key information
+10. Structure information clearly with proper spacing and organization
 
 RESPONSE FORMAT:
-[Your main answer with specific data from the knowledge base]
+[Direct answer to the question with bullet points]
 
 SUGGESTED FOLLOW-UP QUESTIONS:
 • [Question 1]
-• [Question 2] 
+• [Question 2]
 • [Question 3]
 
 RESPONSE:`;
 
     try {
-      console.log('📤 Sending prompt to Gemini...');
-      const result = await this.model.generateContent(prompt);
-      const response = result.response;
-      const text = response.text();
+      console.log('📤 Sending prompt to Gemini via REST API...');
       
-      console.log('📥 Received response from Gemini:', text.substring(0, 100) + '...');
+      // Use REST API directly
+      const apiKey = process.env.GEMINI_API_KEY || 'AIzaSyBQmFySnKjg0GbjYHvUI6Pfpl-9e2GYYTY';
+      const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          contents: [{
+            parts: [{
+              text: prompt
+            }]
+          }],
+          generationConfig: {
+            temperature: 0.7,
+            topP: 0.9,
+            maxOutputTokens: 800,
+          }
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+
+      const data = await response.json();
       
-      // Parse the response to extract main answer and suggestions
-      const parts = text.split('SUGGESTED FOLLOW-UP QUESTIONS:');
-      const mainResponse = parts[0].trim();
-      const suggestionsText = parts[1] ? parts[1].trim() : '';
-      
-      const suggestions = suggestionsText
-        .split('\n')
-        .map(line => line.replace(/^[•\-\*]\s*/, '').trim())
-        .filter(line => line.length > 0)
-        .slice(0, 3);
-      
-      return {
-        response: mainResponse,
-        suggestions: suggestions,
-        intent: intent,
-        extractedInfo: extractedInfo
-      };
+      if (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) {
+        const text = data.candidates[0].content.parts[0].text;
+        
+        console.log('📥 Received response from Gemini:', text.substring(0, 100) + '...');
+        
+        // Parse the response to extract main answer and suggestions
+        const parts = text.split('SUGGESTED FOLLOW-UP QUESTIONS:');
+        const mainResponse = parts[0].trim();
+        const suggestionsText = parts[1] ? parts[1].trim() : '';
+        
+        let suggestions = [];
+        if (suggestionsText) {
+          suggestions = suggestionsText
+            .split('\n')
+            .map(line => line.replace(/^[•\-\*]\s*/, '').trim())
+            .filter(line => line.length > 0)
+            .slice(0, 3);
+        }
+        
+        // If no suggestions found, provide default ones based on intent
+        if (suggestions.length === 0) {
+          switch (intent) {
+            case 'greeting':
+              suggestions = [
+                "Tell me about the faculty members",
+                "What courses are available in 5th semester?",
+                "Show me the lab facilities"
+              ];
+              break;
+            case 'faculty_listing':
+            case 'faculty_query':
+              suggestions = [
+                "Tell me about more faculty members",
+                "What are the research areas in the department?",
+                "Show me faculty by specialization"
+              ];
+              break;
+            case 'course_query':
+            case 'semester_course_query':
+              suggestions = [
+                "Show me courses by semester",
+                "Tell me about 5th semester courses",
+                "What are the core courses?"
+              ];
+              break;
+            case 'infrastructure_query':
+            case 'lab_query':
+              suggestions = [
+                "Tell me about specific lab equipment",
+                "What are the lab timings?",
+                "Show me research facilities"
+              ];
+              break;
+            case 'calendar_query':
+              suggestions = [
+                "Show me all events this month",
+                "Tell me about exam dates",
+                "What are the important deadlines?"
+              ];
+              break;
+            default:
+              suggestions = [
+                "Tell me about the AIML department",
+                "What courses do you offer?",
+                "Show me the faculty members"
+              ];
+          }
+        }
+        
+        return {
+          response: mainResponse,
+          suggestions: suggestions,
+          intent: intent,
+          extractedInfo: extractedInfo
+        };
+      }
     } catch (error) {
-      console.error('❌ Gemini generation error:', error);
+      console.error('❌ Gemini REST API error:', error);
       console.error('Error details:', error.message);
-      return null;
     }
+    
+    return null;
+  }
+
+  generateIntelligentFallbackResponse(userMessage, intent, extractedInfo, sessionId) {
+    const context = this.createComprehensiveContext();
+    const lowerMessage = userMessage.toLowerCase();
+    let response = '';
+    let suggestions = [];
+    
+    // Enhanced context-aware responses
+    switch (intent) {
+             case 'greeting':
+               response = `Hello! I'm LIAM, the AI assistant for the AIML Department at BMSCE. I can help you with:
+
+• Faculty information and research areas
+• Course details and prerequisites
+• Lab facilities and equipment
+• Academic calendar and events
+
+What would you like to know?`;
+
+               suggestions = [
+                 "Tell me about the faculty members",
+                 "What courses are available in 5th semester?",
+                 "Show me the lab facilities"
+               ];
+               break;
+        
+      case 'faculty_query':
+      case 'faculty_listing':
+        const facultyQuery = lowerMessage;
+        let facultyResults = [];
+        
+        if (facultyQuery.includes('hod') || facultyQuery.includes('head')) {
+          facultyResults = context.faculty.filter(f => 
+            f.designation.toLowerCase().includes('hod') || 
+            f.designation.toLowerCase().includes('head')
+          );
+        } else if (facultyQuery.includes('professor') || facultyQuery.includes('prof')) {
+          facultyResults = context.faculty.filter(f => 
+            f.designation.toLowerCase().includes('professor')
+          );
+        } else if (facultyQuery.includes('assistant')) {
+          facultyResults = context.faculty.filter(f => 
+            f.designation.toLowerCase().includes('assistant')
+          );
+        } else {
+          // Search by name or specialization
+          facultyResults = context.faculty.filter(f => 
+            f.name.toLowerCase().includes(facultyQuery) ||
+            f.specialization.some(s => s.toLowerCase().includes(facultyQuery)) ||
+            f.researchAreas.some(r => r.toLowerCase().includes(facultyQuery))
+          );
+        }
+        
+               if (facultyResults.length > 0) {
+                 response = `**Faculty Members Found:**\n\n`;
+                 facultyResults.slice(0, 3).forEach(faculty => {
+                   response += `**${faculty.name}**\n`;
+                   response += `• Designation: ${faculty.designation}\n`;
+                   response += `• Email: ${faculty.email}\n`;
+                   response += `• Phone: ${faculty.phone || 'Not specified'}\n`;
+                   response += `• Office: ${faculty.office || 'Department of AIML'}\n`;
+                   response += `• Specialization: ${faculty.specialization.join(', ')}\n`;
+                   response += `• Research Areas: ${faculty.researchAreas.join(', ')}\n\n`;
+                 });
+
+                 suggestions = [
+                   "Tell me about more faculty members",
+                   "What are the research areas in the department?",
+                   "Show me faculty by specialization"
+                 ];
+               } else {
+                 response = `**Available Faculty Members:**\n\n`;
+                 context.faculty.slice(0, 3).forEach(faculty => {
+                   response += `• **${faculty.name}** - ${faculty.designation}\n`;
+                 });
+
+                 suggestions = [
+                   "Show me all faculty members",
+                   "Tell me about professors",
+                   "What are the research areas?"
+                 ];
+               }
+        break;
+        
+      case 'course_query':
+      case 'semester_course_query':
+        const courseQuery = lowerMessage;
+        let courseResults = [];
+        
+        if (courseQuery.includes('semester')) {
+          const semesterMatch = courseQuery.match(/(\d+)/);
+          if (semesterMatch) {
+            const semester = semesterMatch[1];
+            courseResults = context.courses.filter(c => c.semester.includes(semester));
+          }
+        } else if (extractedInfo.semester) {
+          const semester = extractedInfo.semester;
+          courseResults = context.courses.filter(c => c.semester.includes(semester));
+        } else if (courseQuery.includes('credit')) {
+          const creditMatch = courseQuery.match(/(\d+)/);
+          if (creditMatch) {
+            const credits = parseInt(creditMatch[1]);
+            courseResults = context.courses.filter(c => c.credits === credits);
+          }
+        } else {
+          courseResults = context.courses.filter(c => 
+            c.name.toLowerCase().includes(courseQuery) ||
+            c.code.toLowerCase().includes(courseQuery) ||
+            c.instructor.toLowerCase().includes(courseQuery)
+          );
+        }
+        
+               if (courseResults.length > 0) {
+                 response = `**Courses Found:**\n\n`;
+                 courseResults.slice(0, 3).forEach(course => {
+                   response += `**${course.name} (${course.code})**\n`;
+                   response += `• Semester: ${course.semester}\n`;
+                   response += `• Credits: ${course.credits}\n`;
+                   response += `• Instructor: ${course.instructor}\n`;
+                   response += `• Course Type: ${course.courseType}\n`;
+                   response += `• Contact Hours: ${course.contactHours}\n`;
+                   response += `• Prerequisites: ${Array.isArray(course.prerequisites) ? course.prerequisites.join(', ') : course.prerequisites}\n\n`;
+                 });
+
+                 suggestions = [
+                   "Show me courses by semester",
+                   "Tell me about 5th semester courses",
+                   "What are the core courses?"
+                 ];
+               } else {
+                 response = `**Available Courses:**\n\n`;
+                 context.courses.slice(0, 3).forEach(course => {
+                   response += `• **${course.name}** (${course.code}) - Semester ${course.semester}\n`;
+                 });
+
+                 suggestions = [
+                   "Show me all courses",
+                   "Tell me about 5th semester courses",
+                   "What are the core subjects?"
+                 ];
+               }
+        break;
+        
+      case 'lab_query':
+      case 'infrastructure_query':
+        response = `**Department Location:**\n`;
+        response += `• Building: PJ Block\n`;
+        response += `• Floor: 7th Floor\n`;
+        response += `• Description: All labs, classrooms, and faculty staff rooms are located here\n\n`;
+        response += `**Department Labs:**\n\n`;
+        context.infrastructure.labs.forEach(lab => {
+          response += `**${lab.name}**\n`;
+          response += `• Capacity: ${lab.capacity} students\n`;
+          response += `• Location: ${lab.location}\n`;
+          response += `• Equipment: ${lab.equipment.map(eq => `${eq.name} (${eq.quantity} units)`).join(', ')}\n`;
+          response += `• Facilities: ${lab.facilities.join(', ')}\n`;
+          response += `• Availability: ${lab.availability}\n`;
+          response += `• Special Features: ${lab.specialFeatures.join(', ')}\n\n`;
+        });
+
+        suggestions = [
+          "Tell me about specific lab equipment",
+          "What are the lab timings?",
+          "Show me research facilities"
+        ];
+        break;
+        
+      case 'calendar_query':
+        const upcomingEvents = context.calendar.events
+          .filter(event => new Date(event.date) >= new Date())
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
+          .slice(0, 5);
+          
+        if (upcomingEvents.length > 0) {
+          response = `**Upcoming Events:**\n\n`;
+          upcomingEvents.slice(0, 3).forEach(event => {
+            response += `**${event.title}**\n`;
+            response += `• Date: ${event.date}\n`;
+            response += `• Type: ${event.type}\n`;
+            response += `• Description: ${event.description}\n\n`;
+          });
+        } else {
+          response = `**Academic Calendar:**\n\n`;
+          response += `• Total Events: ${context.calendar.events.length}\n`;
+          response += `• Academic Year: ${context.calendar.academicYear}\n`;
+          response += `• Current Semester: ${context.calendar.currentSemester}\n\n`;
+        }
+
+        suggestions = [
+          "Show me all events this month",
+          "Tell me about exam dates",
+          "What are the important deadlines?"
+        ];
+        break;
+        
+      default:
+        response = `I can help you with:
+
+• Faculty information
+• Course details
+• Lab facilities  
+• Academic calendar
+
+What would you like to know?`;
+
+        suggestions = [
+          "Tell me about the faculty",
+          "Show me available courses",
+          "What labs do we have?"
+        ];
+    }
+    
+    return {
+      response: response,
+      suggestions: suggestions,
+      intent: intent,
+      extractedInfo: extractedInfo,
+      source: 'intelligent_fallback'
+    };
   }
 
   generateFallbackResponse(userMessage, intent, extractedInfo, sessionId) {
