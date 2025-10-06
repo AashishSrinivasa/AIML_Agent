@@ -210,7 +210,7 @@ const Admin: React.FC = () => {
             }}
           />
           <motion.div 
-            className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+            className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
             animate={{ 
               x: [0, -100, 0],
               y: [0, 50, 0],
@@ -288,7 +288,7 @@ const Admin: React.FC = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowAuth(true)}
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold text-lg"
+            className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold text-lg"
           >
             <Zap className="w-5 h-5 inline mr-2" />
             Login to Admin Panel
@@ -362,7 +362,7 @@ const Admin: React.FC = () => {
               className="flex items-center space-x-4"
             >
               <div className="relative">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-xl flex items-center justify-center shadow-lg">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <motion.div
@@ -374,7 +374,7 @@ const Admin: React.FC = () => {
                 </motion.div>
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Admin Panel</h1>
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Admin Panel</h1>
                 <p className="text-sm text-gray-600">Manage AIML Department Data</p>
               </div>
             </motion.div>

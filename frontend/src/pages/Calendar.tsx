@@ -81,7 +81,7 @@ const CalendarPage: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -219,7 +219,7 @@ const CalendarPage: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
-                      className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl border border-purple-200/50"
+                      className="flex items-center p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl border border-purple-200/50"
                     >
                       <div className="flex-shrink-0">
                         <div className={`w-3 h-3 rounded-full ${getEventTypeColor(event.type).replace('100', '500').replace('800', '600')}`}></div>

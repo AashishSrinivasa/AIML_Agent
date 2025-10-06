@@ -178,11 +178,11 @@ const Chat: React.FC = () => {
   ];
 
   return (
-    <div className="h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 overflow-hidden">
+    <div className="h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900 overflow-hidden">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
         <div className="absolute top-40 left-40 w-80 h-80 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
       </div>
 
@@ -233,7 +233,7 @@ const Chat: React.FC = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="flex items-center space-x-2 mb-1"
                 >
-                  <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-pink-200 bg-clip-text text-transparent">
+                  <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
                     LIAM
                   </h1>
                   <motion.div
@@ -288,7 +288,7 @@ const Chat: React.FC = () => {
                   initial={{ scale: 0, rotate: -180 }}
                   animate={{ scale: 1, rotate: 0 }}
                   transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
-                  className="relative w-24 h-24 bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl"
+                  className="relative w-24 h-24 bg-gradient-to-br from-purple-400 to-blue-400 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl"
                 >
                   <motion.div
                     animate={{ rotate: 360 }}
@@ -309,7 +309,7 @@ const Chat: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
-                  className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3"
+                  className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-3"
                 >
                   Hey there! I'm LIAM ✨
                 </motion.h3>
@@ -350,7 +350,7 @@ const Chat: React.FC = () => {
                           className="bg-white/70 dark:bg-gray-700/70 backdrop-blur-sm rounded-2xl p-4 border border-purple-200/50 dark:border-purple-700/50 shadow-lg hover:shadow-xl transition-all duration-300"
                         >
                           <h5 className="font-bold text-gray-800 dark:text-white mb-2 flex items-center space-x-2">
-                            <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+                            <div className="w-2 h-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
                             <span>{capability.category}</span>
                           </h5>
                           <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">{capability.description}</p>
@@ -385,7 +385,7 @@ const Chat: React.FC = () => {
                         whileHover={{ scale: 1.05, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => handleSuggestionClick(question)}
-                        className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-medium hover:from-purple-200 hover:to-pink-200 dark:hover:from-purple-800/70 dark:hover:to-pink-800/70 transition-all duration-300 border border-purple-200/50 dark:border-purple-700/50 shadow-md hover:shadow-lg"
+                        className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/50 dark:to-blue-900/50 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-medium hover:from-purple-200 hover:to-blue-200 dark:hover:from-purple-800/70 dark:hover:to-blue-800/70 transition-all duration-300 border border-purple-200/50 dark:border-purple-700/50 shadow-md hover:shadow-lg"
                       >
                         {question}
                       </motion.button>
@@ -408,7 +408,7 @@ const Chat: React.FC = () => {
                     whileHover={{ scale: 1.02 }}
                     className={`max-w-xs lg:max-w-3xl px-6 py-4 rounded-3xl transition-all duration-300 shadow-lg ${
                       message.role === 'user'
-                        ? 'bg-gradient-to-r from-purple-500 to-pink-500 text-white ml-12'
+                        ? 'bg-gradient-to-r from-purple-500 to-blue-500 text-white ml-12'
                         : 'bg-white/90 dark:bg-gray-700/90 text-gray-800 dark:text-gray-200 mr-12 border border-purple-200/50 dark:border-purple-700/50 backdrop-blur-sm'
                     }`}
                   >
@@ -417,7 +417,7 @@ const Chat: React.FC = () => {
                         <motion.div
                           animate={{ scale: [1, 1.1, 1] }}
                           transition={{ duration: 2, repeat: Infinity }}
-                          className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
+                          className="w-8 h-8 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center flex-shrink-0 mt-1"
                         >
                           <Brain className="w-4 h-4 text-white" />
                         </motion.div>
@@ -457,7 +457,7 @@ const Chat: React.FC = () => {
                                   whileHover={{ scale: 1.05 }}
                                   whileTap={{ scale: 0.95 }}
                                   onClick={() => handleSuggestionClick(suggestion)}
-                                  className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-purple-700 dark:text-purple-300 px-3 py-2 rounded-full text-xs font-medium hover:from-purple-200 hover:to-pink-200 dark:hover:from-purple-800/70 dark:hover:to-pink-800/70 transition-all duration-300 border border-purple-200/50 dark:border-purple-700/50 shadow-sm hover:shadow-md"
+                                  className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/50 dark:to-blue-900/50 text-purple-700 dark:text-purple-300 px-3 py-2 rounded-full text-xs font-medium hover:from-purple-200 hover:to-blue-200 dark:hover:from-purple-800/70 dark:hover:to-blue-800/70 transition-all duration-300 border border-purple-200/50 dark:border-purple-700/50 shadow-sm hover:shadow-md"
                                 >
                                   {suggestion}
                                 </motion.button>
@@ -497,7 +497,7 @@ const Chat: React.FC = () => {
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center"
+                    className="w-8 h-8 bg-gradient-to-br from-purple-400 to-blue-400 rounded-full flex items-center justify-center"
                   >
                     <Brain className="w-4 h-4 text-white" />
                   </motion.div>
@@ -510,7 +510,7 @@ const Chat: React.FC = () => {
                     <motion.div 
                       animate={{ scale: [1, 1.2, 1] }}
                       transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }}
-                      className="w-2 h-2 bg-pink-400 rounded-full"
+                      className="w-2 h-2 bg-blue-400 rounded-full"
                     ></motion.div>
                     <motion.div 
                       animate={{ scale: [1, 1.2, 1] }}
@@ -564,7 +564,7 @@ const Chat: React.FC = () => {
                             onClick={() => handleSuggestionClick(suggestion)}
                             className={`px-4 py-3 cursor-pointer text-sm transition-all duration-200 ${
                               index === selectedSuggestionIndex
-                                ? 'bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/50 dark:to-pink-900/50 text-purple-900 dark:text-purple-100'
+                                ? 'bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/50 dark:to-blue-900/50 text-purple-900 dark:text-purple-100'
                                 : 'hover:bg-purple-50 dark:hover:bg-purple-900/30 text-gray-900 dark:text-gray-100'
                             } ${index === 0 ? 'rounded-t-2xl' : ''} ${
                               index === suggestions.length - 1 ? 'rounded-b-2xl' : ''
@@ -586,7 +586,7 @@ const Chat: React.FC = () => {
                   whileTap={{ scale: 0.95 }}
                   onClick={handleSendMessage}
                   disabled={!inputMessage.trim() || isLoading}
-                  className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-4 rounded-2xl hover:from-purple-600 hover:to-pink-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
+                  className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-4 rounded-2xl hover:from-purple-600 hover:to-blue-600 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 flex items-center space-x-2 shadow-lg hover:shadow-xl"
                 >
                   {isLoading ? (
                     <Loader2 className="w-5 h-5 animate-spin" />

@@ -22,35 +22,35 @@ const Home: React.FC = () => {
       title: 'AI Chat Assistant',
       description: 'Get instant answers about faculty, courses, and academic information',
       link: '/chat',
-      color: 'from-blue-500 to-blue-600'
+      color: 'from-purple-500 to-blue-600'
     },
     {
       icon: Users,
       title: 'Faculty Directory',
       description: 'Explore our expert faculty members and their specializations',
       link: '/faculty',
-      color: 'from-green-500 to-green-600'
+      color: 'from-blue-500 to-indigo-600'
     },
     {
       icon: BookOpen,
       title: 'Course Catalog',
       description: 'Browse comprehensive course information and prerequisites',
       link: '/courses',
-      color: 'from-purple-500 to-purple-600'
+      color: 'from-indigo-500 to-purple-600'
     },
     {
       icon: Calendar,
       title: 'Academic Calendar',
       description: 'Stay updated with important dates and examination schedules',
       link: '/calendar',
-      color: 'from-orange-500 to-orange-600'
+      color: 'from-cyan-500 to-blue-600'
     },
     {
       icon: Building2,
       title: 'Infrastructure',
       description: 'Discover our state-of-the-art labs and facilities',
       link: '/infrastructure',
-      color: 'from-pink-500 to-pink-600'
+      color: 'from-violet-500 to-purple-600'
     }
   ];
 
@@ -62,11 +62,11 @@ const Home: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900 relative overflow-hidden">
       {/* Enhanced Background Elements with Hover Effects */}
       <div className="fixed inset-0 pointer-events-none">
         <motion.div 
-          className="absolute top-0 left-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 left-0 w-96 h-96 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -93,7 +93,7 @@ const Home: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute -bottom-8 left-20 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute -bottom-8 left-20 w-96 h-96 bg-indigo-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, 50, 0],
             y: [0, -100, 0],
@@ -156,7 +156,7 @@ const Home: React.FC = () => {
                 transition={{ duration: 0.8, delay: 0.3 }}
                 className="mb-6"
               >
-                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-4">
+                <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent mb-4">
                   LIAM
                 </h1>
                 <div className="text-2xl md:text-3xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
@@ -197,11 +197,11 @@ const Home: React.FC = () => {
                       ]
                     }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur-lg opacity-75"
+                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-lg opacity-75"
                   />
                   <Link
                     to="/chat"
-                    className="relative group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-3xl z-10"
+                    className="relative group bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 flex items-center justify-center space-x-3 shadow-2xl hover:shadow-3xl z-10"
                   >
                     <motion.div
                       animate={{ rotate: [0, 10, -10, 0] }}
@@ -242,7 +242,7 @@ const Home: React.FC = () => {
                 <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/20">
                   <div className="space-y-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center">
                         <Bot className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -336,7 +336,7 @@ const Home: React.FC = () => {
                     <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">{stat.value}</div>
+                    <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">{stat.value}</div>
                     <div className="text-gray-600 dark:text-gray-400 font-medium">{stat.label}</div>
                   </div>
                 </motion.div>
@@ -356,7 +356,7 @@ const Home: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mb-20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 via-blue-600 to-purple-600 dark:from-white dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-800 via-purple-600 to-blue-600 dark:from-white dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent mb-6">
               Everything You Need
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">

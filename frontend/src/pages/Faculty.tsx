@@ -61,7 +61,7 @@ const FacultyPage: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -245,7 +245,7 @@ const FacultyPage: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+                className="bg-gradient-to-r from-purple-500 to-blue-500 text-white px-6 py-3 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               >
                 <Zap className="w-4 h-4 inline mr-2" />
                 Search

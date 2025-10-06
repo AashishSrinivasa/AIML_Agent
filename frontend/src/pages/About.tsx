@@ -56,7 +56,7 @@ const About: React.FC = () => {
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
         />
         <motion.div
-          className="absolute top-40 right-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-40 right-20 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ x: [0, -100, 0], y: [0, 100, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         />
@@ -267,7 +267,7 @@ const About: React.FC = () => {
                     It fosters dynamic industry-academic synergy for AI adoption, impactful projects with industry and government, 
                     facilitating the <span className="font-bold text-purple-600">NVIDIA DGX A100 server</span>.
                   </p>
-                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4 mt-4">
+                  <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl p-4 mt-4">
                     <p className="text-sm font-medium text-gray-800">
                       The world's first purpose-built system for Deep Learning and accelerated analytics, delivering performance of 
                       <span className="font-bold text-purple-600"> 56 instances in parallel</span> without any deterioration of performance and computations.
@@ -318,28 +318,28 @@ const About: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div 
-                className="text-center p-6 bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl"
+                className="text-center p-6 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Vision</h3>
                 <p className="text-gray-600">To achieve excellent standards of quality education in the field of Artificial Intelligence and Machine Learning.</p>
               </motion.div>
               <motion.div 
-                className="text-center p-6 bg-gradient-to-br from-pink-50 to-indigo-50 rounded-2xl"
+                className="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl"
                 whileHover={{ scale: 1.05, rotateY: 5 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-pink-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                   <GraduationCap className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Mission 1</h3>
@@ -403,7 +403,7 @@ const About: React.FC = () => {
               {researchAreas.map((area, index) => (
                 <motion.div
                   key={index}
-                  className="bg-gradient-to-r from-purple-100 to-pink-100 rounded-xl p-4 text-center hover:from-purple-200 hover:to-pink-200 transition-all duration-300 cursor-pointer"
+                  className="bg-gradient-to-r from-purple-100 to-blue-100 rounded-xl p-4 text-center hover:from-purple-200 hover:to-blue-200 transition-all duration-300 cursor-pointer"
                   whileHover={{ scale: 1.05, rotateY: 5 }}
                   whileTap={{ scale: 0.95 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -566,7 +566,7 @@ const About: React.FC = () => {
             {[
               { name: 'React', tech: 'Frontend', desc: 'React.js with TypeScript', icon: Code, color: 'from-blue-500 to-cyan-500' },
               { name: 'Node.js', tech: 'Backend', desc: 'Node.js with Express', icon: Database, color: 'from-green-500 to-emerald-500' },
-              { name: 'Gemini AI', tech: 'AI Engine', desc: 'Google Gemini Integration', icon: Brain, color: 'from-purple-500 to-pink-500' },
+              { name: 'Gemini AI', tech: 'AI Engine', desc: 'Google Gemini Integration', icon: Brain, color: 'from-purple-500 to-blue-500' },
               { name: 'JSON', tech: 'Data', desc: 'Comprehensive JSON Database', icon: Cpu, color: 'from-orange-500 to-red-500' }
             ].map((tech, index) => {
               const Icon = tech.icon;
@@ -634,7 +634,7 @@ const About: React.FC = () => {
             >
               <motion.a
                 href="mailto:dakshayini.ise@bmsce.ac.in"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
