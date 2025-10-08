@@ -889,5 +889,16 @@
     ],
     "createdAt": "2020-01-01T00:00:00.000Z",
     "updatedAt": "2024-01-01T00:00:00.000Z"
+  },
+  {
+    "id": "faculty_1759930275659",
+    "name": "M P Harshitha",
+    "title": "M P Harshitha",
+    "designation": "B.Tech",
+    "qualification": "MS (AIML)",
+    "email": "mpharshitha.ai23@bmsce.ac.in",
+    "phone": "8088603742",
+    "office": "7th floor",
+    "createdAt": "2025-10-08T13:31:15.659Z"
   }
 ]
