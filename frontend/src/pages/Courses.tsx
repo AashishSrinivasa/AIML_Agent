@@ -158,7 +158,7 @@ const Courses: React.FC = () => {
           }}
         />
         <motion.div 
-          className="absolute top-0 right-0 w-96 h-96 bg-pink-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
+          className="absolute top-0 right-0 w-96 h-96 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl opacity-20"
           animate={{ 
             x: [0, -100, 0],
             y: [0, 50, 0],
