@@ -900,5 +900,219 @@
     "phone": "8088603742",
     "office": "7th floor",
     "createdAt": "2025-10-08T13:31:15.659Z"
+  },
+  {
+    "id": "faculty_1760029071421",
+    "name": "M D Iqbal",
+    "title": "M D Iqbal",
+    "designation": "Professor",
+    "qualification": "Masters in AIML",
+    "email": "mdiqbal@gmail.com",
+    "createdAt": "2025-10-09T16:57:51.421Z"
+  },
+  {
+    "id": "faculty_sumatn",
+    "name": "Prof. Suma T N",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": [
+      "Machine Learning",
+      "Data Science",
+      "Artificial Intelligence"
+    ],
+    "email": "suma.tn@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "PJ Block, 7th Floor, Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Data Science",
+      "Artificial Intelligence"
+    ],
+    "publications": 8,
+    "experience": "5+ years",
+    "courses": [
+      "Machine Learning",
+      "Data Science",
+      "Artificial Intelligence"
+    ],
+    "education": {
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Published 8+ research papers",
+      "Active in AI/ML research"
+    ],
+    "industryExperience": "3+ years in AI/ML industry",
+    "currentProjects": [
+      "Machine Learning Applications",
+      "Data Science Research"
+    ],
+    "createdAt": "2025-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "faculty_yashaswinibm",
+    "name": "Prof. Yashaswini B M",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision"
+    ],
+    "email": "yashaswini.bm@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "PJ Block, 7th Floor, Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision"
+    ],
+    "publications": 6,
+    "experience": "4+ years",
+    "courses": [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision"
+    ],
+    "education": {
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Published 6+ research papers",
+      "Expert in Computer Vision"
+    ],
+    "industryExperience": "2+ years in AI/ML industry",
+    "currentProjects": [
+      "Computer Vision Applications",
+      "Deep Learning Research"
+    ],
+    "createdAt": "2025-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "faculty_spoortiadmani",
+    "name": "Prof. Spoorti Admani",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": [
+      "Machine Learning",
+      "Natural Language Processing",
+      "Artificial Intelligence"
+    ],
+    "email": "spoorti.admani@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "PJ Block, 7th Floor, Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Natural Language Processing",
+      "Artificial Intelligence"
+    ],
+    "publications": 7,
+    "experience": "4+ years",
+    "courses": [
+      "Machine Learning",
+      "Natural Language Processing",
+      "Artificial Intelligence"
+    ],
+    "education": {
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Published 7+ research papers",
+      "Expert in NLP"
+    ],
+    "industryExperience": "2+ years in AI/ML industry",
+    "currentProjects": [
+      "NLP Applications",
+      "AI Research"
+    ],
+    "createdAt": "2025-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "faculty_ashag",
+    "name": "Prof. Asha G",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": [
+      "Machine Learning",
+      "Data Analytics",
+      "Artificial Intelligence"
+    ],
+    "email": "asha.g@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "PJ Block, 7th Floor, Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Data Analytics",
+      "Artificial Intelligence"
+    ],
+    "publications": 5,
+    "experience": "3+ years",
+    "courses": [
+      "Machine Learning",
+      "Data Analytics",
+      "Artificial Intelligence"
+    ],
+    "education": {
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Published 5+ research papers",
+      "Expert in Data Analytics"
+    ],
+    "industryExperience": "2+ years in AI/ML industry",
+    "currentProjects": [
+      "Data Analytics Applications",
+      "AI Research"
+    ],
+    "createdAt": "2025-01-15T10:00:00.000Z"
+  },
+  {
+    "id": "faculty_amithas",
+    "name": "Prof. Amitha S",
+    "designation": "Assistant Professor",
+    "qualification": "M.Tech",
+    "specialization": [
+      "Machine Learning",
+      "Deep Learning",
+      "Neural Networks"
+    ],
+    "email": "amitha.s@bmsce.ac.in",
+    "phone": "+91-80-26622130",
+    "office": "PJ Block, 7th Floor, Department of Machine Learning, BMSCE",
+    "officeHours": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "researchAreas": [
+      "Machine Learning",
+      "Deep Learning",
+      "Neural Networks"
+    ],
+    "publications": 6,
+    "experience": "4+ years",
+    "courses": [
+      "Machine Learning",
+      "Deep Learning",
+      "Neural Networks"
+    ],
+    "education": {
+      "masters": "M.Tech",
+      "bachelors": "B.E."
+    },
+    "achievements": [
+      "Published 6+ research papers",
+      "Expert in Neural Networks"
+    ],
+    "industryExperience": "2+ years in AI/ML industry",
+    "currentProjects": [
+      "Neural Network Applications",
+      "Deep Learning Research"
+    ],
+    "createdAt": "2025-01-15T10:00:00.000Z"
   }
 ]

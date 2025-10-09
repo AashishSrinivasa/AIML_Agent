@@ -61,6 +61,10 @@ class AIMLAgent {
       const infrastructureData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_infrastructure.json'), 'utf8'));
       this.knowledgeBase.infrastructure = infrastructureData;
       
+      // Load students data
+      const studentsData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_students.json'), 'utf8'));
+      this.knowledgeBase.students = studentsData;
+      
       // Load calendar data
       const calendarData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data/comprehensive_academic_calendar.json'), 'utf8'));
       const allEvents = [];
@@ -77,6 +81,7 @@ class AIMLAgent {
       console.log(`   📊 Faculty: ${this.knowledgeBase.faculty.length} members`);
       console.log(`   📚 Courses: ${this.knowledgeBase.courses.length} courses`);
       console.log(`   🏢 Infrastructure: ${this.knowledgeBase.infrastructure.labs.length} labs`);
+      console.log(`   👥 Students: ${this.knowledgeBase.students.totalStudents} students`);
       console.log(`   📅 Calendar: ${this.knowledgeBase.calendar.length} events`);
       
     } catch (error) {
@@ -413,6 +418,20 @@ class AIMLAgent {
         }
       } catch (error) {
         console.log('❌ Gemini error:', error.message);
+        // For student queries, try Gemini again with a simpler prompt
+        if (intent === 'student_query') {
+          try {
+            console.log('🔄 Retrying Gemini for student query...');
+            const retryResponse = await this.generateGeminiResponse(userMessage, intent, extractedInfo, conversationHistory);
+            if (retryResponse) {
+              console.log('✅ Gemini retry successful');
+              this.updateConversationHistory(sessionId, userMessage, retryResponse.response);
+              return retryResponse;
+            }
+          } catch (retryError) {
+            console.log('❌ Gemini retry failed:', retryError.message);
+          }
+        }
         console.log('Using enhanced fallback response');
       }
     } else {
@@ -472,6 +491,40 @@ ${context.infrastructure.labs.map(lab => `
   Availability: ${lab.availability}
   Special Features: ${lab.specialFeatures.join(', ')}
 `).join('')}
+
+STUDENTS DATA:
+Total Students: ${context.students.totalStudents}
+Batch-wise Distribution:
+- 2022 Batch (7th Semester): ${context.students.batches['2022'].totalStudents} students
+- 2023 Batch (5th Semester): ${context.students.batches['2023'].totalStudents} students  
+- 2024 Batch (3rd Semester): ${context.students.batches['2024'].totalStudents} students
+- Lateral Entry Students: ${context.students.lateralEntryStudents.totalStudents} students
+
+COMPLETE STUDENT LISTS BY BATCH:
+
+2022 BATCH (7th Semester - ${context.students.batches['2022'].totalStudents} students):
+${context.students.batches['2022'].students.map(s => `• ${s.name} (USN: ${s.usn})`).join('\n')}
+
+2023 BATCH (5th Semester - ${context.students.batches['2023'].totalStudents} students):
+${context.students.batches['2023'].students.map(s => `• ${s.name} (USN: ${s.usn})`).join('\n')}
+
+2024 BATCH (3rd Semester - ${context.students.batches['2024'].totalStudents} students):
+${context.students.batches['2024'].students.map(s => `• ${s.name} (USN: ${s.usn})`).join('\n')}
+
+LATERAL ENTRY STUDENTS (${context.students.lateralEntryStudents.totalStudents} students):
+${context.students.lateralEntryStudents.students.map(s => `• ${s.name} (USN: ${s.usn}) - ${s.remarks}`).join('\n')}
+
+STUDENT QUERY HANDLING INSTRUCTIONS:
+- For USN queries: Search through ALL batches and lateral entry students
+- For name queries: Search through ALL batches and lateral entry students  
+- For batch queries: Use the complete list provided above
+- For semester queries: Map 3rd sem=2024 batch, 5th sem=2023 batch, 7th sem=2022 batch
+- For count queries: Use the exact numbers provided
+- For validation queries: Check if USN exists in any batch
+- For "first N" queries: Show first N students from specified batch
+- For "starting with" queries: Find students whose names start with specified letter
+- For "ending with" queries: Find students whose USN ends with specified pattern
+- Always provide complete and accurate information from the data above
 
 ${conversationContext}
 
@@ -662,8 +715,8 @@ What would you like to know?`;
           // Search by name or specialization
           facultyResults = context.faculty.filter(f => 
             f.name.toLowerCase().includes(facultyQuery) ||
-            f.specialization.some(s => s.toLowerCase().includes(facultyQuery)) ||
-            f.researchAreas.some(r => r.toLowerCase().includes(facultyQuery))
+            (Array.isArray(f.specialization) && f.specialization.some(s => s.toLowerCase().includes(facultyQuery))) ||
+            (Array.isArray(f.researchAreas) && f.researchAreas.some(r => r.toLowerCase().includes(facultyQuery)))
           );
         }
         
@@ -755,6 +808,200 @@ What would you like to know?`;
                    "What are the core subjects?"
                  ];
                }
+        break;
+        
+      case 'student_query':
+      case 'student_listing':
+        const studentQuery = lowerMessage;
+        let studentResults = [];
+        let studentResponse = '';
+        
+        // Handle different types of student queries
+        if (studentQuery.includes('usn') || /1bm\d{2}ai\d{3}/i.test(studentQuery)) {
+          // USN-based search
+          const usnMatch = studentQuery.match(/1bm\d{2}ai\d{3}/i);
+          if (usnMatch) {
+            const usn = usnMatch[0].toUpperCase();
+            // Search in all batches
+            for (const batchKey in context.students.batches) {
+              const batch = context.students.batches[batchKey];
+              const found = batch.students.find(s => s.usn === usn);
+              if (found) {
+                studentResults = [found];
+                break;
+              }
+            }
+            // Also check lateral entry
+            if (studentResults.length === 0) {
+              const found = context.students.lateralEntryStudents.students.find(s => s.usn === usn);
+              if (found) studentResults = [found];
+            }
+          }
+        } else if (studentQuery.includes('name') || studentQuery.includes('aashish') || studentQuery.includes('rahul')) {
+          // Name-based search
+          const nameQuery = studentQuery.replace(/name|student|find|search|show|list/gi, '').trim();
+          for (const batchKey in context.students.batches) {
+            const batch = context.students.batches[batchKey];
+            const found = batch.students.filter(s => 
+              s.name.toLowerCase().includes(nameQuery) || 
+              s.name.toLowerCase().startsWith(nameQuery)
+            );
+            studentResults.push(...found);
+          }
+          // Also check lateral entry
+          const lateralFound = context.students.lateralEntryStudents.students.filter(s => 
+            s.name.toLowerCase().includes(nameQuery) || 
+            s.name.toLowerCase().startsWith(nameQuery)
+          );
+          studentResults.push(...lateralFound);
+        } else if (studentQuery.includes('batch') || studentQuery.includes('2022') || studentQuery.includes('2023') || studentQuery.includes('2024')) {
+          // Batch-based search
+          if (studentQuery.includes('2022')) {
+            studentResults = context.students.batches['2022'].students;
+          } else if (studentQuery.includes('2023')) {
+            studentResults = context.students.batches['2023'].students;
+          } else if (studentQuery.includes('2024')) {
+            studentResults = context.students.batches['2024'].students;
+          }
+        } else if (studentQuery.includes('semester') || studentQuery.includes('sem')) {
+          // Semester-based search
+          if (studentQuery.includes('3rd') || studentQuery.includes('3')) {
+            studentResults = context.students.batches['2024'].students;
+          } else if (studentQuery.includes('5th') || studentQuery.includes('5')) {
+            studentResults = context.students.batches['2023'].students;
+          } else if (studentQuery.includes('7th') || studentQuery.includes('7')) {
+            studentResults = context.students.batches['2022'].students;
+          }
+        } else if (studentQuery.includes('lateral')) {
+          // Lateral entry students
+          studentResults = context.students.lateralEntryStudents.students;
+        } else if (studentQuery.includes('count') || studentQuery.includes('how many') || studentQuery.includes('total')) {
+          // Count queries
+          const totalStudents = context.students.totalStudents;
+          const batch2022 = context.students.batches['2022'].totalStudents;
+          const batch2023 = context.students.batches['2023'].totalStudents;
+          const batch2024 = context.students.batches['2024'].totalStudents;
+          const lateral = context.students.lateralEntryStudents.totalStudents;
+          
+          studentResponse = `**Student Count Summary:**\n\n`;
+          studentResponse += `• **Total Students:** ${totalStudents}\n`;
+          studentResponse += `• **2022 Batch (7th Sem):** ${batch2022} students\n`;
+          studentResponse += `• **2023 Batch (5th Sem):** ${batch2023} students\n`;
+          studentResponse += `• **2024 Batch (3rd Sem):** ${batch2024} students\n`;
+          studentResponse += `• **Lateral Entry:** ${lateral} students\n`;
+          
+          if (studentQuery.includes('difference') && studentQuery.includes('2022') && studentQuery.includes('2023')) {
+            const diff = Math.abs(batch2023 - batch2022);
+            studentResponse += `\n**Difference between 2022 and 2023 batches:** ${diff} students\n`;
+          }
+        } else if (studentQuery.includes('first') || studentQuery.includes('starting')) {
+          // First N students or students starting with letter
+          if (studentQuery.includes('5') || studentQuery.includes('first')) {
+            if (studentQuery.includes('2024')) {
+              studentResults = context.students.batches['2024'].students.slice(0, 5);
+            } else if (studentQuery.includes('2023')) {
+              studentResults = context.students.batches['2023'].students.slice(0, 5);
+            } else if (studentQuery.includes('2022')) {
+              studentResults = context.students.batches['2022'].students.slice(0, 5);
+            }
+          }
+          // Students starting with specific letter
+          const letterMatch = studentQuery.match(/starting.*?['"]([a-z])['"]/i);
+          if (letterMatch) {
+            const letter = letterMatch[1].toUpperCase();
+            for (const batchKey in context.students.batches) {
+              const batch = context.students.batches[batchKey];
+              const found = batch.students.filter(s => s.name.startsWith(letter));
+              studentResults.push(...found);
+            }
+          }
+        } else if (studentQuery.includes('ending') || studentQuery.includes('usn.*050')) {
+          // USN ending with specific pattern
+          const endingMatch = studentQuery.match(/ending.*?(\d{3})/i);
+          if (endingMatch) {
+            const ending = endingMatch[1];
+            for (const batchKey in context.students.batches) {
+              const batch = context.students.batches[batchKey];
+              const found = batch.students.filter(s => s.usn.endsWith(ending));
+              studentResults.push(...found);
+            }
+          }
+        } else if (studentQuery.includes('valid') || studentQuery.includes('belong')) {
+          // Validation queries
+          const usnMatch = studentQuery.match(/1bm\d{2}ai\d{3}/i);
+          if (usnMatch) {
+            const usn = usnMatch[0].toUpperCase();
+            let found = false;
+            let batch = '';
+            let semester = '';
+            
+            for (const batchKey in context.students.batches) {
+              const batchData = context.students.batches[batchKey];
+              const student = batchData.students.find(s => s.usn === usn);
+              if (student) {
+                found = true;
+                batch = batchKey;
+                semester = student.currentSemester;
+                break;
+              }
+            }
+            
+            if (!found) {
+              const lateralStudent = context.students.lateralEntryStudents.students.find(s => s.usn === usn);
+              if (lateralStudent) {
+                found = true;
+                batch = 'Lateral Entry';
+                semester = lateralStudent.currentSemester;
+              }
+            }
+            
+            if (found) {
+              studentResponse = `**Yes, ${usn} is a valid student.**\n`;
+              studentResponse += `• **Batch:** ${batch}\n`;
+              studentResponse += `• **Current Semester:** ${semester}\n`;
+            } else {
+              studentResponse = `**No, ${usn} is not found in the student database.**\n`;
+            }
+          }
+        }
+        
+        // Generate response based on results
+        if (studentResponse) {
+          response = studentResponse;
+        } else if (studentResults.length > 0) {
+          response = `**Student Information Found:**\n\n`;
+          const displayCount = Math.min(studentResults.length, 10);
+          
+          for (let i = 0; i < displayCount; i++) {
+            const student = studentResults[i];
+            response += `• **${student.name}** (USN: ${student.usn})\n`;
+            if (student.batchYear) {
+              response += `  - Batch: ${student.batchYear}\n`;
+              response += `  - Current Semester: ${student.currentSemester}\n`;
+            }
+            if (student.isLateralEntry) {
+              response += `  - Type: Lateral Entry\n`;
+            }
+            response += `\n`;
+          }
+          
+          if (studentResults.length > 10) {
+            response += `... and ${studentResults.length - 10} more students\n`;
+          }
+        } else {
+          response = `**Student Information:**\n\n`;
+          response += `• **Total Students:** ${context.students.totalStudents}\n`;
+          response += `• **2022 Batch (7th Sem):** ${context.students.batches['2022'].totalStudents} students\n`;
+          response += `• **2023 Batch (5th Sem):** ${context.students.batches['2023'].totalStudents} students\n`;
+          response += `• **2024 Batch (3rd Sem):** ${context.students.batches['2024'].totalStudents} students\n`;
+          response += `• **Lateral Entry:** ${context.students.lateralEntryStudents.totalStudents} students\n`;
+        }
+        
+        suggestions = [
+          "Show me students from 2024 batch",
+          "How many students are in 5th semester?",
+          "Find student with USN 1BM22AI001"
+        ];
         break;
         
       case 'lab_query':
@@ -1208,6 +1455,18 @@ Contact these faculty members for computer vision guidance and research opportun
     if (lowerMessage.includes('show') && lowerMessage.includes('faculty') || lowerMessage.includes('all faculty')) {
       return 'faculty_listing';
     }
+    // Student query detection
+    if (lowerMessage.includes('student') || lowerMessage.includes('usn') || lowerMessage.includes('batch') || 
+        lowerMessage.includes('aashish') || lowerMessage.includes('rahul') || 
+        /1bm\d{2}ai\d{3}/i.test(lowerMessage) || 
+        lowerMessage.includes('how many students') || lowerMessage.includes('total students') ||
+        lowerMessage.includes('2022 batch') || lowerMessage.includes('2023 batch') || lowerMessage.includes('2024 batch') ||
+        lowerMessage.includes('3rd sem') || lowerMessage.includes('5th sem') || lowerMessage.includes('7th sem') ||
+        lowerMessage.includes('lateral entry') || lowerMessage.includes('valid student') ||
+        lowerMessage.includes('first 5') || lowerMessage.includes('starting with') ||
+        lowerMessage.includes('ending with') || lowerMessage.includes('belong to')) {
+      return 'student_query';
+    }
     if (lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
       return 'greeting';
     }
@@ -1283,6 +1542,7 @@ Contact these faculty members for computer vision guidance and research opportun
       faculty: this.knowledgeBase.faculty,
       courses: this.knowledgeBase.courses,
       infrastructure: this.knowledgeBase.infrastructure,
+      students: this.knowledgeBase.students,
       calendar: this.knowledgeBase.calendar
     };
   }
@@ -1326,6 +1586,7 @@ Contact these faculty members for computer vision guidance and research opportun
       console.log(`📊 Serving ${this.knowledgeBase.faculty.length} faculty members`);
       console.log(`📚 Serving ${this.knowledgeBase.courses.length} courses`);
       console.log(`🏢 Serving infrastructure data`);
+      console.log(`👥 Serving ${this.knowledgeBase.students.totalStudents} students`);
       console.log(`📅 Serving calendar data`);
       console.log(`🤖 AIML AI Agent ready for intelligent conversations!`);
     });

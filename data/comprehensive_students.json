@@ -1,0 +1,5935 @@
+{
+  "department": "Machine Learning (AI and ML)",
+  "college": "B.M.S College of Engineering",
+  "academicYear": "2025-26",
+  "totalStudents": 655,
+  "batches": {
+    "2022": {
+      "batchYear": 2022,
+      "currentSemester": 7,
+      "academicYear": "2025-26",
+      "session": "Aug 2025 - Dec 2025",
+      "totalStudents": 163,
+      "students": [
+        {
+          "usn": "1BM22AI001",
+          "name": "AARUSHI SALUJA",
+          "slNo": 1,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI002",
+          "name": "ABHINAV KUMAR PANDEY",
+          "slNo": 2,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI003",
+          "name": "ABHISHEK GUPTA",
+          "slNo": 3,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI004",
+          "name": "ACHINTYA RAMANANDA AVADHANI",
+          "slNo": 4,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI005",
+          "name": "ADITI NADIGER",
+          "slNo": 5,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI006",
+          "name": "AJAY KUMAR V",
+          "slNo": 6,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI007",
+          "name": "AKANKSH KONDURU",
+          "slNo": 7,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI008",
+          "name": "AKASH S S",
+          "slNo": 8,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI009",
+          "name": "AKSHAT SINGH",
+          "slNo": 9,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI010",
+          "name": "AMAN PHANIRAJ ALAWANDI",
+          "slNo": 10,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI011",
+          "name": "AMOGH G",
+          "slNo": 11,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI012",
+          "name": "ANALA P RAO",
+          "slNo": 12,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI013",
+          "name": "ANAND NAIK H",
+          "slNo": 13,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI014",
+          "name": "ANANYA NAIR",
+          "slNo": 14,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI015",
+          "name": "ANIL SHRINIVAS PRABHU",
+          "slNo": 15,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI016",
+          "name": "ANIRUDH MOHAN",
+          "slNo": 16,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI017",
+          "name": "ANKIT KUMAR GUAR",
+          "slNo": 17,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI018",
+          "name": "ANUSHKA AGARWAL",
+          "slNo": 18,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI019",
+          "name": "ANUSHREE GUPTA",
+          "slNo": 19,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI020",
+          "name": "ARCHANA B M",
+          "slNo": 20,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI021",
+          "name": "ARYAMAN TIWARY",
+          "slNo": 21,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI022",
+          "name": "ASHRIT M",
+          "slNo": 22,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI023",
+          "name": "AYUSH RAJ",
+          "slNo": 23,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI024",
+          "name": "AYUSH SAHU",
+          "slNo": 24,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI025",
+          "name": "BALUSUBRAMANI R N",
+          "slNo": 25,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI026",
+          "name": "BASEM KAUNAIN",
+          "slNo": 26,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI027",
+          "name": "BHARATH S",
+          "slNo": 27,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI028",
+          "name": "BHAVAN P",
+          "slNo": 28,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI029",
+          "name": "BHAVANA S",
+          "slNo": 29,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI031",
+          "name": "BHOOMIKA ARUN",
+          "slNo": 30,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI032",
+          "name": "BHOOMIKA K",
+          "slNo": 31,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI033",
+          "name": "BHUVAN S",
+          "slNo": 32,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI034",
+          "name": "BUDDULA VANSHIKA",
+          "slNo": 33,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI035",
+          "name": "C M CHIRANTHAN GOWDA",
+          "slNo": 34,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI036",
+          "name": "C S SHASHANK SHARMA",
+          "slNo": 35,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI037",
+          "name": "CHETAN NAG R",
+          "slNo": 36,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI038",
+          "name": "CHIDVANKUMAR",
+          "slNo": 37,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI039",
+          "name": "CHIRAG GOYAL",
+          "slNo": 38,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI041",
+          "name": "DEEPALI U",
+          "slNo": 39,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI042",
+          "name": "DEVANGANA JAYAKRISHNAN NAIR",
+          "slNo": 40,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI043",
+          "name": "DHANUSH C",
+          "slNo": 41,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI045",
+          "name": "DHIPSHIKA P",
+          "slNo": 42,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI046",
+          "name": "DIKSHA C R",
+          "slNo": 43,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI047",
+          "name": "FAIZA KHANUM",
+          "slNo": 44,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI048",
+          "name": "FARHAAN NAYAKWADI",
+          "slNo": 45,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI049",
+          "name": "G TOUSIF AHMED",
+          "slNo": 46,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI050",
+          "name": "GAURAV SHARMA",
+          "slNo": 47,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI051",
+          "name": "GOWRI KANEKAL",
+          "slNo": 48,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI052",
+          "name": "HAMSIKA AS",
+          "slNo": 49,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI054",
+          "name": "HARSHA SWAROOP",
+          "slNo": 50,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI055",
+          "name": "HEMANT JOSHI",
+          "slNo": 51,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI056",
+          "name": "J SIDDHARTH",
+          "slNo": 52,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI057",
+          "name": "JAYANTH K",
+          "slNo": 53,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI059",
+          "name": "KARAGAPURAM ABHIRAM",
+          "slNo": 54,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI060",
+          "name": "KESHAV SHARMA",
+          "slNo": 55,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI062",
+          "name": "KRUTHI T N",
+          "slNo": 56,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI063",
+          "name": "LIKHITH GUJJAR A",
+          "slNo": 57,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI064",
+          "name": "LIKITH CHOWDARY",
+          "slNo": 58,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI065",
+          "name": "M B PRAJWAL",
+          "slNo": 59,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI066",
+          "name": "M N SHREYAS",
+          "slNo": 60,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI067",
+          "name": "M S ANAGHA",
+          "slNo": 61,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI068",
+          "name": "MALAGUNDLA UDITHA",
+          "slNo": 62,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI069",
+          "name": "MANASA",
+          "slNo": 63,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI070",
+          "name": "MANASA S N",
+          "slNo": 64,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI071",
+          "name": "MANASI NAIK",
+          "slNo": 65,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI073",
+          "name": "MANU P",
+          "slNo": 66,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI075",
+          "name": "MITESH J UPADHYA",
+          "slNo": 67,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI076",
+          "name": "MOHAMMED RAYYAN FAIZAN",
+          "slNo": 68,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI078",
+          "name": "MOHD EHTESHAAM KHAN",
+          "slNo": 69,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI079",
+          "name": "MUDIT SAJAL",
+          "slNo": 70,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI081",
+          "name": "NEERAJ KUMAR",
+          "slNo": 71,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI082",
+          "name": "NEHA",
+          "slNo": 72,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI083",
+          "name": "NEHA BAFNA",
+          "slNo": 73,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI084",
+          "name": "NIRANJAN MURTHY V",
+          "slNo": 74,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI085",
+          "name": "NITHESSHKUMAR JEER SRIDHAR",
+          "slNo": 75,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI086",
+          "name": "OM ARYA BS",
+          "slNo": 76,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI087",
+          "name": "PATIL ADITYA MAHENDRA",
+          "slNo": 77,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI088",
+          "name": "PAVAN KUMAR SHARAVANA",
+          "slNo": 78,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI090",
+          "name": "PRANAV",
+          "slNo": 79,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI091",
+          "name": "PRANAV JAHAGIRDAR",
+          "slNo": 80,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI092",
+          "name": "PRANAV VEERAGHANTA",
+          "slNo": 81,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI093",
+          "name": "PRARTHANA G",
+          "slNo": 82,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI094",
+          "name": "PRASHANTH S",
+          "slNo": 83,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI095",
+          "name": "PRATHAM C PRIYA",
+          "slNo": 84,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI096",
+          "name": "PRATHAM KAMANI",
+          "slNo": 85,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI097",
+          "name": "PRAVEEN SURESH MIRJI",
+          "slNo": 86,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI098",
+          "name": "PREKSHA R",
+          "slNo": 87,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI099",
+          "name": "PRINCE JAIN",
+          "slNo": 88,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI100",
+          "name": "PRIYAM AGARWAL",
+          "slNo": 89,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI101",
+          "name": "PRIYANSHI SONI",
+          "slNo": 90,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI102",
+          "name": "R SUMAN",
+          "slNo": 91,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI103",
+          "name": "RADHIKA AGARWAL",
+          "slNo": 92,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI105",
+          "name": "RASHMI S G",
+          "slNo": 93,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI106",
+          "name": "RIDDHI CHAHAL",
+          "slNo": 94,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI107",
+          "name": "RISHI",
+          "slNo": 95,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI108",
+          "name": "RITIK RAJ",
+          "slNo": 96,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI109",
+          "name": "RUBHAH SHERIFF",
+          "slNo": 97,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI110",
+          "name": "RUPALI A R",
+          "slNo": 98,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI111",
+          "name": "RUSHIL G GOWDA",
+          "slNo": 99,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI112",
+          "name": "SAANVI HEGDE",
+          "slNo": 100,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI114",
+          "name": "SAIFI ALI",
+          "slNo": 101,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI115",
+          "name": "SAKHAMOORI KRISHNA SAKET",
+          "slNo": 102,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI116",
+          "name": "SAKSHI",
+          "slNo": 103,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI117",
+          "name": "SAMSKRUTHI S GNANESH",
+          "slNo": 104,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI120",
+          "name": "SHAH GAURAV DEEPU",
+          "slNo": 105,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI121",
+          "name": "SHILPA K N",
+          "slNo": 106,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI123",
+          "name": "SHIVOLEN MOODLEY",
+          "slNo": 107,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI124",
+          "name": "SHREYA PADAKI",
+          "slNo": 108,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI125",
+          "name": "SHREYAS SACHIN KSHATRIYA",
+          "slNo": 109,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI126",
+          "name": "SHRIYA SAI",
+          "slNo": 110,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI127",
+          "name": "SHRUJAL",
+          "slNo": 111,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI128",
+          "name": "SIDDHARTH SAHAY",
+          "slNo": 112,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI129",
+          "name": "SONU KUMAR",
+          "slNo": 113,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI131",
+          "name": "SRIHARSHA K",
+          "slNo": 114,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI132",
+          "name": "SRINIDHI S MATTUR",
+          "slNo": 115,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI133",
+          "name": "SRIVATSA J",
+          "slNo": 116,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI134",
+          "name": "SRUJAN B J",
+          "slNo": 117,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI135",
+          "name": "SRUJAN RAJESH KUMAR",
+          "slNo": 118,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI136",
+          "name": "SUCHI V YADAV",
+          "slNo": 119,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI137",
+          "name": "SUDHANVA S BHARADWAJ",
+          "slNo": 120,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI138",
+          "name": "SUHA UROOJ IRFAN",
+          "slNo": 121,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI139",
+          "name": "SUHAAS R",
+          "slNo": 122,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI140",
+          "name": "SUJAN S HEGDE",
+          "slNo": 123,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI141",
+          "name": "SUMIT RIMAL",
+          "slNo": 124,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI142",
+          "name": "SUPRIYA C S",
+          "slNo": 125,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI143",
+          "name": "SURYA KIRAN K",
+          "slNo": 126,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI144",
+          "name": "TANVIR SHEKHAWAT",
+          "slNo": 127,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI145",
+          "name": "TARUN RAKSHAN B S",
+          "slNo": 128,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI146",
+          "name": "TEJAS M G",
+          "slNo": 129,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI147",
+          "name": "THILAK T",
+          "slNo": 130,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI148",
+          "name": "UJWAL R SHETTY",
+          "slNo": 131,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI149",
+          "name": "V MADHUMITA",
+          "slNo": 132,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI150",
+          "name": "VARSHA THAKUR",
+          "slNo": 133,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI151",
+          "name": "VIGNESH MADAN",
+          "slNo": 134,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI152",
+          "name": "VINAY YELE",
+          "slNo": 135,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI153",
+          "name": "VIPASA VIJESH",
+          "slNo": 136,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI154",
+          "name": "VISHAL JAYANTH RAJ V",
+          "slNo": 137,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI155",
+          "name": "VISHESH BISHNOI",
+          "slNo": 138,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI156",
+          "name": "YANDURI SOORYA PRAVEEN",
+          "slNo": 139,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI157",
+          "name": "YASHAS NANDAN S",
+          "slNo": 140,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI159",
+          "name": "YOGESH R",
+          "slNo": 141,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI161",
+          "name": "V KARTHIK GANESH",
+          "slNo": 142,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI162",
+          "name": "AJITESH GUPTA",
+          "slNo": 143,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI163",
+          "name": "HANNAH BIJU PUNNOOSE",
+          "slNo": 144,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI164",
+          "name": "A ASHISH",
+          "slNo": 145,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI165",
+          "name": "THARUN B S",
+          "slNo": 146,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI166",
+          "name": "ASHRAY K A",
+          "slNo": 147,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI167",
+          "name": "DHEERAJ S",
+          "slNo": 148,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM22AI168",
+          "name": "SYEDA KULSUM UNNISA",
+          "slNo": 149,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI400",
+          "name": "ARYAN UPPUGANTI",
+          "slNo": 150,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI401",
+          "name": "CHANDANA C M",
+          "slNo": 151,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI402",
+          "name": "CHANDRASHEKAR M",
+          "slNo": 152,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI403",
+          "name": "DARSHAN HOSAMANI",
+          "slNo": 153,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI404",
+          "name": "HONNUR SAB H B",
+          "slNo": 154,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI405",
+          "name": "KUMARA K C",
+          "slNo": 155,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI406",
+          "name": "KUMARASWAMY G",
+          "slNo": 156,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI407",
+          "name": "LAVANYA D L",
+          "slNo": 157,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI408",
+          "name": "MATHIAS PRAJWAL D'SOUZA",
+          "slNo": 158,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI409",
+          "name": "PARIMALA S",
+          "slNo": 159,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI410",
+          "name": "PREETI PATIL",
+          "slNo": 160,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI411",
+          "name": "SANJANA D",
+          "slNo": 161,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI412",
+          "name": "SANJANA PRALHAD HARAKUNI",
+          "slNo": 162,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        },
+        {
+          "usn": "1BM23AI413",
+          "name": "VARSHGANDHI",
+          "slNo": 163,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2022,
+          "currentSemester": 7
+        }
+      ]
+    },
+    "2023": {
+      "batchYear": 2023,
+      "currentSemester": 5,
+      "academicYear": "2025-26",
+      "session": "Aug 2025 - Dec 2025",
+      "totalStudents": 243,
+      "students": [
+        {
+          "usn": "1BM23AI001",
+          "name": "A JAYALAKSHMI",
+          "slNo": 1,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI003",
+          "name": "ABHAY K R",
+          "slNo": 2,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI004",
+          "name": "ABHIJNA SP",
+          "slNo": 3,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI005",
+          "name": "ABHISHEK",
+          "slNo": 4,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI006",
+          "name": "ABHISHEK KUMAR JHA",
+          "slNo": 5,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI008",
+          "name": "ADITHYA K L",
+          "slNo": 6,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI009",
+          "name": "ADITHYA VIPIN",
+          "slNo": 7,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI011",
+          "name": "ADITYA K S",
+          "slNo": 8,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI012",
+          "name": "AFRIN M T P",
+          "slNo": 9,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI013",
+          "name": "AKASH BHARADWAJ",
+          "slNo": 10,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI014",
+          "name": "AKIF KARUVATH",
+          "slNo": 11,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI015",
+          "name": "AKSHAYA BHARADHWAJ C",
+          "slNo": 12,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI016",
+          "name": "ALI ASGAR JAIPURI",
+          "slNo": 13,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI017",
+          "name": "AMAN TULSIYAN",
+          "slNo": 14,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI018",
+          "name": "AMOGH K S",
+          "slNo": 15,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI019",
+          "name": "AMRITH THEJAS",
+          "slNo": 16,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI020",
+          "name": "ANANYA MANOHARAN",
+          "slNo": 17,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI021",
+          "name": "ANEESHA MANJUNATH IYER",
+          "slNo": 18,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI023",
+          "name": "ANIRUDH KUPPAM",
+          "slNo": 19,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI025",
+          "name": "ANKITH KRISHNA BHARGAV",
+          "slNo": 20,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI027",
+          "name": "ANSHUL RAI",
+          "slNo": 21,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI028",
+          "name": "ANSHUL S GOWDA",
+          "slNo": 22,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI029",
+          "name": "ANUJ SRINIVAS",
+          "slNo": 23,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI030",
+          "name": "ANUSHREE SHETTY",
+          "slNo": 24,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI031",
+          "name": "APOORV ANAND",
+          "slNo": 25,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI032",
+          "name": "ARADHYA",
+          "slNo": 26,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI033",
+          "name": "ARNAV RAJAWAT",
+          "slNo": 27,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI034",
+          "name": "ARUSHI N UPPARIGE",
+          "slNo": 28,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI035",
+          "name": "ARYAN A",
+          "slNo": 29,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI036",
+          "name": "ARYAN K A",
+          "slNo": 30,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI037",
+          "name": "ARYAN KUMAR",
+          "slNo": 31,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI038",
+          "name": "ASHWATH L",
+          "slNo": 32,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI039",
+          "name": "ASMITHA REDDY M",
+          "slNo": 33,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI040",
+          "name": "B ROSHINI",
+          "slNo": 34,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI041",
+          "name": "BATUL H SURATWALA",
+          "slNo": 35,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI042",
+          "name": "BHOOMPALLE VISHNU VARDHAN REDDY",
+          "slNo": 36,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI043",
+          "name": "BHUMIKA S",
+          "slNo": 37,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI044",
+          "name": "BIBEK AGRAHARI",
+          "slNo": 38,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI045",
+          "name": "BOORLAGADDA DEVA SATYA KSHEERAJ",
+          "slNo": 39,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI046",
+          "name": "BOTTA VIGHNESH",
+          "slNo": 40,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI047",
+          "name": "BUKKAPATNAM MANISHA RAJ",
+          "slNo": 41,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI048",
+          "name": "C DISHA",
+          "slNo": 42,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI049",
+          "name": "C YUKTHA SHREE",
+          "slNo": 43,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI050",
+          "name": "CHANNABASAVANNA M B",
+          "slNo": 44,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI051",
+          "name": "CHARAN GOVIND NAIK",
+          "slNo": 45,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI052",
+          "name": "CHETHANA T V",
+          "slNo": 46,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI054",
+          "name": "DARSHAN NAYAKA R",
+          "slNo": 47,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI055",
+          "name": "DAVID FRANCIS JOSEPH",
+          "slNo": 48,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI056",
+          "name": "DEVANSH AGRAWAL",
+          "slNo": 49,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI057",
+          "name": "DHANYA A R",
+          "slNo": 50,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI058",
+          "name": "DHANYASHREE S",
+          "slNo": 51,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI059",
+          "name": "DHANYU C",
+          "slNo": 52,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI061",
+          "name": "DHRUVA G S",
+          "slNo": 53,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI062",
+          "name": "DISHA NAGARAJA KABBINADA",
+          "slNo": 54,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI063",
+          "name": "DIVYAM JAIN",
+          "slNo": 55,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI064",
+          "name": "DOMMETI PRANAV SAI",
+          "slNo": 56,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI065",
+          "name": "EERTHINENI ANUPAMA",
+          "slNo": 57,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI066",
+          "name": "EKALAVYA S TANTRY",
+          "slNo": 58,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI067",
+          "name": "ESHAN GOWDA D K",
+          "slNo": 59,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI068",
+          "name": "GANESH KUMAR MAHATO",
+          "slNo": 60,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI069",
+          "name": "GNANESHWARI K L",
+          "slNo": 61,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI070",
+          "name": "GOUTHAM TARANAGAR GANDI",
+          "slNo": 62,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI071",
+          "name": "GOWTHAM R",
+          "slNo": 63,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI072",
+          "name": "GURUPRIYA AVADHANI M M",
+          "slNo": 64,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI073",
+          "name": "H S ADWI",
+          "slNo": 65,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI074",
+          "name": "HAMSASHREE D N",
+          "slNo": 66,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI075",
+          "name": "HARSHIT R JAIN",
+          "slNo": 67,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI076",
+          "name": "HRITHIK M",
+          "slNo": 68,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI077",
+          "name": "INCHARA C",
+          "slNo": 69,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI078",
+          "name": "K KARTHIK",
+          "slNo": 70,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI079",
+          "name": "KANAKAGIRI PHANI SAMVITH",
+          "slNo": 71,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI080",
+          "name": "KARTHIK K",
+          "slNo": 72,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI082",
+          "name": "KEVIN ROY",
+          "slNo": 73,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI083",
+          "name": "KISHAN B",
+          "slNo": 74,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI084",
+          "name": "KRISH N JAIN",
+          "slNo": 75,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI085",
+          "name": "KUSHAL B N",
+          "slNo": 76,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI086",
+          "name": "LAHARI B K",
+          "slNo": 77,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI087",
+          "name": "LAKSHITH B G",
+          "slNo": 78,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI088",
+          "name": "LAKSHMISH R KANCHAN",
+          "slNo": 79,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI089",
+          "name": "LIKITH R",
+          "slNo": 80,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI090",
+          "name": "LISHIKA S",
+          "slNo": 81,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI091",
+          "name": "M P HARSHITHA",
+          "slNo": 82,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI092",
+          "name": "M S AASHISH",
+          "slNo": 83,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI093",
+          "name": "M SAI HARSHA",
+          "slNo": 84,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI094",
+          "name": "MADHU U",
+          "slNo": 85,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI095",
+          "name": "MADHULIKA PRAVEEN",
+          "slNo": 86,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI096",
+          "name": "MAHIT A R",
+          "slNo": 87,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI097",
+          "name": "MANASA H S",
+          "slNo": 88,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI098",
+          "name": "MANJARI M VARMA",
+          "slNo": 89,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI099",
+          "name": "MD IQBAL",
+          "slNo": 90,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI100",
+          "name": "MEET PATIL",
+          "slNo": 91,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI101",
+          "name": "MEGHARAJ JAYI",
+          "slNo": 92,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI102",
+          "name": "MOHAMMED AQUEEL",
+          "slNo": 93,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI103",
+          "name": "MOHAMMED RAIYAAN",
+          "slNo": 94,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI104",
+          "name": "MOHAMMED SHAHID SHARIFF",
+          "slNo": 95,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI105",
+          "name": "MOHAMMED SHANIF",
+          "slNo": 96,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI106",
+          "name": "MOHAMMED TALHA HAFEEZ",
+          "slNo": 97,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI107",
+          "name": "MONISH P G",
+          "slNo": 98,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI108",
+          "name": "MONISH REDDY B",
+          "slNo": 99,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI109",
+          "name": "NAVIT MATHUR",
+          "slNo": 100,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI110",
+          "name": "NIKHITA V R",
+          "slNo": 101,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI112",
+          "name": "NISHA S",
+          "slNo": 102,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI113",
+          "name": "NITHEESH B",
+          "slNo": 103,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI114",
+          "name": "NITHIN E T",
+          "slNo": 104,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI115",
+          "name": "NITHISHQ M",
+          "slNo": 105,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI116",
+          "name": "NITIN RAVIKUMAR",
+          "slNo": 106,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI117",
+          "name": "NITYA RAVIKUMAR",
+          "slNo": 107,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI118",
+          "name": "OM MANISH MAKADIA",
+          "slNo": 108,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI119",
+          "name": "P PRERANA ACHARYA",
+          "slNo": 109,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI120",
+          "name": "P RISHI",
+          "slNo": 110,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI121",
+          "name": "PAKAM YASASWINI",
+          "slNo": 111,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI122",
+          "name": "PALADUGU GEETESH",
+          "slNo": 112,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI123",
+          "name": "PATHAN SOHAIL KHAN",
+          "slNo": 113,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI124",
+          "name": "PAVAN R N",
+          "slNo": 114,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI125",
+          "name": "POOJA B L",
+          "slNo": 115,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI126",
+          "name": "POORVIKA C NAIK",
+          "slNo": 116,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI127",
+          "name": "PRADYOT BILURKAR",
+          "slNo": 117,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI128",
+          "name": "PRAJWAL GANESH C",
+          "slNo": 118,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI129",
+          "name": "PRANEETH R",
+          "slNo": 119,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI130",
+          "name": "PRANEETHA",
+          "slNo": 120,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI131",
+          "name": "PRANJAL SEN",
+          "slNo": 121,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI132",
+          "name": "PRANJALA D KATTIGEHALLY",
+          "slNo": 122,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI133",
+          "name": "PREM RATHOD",
+          "slNo": 123,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI136",
+          "name": "PRIYAM SARKAR",
+          "slNo": 124,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI138",
+          "name": "R PRIYANKA",
+          "slNo": 125,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI139",
+          "name": "RAHUL HONGEKAR",
+          "slNo": 126,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI140",
+          "name": "RAJ SANJAY ASRANI",
+          "slNo": 127,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI141",
+          "name": "RAJASHEKAR GOWDA",
+          "slNo": 128,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI142",
+          "name": "RAJASHREE SHANKARA NARAYANA",
+          "slNo": 129,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI143",
+          "name": "RAJESHA V",
+          "slNo": 130,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI144",
+          "name": "RAKSHITA BHAVI",
+          "slNo": 131,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI145",
+          "name": "RANGANATH R",
+          "slNo": 132,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI146",
+          "name": "RATAKONDA VENKATA MOHUL AMOG",
+          "slNo": 133,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI147",
+          "name": "RAUNAK RAMBRICH SAW",
+          "slNo": 134,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI148",
+          "name": "REEM RASHID",
+          "slNo": 135,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI149",
+          "name": "RENGANAYAKI MURUGESH",
+          "slNo": 136,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI151",
+          "name": "RITIKHA RAJ",
+          "slNo": 137,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI152",
+          "name": "RIYA KUMARI",
+          "slNo": 138,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI154",
+          "name": "ROSHAN N",
+          "slNo": 139,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI155",
+          "name": "ROSHANTH V",
+          "slNo": 140,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI156",
+          "name": "RUTHIKA S",
+          "slNo": 141,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI157",
+          "name": "S M KOUSHIK",
+          "slNo": 142,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI158",
+          "name": "S S GOKULA SWAMY",
+          "slNo": 143,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI159",
+          "name": "S SANJANA",
+          "slNo": 144,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI160",
+          "name": "SAACHI KULKARNI",
+          "slNo": 145,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI161",
+          "name": "SACHIN R N",
+          "slNo": 146,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI162",
+          "name": "SAHANA BUKINAKERE KEERTHI",
+          "slNo": 147,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI163",
+          "name": "SAHANA K SONNI",
+          "slNo": 148,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI164",
+          "name": "SAI SHREEKAR G",
+          "slNo": 149,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI165",
+          "name": "SAI SUJAN A M",
+          "slNo": 150,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI166",
+          "name": "SAIKUMAR R",
+          "slNo": 151,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI168",
+          "name": "SAMRUDHA S KASHYAP",
+          "slNo": 152,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI169",
+          "name": "SANDEEP N",
+          "slNo": 153,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI170",
+          "name": "SANJANA K",
+          "slNo": 154,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI171",
+          "name": "SARAYU K S",
+          "slNo": 155,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI173",
+          "name": "SHAMRATHA G",
+          "slNo": 156,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI174",
+          "name": "SHASHANK BHAT",
+          "slNo": 157,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI175",
+          "name": "SHASHANK V R",
+          "slNo": 158,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI176",
+          "name": "SHINCHANA R REDDY",
+          "slNo": 159,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI177",
+          "name": "SHREEVARA",
+          "slNo": 160,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI178",
+          "name": "SHREYAS B JOSHI",
+          "slNo": 161,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI180",
+          "name": "SHREYASHREE C R",
+          "slNo": 162,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI181",
+          "name": "SHRIYANS NAYAK",
+          "slNo": 163,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI182",
+          "name": "SIDDHANT VAIBHAV",
+          "slNo": 164,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI183",
+          "name": "SINCHANA K",
+          "slNo": 165,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI184",
+          "name": "SINGEETHAM MADHUKAR",
+          "slNo": 166,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI185",
+          "name": "SMAYA SADANAND MABEN",
+          "slNo": 167,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI186",
+          "name": "SNEHA PARASHURAM",
+          "slNo": 168,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI187",
+          "name": "SOMANATH SIDDAPPA DUMBALI",
+          "slNo": 169,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI188",
+          "name": "SRI SOWMI K P",
+          "slNo": 170,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI189",
+          "name": "SRIKANTH MANDAYAM ANNADORAY",
+          "slNo": 171,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI190",
+          "name": "SUDARSHAN P S",
+          "slNo": 172,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI191",
+          "name": "SUDHA NAGA SREE NITHYA",
+          "slNo": 173,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI192",
+          "name": "SUNIKSHA PRIYA DEVRAJ SUNILKUMAR",
+          "slNo": 174,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI193",
+          "name": "SUPREETH B R AARAADHYA",
+          "slNo": 175,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI194",
+          "name": "SYED MOHAMMED AFROSE",
+          "slNo": 176,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI195",
+          "name": "TANISHA",
+          "slNo": 177,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI196",
+          "name": "TEJAS B RAJU",
+          "slNo": 178,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI197",
+          "name": "TEJAS C M",
+          "slNo": 179,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI198",
+          "name": "TEJAS S",
+          "slNo": 180,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI199",
+          "name": "THEJAS GANGADKAR",
+          "slNo": 181,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI200",
+          "name": "THIJESH PRAVEEN V",
+          "slNo": 182,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI201",
+          "name": "THILAK H M",
+          "slNo": 183,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI202",
+          "name": "TUSHAR",
+          "slNo": 184,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI203",
+          "name": "UDAY KUMAR M",
+          "slNo": 185,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI204",
+          "name": "VAISHNAVI B",
+          "slNo": 186,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI206",
+          "name": "VARSHA TOLANI",
+          "slNo": 187,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI207",
+          "name": "VARSHA V KUMAR",
+          "slNo": 188,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI209",
+          "name": "VEDIKA RAJASHEKAR",
+          "slNo": 189,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI210",
+          "name": "VEGESNA KETAN SATVIK VARMA",
+          "slNo": 190,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI211",
+          "name": "VIRAT MALVIYA",
+          "slNo": 191,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI212",
+          "name": "VISHAL KUMAR",
+          "slNo": 192,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI213",
+          "name": "VISHAL S",
+          "slNo": 193,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI214",
+          "name": "VISHRUTH S REDDY",
+          "slNo": 194,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI215",
+          "name": "VISHRUTH VIJAY KUMAR",
+          "slNo": 195,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI216",
+          "name": "VIVASH JAVALI",
+          "slNo": 196,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI217",
+          "name": "VIVYN M J",
+          "slNo": 197,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI218",
+          "name": "YAGYA PRUTHI",
+          "slNo": 198,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI219",
+          "name": "YASH KUMAR",
+          "slNo": 199,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI220",
+          "name": "YASHAS K P",
+          "slNo": 200,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI221",
+          "name": "YASHAS M",
+          "slNo": 201,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI222",
+          "name": "YASHASWINI N",
+          "slNo": 202,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI223",
+          "name": "YASHVI G NARIELWALA",
+          "slNo": 203,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI224",
+          "name": "HARSH RAJ",
+          "slNo": 204,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI225",
+          "name": "LAKSHYA KHAMESRA",
+          "slNo": 205,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI226",
+          "name": "VAGEESH G N",
+          "slNo": 206,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI227",
+          "name": "ADITYA KUMAR SINGH",
+          "slNo": 207,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI228",
+          "name": "AAYUSH RANJAN",
+          "slNo": 208,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI229",
+          "name": "ANUSHKA SINHA",
+          "slNo": 209,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI230",
+          "name": "MAYANK JHA",
+          "slNo": 210,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI231",
+          "name": "CHINMAYEE G",
+          "slNo": 211,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI232",
+          "name": "V TANMAY KRISHNA",
+          "slNo": 212,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI233",
+          "name": "ABHINAV RAJ VERMA",
+          "slNo": 213,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI234",
+          "name": "B SAI SAHITHI",
+          "slNo": 214,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI235",
+          "name": "B THANMAI",
+          "slNo": 215,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI236",
+          "name": "SUBHAYU CHAKRABORTY",
+          "slNo": 216,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI237",
+          "name": "NIKHIL KUMAR SINGH",
+          "slNo": 217,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI238",
+          "name": "RITIKA ROY",
+          "slNo": 218,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI239",
+          "name": "VINEETH D",
+          "slNo": 219,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI240",
+          "name": "RAJATH HARSHA",
+          "slNo": 220,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI241",
+          "name": "VANSH PARYANI",
+          "slNo": 221,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI242",
+          "name": "AKSHAY PRASATH N M",
+          "slNo": 222,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM23AI243",
+          "name": "HITEN SHASHI KUMAR",
+          "slNo": 223,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI400",
+          "name": "ADITYA RAJ C",
+          "slNo": 224,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI401",
+          "name": "AHAS KAUSHIK",
+          "slNo": 225,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI402",
+          "name": "AKSHAY BASUTKAR",
+          "slNo": 226,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI403",
+          "name": "AMRUTA M ITI",
+          "slNo": 227,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI404",
+          "name": "ANUSHA V",
+          "slNo": 228,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI405",
+          "name": "BHARATH KUMAR T K",
+          "slNo": 229,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI406",
+          "name": "BHAVANA K C",
+          "slNo": 230,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI407",
+          "name": "D M ABDUL RAZZAQ",
+          "slNo": 231,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI408",
+          "name": "FASI OWAIZ AHMED",
+          "slNo": 232,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI409",
+          "name": "JEEVAN RAVINDRA KUNTER",
+          "slNo": 233,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI410",
+          "name": "LOHITH M",
+          "slNo": 234,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI411",
+          "name": "NAVEEN KUMAR N",
+          "slNo": 235,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI412",
+          "name": "NEMGOUNDER GEETA AJIT",
+          "slNo": 236,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI413",
+          "name": "PALLAVI M R",
+          "slNo": 237,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI414",
+          "name": "RAVVA NAGARJUN",
+          "slNo": 238,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI415",
+          "name": "RIZAULLA AHMED S A",
+          "slNo": 239,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI416",
+          "name": "SANGEETA",
+          "slNo": 240,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI417",
+          "name": "SAYAM HIRACHAND PADMANNAVAR",
+          "slNo": 241,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI418",
+          "name": "SHASHANK R",
+          "slNo": 242,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        },
+        {
+          "usn": "1BM24AI419",
+          "name": "SIDDHALING RAJASHEKHAR HILLI",
+          "slNo": 243,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2023,
+          "currentSemester": 5
+        }
+      ]
+    },
+    "2024": {
+      "batchYear": 2024,
+      "currentSemester": 3,
+      "academicYear": "2025-26",
+      "session": "Sept 2025 - Jan 2026",
+      "totalStudents": 201,
+      "students": [
+        {
+          "usn": "1BM24AI001",
+          "name": "ABHIMAAN KONUGANTI",
+          "slNo": 195,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI002",
+          "name": "ADARSH GANAPATI HEGDE",
+          "slNo": 196,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI003",
+          "name": "ADITI D",
+          "slNo": 197,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI004",
+          "name": "ADITYA",
+          "slNo": 198,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI005",
+          "name": "ADITYA MARIMGANTI",
+          "slNo": 199,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI006",
+          "name": "AHMED IBRAHIM PADINHAKARA",
+          "slNo": 200,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI007",
+          "name": "AISHWARYA",
+          "slNo": 201,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI008",
+          "name": "AKASH MAHANTESH PATTANASHETTI",
+          "slNo": 202,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI009",
+          "name": "AKASH SHASHIDHAR HOOGAR",
+          "slNo": 203,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI010",
+          "name": "AKASH SHIVALINGAPPA ATHANI",
+          "slNo": 204,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI011",
+          "name": "AKSHAY BHAT",
+          "slNo": 205,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI012",
+          "name": "ALOK RAMACHANDRA HEGDE",
+          "slNo": 206,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI013",
+          "name": "AMRUTHA J SHENOY",
+          "slNo": 207,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI014",
+          "name": "AMULYA R",
+          "slNo": 208,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI015",
+          "name": "ANAGHA AITHALA SARAPADI",
+          "slNo": 209,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI016",
+          "name": "ANAMIKA DUBEY",
+          "slNo": 210,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI017",
+          "name": "ANANYA",
+          "slNo": 211,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI018",
+          "name": "ANANYA SUSAN JACOB",
+          "slNo": 212,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI019",
+          "name": "ANIRUDH PRABHU",
+          "slNo": 213,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI020",
+          "name": "ANKITH GOWDA I M",
+          "slNo": 214,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI021",
+          "name": "ANUSHREE KONDUR",
+          "slNo": 215,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI022",
+          "name": "APOORVA N IYENGAR",
+          "slNo": 216,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI023",
+          "name": "ARCHANAA S R",
+          "slNo": 217,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI024",
+          "name": "ARYA J",
+          "slNo": 218,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI025",
+          "name": "ARYAN URS M N",
+          "slNo": 219,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI026",
+          "name": "ARYAN VINAY M",
+          "slNo": 220,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI027",
+          "name": "AWAIZ S",
+          "slNo": 221,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI028",
+          "name": "B V UDAY SAI",
+          "slNo": 222,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI029",
+          "name": "BHARGAVA S",
+          "slNo": 223,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI030",
+          "name": "BHUMIKA S PATIL",
+          "slNo": 224,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI031",
+          "name": "BHUVAN N",
+          "slNo": 225,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI032",
+          "name": "BHUVANESH S KUMAR",
+          "slNo": 226,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI033",
+          "name": "CHAITANYA MESTA",
+          "slNo": 227,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI034",
+          "name": "CHAITHAN",
+          "slNo": 228,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI035",
+          "name": "CHAITHRALAKSHMI T U",
+          "slNo": 229,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI036",
+          "name": "CHANDU DARSHINI A N",
+          "slNo": 230,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI037",
+          "name": "CHIRANTH G H",
+          "slNo": 231,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI038",
+          "name": "CHITTARA D",
+          "slNo": 232,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI039",
+          "name": "DARSHAN B",
+          "slNo": 233,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI040",
+          "name": "DASARI LALIT",
+          "slNo": 234,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI041",
+          "name": "DEEPAK VAGEESH VALI",
+          "slNo": 235,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI042",
+          "name": "DEEPASHREE D",
+          "slNo": 236,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI043",
+          "name": "DEVARAJ",
+          "slNo": 237,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI044",
+          "name": "DISHA P",
+          "slNo": 238,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI045",
+          "name": "DODDABASAVA",
+          "slNo": 239,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI046",
+          "name": "GADEMSETTI SHIVAM",
+          "slNo": 240,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI047",
+          "name": "GAGAN B C",
+          "slNo": 241,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI048",
+          "name": "GAGAN P",
+          "slNo": 242,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI049",
+          "name": "GANESH",
+          "slNo": 243,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI050",
+          "name": "GAURAV ARYA M",
+          "slNo": 244,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI051",
+          "name": "GAURAV K V",
+          "slNo": 245,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI052",
+          "name": "GNYANESHWARI",
+          "slNo": 246,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI053",
+          "name": "GOUTAM GHANTEPPAGOL",
+          "slNo": 247,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI054",
+          "name": "GOUTHAM KUMAR K S",
+          "slNo": 248,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI055",
+          "name": "GOWTHAM D",
+          "slNo": 249,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI056",
+          "name": "GURUNATH S SINGE",
+          "slNo": 250,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI057",
+          "name": "HARSHITHA V",
+          "slNo": 251,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI058",
+          "name": "HITHESH S",
+          "slNo": 252,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI059",
+          "name": "JAYASHYAM S",
+          "slNo": 253,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI060",
+          "name": "JEET PARIMAL MONANI",
+          "slNo": 254,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI061",
+          "name": "JOGI MOKSHAGNA",
+          "slNo": 255,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI062",
+          "name": "JUNAID SHAIK",
+          "slNo": 256,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI063",
+          "name": "K PALLAVI",
+          "slNo": 257,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI064",
+          "name": "KARTHIK R",
+          "slNo": 258,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI065",
+          "name": "KARTHIK REDDY B P",
+          "slNo": 259,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI066",
+          "name": "KARTIK SHAHAJI GHORPADE",
+          "slNo": 260,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI067",
+          "name": "KAVANA A Y",
+          "slNo": 261,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI068",
+          "name": "KHUSHI G F",
+          "slNo": 262,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI069",
+          "name": "KHUSHI H",
+          "slNo": 263,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI070",
+          "name": "KOVURU MAHENDRA",
+          "slNo": 264,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI071",
+          "name": "KUSHAL KUMAR N",
+          "slNo": 265,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI072",
+          "name": "LAKSHMI KANTH B R",
+          "slNo": 266,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI073",
+          "name": "LAKSHMI NAVANEESHWAR REDDY KANCHAMREDDY",
+          "slNo": 267,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI074",
+          "name": "LALITH MADALA",
+          "slNo": 268,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI075",
+          "name": "LIKHITH GANESH C V",
+          "slNo": 269,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI076",
+          "name": "LOCHAN G CHENNUR",
+          "slNo": 270,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI077",
+          "name": "M ABHINAV",
+          "slNo": 271,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI078",
+          "name": "M SUJEETH",
+          "slNo": 272,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI079",
+          "name": "M VAIBHAV",
+          "slNo": 273,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI080",
+          "name": "MAHATHI REDDY G",
+          "slNo": 274,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI081",
+          "name": "MALLESH LAXMAN NEMAGOUD",
+          "slNo": 275,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI082",
+          "name": "MALYALA SONIKA",
+          "slNo": 276,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI083",
+          "name": "MANITH S",
+          "slNo": 277,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI084",
+          "name": "MANJUNATH",
+          "slNo": 278,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI085",
+          "name": "MAYUR NAGESH YAKKUNDI",
+          "slNo": 279,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI086",
+          "name": "MILAN V S",
+          "slNo": 280,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI087",
+          "name": "MOHAMMED ALI",
+          "slNo": 281,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI088",
+          "name": "MOHAMMED FAHIM",
+          "slNo": 282,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI089",
+          "name": "MOHITH B M",
+          "slNo": 283,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI090",
+          "name": "MONISH M",
+          "slNo": 284,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI091",
+          "name": "MOURYA H P",
+          "slNo": 285,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI092",
+          "name": "N ARVIND RAJ",
+          "slNo": 286,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI093",
+          "name": "N HARSHITHA",
+          "slNo": 287,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI094",
+          "name": "N PUNITH ARADHYA",
+          "slNo": 288,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI095",
+          "name": "NAGAVENI R P",
+          "slNo": 289,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI096",
+          "name": "NAMEETA BASAVARAJ MAMADAPUR",
+          "slNo": 290,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI097",
+          "name": "NAMRATA ADIGA",
+          "slNo": 291,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI098",
+          "name": "NANDAN N",
+          "slNo": 292,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI099",
+          "name": "NIBHA ROKIRAN",
+          "slNo": 293,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI100",
+          "name": "NIKHIL SRINIVAS",
+          "slNo": 294,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI101",
+          "name": "NISHA N",
+          "slNo": 295,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI102",
+          "name": "NISHAL RADHAKRISHNA NAYAK",
+          "slNo": 296,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI103",
+          "name": "NISHANTH C L",
+          "slNo": 297,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI104",
+          "name": "NISHCHAL N SALIGRAM",
+          "slNo": 298,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI105",
+          "name": "NITHIN G S",
+          "slNo": 299,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI106",
+          "name": "NITHYASHREE NATARAJ",
+          "slNo": 300,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI107",
+          "name": "NITYA R PAWAR",
+          "slNo": 301,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI108",
+          "name": "P DURGASHYAMANTH",
+          "slNo": 302,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI109",
+          "name": "PADMAVATHI K M",
+          "slNo": 303,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI110",
+          "name": "PAVANKALYAN K J",
+          "slNo": 304,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI111",
+          "name": "POORVA C",
+          "slNo": 305,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI112",
+          "name": "POORVIKA H",
+          "slNo": 306,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI113",
+          "name": "PRAJWAL C V",
+          "slNo": 307,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI114",
+          "name": "PRAJWAL V MARALIHALLI",
+          "slNo": 308,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI115",
+          "name": "PRANATHA M R",
+          "slNo": 309,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI116",
+          "name": "PRATEEK RAGHAVENDRA",
+          "slNo": 310,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI117",
+          "name": "PRATISH HALLALE",
+          "slNo": 311,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI118",
+          "name": "PREETHAM K S",
+          "slNo": 312,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI119",
+          "name": "PRITHVI CARIAPPA P C",
+          "slNo": 313,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI120",
+          "name": "PRIYADARSHAN SHASHIDHAR NAYAK",
+          "slNo": 314,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI121",
+          "name": "PUNYA G V SUBEDHAR",
+          "slNo": 315,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI122",
+          "name": "RAHUL PUJER",
+          "slNo": 316,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI123",
+          "name": "RAMAKRISHNA REDDY",
+          "slNo": 317,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI124",
+          "name": "RASHMITHA NAIK",
+          "slNo": 318,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI125",
+          "name": "RITHIN KUMAR T",
+          "slNo": 319,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI126",
+          "name": "RIYA JAIN H C",
+          "slNo": 320,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI127",
+          "name": "ROHAN P HEGDE",
+          "slNo": 321,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI128",
+          "name": "ROHIT JAYAVITHAL KUBAL",
+          "slNo": 322,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI129",
+          "name": "ROHITH KUMAR",
+          "slNo": 323,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI130",
+          "name": "RUTHUSHREE",
+          "slNo": 324,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI131",
+          "name": "RUTVIK S UPADHYA",
+          "slNo": 325,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI132",
+          "name": "SAAKSHI C B",
+          "slNo": 326,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI133",
+          "name": "SAHANA BOUDH K S",
+          "slNo": 327,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI134",
+          "name": "SAHANA D A",
+          "slNo": 328,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI135",
+          "name": "SAHITHYA ARJUNAN",
+          "slNo": 329,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI136",
+          "name": "SAI ADITHYA DONAKONDA",
+          "slNo": 330,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI137",
+          "name": "SAI KIRAN",
+          "slNo": 331,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI138",
+          "name": "SAINANDINI M",
+          "slNo": 332,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI139",
+          "name": "SAIVARUN S",
+          "slNo": 333,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI140",
+          "name": "SALMAN S K",
+          "slNo": 334,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI141",
+          "name": "SAMARTH H K",
+          "slNo": 335,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI142",
+          "name": "SAMIKSHA M S",
+          "slNo": 336,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI143",
+          "name": "SAMITH M S",
+          "slNo": 337,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI144",
+          "name": "SANDESH R",
+          "slNo": 338,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI145",
+          "name": "SANJAY GOWDA H D",
+          "slNo": 339,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI146",
+          "name": "SARVESH S VASTRAD",
+          "slNo": 340,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI147",
+          "name": "SATHWIK NIRANJAN",
+          "slNo": 341,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI148",
+          "name": "SEEKE PAVANI",
+          "slNo": 342,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI149",
+          "name": "SHAHIL GAIBAN MULLA",
+          "slNo": 343,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI150",
+          "name": "SHARANYA M",
+          "slNo": 344,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI151",
+          "name": "SHISHIR SIMHA S",
+          "slNo": 345,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI152",
+          "name": "SHIVA KALYAN G",
+          "slNo": 346,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI153",
+          "name": "SHIVATEJA B",
+          "slNo": 347,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI154",
+          "name": "SHRAAVYA JOG",
+          "slNo": 348,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI155",
+          "name": "SHRAVAN SHREEVATHSA C",
+          "slNo": 349,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI156",
+          "name": "SHREEHARSHA S",
+          "slNo": 350,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI157",
+          "name": "SHREYA BHARADWAJ",
+          "slNo": 351,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI158",
+          "name": "SHREYA SANGAPPA KALASAGOND",
+          "slNo": 352,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI159",
+          "name": "SHRIYA K",
+          "slNo": 353,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI160",
+          "name": "SHRIYA SIVA",
+          "slNo": 354,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI161",
+          "name": "SHRUTI ADAGALI",
+          "slNo": 355,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI162",
+          "name": "SHYAM S ANNIGERI",
+          "slNo": 356,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI163",
+          "name": "SMRITHI BHAT G K",
+          "slNo": 357,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI164",
+          "name": "SNEHA N",
+          "slNo": 358,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI165",
+          "name": "SNIGDHA M S",
+          "slNo": 359,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI166",
+          "name": "SONAL K",
+          "slNo": 360,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI167",
+          "name": "SRAJAN",
+          "slNo": 361,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI168",
+          "name": "SUDHANVA SIDDHARTH KAMATAGI",
+          "slNo": 362,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI169",
+          "name": "SUGHOSH P",
+          "slNo": 363,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI170",
+          "name": "SUJAY S KUMAR",
+          "slNo": 364,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI171",
+          "name": "SUKESH N S",
+          "slNo": 365,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI172",
+          "name": "SUMEDH SINGH VIRK",
+          "slNo": 366,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI173",
+          "name": "SUMUKH CHAVAN",
+          "slNo": 367,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI174",
+          "name": "SUPRAJA D",
+          "slNo": 368,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI175",
+          "name": "SURYA K",
+          "slNo": 369,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI176",
+          "name": "SWAPNIL",
+          "slNo": 370,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI177",
+          "name": "TEJAS N A",
+          "slNo": 371,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI178",
+          "name": "TEJASWINI P",
+          "slNo": 372,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI179",
+          "name": "UJWAL VENKATESH",
+          "slNo": 373,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI180",
+          "name": "UTSAV L",
+          "slNo": 374,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI181",
+          "name": "UTSAV RAVIPRAKASH",
+          "slNo": 375,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI182",
+          "name": "V C MOHIT RAO",
+          "slNo": 376,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI183",
+          "name": "VAASTHAV S",
+          "slNo": 377,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI184",
+          "name": "VAIBHAV",
+          "slNo": 378,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI185",
+          "name": "VAISHNAVI SANTOSH BELAVADI",
+          "slNo": 379,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI186",
+          "name": "VARSHALEKHINI L",
+          "slNo": 380,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI187",
+          "name": "VARUN R",
+          "slNo": 381,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI188",
+          "name": "VARUN T",
+          "slNo": 382,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI189",
+          "name": "VIJAI V S",
+          "slNo": 383,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI190",
+          "name": "VIKHYAATH M",
+          "slNo": 384,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI191",
+          "name": "VISHAL KALE",
+          "slNo": 385,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI192",
+          "name": "VISHWA H",
+          "slNo": 386,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI193",
+          "name": "VISHWAS N",
+          "slNo": 387,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI194",
+          "name": "VITTA MOHAN KRISHNA",
+          "slNo": 388,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI195",
+          "name": "VRISHIN DUTT C G",
+          "slNo": 389,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI196",
+          "name": "YESHWANTH J",
+          "slNo": 390,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM24AI197",
+          "name": "SHREYA P NAIDU",
+          "slNo": 391,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM22AI061",
+          "name": "KODIVETTRIVEL J",
+          "slNo": 440,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM23AI053",
+          "name": "DARSHAN KRISHNASWAMY",
+          "slNo": 441,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM23AI081",
+          "name": "KARTHIK V DASAPPA",
+          "slNo": 442,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        },
+        {
+          "usn": "1BM23AI024",
+          "name": "ANISH ANANDKUMAR",
+          "slNo": 443,
+          "remarks": "",
+          "isLateralEntry": false,
+          "batchYear": 2024,
+          "currentSemester": 3
+        }
+      ]
+    }
+  },
+  "lateralEntryStudents": {
+    "totalStudents": 48,
+    "students": [
+      {
+        "usn": "1BM25AI401-T",
+        "name": "PALLAVI V",
+        "slNo": 392,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI402-T",
+        "name": "APOORVA  V",
+        "slNo": 393,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI403-T",
+        "name": "SUDARSHAN  R",
+        "slNo": 394,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI404-T",
+        "name": "S  ROHIT",
+        "slNo": 395,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI405-T",
+        "name": "GOUTHAM V",
+        "slNo": 396,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI406-T",
+        "name": "SAI TEJA K",
+        "slNo": 397,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI407-T",
+        "name": "DEEKSHITH B",
+        "slNo": 398,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI408-T",
+        "name": "SARVARI",
+        "slNo": 399,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI409-T",
+        "name": "ASHITH  ANANDNATH",
+        "slNo": 400,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI410-T",
+        "name": "GOWTHAM  R",
+        "slNo": 401,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI411-T",
+        "name": "POORVA  PATGAONKAR",
+        "slNo": 402,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI412-T",
+        "name": "TANMAY ANAND DIXIT",
+        "slNo": 403,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI413-T",
+        "name": "AKHILGOUDA KRISHNAGOUDA PATIL",
+        "slNo": 404,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI414-T",
+        "name": "H M JEEVAN",
+        "slNo": 405,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI415-T",
+        "name": "PAWAN SHARANAPPA KORI",
+        "slNo": 406,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI416-T",
+        "name": "SAIDEEP BRAHMANAND NAIK",
+        "slNo": 407,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI417-T",
+        "name": "TEJAS KUMAR M",
+        "slNo": 408,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI418-T",
+        "name": "MANOJ G R",
+        "slNo": 409,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI419-T",
+        "name": "TEJAS A L",
+        "slNo": 410,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI420-T",
+        "name": "LIKITHA A M",
+        "slNo": 411,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI421-T",
+        "name": "SAGAR",
+        "slNo": 412,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI422-T",
+        "name": "REVATHI R S",
+        "slNo": 413,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI423-T",
+        "name": "ZAKI T C",
+        "slNo": 414,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI424-T",
+        "name": "RUDRESH S",
+        "slNo": 415,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI425-T",
+        "name": "DARSHAN  A",
+        "slNo": 416,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI426-T",
+        "name": "JAIKUSHAL C",
+        "slNo": 417,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI427-T",
+        "name": "GREESHMA M",
+        "slNo": 418,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI428-T",
+        "name": "AMULYA M B",
+        "slNo": 419,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI429-T",
+        "name": "MANASA B C",
+        "slNo": 420,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI430-T",
+        "name": "AKSHAY S KULKARNI",
+        "slNo": 421,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI431-T",
+        "name": "SHEKHAR ANURAJ JADHAV",
+        "slNo": 422,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI432-T",
+        "name": "MOHAMMADAFAN  ANKALAGI",
+        "slNo": 423,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI433-T",
+        "name": "POORVAJ V",
+        "slNo": 424,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI434-T",
+        "name": "C SWATHI",
+        "slNo": 425,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI435-T",
+        "name": "NITHIN SINGH S",
+        "slNo": 426,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI436-T",
+        "name": "TEJAS  PN",
+        "slNo": 427,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI437-T",
+        "name": "MANIVARMENDRA",
+        "slNo": 428,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI438-T",
+        "name": "BHUVANA M N",
+        "slNo": 429,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI439-T",
+        "name": "PRAKYATH  R",
+        "slNo": 430,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI440-T",
+        "name": "LAVANYA K P",
+        "slNo": 431,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI143-T",
+        "name": "TANUJA BASALINGAPPA KELUR",
+        "slNo": 432,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI441-T",
+        "name": "YASHWANTH  P",
+        "slNo": 433,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI442-T",
+        "name": "ROHITH B J",
+        "slNo": 434,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI443-T",
+        "name": "VIKAS  L",
+        "slNo": 435,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI444-T",
+        "name": "SUJAY H R",
+        "slNo": 436,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI445-T",
+        "name": "MADAPPA",
+        "slNo": 437,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI446-T",
+        "name": "NANDAN KUMAR S",
+        "slNo": 438,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      },
+      {
+        "usn": "1BM25AI447-T",
+        "name": "SHWETA MANJUNATH MADNALLI",
+        "slNo": 439,
+        "remarks": "Lateral Entry",
+        "isLateralEntry": true,
+        "batchYear": 2024,
+        "currentSemester": 3
+      }
+    ]
+  }
+}
